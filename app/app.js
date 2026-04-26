@@ -90,8 +90,13 @@ function initMap(region = 'chile') {
       maxZoom: 8,
       attributionControl: true,
     });
-    // Sin tiles externos en EPSG:3031 (los proveedores comunes no sirven en este CRS).
-    // El fondo lo da el color del contenedor #map; los polígonos del GeoMAP son la visualización.
+    // Imagery polar: NASA GIBS BlueMarble (relieve sombreado, EPSG:3031, sin auth)
+    L.tileLayer.wms('https://gibs.earthdata.nasa.gov/wms/epsg3031/best/wms.cgi', {
+      layers: 'BlueMarble_ShadedRelief_Bathymetry',
+      format: 'image/jpeg',
+      transparent: false,
+      attribution: 'NASA GIBS / Blue Marble',
+    }).addTo(map);
     map.attributionControl.addAttribution('SCAR/GNS GeoMAP v2022.08 (Cox et al. 2023)');
     state.map = map;
   } else {

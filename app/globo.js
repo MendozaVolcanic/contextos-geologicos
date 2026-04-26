@@ -1,10 +1,11 @@
-// Vista 3D con CesiumJS — sin token Ion (usa imagery OSM gratuito).
+// Vista 3D con CesiumJS — sin token Ion (usa Natural Earth II que viene con Cesium).
 // Carga lazy: solo se inicializa cuando el usuario entra a la pestaña Globo 3D.
 
 const globoState = {
   viewer: null,
   layers: { chile: null, antartica: null, cgt: null },
   initialized: false,
+  initializing: false,
 };
 
 const VIEWS = {
@@ -19,109 +20,140 @@ function flyTo(view) {
   const v = VIEWS[view];
   globoState.viewer.camera.flyTo({
     destination: Cesium.Cartesian3.fromDegrees(v.lon, v.lat, v.height),
-    orientation: { heading: 0, pitch: -Cesium.Math.PI_OVER_TWO, roll: 0 },
     duration: 1.5,
   });
 }
 
-async function loadGeoJsonAs(viewer, url, opts = {}) {
+async function loadGeoJsonAs(viewer, url, defaultColor) {
+  // clampToGround: false → mucho más rápido (no calcula intersección con terreno)
+  // stroke=undefined, fill aplicado por entidad desde properties.color
   const ds = await Cesium.GeoJsonDataSource.load(url, {
-    clampToGround: true,
-    ...opts,
+    clampToGround: false,
+    stroke: Cesium.Color.WHITE.withAlpha(0.0),
+    strokeWidth: 0,
+    fill: defaultColor,
   });
-  // Pintar cada entidad con su propio color desde properties.color
   for (const entity of ds.entities.values) {
     const props = entity.properties;
     const colorHex = props && props.color && props.color.getValue();
     if (entity.polygon && colorHex) {
-      const c = Cesium.Color.fromCssColorString(colorHex);
-      entity.polygon.material = c.withAlpha(0.55);
+      const c = Cesium.Color.fromCssColorString(colorHex).withAlpha(0.7);
+      entity.polygon.material = c;
       entity.polygon.outline = false;
+      // Pequeña altura sobre el suelo para evitar z-fighting con la imagery
+      entity.polygon.height = 0;
     }
   }
   await viewer.dataSources.add(ds);
   return ds;
 }
 
+function setStatus(msg) {
+  const el = document.getElementById('globo-status');
+  if (el) el.textContent = msg || '';
+}
+
 async function initGlobo() {
-  if (globoState.initialized) return;
-  globoState.initialized = true;
+  if (globoState.initialized || globoState.initializing) return;
+  globoState.initializing = true;
 
-  // Sin token: usar OSM imagery (no requiere Ion)
-  Cesium.Ion.defaultAccessToken = '';
-
-  const viewer = new Cesium.Viewer('cesium-container', {
-    baseLayerPicker: false,
-    geocoder: false,
-    homeButton: false,
-    sceneModePicker: false,
-    navigationHelpButton: false,
-    timeline: false,
-    animation: false,
-    fullscreenButton: false,
-    infoBox: false,
-    selectionIndicator: false,
-    imageryProvider: new Cesium.OpenStreetMapImageryProvider({
-      url: 'https://tile.openstreetmap.org/',
-    }),
-  });
-
-  viewer.scene.globe.enableLighting = false;
-  viewer.scene.skyAtmosphere.show = true;
-  viewer.scene.backgroundColor = Cesium.Color.fromCssColorString('#000814');
-
-  globoState.viewer = viewer;
-
-  // Cargar capas en paralelo
   try {
-    const [chileDs, antDs, cgtDs] = await Promise.all([
-      loadGeoJsonAs(viewer, 'data/chile_geologico.geojson'),
-      loadGeoJsonAs(viewer, 'data/antartica_simplecode.geojson'),
-      loadGeoJsonAs(viewer, 'data/contextos.geojson'),
-    ]);
-    globoState.layers.chile = chileDs;
-    globoState.layers.antartica = antDs;
-    globoState.layers.cgt = cgtDs;
-  } catch (e) {
-    console.error('Error cargando capas en globo:', e);
-  }
+    Cesium.Ion.defaultAccessToken = '';
+    setStatus('Inicializando globo…');
 
-  // Vista inicial
-  flyTo('continente');
+    // baseLayer: false → no intentar Ion. Después agrego Natural Earth II como imagery.
+    const viewer = new Cesium.Viewer('cesium-container', {
+      baseLayer: false,
+      baseLayerPicker: false,
+      geocoder: false,
+      homeButton: false,
+      sceneModePicker: false,
+      navigationHelpButton: false,
+      timeline: false,
+      animation: false,
+      fullscreenButton: false,
+      infoBox: false,
+      selectionIndicator: false,
+      requestRenderMode: true,
+    });
 
-  // Click handler
-  const handler = new Cesium.ScreenSpaceEventHandler(viewer.scene.canvas);
-  handler.setInputAction((click) => {
-    const picked = viewer.scene.pick(click.position);
-    if (Cesium.defined(picked) && picked.id && picked.id.properties) {
-      const p = picked.id.properties;
-      showGloboDetail({
-        nombre: (p.nombre && p.nombre.getValue()) || (p.geo && p.geo.getValue()) || '—',
-        edad: (p.edad && p.edad.getValue()) || (p.epoca && p.epoca.getValue()) || '',
-        descripcion: (p.descripcion && p.descripcion.getValue()) || (p.composicio && p.composicio.getValue()) || '',
-        clase: (p.clase && p.clase.getValue()) || (p.era && p.era.getValue()) || '',
-      });
-    } else {
-      hideGloboDetail();
+    viewer.scene.globe.enableLighting = false;
+    viewer.scene.skyAtmosphere.show = true;
+    viewer.scene.backgroundColor = Cesium.Color.fromCssColorString('#000814');
+    globoState.viewer = viewer;
+
+    // Imagery: Natural Earth II que viene con Cesium (no requiere token, no tiene CORS issues)
+    setStatus('Cargando imagery…');
+    try {
+      const provider = await Cesium.TileMapServiceImageryProvider.fromUrl(
+        Cesium.buildModuleUrl('Assets/Textures/NaturalEarthII')
+      );
+      viewer.imageryLayers.addImageryProvider(provider);
+    } catch (e) {
+      console.warn('Natural Earth II falló, probando provider alternativo', e);
+      // Fallback: ArcGIS World Imagery (CORS friendly)
+      try {
+        const fallback = await Cesium.ArcGisMapServerImageryProvider.fromUrl(
+          'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer'
+        );
+        viewer.imageryLayers.addImageryProvider(fallback);
+      } catch (e2) {
+        console.error('Sin imagery base disponible', e2);
+      }
     }
-  }, Cesium.ScreenSpaceEventType.LEFT_CLICK);
 
-  // Wire toggles
-  document.getElementById('globo-chile').addEventListener('change', e => {
-    if (globoState.layers.chile) globoState.layers.chile.show = e.target.checked;
-  });
-  document.getElementById('globo-antartica').addEventListener('change', e => {
-    if (globoState.layers.antartica) globoState.layers.antartica.show = e.target.checked;
-  });
-  document.getElementById('globo-cgt').addEventListener('change', e => {
-    if (globoState.layers.cgt) globoState.layers.cgt.show = e.target.checked;
-  });
+    // Cargar capas en paralelo (NO bloquea el render del globo)
+    setStatus('Cargando capas geológicas…');
+    const tasks = [
+      loadGeoJsonAs(viewer, 'data/chile_geologico.geojson').then(ds => globoState.layers.chile = ds),
+      loadGeoJsonAs(viewer, 'data/antartica_simplecode.geojson').then(ds => globoState.layers.antartica = ds),
+      loadGeoJsonAs(viewer, 'data/contextos.geojson').then(ds => globoState.layers.cgt = ds),
+    ];
+    await Promise.allSettled(tasks);
+    setStatus('');
 
-  document.querySelectorAll('.btn-view').forEach(btn => {
-    btn.addEventListener('click', () => flyTo(btn.dataset.view));
-  });
+    flyTo('continente');
 
-  document.querySelector('#globo-detail .close').addEventListener('click', hideGloboDetail);
+    // Click handler
+    const handler = new Cesium.ScreenSpaceEventHandler(viewer.scene.canvas);
+    handler.setInputAction((click) => {
+      const picked = viewer.scene.pick(click.position);
+      if (Cesium.defined(picked) && picked.id && picked.id.properties) {
+        const p = picked.id.properties;
+        showGloboDetail({
+          nombre: (p.nombre && p.nombre.getValue()) || (p.geo && p.geo.getValue()) || '—',
+          edad: (p.edad && p.edad.getValue()) || (p.epoca && p.epoca.getValue()) || '',
+          descripcion: (p.descripcion && p.descripcion.getValue()) || (p.composicio && p.composicio.getValue()) || '',
+          clase: (p.clase && p.clase.getValue()) || (p.era && p.era.getValue()) || '',
+        });
+      } else {
+        hideGloboDetail();
+      }
+    }, Cesium.ScreenSpaceEventType.LEFT_CLICK);
+
+    document.getElementById('globo-chile').addEventListener('change', e => {
+      if (globoState.layers.chile) globoState.layers.chile.show = e.target.checked;
+    });
+    document.getElementById('globo-antartica').addEventListener('change', e => {
+      if (globoState.layers.antartica) globoState.layers.antartica.show = e.target.checked;
+    });
+    document.getElementById('globo-cgt').addEventListener('change', e => {
+      if (globoState.layers.cgt) globoState.layers.cgt.show = e.target.checked;
+    });
+
+    document.querySelectorAll('.btn-view').forEach(btn => {
+      btn.addEventListener('click', () => flyTo(btn.dataset.view));
+    });
+
+    document.querySelector('#globo-detail .close').addEventListener('click', hideGloboDetail);
+
+    globoState.initialized = true;
+  } catch (e) {
+    console.error('Error inicializando globo:', e);
+    setStatus('Error: ' + e.message);
+  } finally {
+    globoState.initializing = false;
+  }
 }
 
 function showGloboDetail({ nombre, edad, descripcion, clase }) {
