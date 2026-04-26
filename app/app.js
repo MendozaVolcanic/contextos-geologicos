@@ -3,8 +3,9 @@
 
 const state = {
   contextos: null,
-  antartica: null,           // 21 SIMPLECODE classes (lazy)
-  chileGeologico: null,      // Mapa geológico de Chile 1:1M (lazy)
+  chileContextos: null,      // 22 contextos Mourgues mapeados al mapa al millón (lazy)
+  antartica: null,           // 9 SCAR Frameworks (lazy)
+  chileGeologico: null,      // Mapa geológico de Chile 1:1M crudo (lazy, capa base)
   lexico: null,
   layer: null,               // capa de contextos (CGT)
   baseLayer: null,           // capa base geológica
@@ -130,10 +131,15 @@ function styleFor(feature) {
 async function ensureAntarticaLoaded() {
   if (state.antartica) return;
   try {
-    state.antartica = await fetch('data/antartica_simplecode.geojson').then(r => r.json());
+    // Por defecto: 9 SCAR Frameworks (interpretativos). Si querés ver las 21 SIMPCODE, cambia a antartica_simplecode.geojson.
+    state.antartica = await fetch('data/antartica_frameworks.geojson').then(r => r.json());
   } catch (e) {
-    console.warn('No se pudo cargar antartica_simplecode.geojson — corre scripts/build_antartica_geojson.py', e);
-    state.antartica = { type: 'FeatureCollection', features: [] };
+    console.warn('No se pudo cargar antartica_frameworks.geojson, fallback a SIMPCODE', e);
+    try {
+      state.antartica = await fetch('data/antartica_simplecode.geojson').then(r => r.json());
+    } catch (e2) {
+      state.antartica = { type: 'FeatureCollection', features: [] };
+    }
   }
 }
 
@@ -193,7 +199,17 @@ async function renderContextos() {
     await ensureAntarticaLoaded();
     source = state.antartica.features;
   } else {
-    source = state.contextos.features.filter(f => f.properties.region === 'chile');
+    // Modo Chile: 22 contextos Mourgues mapeados desde el mapa al millón.
+    // Fallback: contextos.geojson (19 CGT Aysén) si chile_contextos no carga.
+    try {
+      if (!state.chileContextos) {
+        state.chileContextos = await fetch('data/chile_contextos.geojson').then(r => r.json());
+      }
+      source = state.chileContextos.features;
+    } catch (e) {
+      console.warn('chile_contextos.geojson no disponible, fallback a Aysén CGT', e);
+      source = state.contextos.features.filter(f => f.properties.region === 'chile');
+    }
   }
 
   const features = source.filter(f => {

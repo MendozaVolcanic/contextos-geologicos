@@ -1,101 +1,13 @@
 {
-  "_note": "Muestra inicial del léxico estratigráfico chileno. Extraída manualmente de los informes SERNAGEOMIN (Arratia, Espinoza, Garrido 2024) presentes en /docs/pdfs. Pendiente: parser automático para completar las ~500+ unidades.",
+  "_note": "Muestra inicial del léxico estratigráfico chileno. Extraída manualmente de los informes SERNAGEOMIN (Arratia, Espinoza, Garrido 2024) presentes en /docs/pdfs. El parser automático (scripts/build_lexico.py) está pendiente de mejorar — los headers en los PDFs no son suficientemente regulares para extraer ~500 unidades sin ruido.",
   "entries": [
-    {
-      "id": "fm-la-negra",
-      "nombre": "Formación La Negra",
-      "rango": "Formación",
-      "periodo": "Jurásico",
-      "edad": "Jurásico Inferior a Superior (Sinemuriano-Kimmeridgiano)",
-      "litologia": "Lavas y rocas piroclásticas andesíticas, basálticas y dacíticas, con intercalaciones de areniscas y calizas marinas.",
-      "distribucion": "Cordillera de la Costa entre Antofagasta y Taltal, regiones de Antofagasta y Atacama.",
-      "espesor": "Más de 10.000 m en la localidad tipo.",
-      "definicion": "García (1967), área de Antofagasta.",
-      "contexto": "cgc-02"
-    },
-    {
-      "id": "cm-andino-oriental",
-      "nombre": "Complejo Metamórfico Andino Oriental",
-      "rango": "Complejo",
-      "periodo": "Paleozoico",
-      "edad": "Devónico-Carbonífero",
-      "litologia": "Rocas metamórficas de bajo a medio grado: filitas, esquistos pelíticos, metareniscas y metavolcánicas.",
-      "distribucion": "Cordillera Patagónica oriental entre los 46° y 48° S, alrededores de Cochrane.",
-      "espesor": "Indeterminado por deformación.",
-      "definicion": "Hervé et al., reconocido en cartografías SERNAGEOMIN.",
-      "contexto": "cgc-01"
-    },
-    {
-      "id": "fm-pastos-blancos",
-      "nombre": "Formación Pastos Blancos",
-      "rango": "Formación",
-      "periodo": "Triásico",
-      "edad": "Pérmico Superior - Triásico Inferior",
-      "litologia": "Secuencia volcano-sedimentaria con tobas riolíticas, lavas, areniscas y conglomerados continentales.",
-      "distribucion": "Alta cordillera entre las regiones de Atacama y Coquimbo.",
-      "espesor": "Hasta 2.500 m.",
-      "definicion": "Reutter, 1974.",
-      "contexto": "cgc-04"
-    },
-    {
-      "id": "fm-punta-del-cobre",
-      "nombre": "Formación Punta del Cobre",
-      "rango": "Formación",
-      "periodo": "Cretácico",
-      "edad": "Cretácico Inferior (Hauteriviano-Barremiano)",
-      "litologia": "Lavas y brechas andesíticas con intercalaciones de tobas, areniscas volcanoclásticas y calizas.",
-      "distribucion": "Cordillera de la Costa de la Región de Atacama, área del distrito Punta del Cobre - Candelaria.",
-      "espesor": "~1.200 m.",
-      "definicion": "Segerstrom y Ruiz, 1962.",
-      "contexto": "cgc-02"
-    },
-    {
-      "id": "fm-las-chilcas",
-      "nombre": "Formación Las Chilcas",
-      "rango": "Formación",
-      "periodo": "Cretácico",
-      "edad": "Cretácico Superior (Albiano-Campaniano)",
-      "litologia": "Conglomerados, areniscas, lutitas, lavas andesíticas y tobas; intercalaciones calcáreas en la base.",
-      "distribucion": "Cordillera de la Costa entre los 32° y 33° S, Región de Valparaíso y Metropolitana.",
-      "espesor": "Hasta 7.000 m.",
-      "definicion": "Thomas, 1958.",
-      "contexto": "cgc-02"
-    },
-    {
-      "id": "fm-springhill",
-      "nombre": "Formación Springhill",
-      "rango": "Formación",
-      "periodo": "Jurásico-Cretácico",
-      "edad": "Jurásico Superior (Tithoniano) - Cretácico Inferior (Hauteriviano)",
-      "litologia": "Areniscas cuarzosas marinas a transicionales, principal reservorio hidrocarburífero de la Cuenca de Magallanes.",
-      "distribucion": "Subsuelo de la Cuenca de Magallanes; aflora localmente en Tierra del Fuego.",
-      "espesor": "0–250 m según sector.",
-      "definicion": "Thomas, 1949.",
-      "contexto": "cgc-03"
-    },
-    {
-      "id": "fm-zapata",
-      "nombre": "Formación Zapata",
-      "rango": "Formación",
-      "periodo": "Cretácico",
-      "edad": "Cretácico Inferior (Berriasiano-Aptiano)",
-      "litologia": "Lutitas negras marinas profundas con intercalaciones de areniscas finas turbidíticas.",
-      "distribucion": "Cuenca de Magallanes, Región de Magallanes y Antártica Chilena.",
-      "espesor": "~1.000 m.",
-      "definicion": "Katz, 1963.",
-      "contexto": "cgc-03"
-    },
-    {
-      "id": "fm-lopez-bertodano",
-      "nombre": "Formación López de Bertodano",
-      "rango": "Formación",
-      "periodo": "Cretácico-Paleógeno",
-      "edad": "Maastrichtiano - Daniano",
-      "litologia": "Limolitas y areniscas finas marinas con concreciones; contiene el límite K-Pg con anomalía de iridio.",
-      "distribucion": "Isla Marambio (Seymour), Antártica.",
-      "espesor": "~1.190 m.",
-      "definicion": "Rinaldi et al., 1978.",
-      "contexto": "cga-03"
-    }
+    {"id": "fm-la-negra", "nombre": "Formación La Negra", "rango": "Formación", "periodo": "Jurásico", "edad": "Jurásico Inferior a Superior (Sinemuriano-Kimmeridgiano)", "litologia": "Lavas y rocas piroclásticas andesíticas, basálticas y dacíticas, con intercalaciones de areniscas y calizas marinas.", "distribucion": "Cordillera de la Costa entre Antofagasta y Taltal, regiones de Antofagasta y Atacama.", "espesor": "Más de 10.000 m en la localidad tipo.", "definicion": "García (1967), área de Antofagasta.", "contexto": "AcMz"},
+    {"id": "cm-andino-oriental", "nombre": "Complejo Metamórfico Andino Oriental", "rango": "Complejo", "periodo": "Paleozoico", "edad": "Devónico-Carbonífero", "litologia": "Rocas metamórficas de bajo a medio grado: filitas, esquistos pelíticos, metareniscas y metavolcánicas.", "distribucion": "Cordillera Patagónica oriental entre los 46° y 48° S, alrededores de Cochrane.", "espesor": "Indeterminado por deformación.", "definicion": "Hervé et al., reconocido en cartografías SERNAGEOMIN.", "contexto": "TCA"},
+    {"id": "fm-pastos-blancos", "nombre": "Formación Pastos Blancos", "rango": "Formación", "periodo": "Triásico", "edad": "Pérmico Superior - Triásico Inferior", "litologia": "Secuencia volcano-sedimentaria con tobas riolíticas, lavas, areniscas y conglomerados continentales.", "distribucion": "Alta cordillera entre las regiones de Atacama y Coquimbo.", "espesor": "Hasta 2.500 m.", "definicion": "Reutter, 1974.", "contexto": "SCMz"},
+    {"id": "fm-punta-del-cobre", "nombre": "Formación Punta del Cobre", "rango": "Formación", "periodo": "Cretácico", "edad": "Cretácico Inferior (Hauteriviano-Barremiano)", "litologia": "Lavas y brechas andesíticas con intercalaciones de tobas, areniscas volcanoclásticas y calizas.", "distribucion": "Cordillera de la Costa de la Región de Atacama, área del distrito Punta del Cobre - Candelaria.", "espesor": "~1.200 m.", "definicion": "Segerstrom y Ruiz, 1962.", "contexto": "AcMz"},
+    {"id": "fm-las-chilcas", "nombre": "Formación Las Chilcas", "rango": "Formación", "periodo": "Cretácico", "edad": "Cretácico Superior (Albiano-Campaniano)", "litologia": "Conglomerados, areniscas, lutitas, lavas andesíticas y tobas; intercalaciones calcáreas en la base.", "distribucion": "Cordillera de la Costa entre los 32° y 33° S, Región de Valparaíso y Metropolitana.", "espesor": "Hasta 7.000 m.", "definicion": "Thomas, 1958.", "contexto": "AcMz"},
+    {"id": "fm-springhill", "nombre": "Formación Springhill", "rango": "Formación", "periodo": "Jurásico-Cretácico", "edad": "Jurásico Superior (Tithoniano) - Cretácico Inferior (Hauteriviano)", "litologia": "Areniscas cuarzosas marinas a transicionales, principal reservorio hidrocarburífero de la Cuenca de Magallanes.", "distribucion": "Subsuelo de la Cuenca de Magallanes; aflora localmente en Tierra del Fuego.", "espesor": "0–250 m según sector.", "definicion": "Thomas, 1949.", "contexto": "SMTrJ"},
+    {"id": "fm-zapata", "nombre": "Formación Zapata", "rango": "Formación", "periodo": "Cretácico", "edad": "Cretácico Inferior (Berriasiano-Aptiano)", "litologia": "Lutitas negras marinas profundas con intercalaciones de areniscas finas turbidíticas.", "distribucion": "Cuenca de Magallanes, Región de Magallanes y Antártica Chilena.", "espesor": "~1.000 m.", "definicion": "Katz, 1963.", "contexto": "SMKi"},
+    {"id": "fm-lopez-bertodano", "nombre": "Formación López de Bertodano", "rango": "Formación", "periodo": "Cretácico-Paleógeno", "edad": "Maastrichtiano - Daniano", "litologia": "Limolitas y areniscas finas marinas con concreciones; contiene el límite K-Pg con anomalía de iridio.", "distribucion": "Isla Marambio (Seymour), Antártica.", "espesor": "~1.190 m.", "definicion": "Rinaldi et al., 1978.", "contexto": "scar-f5"}
   ]
 }

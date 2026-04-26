@@ -1,64 +1,106 @@
 # Contextos Geológicos · Chile & Antártica
 
-Plataforma web para visualizar contextos geológicos chilenos y antárticos, y consultar el léxico estratigráfico de unidades de roca. Inspirada en el [BGS Geology Viewer](https://www.bgs.ac.uk/map-viewers/bgs-geology-viewer/) y el [BGS Lexicon](https://webapps.bgs.ac.uk/lexicon/).
+Visor interactivo de los **22 Contextos Geológicos Chilenos** (Mourgues, Schilling & Castro 2012/2016) y los **9 SCAR Antarctic Geological Frameworks** (ATCM XLIII, 2021), construido sobre el Mapa Geológico de Chile 1:1.000.000 (SERNAGEOMIN) y el SCAR/GNS GeoMAP v2022.08 (Cox et al. 2023).
+
+🌐 **Dashboard público:** https://mendozavolcanic.github.io/contextos-geologicos/ *(GitHub Pages, redeploya automático en cada push)*
+
+## Qué hace
+
+- **Mapa de contextos** (Leaflet) — cambia entre Chile (Web Mercator) y Antártica (Polar Stereographic EPSG:3031), con mapa geológico base + polígonos de contextos.
+- **Globo 3D** (CesiumJS) — vista esférica con todas las capas superpuestas, sin token Ion.
+- **Léxico estratigráfico** — 8 entradas hand-curadas (parser automático en TODO).
+
+## Datos
+
+| Capa | Fuente | Procesamiento |
+|---|---|---|
+| Mapa Geológico de Chile 1:1M | SERNAGEOMIN (18.935 polígonos) | Disuelto por código `geo` → 149 unidades coloreadas por era |
+| 22 Contextos Mourgues | Mourgues 2012/2016 + Mapa al Millón | Reglas era+período+composición+latitud → 15 contextos asignados a polígonos del mapa oficial |
+| 9 SCAR Frameworks | SCAR ATCM XLIII Att. A (2021) + GeoMAP | Reglas SIMPCODE → Framework → 6 frameworks asignables desde GeoMAP |
+| 21 clases SIMPCODE | Cox et al. 2023, Tabla 3 | Disuelto desde 99.080 polígonos |
 
 ## Estructura
 
 ```
 .
-├── app/                                  # Aplicación web (HTML + Leaflet + JS vanilla, sin build)
+├── app/                          # Dashboard estático (sin build)
 │   ├── index.html
+│   ├── app.js                    # Mapa Leaflet
+│   ├── globo.js                  # Globo Cesium
 │   ├── styles.css
-│   ├── app.js
 │   └── data/
-│       ├── contextos.geojson             # 19 CGT Aysén + 4 antárticos
-│       └── lexico.json                   # Léxico estratigráfico (muestra inicial)
+│       ├── chile_contextos.geojson      # 22 contextos chilenos (5 MB)
+│       ├── chile_geologico.geojson      # Base 1:1M (7 MB)
+│       ├── antartica_frameworks.geojson # 9 SCAR Frameworks (16 MB)
+│       ├── antartica_simplecode.geojson # 21 SIMPCODE GeoMAP (17 MB)
+│       ├── contextos.geojson            # 19 CGT Aysén (Benado 2020)
+│       └── lexico.json
+├── scripts/                      # Pipelines reproducibles (geopandas)
+│   ├── build_chile_contextos.py
+│   ├── build_chile_geologico.py
+│   ├── build_antartica_frameworks.py
+│   ├── build_antartica_geojson.py
+│   └── build_lexico.py
 ├── docs/
-│   ├── pdfs/                             # Informes-fuente del léxico SERNAGEOMIN + texto extraído
+│   ├── pdfs/                     # Informes-fuente del léxico SERNAGEOMIN
 │   ├── bibliografia/
-│   │   ├── 01_contextos_geologicos/      # Benado 2019, Benado et al. 2020
-│   │   ├── 02_tesis_regionales/          # Sepúlveda 2022, Gálvez 2024
-│   │   ├── 03_mapas_base/                # Mapa al Millón, Mapa Antártico BND
-│   │   └── PENDIENTES_DESCARGA.md
-│   ├── mapas/                            # Datos geoespaciales
-│   │   ├── chile/                        # SHP + GeoJSON Mapa Geológico de Chile
-│   │   └── antartica/                    # SCAR GeoMAP v2022.08 (ESRI + Google Earth)
+│   │   ├── 01_contextos_geologicos/  # Benado 2019, Benado 2020, SCAR ATCM43
+│   │   ├── 02_tesis_regionales/      # Sepúlveda 2022, Gálvez 2024
+│   │   └── 03_mapas_base/            # Cox 2023, Mapa al Millón, Antártico BND
+│   ├── mapas/                    # Datasets crudos (gitignored, ver PENDIENTES)
 │   └── notas/
-│       ├── contextos_aysen_benado_2020.md  # Tabla de los 19 CGT
+│       ├── contextos_chilenos_22_mourgues.md  ← lista oficial 22 contextos
+│       ├── contextos_antarticos.md             ← lista oficial 9 frameworks
+│       ├── contextos_aysen_benado_2020.md
+│       ├── mapping_rules_log.md                ← auditoría del mapping
 │       └── scar_categorias.md
+├── DEPLOY.md                     # Cómo deployar a Cloudflare Pages / Netlify
 └── README.md
 ```
 
-## Cómo correr
+## Reproducir el procesamiento
 
-La app es estática pero necesita un servidor HTTP por los `fetch` a `/data`. Desde la carpeta del proyecto:
+Requiere Python 3.12 + geopandas, fiona, pyogrio.
 
 ```bash
-cd app
-python -m http.server 8000
+# 1. Bajar los datasets pesados a docs/mapas/{chile,antartica}/ (ver docs/bibliografia/PENDIENTES_DESCARGA.md)
+# 2. Generar las capas
+python scripts/build_chile_geologico.py        # → app/data/chile_geologico.geojson
+python scripts/build_chile_contextos.py        # → app/data/chile_contextos.geojson
+python scripts/build_antartica_geojson.py      # → app/data/antartica_simplecode.geojson
+python scripts/build_antartica_frameworks.py   # → app/data/antartica_frameworks.geojson
 ```
 
-Y abrir http://localhost:8000
+Los GeoJSON resultado están commiteados al repo, así que para solo correr el dashboard:
+```bash
+cd app && python -m http.server 8000   # → http://localhost:8000
+```
 
 ## Estado del proyecto
 
-### Hecho
-- [x] Estructura del proyecto, bibliografía clasificada en subcarpetas temáticas
-- [x] Texto de los dos informes SERNAGEOMIN extraído a `docs/pdfs/lexico*.txt`
-- [x] **19 Contextos Geológicos Temáticos de Aysén** (Benado et al. 2020) integrados al mapa, con sus unidades representativas
-- [x] 4 contextos antárticos derivados de SCAR EG-GEOCON
-- [x] Filtros por región / tipo / edad, panel de detalle, navegación cruzada léxico ↔ mapa
-- [x] Léxico con buscador y filtro por período (8 entradas iniciales)
-- [x] Bibliografía descargada: Benado 2019 (Geoconservation Chile), Benado 2020 (Aysén), Sepúlveda 2022, Gálvez 2024, Mapa al Millón, Mapa Antártico BND
-- [x] Datos geoespaciales descargados: SHP+GeoJSON Mapa Geológico de Chile, SCAR GeoMAP Antártica v2022.08 (ESRI + Google Earth)
+### Lo conseguido
+- ✅ Listas oficiales completas de los 22 contextos chilenos y los 9 frameworks SCAR antárticos
+- ✅ Polígonos georreferenciados nacionales para 15/22 contextos chilenos (vía mapping algorítmico)
+- ✅ Polígonos antárticos para 6/9 frameworks SCAR
+- ✅ Capa base geológica (mapa al millón + GeoMAP) bajo los contextos
+- ✅ Vista 3D Cesium con todas las capas
+- ✅ Proyección polar EPSG:3031 para Antártica
+- ✅ Repo público, GitHub Pages auto-deploy
 
-### Pendiente
-Ver [`docs/bibliografia/PENDIENTES_DESCARGA.md`](docs/bibliografia/PENDIENTES_DESCARGA.md). El único bloqueante real es **Mourgues, Schilling & Castro (2012)** — pero los 19 CGT de Aysén derivan de ese trabajo, así que tenemos buena base mientras tanto.
+### Lo que requiere validación humana (Felipe / equipo SERNAGEOMIN)
+- Validación / refrendo institucional de los 22 contextos chilenos (la lista *no ha sido validada* por la comunidad geológica nacional según Benado et al. 2019)
+- Revisión de las **reglas de mapping** en `scripts/build_chile_contextos.py` función `assign_contexto()` — son heurísticas era+período+composición que pueden corregirse polígono-a-polígono
+- Contextos chilenos NO mapeables por reglas: #6 IO (islas oceánicas), #16 BC (borde costero), #21 TEC (estructuras), #22 Lss (impactos) — requieren info espacial/estructural adicional
+- Frameworks antárticos NO mapeables solo desde SIMPCODE: F5 (K-Pg, sitio puntual), F7 (meteoritos), F8 (subglacial)
 
-### Próximos pasos sugeridos
-1. **Cargar Mapa Geológico de Chile** como capa base bajo los CGT (el GeoJSON pesa 60 MB; conviene tilear con `tippecanoe` → `pmtiles` o filtrar columnas y simplificar geometría con `mapshaper`).
-2. **Parser de los PDFs SERNAGEOMIN** → léxico completo. El texto ya está extraído; campos siguen el patrón `Edad:`, `Litología.`, `Distribución.`, `Definición:`.
-3. **Cargar SCAR GeoMAP Antártica** como capa antártica (la geodatabase ESRI requiere convertir a GeoJSON con GDAL/ogr2ogr).
-4. **Polígonos georreferenciados reales para los CGT** (no los bounding boxes placeholder actuales).
-5. **Carga del SHP del Inventario Nacional de Geositios** como capa de puntos.
-6. **Visor 3D de superficies** (idea 5 — desafío Leapfrog-like) — proyecto separado.
+### TODO técnico
+- Mejorar parser del léxico (`scripts/build_lexico.py`) para extraer las ~500 unidades de los 2 PDFs SERNAGEOMIN
+- Cargar el SHP del Inventario Nacional de Geositios (cuando lo tengamos) como capa de puntos
+- Dataset Mourgues 2012 original (SSL caducado, ver `docs/bibliografia/PENDIENTES_DESCARGA.md`) para validar nuestras reglas
+- Visor 3D de superficies tipo Leapfrog para acuíferos (idea aparte de Felipe)
+
+## Licencias y atribuciones
+
+- **App y código:** MIT
+- **Datos:** SERNAGEOMIN (uso académico), SCAR/GNS GeoMAP CC-BY 4.0, Cox et al. 2023 CC-BY 4.0
+- **Bibliografía:** PDFs en `docs/bibliografia/` son referenciales — derechos de los autores originales
