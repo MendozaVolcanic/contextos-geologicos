@@ -1,0 +1,146 @@
+[
+  {
+    "archivo": "55_83_H834_LexStratigr_.pdf",
+    "titulo": "Léxico Estratigráfico (extracto pp. 55-83, Carta H834) - SERNAGEOMIN",
+    "autores": ["SERNAGEOMIN (no extraíble: PDF escaneado)"],
+    "anio": null,
+    "tipo": "léxico",
+    "alcance_geografico": "Chile",
+    "n_unidades_o_geositios": "Extracto parcial (29 páginas) de léxico estratigráfico chileno asociado a la Hoja/Carta H834 del SERNAGEOMIN; número exacto de unidades no determinable en el extracto",
+    "estructura": "PDF escaneado sin capa de texto OCR. Por convención del léxico chileno SERNAGEOMIN: fichas de unidades estratigráficas ordenadas alfabéticamente con localidad tipo, edad, litología, espesor y referencias",
+    "aplicabilidad_proyecto": "Fuente para nomenclatura estratigráfica formal chilena; referencia para fichas de unidades del proyecto. Requiere OCR para uso completo",
+    "rutas_o_circuitos_destacados": []
+  },
+  {
+    "archivo": "Caruso2021CondicionesBiofsicasyClimticasdeArgentina.pdf",
+    "titulo": "Las condiciones biofísicas y climáticas de la Argentina (Capítulo VIII de 'Geopolítica argentina')",
+    "autores": ["Sergio Adrián Caruso"],
+    "anio": 2021,
+    "tipo": "libro_geopatrimonio",
+    "alcance_geografico": "Argentina",
+    "n_unidades_o_geositios": "No aplica; capítulo descriptivo de ecorregiones argentinas (NEA, NOA, Pampa, Patagonia, etc.)",
+    "estructura": "Capítulo de libro Eudeba (UBA). Consideraciones iniciales sobre posición planetaria/continental, gradiente latitudinal, influencia oceánica, y caracterización por ecorregiones",
+    "aplicabilidad_proyecto": "Marco contextual biofísico-climático para proyectos transfronterizos Argentina-Chile; útil para contextualizar geositios patagónicos y andinos en su entorno climático y ecorregional",
+    "rutas_o_circuitos_destacados": []
+  },
+  {
+    "archivo": "Fajardoetal2018LxicoCuaternario.pdf",
+    "titulo": "Léxico Estratigráfico de la Argentina. Volumen XIII - Cuaternario",
+    "autores": ["Dante Fajardo", "Federico Isla", "Martín Iriondo", "Daniela Krohling"],
+    "anio": 2018,
+    "tipo": "léxico",
+    "alcance_geografico": "Argentina",
+    "n_unidades_o_geositios": "Cientos de unidades cuaternarias (léxico de ~173 pp.); orden alfabético de formaciones, miembros y unidades informales del Cuaternario argentino",
+    "estructura": "Publicación AGA Serie B Didáctica N°33 / SEGEMAR Pub. N°174. Prólogo, Léxico (pp. 3-172), Referencias (p. 173). Fichas con denominación, autor original, localidad tipo, litología, edad, ambiente y referencias",
+    "aplicabilidad_proyecto": "Modelo formal de léxico estratigráfico con metadatos estandarizados; replicable para fichas chilenas. Especialmente útil para correlación de unidades cuaternarias andinas/patagónicas Arg-Chile",
+    "rutas_o_circuitos_destacados": []
+  },
+  {
+    "archivo": "LibroFinal_RutasInteractivasJenimeni.pdf",
+    "titulo": "Rutas Interactivas e Inclusivas en Jeinimeni",
+    "autores": ["José Benado W.", "Felipe Andrade A.", "Arturo Clark C.", "Laura Sánchez Jardín"],
+    "anio": 2020,
+    "tipo": "guía",
+    "alcance_geografico": "Chile - Aysén (Parque Nacional Patagonia, valle del río Jeinimeni)",
+    "n_unidades_o_geositios": "7 rutas y 28 sitios de geodiversidad/biodiversidad",
+    "estructura": "Guía interpretativa de 88 pp., Ediciones Universidad de Magallanes. Introducción, fichas por ruta con sitios temáticos (geo y biodiversidad), mapa general, recomendaciones, archivo KMZ asociado",
+    "aplicabilidad_proyecto": "Modelo directo de libro de geoturismo chileno con rutas+geositios+KMZ, formato replicable para el proyecto. Patagonia chilena, contiguo al Lago Buenos Aires/General Carrera",
+    "rutas_o_circuitos_destacados": [
+      "Ruta 1 - Pliegue Anticlinal, Diatrema, Cerro Lápiz, Islas Aborregadas, Piedra Azul, Domo Cerro Bayo, Lago General Carrera",
+      "Ruta 2 - Desembocadura río Jeinimeni, Piedra del Indio, Frutales y Hortalizas",
+      "Ruta 3 - Cerro Apidame",
+      "Ruta 4 - Antiguo Delta, Estepa, Fósiles Marinos, Bloque Errático, Discontinuidad Estratigráfica",
+      "Ruta 5 - Quebradas y Esteros, Piedra Clavada, Meseta Lago Buenos Aires, Cueva de las Manos, Valle Lunar",
+      "Ruta 6 - Curso medio río Jeinimeni, Antigua mina Ligorio Márquez",
+      "Ruta 7 - Laguna los Flamencos, Lago Jeinimeni, Plantaciones de Pino, Valle en U, Bosques de Lenga y Ñire"
+    ]
+  },
+  {
+    "archivo": "Libro_Geopatrimonio_Copiapo_Abadetal2022_compprot.pdf",
+    "titulo": "Lugares de Interés Geológico del Valle del Copiapó. Geopatrimonio, Geodiversidad y Geoturismo",
+    "autores": ["Manuel Abad", "Philippe Moisan", "Tatiana Izquierdo", "et al. (~25 autores)"],
+    "anio": 2022,
+    "tipo": "libro_geopatrimonio",
+    "alcance_geografico": "Chile - Región de Atacama, Valle del Copiapó",
+    "n_unidades_o_geositios": "27 geositios (fichas 4.1 a 4.27) y 7 rutas temáticas",
+    "estructura": "Libro 84 pp., Letra Capital Ediciones, financiado por Gobierno Regional Atacama (Proyecto FIC GECOTUR). Secciones: Preámbulo, Cómo usar, Introducción al valle (clima, agua, historia geológica, paleontología, minería), Catálogo de geositios, Rutas temáticas, Glosario, Referencias",
+    "aplicabilidad_proyecto": "Modelo de referencia principal para el proyecto: estructura libro+catálogo de geositios+rutas temáticas en Chile. Fichas con narrativa divulgativa rigurosa. Reutilizable plantilla y enfoque transversal geodiversidad/geopatrimonio/geoturismo",
+    "rutas_o_circuitos_destacados": [
+      "Ruta costera",
+      "Ruta urbana por Copiapó y alrededores",
+      "Ruta del agua",
+      "Ruta de Darwin",
+      "Ruta minera",
+      "Ruta paleontológica",
+      "Ruta cordillerana"
+    ]
+  },
+  {
+    "archivo": "LxicoEstratigrficodelaArgentina.VolumenIV-Silrico.pdf",
+    "titulo": "Léxico Estratigráfico de la Argentina. Volumen IV - Silúrico",
+    "autores": ["Claudia V. Rubinstein (editora)", "Subcomisión del Silúrico (Cingolani, Dahlquist, Dalenz Farjat, Devincenzi, Toro, Uriz)"],
+    "anio": 2021,
+    "tipo": "léxico",
+    "alcance_geografico": "Argentina",
+    "n_unidades_o_geositios": "Léxico de ~85 pp. con decenas de unidades silúricas (formaciones, grupos, miembros) ordenadas alfabéticamente",
+    "estructura": "AGA Serie B N°35 / SEGEMAR Pub. N°178. Prólogo, Léxico (pp. 3-84), Referencias (p. 85). Fichas estandarizadas con localidad tipo, litología, edad, fauna, correlaciones",
+    "aplicabilidad_proyecto": "Referencia para correlación de unidades silúricas argentino-chilenas (Precordillera, Cordillera Frontal). Modelo de ficha estratigráfica formal",
+    "rutas_o_circuitos_destacados": []
+  },
+  {
+    "archivo": "LxicoEstratigrficodelaArgentina.VolumenV-Devnico.pdf",
+    "titulo": "Léxico Estratigráfico de la Argentina. Volumen V - Devónico",
+    "autores": ["Claudia V. Rubinstein (editora)", "Subcomisión del Devónico (Amenábar, Cingolani, Dahlquist, Dalenz Farjat, di Pasquo, Noetinger, N. Rubinstein, Uriz)"],
+    "anio": 2021,
+    "tipo": "léxico",
+    "alcance_geografico": "Argentina",
+    "n_unidades_o_geositles": "Léxico de ~150 pp. con numerosas unidades devónicas argentinas",
+    "estructura": "AGA Serie B N°36 / SEGEMAR Pub. N°179. Prólogo, Léxico (pp. 3-152), Referencias (p. 153). Fichas con denominación, autor, edad, localidad tipo, descripción y correlaciones",
+    "aplicabilidad_proyecto": "Correlación de unidades devónicas en transectos andinos Arg-Chile-Bolivia. Patrón de ficha replicable para léxico chileno",
+    "rutas_o_circuitos_destacados": []
+  },
+  {
+    "archivo": "Surez-SorucoyDaz-Martnez1996-LxicoEstratigrficodeBolivia.pdf",
+    "titulo": "Léxico Estratigráfico de Bolivia",
+    "autores": ["Ramiro Suárez-Soruco", "Enrique Díaz-Martínez"],
+    "anio": 1996,
+    "tipo": "léxico",
+    "alcance_geografico": "Bolivia",
+    "n_unidades_o_geositios": "Léxico nacional con varios cientos de unidades estratigráficas bolivianas (PDF escaneado sin texto extraíble; conteo no determinable)",
+    "estructura": "PDF escaneado de la publicación clásica YPFB-SERGEOMIN. Estructura habitual: prólogo, fichas alfabéticas de formaciones/grupos/miembros con localidad tipo, edad, litología, espesor, fósiles y referencias",
+    "aplicabilidad_proyecto": "Fundamental para correlación de unidades paleozoicas (sobre todo) entre cuencas bolivianas y norte de Chile/Argentina. Requiere OCR para indexación completa",
+    "rutas_o_circuitos_destacados": []
+  },
+  {
+    "archivo": "libro_geoturismo Ohiggins.pdf",
+    "titulo": "Geopatrimonio de los Andes de O'Higgins. Una apuesta por el geoturismo",
+    "autores": ["Universidad Central de Chile - Instituto del Patrimonio Turístico", "ONG Poloc (equipo de ciencias de la tierra)"],
+    "anio": 2017,
+    "tipo": "libro_geoturismo",
+    "alcance_geografico": "Chile - Región de O'Higgins (cordillera y precordillera; comunas de San Fernando, Machalí, Requínoa, Rengo, Codegua)",
+    "n_unidades_o_geositios": "39 sitios de interés geológico y 20 sitios de geodiversidad inventariados",
+    "estructura": "Libro divulgativo del proyecto 'Geoturismo en la Cordillera del Libertador' (FIC GORE O'Higgins, SERNATUR). Secciones: contexto geográfico Andes Centrales, historia del proyecto, definición de geopatrimonio (SGCh), inventario de sitios de geodiversidad por comuna, fichas de sitios, vinculación con emprendedores locales",
+    "aplicabilidad_proyecto": "Modelo chileno de geoturismo orientado a emprendimientos locales; metodología de inventario alineada con Sociedad Geológica de Chile. Buen referente de articulación geopatrimonio-turismo comunitario",
+    "rutas_o_circuitos_destacados": [
+      "Ignimbrita Machalí",
+      "Sinclinal Alto de la Bandera",
+      "Roca aborregada Cortaderal",
+      "Huellas Glaciares del Rincón de los Guanacos",
+      "Huellas de Dinosaurios (San Fernando)",
+      "Corales y Moluscos de Termas del Flaco",
+      "Cascada Laguna del Encanto"
+    ]
+  },
+  {
+    "archivo": "2962-Textodelartculoanonimizadoobligatorio-18248-1-10-20190328.pdf",
+    "titulo": "Propuesta metodológica para la generación de productos turísticos a partir de la comunidad local",
+    "autores": ["Omar Ismael Ramírez Hernández"],
+    "anio": 2019,
+    "tipo": "guía",
+    "alcance_geografico": "México (marco metodológico aplicable genéricamente a Latinoamérica)",
+    "n_unidades_o_geositios": "No aplica; artículo metodológico (Revista Retos 9(17), UPS Ecuador) con 8 etapas",
+    "estructura": "Artículo académico: Resumen, Introducción, Revisión de literatura, Propuesta metodológica en 8 etapas (I. Sensibilización comunidad local, II. Contextualización del lugar, III. Diseño del producto turístico, IV. Identificación/análisis de demanda, V. Decisión de precio, VI. Comercialización, VII. Prueba de mercado, VIII. Puesta en marcha y seguimiento), conclusiones",
+    "aplicabilidad_proyecto": "Marco metodológico para diseñar productos geoturísticos con participación comunitaria. Útil para la fase de implementación local de rutas/geositios del proyecto, especialmente en territorios indígenas o rurales",
+    "rutas_o_circuitos_destacados": []
+  }
+]

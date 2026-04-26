@@ -14,6 +14,8 @@ const state = {
   filterTypes: new Set(),
   filterAges: new Set(),
   showBase: true,
+  showGeositios: true,
+  geositios: null,
   map: null,
 };
 
@@ -153,6 +155,51 @@ async function ensureChileGeologicoLoaded() {
   }
 }
 
+let geositiosLayer = null;
+async function ensureGeositiosLoaded() {
+  if (state.geositios) return;
+  try {
+    state.geositios = await fetch('data/geositios_inventario_nacional.geojson').then(r => r.json());
+  } catch (e) {
+    console.warn('Inventario Nacional no disponible', e);
+    state.geositios = { type: 'FeatureCollection', features: [] };
+  }
+}
+
+async function renderGeositiosLayer() {
+  if (geositiosLayer) {
+    state.map.removeLayer(geositiosLayer);
+    geositiosLayer = null;
+  }
+  if (!state.showGeositios || state.filterRegion !== 'chile') return;
+  await ensureGeositiosLoaded();
+  geositiosLayer = L.geoJSON(state.geositios, {
+    pointToLayer: (feature, latlng) => {
+      const escala = (feature.properties['ESCALA DE RELEVANCIA'] || '').toLowerCase();
+      let color = '#fff';
+      if (escala.includes('internacional')) color = '#e74c3c';
+      else if (escala.includes('nacional')) color = '#f39c12';
+      else if (escala.includes('regional')) color = '#3498db';
+      else color = '#95a5a6';
+      return L.circleMarker(latlng, { radius: 7, color: '#000', weight: 1, fillColor: color, fillOpacity: 0.95 });
+    },
+    onEachFeature: (feature, layer) => {
+      const p = feature.properties;
+      const codigo = p['CÓDIGO INVENTARIO NACIONAL'] || '';
+      const region = p['REGIÓN'] || '';
+      const interes = p['INTERÉS GEOCIENTÍFICO PRINCIPAL'] || '';
+      const escala = p['ESCALA DE RELEVANCIA'] || '';
+      layer.bindPopup(
+        `<strong>${p.nombre}</strong><br>` +
+        `<span style="color:#888;font-size:0.8em">${codigo} · ${region}</span><br>` +
+        `<em>${interes}</em><br>` +
+        `<small>Relevancia: ${escala}</small><br>` +
+        `<details><summary>Más info</summary>${(p.descripcion || '').slice(0, 400)}…</details>`
+      );
+    },
+  }).addTo(state.map);
+}
+
 function styleBaseChile(feature) {
   return {
     color: feature.properties.color,
@@ -193,6 +240,7 @@ async function renderContextos() {
     state.map.removeLayer(state.layer);
   }
   await renderBaseLayer();
+  await renderGeositiosLayer();
 
   let source;
   if (state.filterRegion === 'antartica') {
@@ -339,6 +387,11 @@ document.getElementById('region-filter').addEventListener('change', e => {
 document.getElementById('toggle-base').addEventListener('change', e => {
   state.showBase = e.target.checked;
   renderBaseLayer();
+});
+
+document.getElementById('toggle-geositios').addEventListener('change', e => {
+  state.showGeositios = e.target.checked;
+  renderGeositiosLayer();
 });
 
 // ---------- Léxico ----------

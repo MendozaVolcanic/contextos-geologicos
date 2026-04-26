@@ -9,12 +9,25 @@ docs/mapas/chile/*.geojson
 # - SCAR/GNS GeoMAP v2022.08 (CC-BY 4.0)
 # - SERNAGEOMIN Mapa Geológico 1:1.000.000
 
-# Material bibliográfico pesado (terceros, demasiado para repo)
+# Bibliografía pesada (terceros, ~3.5 GB total — gitignored)
+docs/biblioteca/libros/
+docs/biblioteca/papers/
+docs/biblioteca/tesis/
+docs/biblioteca/congresos/
+# Bases de datos y notas SÍ se commitean: docs/biblioteca/_db/
+# Carpetas viejas (legacy)
 docs/congresos/
 docs/Libros/
 docs/Papers/
 docs/Tesis/
 docs/Simposios-Congresos/
+
+# Capas oficiales SERNAGEOMIN copiadas desde Recuperacion (datos de terceros)
+docs/mapas/chile/sernageomin_arcgis/
+docs/mapas/chile/sernageomin_oficial/
+docs/mapas/chile/inventario_geositios/*.kmz
+docs/mapas/chile/inventario_geositios/*.xlsx
+docs/mapas/chile/inventario_geositios/*.pdf
 
 # Bibliografía PDF de terceros (copyright; cada uno descarga por su lado)
 docs/bibliografia/01_contextos_geologicos/*.pdf

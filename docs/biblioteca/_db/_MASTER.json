@@ -1,0 +1,2369 @@
+{
+  "_generado": "scripts/build_master_db.py",
+  "fuentes": {
+    "inventario_geositios": {
+      "n": 49,
+      "muestras": [
+        {
+          "nombre": "CATEDRAL DEL VALLE DEL RÍO LAUCA",
+          "descripcion": "<html>\n<title>CATEDRAL DEL VALLE DEL RÍO LAUCA</title>\n\n  \n\n<head>\n\n<meta charset=\"UTF-8\">\n\n    <style type=\"text/css\">\n\n    \n\n    body { color: #000000; background-color: white; width: 1000px; margin-left: auto; margin-right: auto; padding: 10px; font-family: Arial, Tahoma, Helvetica Neue, Helvetica, \"Arial\", \"sans-serif\"; font-size: 13px; }\n\n    \n\n    .top { width: 100%; height: 30px; display: block; margin-bottom: 10px; padding-bottom: 10px; margin-bottom: 15px; }\n\n    .titulo { font-size: 24",
+          "tipo_geometria": "Point",
+          "coordenadas": [
+            -69.25387325530225,
+            -18.47425154278684
+          ],
+          "CÓDIGO INVENTARIO NACIONAL": "GST00491",
+          "NOMBRE": "CATEDRAL DEL VALLE DEL RÍO LAUCA ",
+          "REGIÓN": "ARICA Y PARINACOTA",
+          "PROVINCIA": "Parinacota",
+          "COMUNA": "Putre",
+          "LOCALIDAD": "Ancuta",
+          "LATITUD": "18° 28'  27,29\"",
+          "LONGITUD": " 69° 15'  13,93\"",
+          "LATITUD Dec": "-18.47424722222222",
+          "LONGITUD Dec": "-69.25386944444445",
+          "DÁTUM": "SIRGAS Chile",
+          "ALTITUD\n(m s.n.m.)": "4170",
+          "FIGURA PROTECCIÓN": "Sin protección",
+          "ESTADO DE CONSERVACIÓN": "Muy conservado: el sitio no presenta  deterioro o modificación conservando la totalidad de los elementos de interés  principales y secundarios",
+          "JUSTIFICACIÓN 1": "Gran belleza escénica",
+          "JUSTIFICACIÓN 2": "Representativo de procesos sedimentarios",
+          "ESCALA DE RELEVANCIA": "Regional",
+          "VALOR  PRINCIPAL": "Recreativo",
+          "INTERÉS GEOCIENTÍFICO PRINCIPAL": "Geomorfológico",
+          "DESCRIPCIÓN": "El geositio Catedral del Valle del Río Lauca se ubica a poco más de 7,8 km al oeste de la localidad de Ancuta, en la provincia de Parinacota. No obstante, la forma más directa de acceder a este sitio es dirigirse hacia el sur, desde el kilómetro 158 de la ruta internacional CH-11 (12 km antes de llegar a Chucuyo), por la ruta A-235 hasta Misitune y luego continuar al sur por la ruta A-245 hasta cerca de 1,5 km antes del cruce con la ruta A-243, donde hay un desvío que permite acercarse al geositio. \nEste geositio corresponde a un sector del valle, con forma de anfiteatro, donde, a partir del Pleistoceno hasta el presente, la erosión ha esculpido llamativas estructuras con aspecto de pilares. Estas se originaron por el intenso escurrimiento del agua sobre las laderas compuestas por una serie de capas de sedimentos lagunares, de distintos espesores y de color pardo en diferentes tonalidades, en las que, además, se intercalan capas de cenizas volcánicas de coloración blanquecina. Toda esta secuencia de capas de sedimentos y cenizas ha sido agrupada en la denominada Formación Lauca, a la que se le asigna una edad entre 6,2 y 2,6 millones de años, correspondiente al lapso Mioceno Superior-Plioceno Superior.",
+          "Edades": "Edades!A1",
+          "FUENTE DE LA INFORMACIÓN": "Congreso geológico",
+          "FECHA ÚLTIMA ACTUALIZACIÓN": "2023",
+          " REFERENCIA GEOPATRIMONIAL": "Cáceres, M.; Godoy, B. 2012. Ruta geoturística a través del Parque Nacional Lauca, Región de Arica y Parinacota, Chile. In Congreso Geológico Chileno, No. 8, Actas: 914-916. Coquimbo.\n\nSernageomin. 2023. Geositios de Chile: una mirada a sus maravillas geológicas. Servicio Nacional de Geología y Minería: 144 p. Santiago. ",
+          "LINKS REFERENCIA GEOPATRIMONIAL": "https://catalogobiblioteca.sernageomin.cl/Archivos/14127_pp_917_919.pdf\n\nhttps://geositiosdechile.sernageomin.cl/\n\n"
+        },
+        {
+          "nombre": "MORRO DE ARICA",
+          "descripcion": "<html>\n\n\n  \n\n<head>\n\n<meta charset=\"UTF-8\">\n\n    <style type=\"text/css\">\n\n    \n\n    body { color: #000000; background-color: white; width: 1000px; margin-left: auto; margin-right: auto; padding: 10px; font-family: Arial, Tahoma, Helvetica Neue, Helvetica, \"Arial\", \"sans-serif\"; font-size: 13px; }\n\n    \n\n    .top { width: 100%; height: 30px; display: block; margin-bottom: 10px; padding-bottom: 10px; margin-bottom: 15px; }\n\n    .titulo { font-size: 24px; border-bottom: dotted 1px;}\n\n    .detalle {",
+          "tipo_geometria": "Point",
+          "coordenadas": [
+            -70.32456457135551,
+            -18.48077120333701
+          ],
+          "CÓDIGO INVENTARIO NACIONAL": "GST00492",
+          "NOMBRE": "MORRO DE ARICA",
+          "REGIÓN": "ARICA Y PARINACOTA",
+          "PROVINCIA": "Arica",
+          "COMUNA": "Arica",
+          "LOCALIDAD": "Arica",
+          "TOPÓNIMO": "Morro de Arica",
+          "LATITUD": "18° 28'  50,76\"",
+          "LONGITUD": " 70° 19'  28,43\"",
+          "LATITUD Dec": "-18.48076666666666",
+          "LONGITUD Dec": "-70.32456388888889",
+          "DÁTUM": "SIRGAS Chile",
+          "ALTITUD\n(m s.n.m.)": "130",
+          "FIGURA PROTECCIÓN": "Monumento Nacional - Monumento Histórico",
+          "ESTADO DE CONSERVACIÓN": "Muy conservado: el sitio no presenta  deterioro o modificación conservando la totalidad de los elementos de interés  principales y secundarios",
+          "JUSTIFICACIÓN 1": "Vinculación con patrimonio nacional",
+          "JUSTIFICACIÓN 2": "Representativo de  procesos volcánicos",
+          "ESCALA DE RELEVANCIA": "Nacional",
+          "VALOR  PRINCIPAL": "Cultural",
+          "INTERÉS GEOCIENTÍFICO PRINCIPAL": "Petrológico",
+          "INTERÉS GEOCIENTÍFICO SECUNDARIO": "Geomorfológico",
+          "DESCRIPCIÓN": "El geositio Morro de Arica es un cerro costero de 280 m de altura aproximada ubicado en el sector sur de la ciudad de Arica. Declarado Monumento Nacional el 6 de octubre de 1971, constituye el extremo norte de la cordillera de la Costa en Chile y el inicio del acantilado costero. \n\nSus rocas, asignadas a la denominada Formación Camaraca, son las más antiguas de la provincia de Arica y, según su contenido fosilífero, han sido asignadas al Jurásico Medio, entre 170 y 163 millones de años aproximadamente. En el acantilado, resultante de procesos de alzamiento y erosión ocurridos durante el lapso Pleistoceno-Presente, se expone una secuencia de capas levemente inclinadas hacia el este (15-20°), conformadas, principalmente, por lavas andesíticas con intercalaciones de rocas sedimentarias marinas con fósiles. \n\nToda la secuencia se formó en un ambiente marino de poca profundidad según lo demuestra el contenido fósil, donde destacan los restos de bivalvos, amonites, equinodermos, corales y braquiópodos, todos organismos marinos de ambientes someros. Por otra parte, la fuente de los materiales volcánicos se ubicaba cercana a la costa, tal como lo demuestra la presencia de estructuras de enfriamiento rápido generadas en la lava al entrar en contacto con el agua del mar. Las lavas con estas estructuras son denominadas lavas almohadilladas o pillow lavas por sus formas ovaladas y se pueden observar a simple vista en las rocas del morro.\n\nEste geositio es el principal símbolo de la ciudad y es visitado por muchos turistas cada año, tanto por la vista panorámica que ofrece de la ciudad y sus playas cercanas, como por su relevancia histórica.",
+          "Edades": "Edades!A1",
+          "FUENTE DE LA INFORMACIÓN": "Servicio Nacional de Geología y Minería",
+          "FECHA ÚLTIMA ACTUALIZACIÓN": "2023",
+          " REFERENCIA GEOPATRIMONIAL": "Sernageomin. 2023. Geositios de Chile: una mirada a sus maravillas geológicas. Servicio Nacional de Geología y Minería: 144 p. Santiago. ",
+          "LINKS REFERENCIA GEOPATRIMONIAL": "https://geositiosdechile.sernageomin.cl/"
+        },
+        {
+          "nombre": "LAGUNAS DE AMUYO",
+          "descripcion": "<html>\n\n\n  \n\n<head>\n\n<meta charset=\"UTF-8\">\n\n    <style type=\"text/css\">\n\n    \n\n    body { color: #000000; background-color: white; width: 1000px; margin-left: auto; margin-right: auto; padding: 10px; font-family: Arial, Tahoma, Helvetica Neue, Helvetica, \"Arial\", \"sans-serif\"; font-size: 13px; }\n\n    \n\n    .top { width: 100%; height: 30px; display: block; margin-bottom: 10px; padding-bottom: 10px; margin-bottom: 15px; }\n\n    .titulo { font-size: 24px; border-bottom: dotted 1px;}\n\n    .detalle {",
+          "tipo_geometria": "Point",
+          "coordenadas": [
+            -69.25343615875315,
+            -19.05763578260138
+          ],
+          "CÓDIGO INVENTARIO NACIONAL": "GST00493",
+          "NOMBRE": "LAGUNAS DE AMUYO",
+          "REGIÓN": "ARICA Y PARINACOTA",
+          "PROVINCIA": "Arica",
+          "COMUNA": "Camarones",
+          "LOCALIDAD": "Camiña",
+          "TOPÓNIMO": "Lagunas de Amuyo",
+          "LATITUD": "19° 3'  27,46\"",
+          "LONGITUD": " 69° 15'  12,35\"",
+          "LATITUD Dec": "-19.05762777777778",
+          "LONGITUD Dec": "-69.25343055555555",
+          "DÁTUM": "SIRGAS Chile",
+          "ALTITUD\n(m s.n.m.)": "3700",
+          "FIGURA PROTECCIÓN": "Sin protección",
+          "ESTADO DE CONSERVACIÓN": "Muy conservado: el sitio no presenta  deterioro o modificación conservando la totalidad de los elementos de interés  principales y secundarios",
+          "JUSTIFICACIÓN 1": "Gran belleza escénica",
+          "JUSTIFICACIÓN 2": "Vinculación con ecosistemas",
+          "ESCALA DE RELEVANCIA": "Regional",
+          "VALOR  PRINCIPAL": "Cultural",
+          "INTERÉS GEOCIENTÍFICO PRINCIPAL": "Geomorfológico",
+          "INTERÉS GEOCIENTÍFICO SECUNDARIO": "Geotérmico",
+          "DESCRIPCIÓN": "Las lagunas de Amuyo, ubicadas en las cercanías del poblado de Camiña, son la expresión superficial de un sistema hidrotermal profundo donde fluidos a altas temperaturas circulan por rocas volcánicas muy permeables de la Formación Oxaya, del Oligoceno-Mioceno. Esta circulación provoca que se disuelvan ciertos minerales presentes en esas rocas y, a su vez, el aumento de la salinidad y concentración de algunos elementos y compuestos en estos fluidos.\nEl ascenso de estos fluidos y la precipitación constante de sales, durante el lapso Mioceno Medio-Presente, dan forma a rocas termales de manantial, las que consisten en gruesas costras de colores muy llamativos, que dan el nombre a estas lagunas. Dependiendo de la composición del fluido, estas costras pueden ser verde-amarillentas, si son ricas en el mineral conocido como oropimente, o anaranjadas-rojizas, si en ellas abunda el rejalgar. La continua acumulación de costras ha generado una estructura de domo de unos 400 m de diámetro que se eleva unos 15 m sobre el nivel del río Caritaya.\nAdemás, estos ambientes extremos y únicos albergan colonias de bacterias que soportan las altas temperaturas y concentraciones salinas de las lagunas (la laguna Roja tiene una temperatura máxima de 57 ºC medida a 11 m de profundidad). Estas comunidades bacterianas, conocidas como termófilas por su tolerancia a altas temperaturas, generan estructuras orgánicas denominadas estromatolitos y trombolitos. Debido a la presencia de este tipo de organismos en la Tierra desde hace unos 3.500 millones de años, el estudio de las colonias de este geositio es fundamental para la comprensión del origen y desarrollo de la vida terrestre y la posibilidad de vida extraterrestre. \nDebido a lo peculiar de los tonos de sus aguas y depósitos, lo llamativo de su morfología y el contraste con su entorno opaco, estas lagunas son un espacio ritual para las comunidades originarias, lo que ha generado nutridos relatos e imaginarios asociados a ellas, además de constituir un gran atractivo turístico local.",
+          "Edades": "Edades!A1",
+          "FUENTE DE LA INFORMACIÓN": "Congreso geológico",
+          "FECHA ÚLTIMA ACTUALIZACIÓN": "2023",
+          " REFERENCIA GEOPATRIMONIAL": "Sernageomin. 2023. Geositios de Chile: una mirada a sus maravillas geológicas. Servicio Nacional de Geología y Minería: 144 p. Santiago. \n\nSolari, M. 2015. The unexplored geobiological heritage of Chile: key to understand the past and future. In Congreso Geológico Chileno, No. 14, Actas 3: 388-391. La Serena.",
+          "LINKS REFERENCIA GEOPATRIMONIAL": "https://catalogobiblioteca.sernageomin.cl/Archivos/14905_v3_pp_388_391.pdf\n\nhttps://geositiosdechile.sernageomin.cl/"
+        }
+      ]
+    },
+    "libros": {
+      "n": 10,
+      "muestras": [
+        {
+          "archivo": "55_83_H834_LexStratigr_.pdf",
+          "titulo": "Léxico Estratigráfico (extracto pp. 55-83, Carta H834) - SERNAGEOMIN",
+          "autores": [
+            "SERNAGEOMIN (no extraíble: PDF escaneado)"
+          ],
+          "anio": null,
+          "tipo": "léxico",
+          "alcance_geografico": "Chile",
+          "n_unidades_o_geositios": "Extracto parcial (29 páginas) de léxico estratigráfico chileno asociado a la Hoja/Carta H834 del SERNAGEOMIN; número exacto de unidades no determinable en el extracto",
+          "estructura": "PDF escaneado sin capa de texto OCR. Por convención del léxico chileno SERNAGEOMIN: fichas de unidades estratigráficas ordenadas alfabéticamente con localidad tipo, edad, litología, espesor y referencias",
+          "aplicabilidad_proyecto": "Fuente para nomenclatura estratigráfica formal chilena; referencia para fichas de unidades del proyecto. Requiere OCR para uso completo",
+          "rutas_o_circuitos_destacados": []
+        },
+        {
+          "archivo": "Caruso2021CondicionesBiofsicasyClimticasdeArgentina.pdf",
+          "titulo": "Las condiciones biofísicas y climáticas de la Argentina (Capítulo VIII de 'Geopolítica argentina')",
+          "autores": [
+            "Sergio Adrián Caruso"
+          ],
+          "anio": 2021,
+          "tipo": "libro_geopatrimonio",
+          "alcance_geografico": "Argentina",
+          "n_unidades_o_geositios": "No aplica; capítulo descriptivo de ecorregiones argentinas (NEA, NOA, Pampa, Patagonia, etc.)",
+          "estructura": "Capítulo de libro Eudeba (UBA). Consideraciones iniciales sobre posición planetaria/continental, gradiente latitudinal, influencia oceánica, y caracterización por ecorregiones",
+          "aplicabilidad_proyecto": "Marco contextual biofísico-climático para proyectos transfronterizos Argentina-Chile; útil para contextualizar geositios patagónicos y andinos en su entorno climático y ecorregional",
+          "rutas_o_circuitos_destacados": []
+        },
+        {
+          "archivo": "Fajardoetal2018LxicoCuaternario.pdf",
+          "titulo": "Léxico Estratigráfico de la Argentina. Volumen XIII - Cuaternario",
+          "autores": [
+            "Dante Fajardo",
+            "Federico Isla",
+            "Martín Iriondo",
+            "Daniela Krohling"
+          ],
+          "anio": 2018,
+          "tipo": "léxico",
+          "alcance_geografico": "Argentina",
+          "n_unidades_o_geositios": "Cientos de unidades cuaternarias (léxico de ~173 pp.); orden alfabético de formaciones, miembros y unidades informales del Cuaternario argentino",
+          "estructura": "Publicación AGA Serie B Didáctica N°33 / SEGEMAR Pub. N°174. Prólogo, Léxico (pp. 3-172), Referencias (p. 173). Fichas con denominación, autor original, localidad tipo, litología, edad, ambiente y referencias",
+          "aplicabilidad_proyecto": "Modelo formal de léxico estratigráfico con metadatos estandarizados; replicable para fichas chilenas. Especialmente útil para correlación de unidades cuaternarias andinas/patagónicas Arg-Chile",
+          "rutas_o_circuitos_destacados": []
+        }
+      ]
+    },
+    "papers_chile_fundacionales": {
+      "n": 10,
+      "muestras": [
+        {
+          "archivo": "Mourgues etal 2016_ Patrimonio Geologico y su conservacion en Chile.pdf",
+          "titulo": "Patrimonio geológico y su conservación en Chile",
+          "autores": [
+            "F. A. Mourgues",
+            "K. Contreras",
+            "M. E. Schilling",
+            "J. Benado",
+            "D. Partarrieu"
+          ],
+          "anio": 2016,
+          "tipo": "capítulo",
+          "tema_principal": "contextos geológicos chilenos / inventario nacional",
+          "palabras_clave": [
+            "patrimonio geológico",
+            "Chile",
+            "contextos geológicos",
+            "geositios",
+            "geoconservación",
+            "SGCh"
+          ],
+          "resumen": "Capítulo Chile del libro 'Patrimonio geológico y su conservación en América Latina' (UNAM 2016, eds. Palacio Prieto, Sánchez Cortez, Schilling). Sintetiza el estado del geopatrimonio nacional, analiza 256 geositios registrados en Chile y los relaciona con la propuesta de 22 contextos geológicos chilenos preliminares (Mourgues et al. 2012), con un registro que cubre 19 de los 22 contextos. Tres contextos sin representación: Arco volcánico del Mesozoico, Islas y pisos oceánicos, y Campos de hielo e inlandsis Antártico.",
+          "metodologia": "Brilha 2005/2015 + Global Geosites (Wimbledon 2000) + García-Cortés 2000/2001 (España) como referencia para los marcos/contextos",
+          "geositios_propuestos": [
+            "Cerro Ballena (Caldera)",
+            "Acantilados y Playas de Loanco",
+            "La Portada de Antofagasta",
+            "Cerro Santa Lucía",
+            "Piedra de la Iglesia (Constitución)",
+            "Granito Orbicular",
+            "Capilla de Mármol",
+            "Dunas de Concón"
+          ],
+          "contextos_referenciados": [
+            "1 MgPz - Magmatismo paleozoico",
+            "2 MgMz - Magmatismo mesozoico",
+            "3 MgVCz - Magmatismo y volcanismo cenozoico",
+            "4 AcMz - Arco volcánico del Mesozoico",
+            "5 VNgsQ - Volcanismo Neógeno superior-Cuaternario y campos geotermales",
+            "6 IO - Islas y piso oceánicos",
+            "7 TCA - Terrenos exóticos y complejos de acreción",
+            "8 SSPz - Series sedimentarias del Paleozoico",
+            "9 SCMz - Series continentales mesozoicas y sus fósiles",
+            "10 SMTrJ - Cuencas marinas del Triásico, Jurásico y Cretácico basal",
+            "11 SMKi - Cuencas marinas del Cretácico Inferior",
+            "12 KsMC - El Cretácico Superior marino de Magallanes y Chile central",
+            "13 SCCz - Series continentales cenozoicas y sus fósiles",
+            "14 SMCz - Series marinas cenozoicas y sus fósiles",
+            "15 AFNgQ - Ambientes fluvioaluviales del Neógeno-Cuaternario",
+            "16 BC - Borde costero",
+            "17 DA - Desierto de Atacama",
+            "18 PGGl - Procesos, geoformas y depósitos glaciales del centro y sur",
+            "19 ACQ - Ambientes continentales del Cuaternario, la megafauna y los primeros habitantes de América",
+            "20 CHA - Campos de hielo e inlandsis antártico",
+            "21 TEC - Mega estructuras, tectónica andina y neotectónica",
+            "22 As - Geoformas por impactos y materiales del sistema solar incorporados a la Tierra"
+          ],
+          "aplicabilidad_proyecto": "FUNDACIONAL: Provee la lista oficial de los 22 Contextos Geológicos Chilenos con código y nombre — base directa para la taxonomía/categorización del visor. Define el universo de 256 geositios y la cobertura/lagunas (19/22 contextos representados). Permite mapear cada geositio a su contexto. Útil también para determinar qué contextos faltan documentar.",
+          "citas_clave": [
+            "Mourgues, Schilling y Castro 2012 - Propuesta de 22 contextos (XIII CGCh)",
+            "Brilha 2005, 2015/2016 - Inventory and Quantitative Assessment",
+            "García-Cortés et al. 2000, 2001 - Contextos geológicos españoles",
+            "Wimbledon et al. 1999, 2000 - Global Geosites",
+            "Calderón et al. 2009 - Geositios de la SGCh",
+            "Hervé et al. 2012 - La difícil tarea de identificar y proteger el patrimonio geológico de Chile",
+            "Brüggen 1927 - bloque errático Puente Alto"
+          ]
+        },
+        {
+          "archivo": "Brilha (2016) REVIEW.pdf",
+          "titulo": "Inventory and Quantitative Assessment of Geosites and Geodiversity Sites: a Review",
+          "autores": [
+            "José Brilha"
+          ],
+          "anio": 2016,
+          "tipo": "paper",
+          "tema_principal": "metodología (inventario y evaluación cuantitativa)",
+          "palabras_clave": [
+            "geosite",
+            "geoheritage",
+            "geodiversity site",
+            "geopark",
+            "inventory"
+          ],
+          "resumen": "Paper de referencia mundial publicado en Geoheritage 8(2):119-134. Revisa y propone una distinción operativa entre geosite (valor científico in situ) y geodiversity site (valor educativo/turístico/cultural sin requisito científico). Define el procedimiento sistemático de inventario en etapas (selección, caracterización, cuantificación) y propone criterios numéricos para valor científico, valor educativo, valor turístico y riesgo de degradación.",
+          "metodologia": "Brilha 2016 (la propia metodología propuesta); referencia: Brilha 2005, ProGEO, Lima et al. 2010",
+          "geositios_propuestos": [],
+          "contextos_referenciados": [
+            "marcos geológicos / geological frameworks como criterio de selección de geosites"
+          ],
+          "aplicabilidad_proyecto": "Define los conceptos clave (geosite, geoheritage, geodiversity site, geomonument) y la metodología cuantitativa estándar para fichas y rankings del visor. Provee las dimensiones de evaluación (científico, educativo, turístico, riesgo) que pueden traducirse directamente en campos de la base de datos. Es la metodología citada por Mourgues 2016 y Geoconservación-Chile 2018.",
+          "citas_clave": [
+            "Brilha 2005 - Patrimonio Geologico e Geoconservacao",
+            "Wimbledon 2011",
+            "Gray 2004, 2008, 2013 - Geodiversity",
+            "Henriques et al. 2011",
+            "Lima et al. 2010 - Global Geosites methodology",
+            "Prosser et al. 2010",
+            "García-Cortés y Carcavilla 2009 (España)"
+          ]
+        },
+        {
+          "archivo": "Geoconservacion-Chile_2018 (1).pdf",
+          "titulo": "Geoconservation in Chile: State of the Art and Analysis",
+          "autores": [
+            "José Benado",
+            "Francisco Hervé",
+            "Manuel Schilling",
+            "José Brilha"
+          ],
+          "anio": 2018,
+          "tipo": "paper",
+          "tema_principal": "estado del arte de la geoconservación en Chile",
+          "palabras_clave": [
+            "Chile",
+            "geoconservation",
+            "geoheritage",
+            "geosite",
+            "geopark"
+          ],
+          "resumen": "Publicado en Geoheritage (Springer), DOI 10.1007/s12371-018-0330-z. Diagnóstico crítico del estado de la geoconservación en Chile: revisa pioneros (Brüggen 1927, Segerstrom 1967), el Programa de Detección y Establecimiento de Geositios de la SGCh (63 geositios a junio 2016), proyectos de geoparques (Kütralkura, Puchuncaví, Cajón del Maipo) e iniciativas regionales (Aysén). Concluye que el desarrollo es aún incipiente por falta de políticas públicas y débil articulación institucional.",
+          "metodologia": "Brilha 2005/2016 (definiciones); revisión documental institucional",
+          "geositios_propuestos": [
+            "Granito Orbicular",
+            "Capilla de Mármol",
+            "Dunas de Concón",
+            "Huellas Termas del Flaco",
+            "Complejo Metamórfico Belén",
+            "Morro de Arica"
+          ],
+          "contextos_referenciados": [
+            "Cita la propuesta de 22 marcos geológicos de Mourgues et al. 2012 (Acretion Complexes, Batholiths, Atacama Desert, Ice Fields & Antarctic Inlandsis, etc.)"
+          ],
+          "aplicabilidad_proyecto": "Inventario institucional clave: lista los 63 geositios SGCh (jun 2016), proyectos de geoparques, museos y Santuarios de la Naturaleza relacionados con geopatrimonio. Aporta marco legal e institucional (CMN, MMA, SERNAGEOMIN, SGCh, INACH, CONAF) que el visor debe registrar como atributos de protección. Justifica brechas y prioridades.",
+          "citas_clave": [
+            "Mourgues et al. 2012 - 22 marcos geológicos",
+            "Brilha 2005, 2016",
+            "Calderón et al. 2009 - Programa SGCh",
+            "Schilling et al. 2012 - Geoparque Kütralkura",
+            "Crofts y Gordon 2015 (IUCN WCPA)",
+            "Wimbledon 1999, 2000 - Global Geosites",
+            "Brüggen 1927; Segerstrom 1967"
+          ]
+        }
+      ]
+    },
+    "papers_internacionales": {
+      "n": 16,
+      "muestras": [
+        {
+          "archivo": "Geoparques._Guia_para_la_formulacion_de.pdf",
+          "titulo": "Geoparques: Guía para la formulación de proyectos",
+          "autores": [
+            "Instituto de Geografía UNAM"
+          ],
+          "anio": null,
+          "tipo": "libro/guía",
+          "pais_caso": "México",
+          "tema_principal": "Marco conceptual y metodológico para la formulación de geoparques",
+          "ideas_replicables_chile": "Adoptar una guía nacional que estandarice los criterios de formulación de proyectos de geoparques en Chile, integrando geoconservación, educación, geoturismo y desarrollo sostenible bajo el modelo UNESCO. Aplicable como herramienta para SERNAGEOMIN, SERNATUR y municipios.",
+          "experiencia_clave": "Manual académico que sistematiza la creación de geoparques desde la perspectiva geográfica latinoamericana, con criterios técnicos, sociales y de gestión.",
+          "escala": "nacional"
+        },
+        {
+          "archivo": "Geotourism.pdf",
+          "titulo": "Geotourism (Editorial - Special Issue Geosciences)",
+          "autores": [
+            "Rannveig Ólafsdóttir"
+          ],
+          "anio": 2019,
+          "tipo": "editorial/revisión",
+          "pais_caso": "Internacional (Islandia, Escocia, Portugal, España, Italia, Caribe, Ecuador)",
+          "tema_principal": "Estado del arte del geoturismo: paisaje cultural, señalética, percepción local, sostenibilidad",
+          "ideas_replicables_chile": "Tipologías de geoturistas (lite, masivo, social, clásico) para diseñar paneles interpretativos diferenciados; evitar 'bosques de señales'; usar rutas de cabalgata, ciclismo y trashumancia como geoturismo activo (aplicable a arrieros andinos chilenos); evaluación multidimensional de geomorfositios (científico, estético, cultural, ecológico).",
+          "experiencia_clave": "Compilación de 11 estudios que muestran cómo articular geoconservación con tipologías de visitantes, señalética, transporte alternativo (caballo, bicicleta) y SWOT para minería patrimonial.",
+          "escala": "regional"
+        },
+        {
+          "archivo": "EL_GEOPARQUE_VILLUERCAS-IBORES-JARA_Y_SU.pdf",
+          "titulo": "El Geoparque Villuercas-Ibores-Jara y su impacto múltiple en el área de influencia",
+          "autores": [
+            "José M. Barrera Martín-Merás"
+          ],
+          "anio": 2014,
+          "tipo": "ponencia",
+          "pais_caso": "España (Extremadura)",
+          "tema_principal": "Impacto socioeconómico, educativo y turístico de un geoparque UNESCO",
+          "ideas_replicables_chile": "Modelo de gestión municipal-provincial (Diputación) con asociación local de empresarios turísticos (Geovilluercas) y grupos de acción local (APRODERVI); integración de patrimonio geológico, biodiversidad (Red Natura 2000) y patrimonio cultural (Monasterio de Guadalupe). Replicable en territorios chilenos con coexistencia de SNASPE + cultura local.",
+          "experiencia_clave": "Geoparque originado desde un Plan de Dinamización de Producto Turístico, consolidado mediante centro de interpretación, unidades didácticas para escuelas y registro como entrada estadística en observatorio regional de turismo.",
+          "escala": "regional"
+        }
+      ]
+    },
+    "papers_metodologicos": {
+      "n": 11,
+      "muestras": [
+        {
+          "archivo": "1_BrocxSemeniuk_1_Geoheritage_ScopeScale_Low.pdf",
+          "titulo": "Geoheritage and geoconservation – history, definition, scope and scale",
+          "autores": [
+            "M. Brocx",
+            "V. Semeniuk"
+          ],
+          "anio": 2007,
+          "tipo": "articulo cientifico",
+          "tema_principal": "Definicion conceptual de geopatrimonio, geoconservacion y geodiversidad; marco de escalas y niveles de significancia",
+          "metodologia_propuesta": "Marco conceptual jerarquico para la identificacion y clasificacion de sitios de geopatrimonio basado en dos ejes: (1) escala espacial (regional, large, medium, small, fine, very fine) y (2) niveles de significancia (Internacional, Nacional, Estatal, Regional, Local). Propone categorias tipologicas de sitios (sitios tipo/referencia, sitios geohistoricos, sitios cultural/historicamente significativos, paisajes modernos). Aboga por inventarios sistematicos siguiendo el modelo del Reino Unido.",
+          "criterios_evaluacion": [
+            "frecuencia/rareza dentro de la escala de referencia",
+            "importancia cultural",
+            "valor cientifico intrinseco",
+            "representatividad",
+            "valor educativo y de referencia"
+          ],
+          "escala_aplicacion": "internacional",
+          "aplicabilidad_proyecto": "Alta. Aporta el marco conceptual fundacional escalas-significancia que puede estructurar la base de datos de geopatrimonio (campos de escala y nivel de relevancia) y la categorizacion tipologica de geositios en el visor de Contextos Geologicos.",
+          "citas_clave": [
+            "Wimbledon et al. 1995",
+            "Sharples 2002",
+            "Gray 2004",
+            "Doyle et al. 1994",
+            "Semeniuk 1997"
+          ]
+        },
+        {
+          "archivo": "23_BrocxBrownSemeniuk_2019_Geoheritageimportanceofstratigraphictypesectionstypelocalitiesandreferencesites.pdf",
+          "titulo": "Geoheritage importance of stratigraphic type sections, type localities and reference sites—review, discussion and protocols for geoconservation",
+          "autores": [
+            "M. Brocx",
+            "C. Brown",
+            "V. Semeniuk"
+          ],
+          "anio": 2019,
+          "tipo": "articulo cientifico",
+          "tema_principal": "Importancia geopatrimonial y protocolos de geoconservacion para secciones tipo estratigraficas, localidades tipo y sitios de referencia",
+          "metodologia_propuesta": "Protocolo multi-pronged para geoconservacion de secciones tipo: (1) creacion de inventario de todas las localidades nominadas; (2) registro en niveles de gobierno Local/Estatal/Federal segun legislacion vigente; (3) educacion de propietarios y gestores; (4) proteccion mediante reservas. Adapta el modelo britanico (SSSI, RIGS) y aplica la clasificacion Brocx & Semeniuk 2007 (Categoria A: sitios tipo/referencia).",
+          "criterios_evaluacion": [
+            "caracter de tipo/referencia",
+            "importancia historica/cultural",
+            "valor cientifico para definicion de unidades",
+            "vulnerabilidad a destruccion antropica",
+            "estado de proteccion legal"
+          ],
+          "escala_aplicacion": "nacional",
+          "aplicabilidad_proyecto": "Util para definir un campo tipologico 'seccion tipo / localidad tipo / sitio de referencia' en la base de datos y registrar GSSPs y estratotipos como categoria especial con protocolos de proteccion diferenciados.",
+          "citas_clave": [
+            "Brocx & Semeniuk 2007",
+            "Hedberg 1976",
+            "Wimbledon et al. 1995",
+            "Cohen et al. 2013 GSSP",
+            "Percival 2014"
+          ]
+        },
+        {
+          "archivo": "Garciaetal_2017_InventorySP.pdf",
+          "titulo": "The Inventory of Geological Heritage of the State of São Paulo, Brazil: Methodological Basis, Results and Perspectives",
+          "autores": [
+            "M.G.M. Garcia",
+            "A. Brilha",
+            "A. Alves",
+            "A. Perez-Aguilar",
+            "et al."
+          ],
+          "anio": 2018,
+          "tipo": "articulo cientifico",
+          "tema_principal": "Inventario sistematico del patrimonio geologico del Estado de Sao Paulo basado en marcos geologicos (geological frameworks)",
+          "metodologia_propuesta": "Metodologia Brilha (2016) adaptada: (1) definicion de marcos geologicos representativos del estado; (2) identificacion de geositios y sitios de geodiversidad mediante consulta a expertos; (3) evaluacion cuantitativa con criterios de valor cientifico, valor educativo, valor turistico y riesgo de degradacion; (4) seleccion final con ponderaciones; (5) caracterizacion en fichas estandarizadas. Workshops tematicos por marcos geologicos.",
+          "criterios_evaluacion": [
+            "valor cientifico (representatividad, rareza, integridad, conocimiento cientifico)",
+            "valor educativo",
+            "valor turistico",
+            "riesgo de degradacion",
+            "uso potencial"
+          ],
+          "escala_aplicacion": "regional",
+          "aplicabilidad_proyecto": "Muy alta. Es el modelo metodologico mas aplicable al proyecto: replica adaptable Brilha 2016 con marcos geologicos como contexto, evaluacion cuantitativa multidimensional y fichas estandarizadas. Util como plantilla de campos de la BD.",
+          "citas_clave": [
+            "Brilha 2016",
+            "Garcia-Cortes y Carcavilla 2009",
+            "Wimbledon 1996",
+            "Lima et al. 2010"
+          ]
+        }
+      ]
+    },
+    "papers_regionales_chile": {
+      "n": 14,
+      "muestras": [
+        {
+          "archivo": "Paper_InventarioReginAysn-2020.pdf",
+          "titulo": "Geositios de la región de Aysén (Chile): resumen de la historia geológica regional, propuesta de contextos geológicos temáticos e inventario",
+          "autores": [
+            "José Benado Wilson",
+            "Felipe Andrade",
+            "Eleonora Muñoz",
+            "Felipe Reyes Córdova",
+            "Enrique Crisostomo",
+            "Estefanía Quilamán",
+            "David Valenzuela"
+          ],
+          "anio": 2020,
+          "tipo": "paper_cientifico_inventario_regional",
+          "region_chile": "Aysén",
+          "geositios_listados": [
+            "Complejo Metamórfico Andino Oriental",
+            "Complejo Metamórfico Los Chonos",
+            "Formación Ibáñez",
+            "Grupo Coyhaique (Fm Toqui, Katterfeld, Apeleg)",
+            "Complejo Baño Nuevo",
+            "Grupo Divisadero",
+            "Formación Ligorio Márquez",
+            "Basaltos de Balmaceda",
+            "Formación San José",
+            "Secuencia Tres Montes y Puerto Good",
+            "Formación Traiguén",
+            "Ofiolita de Taitao",
+            "Megafalla Liquiñe-Ofqui"
+          ],
+          "contextos_relevantes": [
+            "metamorfismo paleozoico-mesozoico",
+            "Batolito Patagónico",
+            "cuenca de tras-arco Coyhaique",
+            "volcanismo cretácico",
+            "tectónica extensional cenozoica",
+            "ventana astenosférica",
+            "ofiolitas",
+            "glaciaciones cuaternarias",
+            "fallas Liquiñe-Ofqui"
+          ],
+          "resumen": "Primer inventario regional de geositios en Chile, siguiendo lineamientos del Global Geosites IUGS. Define Contextos Geológicos Temáticos (CGT) para Aysén basados en Mourgues et al. 2012, identificando 180+ geositios y caracterizando 51 en detalle, de los cuales 21 fueron aceptados por la SGCh. Cubre 300 Ma de historia geológica.",
+          "aplicabilidad_proyecto": "Modelo metodológico clave: cómo definir CGT regionales coherentes con la propuesta nacional Mourgues. Aporta inventario validado de 21 geositios SGCh en Aysén directamente integrables a la base de datos. Define criterios cuantitativos de Brilha (contenido científico, integridad, rareza, representatividad) aplicables al visor.",
+          "ideas_geoturismo": "No propone rutas turísticas específicas; foco en metodología y caracterización científica. Mencionan potencial educativo y turístico como uno de los usos a cuantificar."
+        },
+        {
+          "archivo": "Paper_InventarioRegiónAysén-2020.pdf",
+          "titulo": "Geositios de la región de Aysén (Chile): resumen de la historia geológica regional, propuesta de contextos geológicos temáticos e inventario",
+          "autores": [
+            "José Benado Wilson",
+            "Felipe Andrade",
+            "Eleonora Muñoz",
+            "Felipe Reyes Córdova",
+            "Enrique Crisostomo",
+            "Estefanía Quilamán",
+            "David Valenzuela"
+          ],
+          "anio": 2020,
+          "tipo": "paper_cientifico_inventario_regional",
+          "region_chile": "Aysén",
+          "geositios_listados": [
+            "mismos geositios del archivo gemelo Paper_InventarioReginAysn-2020"
+          ],
+          "contextos_relevantes": [
+            "idénticos al archivo gemelo (duplicado del mismo paper, distinta codificación de filename)"
+          ],
+          "resumen": "Archivo duplicado del paper de Benado et al. 2020 sobre Geositios de Aysén (mismo contenido, distinto encoding de tilde en el nombre).",
+          "aplicabilidad_proyecto": "Marcar como duplicado en la base de datos para evitar doble conteo.",
+          "ideas_geoturismo": "Idem archivo gemelo."
+        },
+        {
+          "archivo": "geopatrimonioenlaregindeatacama-141217095304-conversion-gate01.pdf",
+          "titulo": "(Geo)patrimonio en la Región de Atacama – con enfoque a la comuna Caldera",
+          "autores": [
+            "Wolfgang Griem"
+          ],
+          "anio": 2014,
+          "tipo": "presentacion_divulgativa",
+          "region_chile": "Atacama",
+          "geositios_listados": [
+            "Estratos Bahía Inglesa (Mioceno-Cuaternario)",
+            "Terrazas marinas de Caldera (Darwin)",
+            "Granito Orbicular de Caldera",
+            "Tafoni de Caldera",
+            "Mina Algarrobo",
+            "Mina San José",
+            "Dunas costeras"
+          ],
+          "contextos_relevantes": [
+            "paleontología neógena (Pelagornis, cetáceos, perezosos Thalasochnus)",
+            "tectónica de subducción y alzamiento costero",
+            "petrología ígnea singular (granito orbicular)",
+            "geomorfología eólica (tafoni, dunas)",
+            "patrimonio minero histórico (Cu 1850-1920)"
+          ],
+          "resumen": "Presentación tipo charla universitaria (UDA) que cataloga geopatrimonio de Caldera: estratos Bahía Inglesa con fauna marina miocénica, terrazas darwinianas, granito orbicular, tafoni, desierto y patrimonio minero. Combina turismo, geología, historia y cultura.",
+          "aplicabilidad_proyecto": "Lista directa de geositios y sitios de geodiversidad de Caldera con fotos contextuales. Útil para fichas de geositios costeros de Atacama y para ligar paleontología-turismo-cultura. Recuerda restricciones legales Ley 17.288 sobre extracción de fósiles.",
+          "ideas_geoturismo": "Propone turismo activo-informativo-educativo articulando geología + geografía + historia + cultura, con identificación de país destino. No define ruta formal pero perfila circuito Caldera-Bahía Inglesa-Mina Algarrobo."
+        }
+      ]
+    },
+    "tesis_regionales": {
+      "n": 21,
+      "muestras": [
+        {
+          "archivo": "Geologia-y-geopatrimonio-del-area-de-cerro-castillo-xi-region-de-aysen-chile (2).pdf",
+          "titulo": "Geología y Geopatrimonio del Área de Cerro Castillo, XI Región de Aysén, Chile",
+          "autor": "Nicolás Ignacio Aravena Bendeck",
+          "anio": 2014,
+          "universidad": "Universidad de Chile",
+          "region_chile": "Aysén",
+          "area_estudio": "Villa Cerro Castillo (46°05'S), cuenca del río Ibáñez, área aledaña al Lago General Carrera",
+          "n_geositios_identificados": 5,
+          "geositios_destacados": [
+            "Cerro Castillo: complejo intrusivo (CICC propuesto) y morfología de la cordillera",
+            "Afloramientos Formación Ibáñez: rocas volcánicas jurásicas",
+            "Afloramientos Formación Toqui con granates y calcita",
+            "Formación Katterfeld con sills intruyendo secuencia",
+            "Depósitos cuaternarios del Río Ibáñez (terrazas deltaicas, depósitos eólicos)"
+          ],
+          "contextos_mourgues_aplicables": [
+            "Plutonismo Mesozoico",
+            "Volcanismo Mesozoico",
+            "Cuencas sedimentarias mesozoicas",
+            "Glaciaciones cuaternarias"
+          ],
+          "metodologia": "Partarrieu (2013) adaptada — fichas SGCh; identificación, catalogación y valoración",
+          "valor_para_geoturismo": "Aporta al inventario regional de Aysén; lugares accesibles desde Ruta 7 con potencial educativo y turístico",
+          "rutas_o_circuitos": "Sin ruta formal; geositios distribuidos a lo largo de la Ruta 7 Carretera Austral cerca de Villa Cerro Castillo"
+        },
+        {
+          "archivo": "Geopatrimonio-de-las-unidades-volcánicas-y-plutónicas-del-sector-oriental-del-Lago-General-Carrera.pdf",
+          "titulo": "Geopatrimonio de las unidades volcánicas y plutónicas del sector oriental del Lago General Carrera: Selección, caracterización y estrategias de divulgación",
+          "autor": "David Alejandro Valenzuela Hernández",
+          "anio": 2017,
+          "universidad": "Universidad de Chile",
+          "region_chile": "Aysén",
+          "area_estudio": "Sector oriental Lago General Carrera, comunas Chile Chico y Puerto Ibáñez",
+          "n_geositios_identificados": 16,
+          "geositios_destacados": [
+            "Domo Valle Lunar Jeinimeni",
+            "Brechas Caóticas Basales Formación Ibáñez",
+            "Domo Cerro Cabeza Blanca",
+            "Volcanitas Estero Lo Burgos",
+            "Mugearitas de Río Ibáñez",
+            "Cerro Cuadro",
+            "Mina Cerro Bayo y Domo Cerro Bayo",
+            "Basanita con Xenolitos Mantélicos de Cerro Lápiz",
+            "Diatrema Chile Chico",
+            "Diques y Cuerpos Subvolcánicos de Puerto Guadal",
+            "Contacto Basaltos Chile Chico–Fm Ligorio Márquez",
+            "Contacto Complejo Plutónico Paso Las Llaves–Fm Ibáñez",
+            "Cerro Colorado/Apidame"
+          ],
+          "contextos_mourgues_aplicables": [
+            "Volcanismo Mesozoico (Fm Ibáñez)",
+            "Plutonismo Mesozoico-Cenozoico (Batolito Patagónico)",
+            "Volcanismo cenozoico de retroarco (basaltos)",
+            "Domos y diatremas"
+          ],
+          "metodologia": "Brilha (2016) + Categorías Geológicas Temáticas (CGT) Grupo Geopatrimonio SEREMI Aysén; pre-selección 28 → selección final 16",
+          "valor_para_geoturismo": "Valoración cuantitativa científica/turística; propuestas de mapa interactivo y rutas geocronológicas",
+          "rutas_o_circuitos": "Ruta geocronológica que agrupa geositios desde Chile Chico hacia Puerto Guadal por ribera sur; mapa interactivo digital"
+        },
+        {
+          "archivo": "IDENTIFICACIÓN Y EVALUACIÓN DE GEOSITIOS EN EL PARQUE NACIONAL TORRES DEL PAINE..pdf",
+          "titulo": "Identificación y Evaluación de Geositios en el Parque Nacional Torres del Paine",
+          "autor": "Javier Fernández Hirsch",
+          "anio": 2007,
+          "universidad": "Universidad de Chile",
+          "region_chile": "Magallanes y de la Antártica Chilena",
+          "area_estudio": "Parque Nacional Torres del Paine",
+          "n_geositios_identificados": 21,
+          "geositios_destacados": [
+            "Cordillera Paine vista desde Lago Pehoé",
+            "Mirador Valle del Francés (Bajo y Alto)",
+            "Cuernos del Paine: contacto granito-sedimentario",
+            "Mirador CITP por el Norte (Las Torres)",
+            "Lago Sarmiento: trombolitos",
+            "Mirador Zapata",
+            "Glaciar Grey",
+            "Glaciar del Bader",
+            "Salto Grande",
+            "Laguna Amarga (único fuera del PNTP)",
+            "Secuencia turbidítica Lago Nordenskjöld",
+            "Secuencia turbidítica Lago Sarmiento"
+          ],
+          "contextos_mourgues_aplicables": [
+            "Plutonismo cenozoico (Laccolito Paine)",
+            "Cuencas sedimentarias (Cretácico)",
+            "Glaciarismo patagónico",
+            "Geomorfología glaciar"
+          ],
+          "metodologia": "Propia: clasificación IUGS + escala binaria 40 puntos; categorías Nacional/Regional/Local",
+          "valor_para_geoturismo": "20 de 21 geositios protegidos por SNASPE; potencial Geoparque UNESCO descartado por estatus Reserva de Biósfera",
+          "rutas_o_circuitos": "Aprovecha senderos existentes del PNTP (Circuito W, Base Torres, Valle Francés)"
+        }
+      ]
+    }
+  },
+  "indices": {
+    "por_tema": {
+      "—": [
+        {
+          "_origen": "inventario_geositios",
+          "nombre": "CATEDRAL DEL VALLE DEL RÍO LAUCA"
+        },
+        {
+          "_origen": "inventario_geositios",
+          "nombre": "MORRO DE ARICA"
+        },
+        {
+          "_origen": "inventario_geositios",
+          "nombre": "LAGUNAS DE AMUYO"
+        },
+        {
+          "_origen": "inventario_geositios",
+          "nombre": "DUNA CERRO DRAGÓN"
+        },
+        {
+          "_origen": "inventario_geositios",
+          "nombre": "SALAR Y GEOGLIFOS DE PINTADOS"
+        },
+        {
+          "_origen": "inventario_geositios",
+          "nombre": "LOS PUQUIOS DEL SALAR DE LLAMARA"
+        },
+        {
+          "_origen": "inventario_geositios",
+          "nombre": "GÉISERS DE EL TATIO"
+        },
+        {
+          "_origen": "inventario_geositios",
+          "nombre": "LA PORTADA"
+        },
+        {
+          "_origen": "inventario_geositios",
+          "nombre": "CRÁTER DE IMPACTO MONTURAQUI"
+        },
+        {
+          "_origen": "inventario_geositios",
+          "nombre": "TONALITA ORBICULAR"
+        },
+        {
+          "_origen": "inventario_geositios",
+          "nombre": "PARQUE PALEONTOLÓGICO LOS DEDOS"
+        },
+        {
+          "_origen": "inventario_geositios",
+          "nombre": "ARENISCAS Y CALIZAS DE QUEBRADA PINTE"
+        },
+        {
+          "_origen": "inventario_geositios",
+          "nombre": "YACIMIENTO PALEONTOLÓGICO PICHASCA"
+        },
+        {
+          "_origen": "inventario_geositios",
+          "nombre": "BORDE COSTERO  PARQUE NACIONAL FRAY JORGE"
+        },
+        {
+          "_origen": "inventario_geositios",
+          "nombre": "DUNAS DE QUEREO"
+        },
+        {
+          "_origen": "inventario_geositios",
+          "nombre": "CRÁTER DEL VOLCÁN RANO KAO"
+        },
+        {
+          "_origen": "inventario_geositios",
+          "nombre": "ESCALERA DEL DIABLO"
+        },
+        {
+          "_origen": "inventario_geositios",
+          "nombre": "ACANTILADO COSTERO DE QUIRILLUCA"
+        },
+        {
+          "_origen": "inventario_geositios",
+          "nombre": "DUNAS DE CONCÓN"
+        },
+        {
+          "_origen": "inventario_geositios",
+          "nombre": "DISYUNCIÓN COLUMNAR CERRO SANTA LUCÍA"
+        },
+        {
+          "_origen": "inventario_geositios",
+          "nombre": "PLACAS DE LO VALDÉS"
+        },
+        {
+          "_origen": "inventario_geositios",
+          "nombre": "QUEBRADA LAS AMARILLAS"
+        },
+        {
+          "_origen": "inventario_geositios",
+          "nombre": "IGNIMBRITA PUDAHUEL EN MACHALÍ"
+        },
+        {
+          "_origen": "inventario_geositios",
+          "nombre": "HUELLAS DE DINOSAURIOS EN TERMAS DEL FLACO"
+        },
+        {
+          "_origen": "inventario_geositios",
+          "nombre": "FALLA EL FIERRO"
+        },
+        {
+          "_origen": "inventario_geositios",
+          "nombre": "ROCAS DE CONSTITUCIÓN"
+        },
+        {
+          "_origen": "inventario_geositios",
+          "nombre": "RADAL SIETE TAZAS"
+        },
+        {
+          "_origen": "inventario_geositios",
+          "nombre": "DISYUNCIÓN COLUMNAR LA CÁRCEL"
+        },
+        {
+          "_origen": "inventario_geositios",
+          "nombre": "CUEVA DE LOS PINCHEIRA"
+        },
+        {
+          "_origen": "inventario_geositios",
+          "nombre": "IGLESIA DE PIEDRA DE COBQUECURA"
+        },
+        {
+          "_origen": "inventario_geositios",
+          "nombre": "GRUTA LOS PANGUES"
+        },
+        {
+          "_origen": "inventario_geositios",
+          "nombre": "CALETA COCHOLGÜE"
+        },
+        {
+          "_origen": "inventario_geositios",
+          "nombre": "ANTICLINAL VOLCADO DE CURAMALLÍN"
+        },
+        {
+          "_origen": "inventario_geositios",
+          "nombre": "PIEDRA DEL ÁGUILA"
+        },
+        {
+          "_origen": "inventario_geositios",
+          "nombre": "CONO NAVIDAD"
+        },
+        {
+          "_origen": "inventario_geositios",
+          "nombre": "CAÑADÓN TRUFUL-TRUFUL"
+        },
+        {
+          "_origen": "inventario_geositios",
+          "nombre": "CRÁTER DEL VOLCÁN VILLARRICA"
+        },
+        {
+          "_origen": "inventario_geositios",
+          "nombre": "DEPÓSITOS INTERGLACIARES DE VALDIVIA EN EL FUERTE NIEBLA"
+        },
+        {
+          "_origen": "inventario_geositios",
+          "nombre": "LAVAS AA Y PAHOEHOE DEL VOLCÁN VILLARRICA"
+        },
+        {
+          "_origen": "inventario_geositios",
+          "nombre": "CONO MIRADOR"
+        },
+        {
+          "_origen": "inventario_geositios",
+          "nombre": "SITIO PALEOARQUEOLÓGICO DE PILAUCO"
+        },
+        {
+          "_origen": "inventario_geositios",
+          "nombre": "SALTOS DEL PETROHUÉ"
+        },
+        {
+          "_origen": "inventario_geositios",
+          "nombre": "DOMOS DEL VOLCÁN CHAITÉN"
+        },
+        {
+          "_origen": "inventario_geositios",
+          "nombre": "CERRO CASTILLO"
+        },
+        {
+          "_origen": "inventario_geositios",
+          "nombre": "CAPILLA DE MÁRMOL"
+        },
+        {
+          "_origen": "inventario_geositios",
+          "nombre": "PIEDRA CLAVADA"
+        },
+        {
+          "_origen": "inventario_geositios",
+          "nombre": "TORRES Y CUERNOS DEL PAINE"
+        },
+        {
+          "_origen": "inventario_geositios",
+          "nombre": "CONO DE PALI-AIKE"
+        },
+        {
+          "_origen": "inventario_geositios",
+          "nombre": "DIENTES DE NAVARINO"
+        },
+        {
+          "_origen": "tesis_regionales",
+          "titulo": "Geología y Geopatrimonio del Área de Cerro Castillo, XI Región de Aysén, Chile",
+          "autor": "Nicolás Ignacio Aravena Bendeck",
+          "anio": 2014
+        }
+      ],
+      "léxico": [
+        {
+          "_origen": "libros",
+          "titulo": "Léxico Estratigráfico (extracto pp. 55-83, Carta H834) - SERNAGEOMIN",
+          "autores": [
+            "SERNAGEOMIN (no extraíble: PDF escaneado)"
+          ],
+          "anio": null
+        },
+        {
+          "_origen": "libros",
+          "titulo": "Léxico Estratigráfico de la Argentina. Volumen XIII - Cuaternario",
+          "autores": [
+            "Dante Fajardo",
+            "Federico Isla",
+            "Martín Iriondo",
+            "Daniela Krohling"
+          ],
+          "anio": 2018
+        },
+        {
+          "_origen": "libros",
+          "titulo": "Léxico Estratigráfico de la Argentina. Volumen IV - Silúrico",
+          "autores": [
+            "Claudia V. Rubinstein (editora)",
+            "Subcomisión del Silúrico (Cingolani, Dahlquist, Dalenz Farjat, Devincenzi, Toro, Uriz)"
+          ],
+          "anio": 2021
+        },
+        {
+          "_origen": "libros",
+          "titulo": "Léxico Estratigráfico de la Argentina. Volumen V - Devónico",
+          "autores": [
+            "Claudia V. Rubinstein (editora)",
+            "Subcomisión del Devónico (Amenábar, Cingolani, Dahlquist, Dalenz Farjat, di Pasquo, Noetinger, N. Rubinstein, Uriz)"
+          ],
+          "anio": 2021
+        },
+        {
+          "_origen": "libros",
+          "titulo": "Léxico Estratigráfico de Bolivia",
+          "autores": [
+            "Ramiro Suárez-Soruco",
+            "Enrique Díaz-Martínez"
+          ],
+          "anio": 1996
+        }
+      ],
+      "libro_geopatrimonio": [
+        {
+          "_origen": "libros",
+          "titulo": "Las condiciones biofísicas y climáticas de la Argentina (Capítulo VIII de 'Geopolítica argentina')",
+          "autores": [
+            "Sergio Adrián Caruso"
+          ],
+          "anio": 2021
+        },
+        {
+          "_origen": "libros",
+          "titulo": "Lugares de Interés Geológico del Valle del Copiapó. Geopatrimonio, Geodiversidad y Geoturismo",
+          "autores": [
+            "Manuel Abad",
+            "Philippe Moisan",
+            "Tatiana Izquierdo",
+            "et al. (~25 autores)"
+          ],
+          "anio": 2022
+        }
+      ],
+      "guía": [
+        {
+          "_origen": "libros",
+          "titulo": "Rutas Interactivas e Inclusivas en Jeinimeni",
+          "autores": [
+            "José Benado W.",
+            "Felipe Andrade A.",
+            "Arturo Clark C.",
+            "Laura Sánchez Jardín"
+          ],
+          "anio": 2020
+        },
+        {
+          "_origen": "libros",
+          "titulo": "Propuesta metodológica para la generación de productos turísticos a partir de la comunidad local",
+          "autores": [
+            "Omar Ismael Ramírez Hernández"
+          ],
+          "anio": 2019
+        }
+      ],
+      "libro_geoturismo": [
+        {
+          "_origen": "libros",
+          "titulo": "Geopatrimonio de los Andes de O'Higgins. Una apuesta por el geoturismo",
+          "autores": [
+            "Universidad Central de Chile - Instituto del Patrimonio Turístico",
+            "ONG Poloc (equipo de ciencias de la tierra)"
+          ],
+          "anio": 2017
+        }
+      ],
+      "contextos geológicos chilenos / inventario nacional": [
+        {
+          "_origen": "papers_chile_fundacionales",
+          "titulo": "Patrimonio geológico y su conservación en Chile",
+          "autores": [
+            "F. A. Mourgues",
+            "K. Contreras",
+            "M. E. Schilling",
+            "J. Benado",
+            "D. Partarrieu"
+          ],
+          "anio": 2016
+        }
+      ],
+      "metodología (inventario y evaluación cuantitativa)": [
+        {
+          "_origen": "papers_chile_fundacionales",
+          "titulo": "Inventory and Quantitative Assessment of Geosites and Geodiversity Sites: a Review",
+          "autores": [
+            "José Brilha"
+          ],
+          "anio": 2016
+        }
+      ],
+      "estado del arte de la geoconservación en Chile": [
+        {
+          "_origen": "papers_chile_fundacionales",
+          "titulo": "Geoconservation in Chile: State of the Art and Analysis",
+          "autores": [
+            "José Benado",
+            "Francisco Hervé",
+            "Manuel Schilling",
+            "José Brilha"
+          ],
+          "anio": 2018
+        }
+      ],
+      "catálogo divulgativo de geositios SGCh": [
+        {
+          "_origen": "papers_chile_fundacionales",
+          "titulo": "Geositios de Chile (Librito SGCh)",
+          "autores": [
+            "Sociedad Geológica de Chile - Grupo de Especialistas en Geopatrimonio"
+          ],
+          "anio": 2012
+        }
+      ],
+      "compilación geoespacial de patrimonio cultural y natural (incl. geopatrimonio)": [
+        {
+          "_origen": "papers_chile_fundacionales",
+          "titulo": "Atlas del Patrimonio Cultural y Natural: Primera compilación de información geoespacial. Chile 2016 (Versión revisada 2019)",
+          "autores": [
+            "Bernardita Ladrón de Guevara González (ed. general)",
+            "Carolina Chávez Valdivia",
+            "Darío Toro Balbontín",
+            "Gloria Núñez Rodríguez",
+            "Mauricio González Loyola",
+            "Manuel Arenas Abarca (SERNAGEOMIN)"
+          ],
+          "anio": 2019
+        }
+      ],
+      "panorama latinoamericano de patrimonio geológico": [
+        {
+          "_origen": "papers_chile_fundacionales",
+          "titulo": "Patrimonio geológico y su conservación en América Latina. Situación y perspectivas nacionales",
+          "autores": [
+            "José Luis Palacio Prieto (coord.)",
+            "José Luis Sánchez Cortez (ed.)",
+            "Manuel Enrique Schilling (ed.)"
+          ],
+          "anio": 2016
+        }
+      ],
+      "geopatrimonio Región de Aysén / S.N. Capillas de Mármol": [
+        {
+          "_origen": "papers_chile_fundacionales",
+          "titulo": "Celebración Día del Patrimonio - Programa Fomento Productivo de los Recursos Geológicos de la Región de Aysén",
+          "autores": [
+            "José Benado Wilson"
+          ],
+          "anio": 2020
+        }
+      ],
+      "geoconservación volcánica / casos El Laco y Lastarria": [
+        {
+          "_origen": "papers_chile_fundacionales",
+          "titulo": "Geological, Geographical and Legal Considerations for the Conservation of Unique Iron Oxide and Sulphur Flows at El Laco and Lastarria Volcanic Complexes, Central Andes, Northern Chile",
+          "autores": [
+            "Rodrigo Guijón",
+            "Fernando Henríquez",
+            "José Antonio Naranjo"
+          ],
+          "anio": 2011
+        }
+      ],
+      "inventario regional de geositios (proyecto Geoparque Cajón del Maipo)": [
+        {
+          "_origen": "papers_chile_fundacionales",
+          "titulo": "Geodiversidad, Patrimonio Geológico y Geositios del Cajón del Maipo - La Capital Geológica de Chile",
+          "autores": [
+            "Cristóbal Estay (textos)",
+            "Marcos Contreras (geología y cartografía)",
+            "Anthony Prior",
+            "Victor Godoy",
+            "Jorge Zapata",
+            "Camilo Vergara (coord.)"
+          ],
+          "anio": 2021
+        }
+      ],
+      "extremófilos, estromatolitos y geopatrimonio del Altiplano/Atacama": [
+        {
+          "_origen": "papers_chile_fundacionales",
+          "titulo": "Extremófilos y origen de la vida en Atacama / Extremophiles and the origin of life in Atacama",
+          "autores": [
+            "María E. Farías",
+            "Manuel Contreras"
+          ],
+          "anio": 2018
+        }
+      ],
+      "Marco conceptual y metodológico para la formulación de geoparques": [
+        {
+          "_origen": "papers_internacionales",
+          "titulo": "Geoparques: Guía para la formulación de proyectos",
+          "autores": [
+            "Instituto de Geografía UNAM"
+          ],
+          "anio": null
+        }
+      ],
+      "Estado del arte del geoturismo: paisaje cultural, señalética, percepción local, sostenibilidad": [
+        {
+          "_origen": "papers_internacionales",
+          "titulo": "Geotourism (Editorial - Special Issue Geosciences)",
+          "autores": [
+            "Rannveig Ólafsdóttir"
+          ],
+          "anio": 2019
+        }
+      ],
+      "Impacto socioeconómico, educativo y turístico de un geoparque UNESCO": [
+        {
+          "_origen": "papers_internacionales",
+          "titulo": "El Geoparque Villuercas-Ibores-Jara y su impacto múltiple en el área de influencia",
+          "autores": [
+            "José M. Barrera Martín-Merás"
+          ],
+          "anio": 2014
+        }
+      ],
+      "Identificación preliminar de áreas candidatas a geoparques en una región andina": [
+        {
+          "_origen": "papers_internacionales",
+          "titulo": "Geoparques globales en La Libertad: Notas preliminares para la geoconservación, educación y geoturismo",
+          "autores": [
+            "Víctor D. Corcuera Cueva"
+          ],
+          "anio": 2016
+        }
+      ],
+      "Inventario de Puntos de Interés Geológico (PIG) y diseño de georrutas": [
+        {
+          "_origen": "papers_internacionales",
+          "titulo": "Geoturismo como estrategia de desarrollo territorial en los distritos Aquia y Huallanca, Ancash",
+          "autores": [
+            "Romyna Huamán Espinoza"
+          ],
+          "anio": null
+        }
+      ],
+      "Uso de videojuegos comerciales (Minecraft) para difundir geoheritage entre jóvenes": [
+        {
+          "_origen": "papers_internacionales",
+          "titulo": "Gamificación para la geoconservación mediante Minecraft",
+          "autores": [
+            "A. Díez-Herrero",
+            "P. Díez Marcelo",
+            "J. Vegas",
+            "A. Cabrera"
+          ],
+          "anio": 2019
+        }
+      ],
+      "Herramientas digitales (Google Earth, Gigapan, Virtual Landscapes) para docencia geológica remota": [
+        {
+          "_origen": "papers_internacionales",
+          "titulo": "Using Digital Field Tools for Remote Teaching Webinar Series",
+          "autores": [
+            "Steve Whitmeyer",
+            "Andrew Laskowski",
+            "Callan Bentley",
+            "Jennifer Piatek",
+            "Jacqueline Houghton",
+            "Mark Helper"
+          ],
+          "anio": 2020
+        }
+      ],
+      "Inserción de geociencias en currículo escolar chileno y cultura de prevención de desastres": [
+        {
+          "_origen": "papers_internacionales",
+          "titulo": "Geociencias en la etapa escolar: hacia una sociedad preventiva y con cultura de desastres",
+          "autores": [
+            "Javier Ojeda",
+            "Nicolás Espinoza",
+            "Diego Heredia",
+            "Camila Meza",
+            "Andrés Martínez"
+          ],
+          "anio": 2018
+        }
+      ],
+      "Gobernanza participativa bottom-up en geoparques": [
+        {
+          "_origen": "papers_internacionales",
+          "titulo": "Enfoque de abajo a arriba para el desarrollo sostenible: La estructura de gestión del Geoparque Mundial UNESCO Villuercas-Ibores-Jara",
+          "autores": [
+            "José M. Barrera"
+          ],
+          "anio": 2017
+        }
+      ],
+      "Historia natural mediterránea, colecciones, biodiversidad, divulgación": [
+        {
+          "_origen": "papers_internacionales",
+          "titulo": "O Mapa da Natureza do Brasil. Revisando (Libro de Resúmenes XXIII Bienal RSEHN)",
+          "autores": [
+            "Yael Díaz-Acha",
+            "Iria Díaz-Ontiveros",
+            "Alfredo Baratas Díaz (eds.)"
+          ],
+          "anio": 2019
+        }
+      ],
+      "Estrategias de geoconservación en isla con parque estatal": [
+        {
+          "_origen": "papers_internacionales",
+          "titulo": "O patrimônio geológico de Ilhabela-SP: estratégias de geoconservação",
+          "autores": [
+            "Rachel Prochoroff"
+          ],
+          "anio": 2014
+        }
+      ],
+      "Geoturismo en municipio amazónico fronterizo": [
+        {
+          "_origen": "papers_internacionales",
+          "titulo": "Potencialidades no Município de Oiapoque, Amapá, para o Desenvolvimento do Geoturismo",
+          "autores": [
+            "José Mauro Palhares",
+            "Antônio José Teixeira Guerra"
+          ],
+          "anio": 2016
+        }
+      ],
+      "Inventario de patrimonio hidrogeológico, balnearios y aguas minero-medicinales": [
+        {
+          "_origen": "papers_internacionales",
+          "titulo": "Patrimonio hidrogeológico y las aguas minerales en la provincia de Cuenca",
+          "autores": [
+            "Esther Alonso Marín",
+            "Marc Martínez Parra"
+          ],
+          "anio": 2007
+        }
+      ],
+      "Ecoturismo y figuras legales de protección de espacios naturales": [
+        {
+          "_origen": "papers_internacionales",
+          "titulo": "Interrelación entre la actividad turística y los espacios naturales protegidos",
+          "autores": [
+            "Mercedes Millán Escriche"
+          ],
+          "anio": 2001
+        }
+      ],
+      "Conflictos discursivos entre actores en espacios protegidos": [
+        {
+          "_origen": "papers_internacionales",
+          "titulo": "Naturalezas discursivas en espacios protegidos",
+          "autores": [
+            "José M. Valcuende",
+            "Victoria Quintero",
+            "José A. Cortés"
+          ],
+          "anio": 2011
+        }
+      ],
+      "Cartografía geológica virtual con Google Earth para docencia": [
+        {
+          "_origen": "papers_internacionales",
+          "titulo": "Virtual geological mapping in the Lurestan region of the Zagros with Google Earth",
+          "autores": [
+            "S. Tavani",
+            "A. Corradetti",
+            "F. Vinci",
+            "M. Parente",
+            "S. Mazzoli",
+            "D. Morsalnejad",
+            "A. Iannace"
+          ],
+          "anio": 2020
+        }
+      ],
+      "Definicion conceptual de geopatrimonio, geoconservacion y geodiversidad; marco de escalas y niveles de significancia": [
+        {
+          "_origen": "papers_metodologicos",
+          "titulo": "Geoheritage and geoconservation – history, definition, scope and scale",
+          "autores": [
+            "M. Brocx",
+            "V. Semeniuk"
+          ],
+          "anio": 2007
+        }
+      ],
+      "Importancia geopatrimonial y protocolos de geoconservacion para secciones tipo estratigraficas, localidades tipo y sitios de referencia": [
+        {
+          "_origen": "papers_metodologicos",
+          "titulo": "Geoheritage importance of stratigraphic type sections, type localities and reference sites—review, discussion and protocols for geoconservation",
+          "autores": [
+            "M. Brocx",
+            "C. Brown",
+            "V. Semeniuk"
+          ],
+          "anio": 2019
+        }
+      ],
+      "Inventario sistematico del patrimonio geologico del Estado de Sao Paulo basado en marcos geologicos (geological frameworks)": [
+        {
+          "_origen": "papers_metodologicos",
+          "titulo": "The Inventory of Geological Heritage of the State of São Paulo, Brazil: Methodological Basis, Results and Perspectives",
+          "autores": [
+            "M.G.M. Garcia",
+            "A. Brilha",
+            "A. Alves",
+            "A. Perez-Aguilar",
+            "et al."
+          ],
+          "anio": 2018
+        }
+      ],
+      "Inventario de 150 LIGs del Pais Vasco con metodologia adaptada de Cendrero (1996) y Carcavilla et al. (2007)": [
+        {
+          "_origen": "papers_metodologicos",
+          "titulo": "El Inventario de Lugares de Interés Geológico de la Comunidad Autónoma del País Vasco (CAPV)",
+          "autores": [
+            "M. Mendia",
+            "A. Hilario",
+            "E. Apellaniz",
+            "A. Aranburu",
+            "M. Carracedo",
+            "A. Cearreta",
+            "L. Eguiluz",
+            "P.P. Gil Crespo",
+            "M.J. Gonzalez",
+            "M. Lopez-Horgue",
+            "L.M. Martinez-Torres",
+            "I. Mugerza"
+          ],
+          "anio": 2013
+        }
+      ],
+      "Marco legal espanol para geoconservacion (Leyes 5/2007, 42/2007, 45/2007) y obligacion de elaborar Inventario de LIGs": [
+        {
+          "_origen": "papers_metodologicos",
+          "titulo": "El patrimonio geológico y la geodiversidad de España. Inicio de su reconocimiento gracias a la nueva legislación",
+          "autores": [
+            "E. Diaz-Martinez",
+            "F. Guillen Mondejar",
+            "J.M. Mata Perello",
+            "P. Munoz Barco",
+            "L.M. Nieto Albert",
+            "F. Perez Lorente",
+            "C. de Santisteban Bove"
+          ],
+          "anio": 2008
+        }
+      ],
+      "Marco metodologico para evaluar evolucion temporal del estado de conservacion de LIGs bajo presion antropica": [
+        {
+          "_origen": "papers_metodologicos",
+          "titulo": "Evolución del estado de conservación de Lugares de Interés Geológico sometidos a modificaciones antrópicas",
+          "autores": [
+            "M. Mendia",
+            "M. Monge-Ganuzas",
+            "M. Onaindia",
+            "L. Pena"
+          ],
+          "anio": 2015
+        }
+      ],
+      "Estado del arte en metodologias de inventario y evaluacion de geodiversidad/geopatrimonio cruzando disciplinas": [
+        {
+          "_origen": "papers_metodologicos",
+          "titulo": "Geodiversity and Geoheritage: Crossing Disciplines and Approaches (Editorial)",
+          "autores": [
+            "P. Coratza",
+            "E. Reynard",
+            "Z. Zwolinski"
+          ],
+          "anio": 2018
+        }
+      ],
+      "Monitorizacion instrumental de procesos activos de degradacion en LIGs como base para geoindicadores de conservacion": [
+        {
+          "_origen": "papers_metodologicos",
+          "titulo": "Propuesta de monitorización instrumental para la geoconservación del LIG 'Icnitas de reptiles triásicos' en el Geoparque de la Comarca de Molina-Alto Tajo",
+          "autores": [
+            "A. Diez-Herrero",
+            "J. Luengo",
+            "J. Vegas",
+            "M. Hernandez",
+            "L. Carcavilla",
+            "A. Sopena",
+            "Y. Sanchez-Moya",
+            "J. Moratalla",
+            "E. Baeza",
+            "A. Garcia-Cortes"
+          ],
+          "anio": 2017
+        }
+      ],
+      "Propuesta metodologica para inventario y valoracion del paisaje biogeocultural integrando geopatrimonio, biodiversidad y diversidad cultural en Atacama (Chile)": [
+        {
+          "_origen": "papers_metodologicos",
+          "titulo": "Hacia una conservación integrada del paisaje biogeocultural de Atacama",
+          "autores": [
+            "H. Manriquez Tirado",
+            "P. Mansilla Quinones",
+            "A. Moreira Munoz"
+          ],
+          "anio": 2019
+        }
+      ],
+      "Propuesta de Dia Internacional de la Geodiversidad y definicion operativa de geodiversidad": [
+        {
+          "_origen": "papers_metodologicos",
+          "titulo": "International Geodiversity Day - Proposal arising from the Oxford Geoheritage Virtual Conference",
+          "autores": [
+            "J. Brilha",
+            "M. Gray",
+            "J. Matthews",
+            "Z. Zwolinski"
+          ],
+          "anio": 2020
+        }
+      ],
+      "Programa nacional de voluntariado ciudadano para seguimiento del estado de conservacion de LIGs del IELIG": [
+        {
+          "_origen": "papers_metodologicos",
+          "titulo": "'Apadrina una Roca'. Participación ciudadana para la geoconservación en España",
+          "autores": [
+            "A. Cabrera",
+            "J. Vegas",
+            "A. Prieto",
+            "A. Diez-Herrero",
+            "A. Garcia-Cortes",
+            "E. Diaz-Martinez",
+            "A. Salazar",
+            "L. Carcavilla"
+          ],
+          "anio": 2019
+        }
+      ],
+      "paper_cientifico_inventario_regional": [
+        {
+          "_origen": "papers_regionales_chile",
+          "titulo": "Geositios de la región de Aysén (Chile): resumen de la historia geológica regional, propuesta de contextos geológicos temáticos e inventario",
+          "autores": [
+            "José Benado Wilson",
+            "Felipe Andrade",
+            "Eleonora Muñoz",
+            "Felipe Reyes Córdova",
+            "Enrique Crisostomo",
+            "Estefanía Quilamán",
+            "David Valenzuela"
+          ],
+          "anio": 2020
+        },
+        {
+          "_origen": "papers_regionales_chile",
+          "titulo": "Geositios de la región de Aysén (Chile): resumen de la historia geológica regional, propuesta de contextos geológicos temáticos e inventario",
+          "autores": [
+            "José Benado Wilson",
+            "Felipe Andrade",
+            "Eleonora Muñoz",
+            "Felipe Reyes Córdova",
+            "Enrique Crisostomo",
+            "Estefanía Quilamán",
+            "David Valenzuela"
+          ],
+          "anio": 2020
+        }
+      ],
+      "presentacion_divulgativa": [
+        {
+          "_origen": "papers_regionales_chile",
+          "titulo": "(Geo)patrimonio en la Región de Atacama – con enfoque a la comuna Caldera",
+          "autores": [
+            "Wolfgang Griem"
+          ],
+          "anio": 2014
+        }
+      ],
+      "paper_simposio_geoturismo": [
+        {
+          "_origen": "papers_regionales_chile",
+          "titulo": "La Ruta de Segerstrom: transversa geoturística y geopatrimonial en la Provincia de Copiapó, Región de Atacama",
+          "autores": [
+            "Miguel Cáceres",
+            "Carlos Marquardt",
+            "Luis Cerpa",
+            "Felipe Aguilera"
+          ],
+          "anio": 2011
+        }
+      ],
+      "libro_divulgacion_cientifica": [
+        {
+          "_origen": "papers_regionales_chile",
+          "titulo": "Extremófilos y el origen de la vida en Atacama",
+          "autores": [
+            "María Eugenia Farías",
+            "Manuel Contreras",
+            "Fernando Novoa"
+          ],
+          "anio": 2018
+        }
+      ],
+      "guia_tecnica_conservacion": [
+        {
+          "_origen": "papers_regionales_chile",
+          "titulo": "Guía para la Conservación y Seguimiento de Ecosistemas Microbianos Extremófilos: Tapetes Microbianos, Microbialitos y Endoevaporitas",
+          "autores": [
+            "Manuel Contreras",
+            "María Eugenia Farías"
+          ],
+          "anio": 2017
+        }
+      ],
+      "presentacion_geoturismo_regional": [
+        {
+          "_origen": "papers_regionales_chile",
+          "titulo": "Sitios Geológicos en la Región (Llanquihue) - Geoturismo",
+          "autores": [
+            "SERNAGEOMIN Oficina Técnica Puerto Varas"
+          ],
+          "anio": null
+        }
+      ],
+      "guia_geoturistica_oficial": [
+        {
+          "_origen": "papers_regionales_chile",
+          "titulo": "Patagonia Verde: Guía Geoturística",
+          "autores": [
+            "Manuel E. Schilling",
+            "Tomás Martínez",
+            "Juan A. Amthauer",
+            "Patricio Contreras",
+            "Adriano Rovira",
+            "Marcelo Godoy",
+            "Simón Sierralta",
+            "Karin Toro",
+            "Alejandra González",
+            "Melissa González",
+            "Felipe Santos"
+          ],
+          "anio": 2020
+        }
+      ],
+      "libro_cultural_turistico": [
+        {
+          "_origen": "papers_regionales_chile",
+          "titulo": "Patagonia Verde - Cultura e Identidad para el Desarrollo del Turismo Territorial",
+          "autores": [
+            "Constanza Gómez",
+            "Katerine Barría",
+            "José Joaquín Saavedra (textos)",
+            "Guillermo Helo (fotografía)"
+          ],
+          "anio": 2018
+        }
+      ],
+      "paper_cientifico_arqueologia_geologia": [
+        {
+          "_origen": "papers_regionales_chile",
+          "titulo": "Rapa Nui (Easter Island) monument (ahu) locations explained by freshwater sources",
+          "autores": [
+            "Robert J. DiNapoli",
+            "Carl P. Lipo",
+            "Tanya Brosnan",
+            "Terry L. Hunt",
+            "Sean Hixon",
+            "Alex E. Morrison",
+            "Matthew Becker"
+          ],
+          "anio": 2019
+        }
+      ],
+      "paper_congreso_inventario_nacional": [
+        {
+          "_origen": "papers_regionales_chile",
+          "titulo": "Estado actual de reconocimiento y distribución geográfica del Patrimonio Geológico Chileno",
+          "autores": [
+            "Tomás Martínez",
+            "David Valenzuela",
+            "Francisco Hevia",
+            "Gonzalo Silva",
+            "Francisco Hervé"
+          ],
+          "anio": 2015
+        }
+      ],
+      "paper_congreso_inventario_comunal": [
+        {
+          "_origen": "papers_regionales_chile",
+          "titulo": "Valoración de la geodiversidad en la comuna de Puerto Varas: Nuevas perspectivas para el desarrollo local",
+          "autores": [
+            "Tomás Martínez",
+            "Manuel Schilling",
+            "Francisco Hervé",
+            "Gabriel Orozco",
+            "Reynaldo Charrier"
+          ],
+          "anio": 2017
+        }
+      ],
+      "paper_cientifico_peligros_geologicos": [
+        {
+          "_origen": "papers_regionales_chile",
+          "titulo": "A rare case of grass flow induced by the M8.4 Arequipa earthquake, June 2001, in the Altiplano of Northern Chile",
+          "autores": [
+            "José A. Naranjo",
+            "Jorge E. Clavero"
+          ],
+          "anio": 2005
+        }
+      ],
+      "comunicacion_tecnica_politica_publica": [
+        {
+          "_origen": "papers_regionales_chile",
+          "titulo": "Patrimonio geológico: un nuevo nicho de empleo verde",
+          "autores": [
+            "Enrique Díaz Martínez",
+            "Luis Carcavilla Urquí",
+            "Ángel García Cortés",
+            "Juana Vegas Salamanca",
+            "Carlos de Santisteban Bové",
+            "Francisco Guillén Mondéjar",
+            "Ángel Salazar Rincón",
+            "José María Mata Perelló"
+          ],
+          "anio": 2010
+        }
+      ]
+    },
+    "por_region": {
+      "ARICA Y PARINACOTA": [
+        {
+          "_origen": "inventario_geositios",
+          "titulo": "CATEDRAL DEL VALLE DEL RÍO LAUCA"
+        },
+        {
+          "_origen": "inventario_geositios",
+          "titulo": "MORRO DE ARICA"
+        },
+        {
+          "_origen": "inventario_geositios",
+          "titulo": "LAGUNAS DE AMUYO"
+        }
+      ],
+      "TARAPACÁ": [
+        {
+          "_origen": "inventario_geositios",
+          "titulo": "DUNA CERRO DRAGÓN"
+        },
+        {
+          "_origen": "inventario_geositios",
+          "titulo": "SALAR Y GEOGLIFOS DE PINTADOS"
+        },
+        {
+          "_origen": "inventario_geositios",
+          "titulo": "LOS PUQUIOS DEL SALAR DE LLAMARA"
+        }
+      ],
+      "—": [
+        {
+          "_origen": "inventario_geositios",
+          "titulo": "GÉISERS DE EL TATIO"
+        },
+        {
+          "_origen": "inventario_geositios",
+          "titulo": "CRÁTER DEL VOLCÁN RANO KAO"
+        },
+        {
+          "_origen": "inventario_geositios",
+          "titulo": "PLACAS DE LO VALDÉS"
+        },
+        {
+          "_origen": "papers_chile_fundacionales",
+          "titulo": "Patrimonio geológico y su conservación en Chile"
+        },
+        {
+          "_origen": "papers_chile_fundacionales",
+          "titulo": "Inventory and Quantitative Assessment of Geosites and Geodiversity Sites: a Review"
+        },
+        {
+          "_origen": "papers_chile_fundacionales",
+          "titulo": "Geoconservation in Chile: State of the Art and Analysis"
+        },
+        {
+          "_origen": "papers_chile_fundacionales",
+          "titulo": "Geositios de Chile (Librito SGCh)"
+        },
+        {
+          "_origen": "papers_chile_fundacionales",
+          "titulo": "Atlas del Patrimonio Cultural y Natural: Primera compilación de información geoespacial. Chile 2016 (Versión revisada 2019)"
+        },
+        {
+          "_origen": "papers_chile_fundacionales",
+          "titulo": "Patrimonio geológico y su conservación en América Latina. Situación y perspectivas nacionales"
+        },
+        {
+          "_origen": "papers_chile_fundacionales",
+          "titulo": "Celebración Día del Patrimonio - Programa Fomento Productivo de los Recursos Geológicos de la Región de Aysén"
+        },
+        {
+          "_origen": "papers_chile_fundacionales",
+          "titulo": "Geological, Geographical and Legal Considerations for the Conservation of Unique Iron Oxide and Sulphur Flows at El Laco and Lastarria Volcanic Complexes, Central Andes, Northern Chile"
+        },
+        {
+          "_origen": "papers_chile_fundacionales",
+          "titulo": "Geodiversidad, Patrimonio Geológico y Geositios del Cajón del Maipo - La Capital Geológica de Chile"
+        },
+        {
+          "_origen": "papers_chile_fundacionales",
+          "titulo": "Extremófilos y origen de la vida en Atacama / Extremophiles and the origin of life in Atacama"
+        },
+        {
+          "_origen": "papers_internacionales",
+          "titulo": "Geoparques: Guía para la formulación de proyectos"
+        },
+        {
+          "_origen": "papers_internacionales",
+          "titulo": "Geotourism (Editorial - Special Issue Geosciences)"
+        },
+        {
+          "_origen": "papers_internacionales",
+          "titulo": "El Geoparque Villuercas-Ibores-Jara y su impacto múltiple en el área de influencia"
+        },
+        {
+          "_origen": "papers_internacionales",
+          "titulo": "Geoparques globales en La Libertad: Notas preliminares para la geoconservación, educación y geoturismo"
+        },
+        {
+          "_origen": "papers_internacionales",
+          "titulo": "Geoturismo como estrategia de desarrollo territorial en los distritos Aquia y Huallanca, Ancash"
+        },
+        {
+          "_origen": "papers_internacionales",
+          "titulo": "Gamificación para la geoconservación mediante Minecraft"
+        },
+        {
+          "_origen": "papers_internacionales",
+          "titulo": "Using Digital Field Tools for Remote Teaching Webinar Series"
+        },
+        {
+          "_origen": "papers_internacionales",
+          "titulo": "Geociencias en la etapa escolar: hacia una sociedad preventiva y con cultura de desastres"
+        },
+        {
+          "_origen": "papers_internacionales",
+          "titulo": "Enfoque de abajo a arriba para el desarrollo sostenible: La estructura de gestión del Geoparque Mundial UNESCO Villuercas-Ibores-Jara"
+        },
+        {
+          "_origen": "papers_internacionales",
+          "titulo": "O Mapa da Natureza do Brasil. Revisando (Libro de Resúmenes XXIII Bienal RSEHN)"
+        },
+        {
+          "_origen": "papers_internacionales",
+          "titulo": "O patrimônio geológico de Ilhabela-SP: estratégias de geoconservação"
+        },
+        {
+          "_origen": "papers_internacionales",
+          "titulo": "Potencialidades no Município de Oiapoque, Amapá, para o Desenvolvimento do Geoturismo"
+        },
+        {
+          "_origen": "papers_internacionales",
+          "titulo": "Patrimonio hidrogeológico y las aguas minerales en la provincia de Cuenca"
+        },
+        {
+          "_origen": "papers_internacionales",
+          "titulo": "Interrelación entre la actividad turística y los espacios naturales protegidos"
+        },
+        {
+          "_origen": "papers_internacionales",
+          "titulo": "Naturalezas discursivas en espacios protegidos"
+        },
+        {
+          "_origen": "papers_internacionales",
+          "titulo": "Virtual geological mapping in the Lurestan region of the Zagros with Google Earth"
+        },
+        {
+          "_origen": "papers_metodologicos",
+          "titulo": "Geoheritage and geoconservation – history, definition, scope and scale"
+        },
+        {
+          "_origen": "papers_metodologicos",
+          "titulo": "Geoheritage importance of stratigraphic type sections, type localities and reference sites—review, discussion and protocols for geoconservation"
+        },
+        {
+          "_origen": "papers_metodologicos",
+          "titulo": "The Inventory of Geological Heritage of the State of São Paulo, Brazil: Methodological Basis, Results and Perspectives"
+        },
+        {
+          "_origen": "papers_metodologicos",
+          "titulo": "El Inventario de Lugares de Interés Geológico de la Comunidad Autónoma del País Vasco (CAPV)"
+        },
+        {
+          "_origen": "papers_metodologicos",
+          "titulo": "El patrimonio geológico y la geodiversidad de España. Inicio de su reconocimiento gracias a la nueva legislación"
+        },
+        {
+          "_origen": "papers_metodologicos",
+          "titulo": "Evolución del estado de conservación de Lugares de Interés Geológico sometidos a modificaciones antrópicas"
+        },
+        {
+          "_origen": "papers_metodologicos",
+          "titulo": "Geodiversity and Geoheritage: Crossing Disciplines and Approaches (Editorial)"
+        },
+        {
+          "_origen": "papers_metodologicos",
+          "titulo": "Propuesta de monitorización instrumental para la geoconservación del LIG 'Icnitas de reptiles triásicos' en el Geoparque de la Comarca de Molina-Alto Tajo"
+        },
+        {
+          "_origen": "papers_metodologicos",
+          "titulo": "Hacia una conservación integrada del paisaje biogeocultural de Atacama"
+        },
+        {
+          "_origen": "papers_metodologicos",
+          "titulo": "International Geodiversity Day - Proposal arising from the Oxford Geoheritage Virtual Conference"
+        },
+        {
+          "_origen": "papers_metodologicos",
+          "titulo": "'Apadrina una Roca'. Participación ciudadana para la geoconservación en España"
+        }
+      ],
+      "ANTOFAGASTA": [
+        {
+          "_origen": "inventario_geositios",
+          "titulo": "LA PORTADA"
+        },
+        {
+          "_origen": "inventario_geositios",
+          "titulo": "CRÁTER DE IMPACTO MONTURAQUI"
+        }
+      ],
+      "ATACAMA": [
+        {
+          "_origen": "inventario_geositios",
+          "titulo": "TONALITA ORBICULAR"
+        },
+        {
+          "_origen": "inventario_geositios",
+          "titulo": "PARQUE PALEONTOLÓGICO LOS DEDOS"
+        },
+        {
+          "_origen": "inventario_geositios",
+          "titulo": "ARENISCAS Y CALIZAS DE QUEBRADA PINTE"
+        }
+      ],
+      "COQUIMBO": [
+        {
+          "_origen": "inventario_geositios",
+          "titulo": "YACIMIENTO PALEONTOLÓGICO PICHASCA"
+        },
+        {
+          "_origen": "inventario_geositios",
+          "titulo": "BORDE COSTERO  PARQUE NACIONAL FRAY JORGE"
+        },
+        {
+          "_origen": "inventario_geositios",
+          "titulo": "DUNAS DE QUEREO"
+        }
+      ],
+      "VALPARAÍSO": [
+        {
+          "_origen": "inventario_geositios",
+          "titulo": "ESCALERA DEL DIABLO"
+        },
+        {
+          "_origen": "inventario_geositios",
+          "titulo": "ACANTILADO COSTERO DE QUIRILLUCA"
+        },
+        {
+          "_origen": "inventario_geositios",
+          "titulo": "DUNAS DE CONCÓN"
+        }
+      ],
+      "METROPOLITANA DE SANTIAGO": [
+        {
+          "_origen": "inventario_geositios",
+          "titulo": "DISYUNCIÓN COLUMNAR CERRO SANTA LUCÍA"
+        },
+        {
+          "_origen": "inventario_geositios",
+          "titulo": "QUEBRADA LAS AMARILLAS"
+        }
+      ],
+      "LIBERTADOR BERNARDO O’HIGGINS": [
+        {
+          "_origen": "inventario_geositios",
+          "titulo": "IGNIMBRITA PUDAHUEL EN MACHALÍ"
+        },
+        {
+          "_origen": "inventario_geositios",
+          "titulo": "HUELLAS DE DINOSAURIOS EN TERMAS DEL FLACO"
+        },
+        {
+          "_origen": "inventario_geositios",
+          "titulo": "FALLA EL FIERRO"
+        }
+      ],
+      "MAULE": [
+        {
+          "_origen": "inventario_geositios",
+          "titulo": "ROCAS DE CONSTITUCIÓN"
+        },
+        {
+          "_origen": "inventario_geositios",
+          "titulo": "RADAL SIETE TAZAS"
+        },
+        {
+          "_origen": "inventario_geositios",
+          "titulo": "DISYUNCIÓN COLUMNAR LA CÁRCEL"
+        }
+      ],
+      "ÑUBLE": [
+        {
+          "_origen": "inventario_geositios",
+          "titulo": "CUEVA DE LOS PINCHEIRA"
+        },
+        {
+          "_origen": "inventario_geositios",
+          "titulo": "IGLESIA DE PIEDRA DE COBQUECURA"
+        },
+        {
+          "_origen": "inventario_geositios",
+          "titulo": "GRUTA LOS PANGUES"
+        }
+      ],
+      "BIOBÍO": [
+        {
+          "_origen": "inventario_geositios",
+          "titulo": "CALETA COCHOLGÜE"
+        },
+        {
+          "_origen": "inventario_geositios",
+          "titulo": "ANTICLINAL VOLCADO DE CURAMALLÍN"
+        },
+        {
+          "_origen": "inventario_geositios",
+          "titulo": "PIEDRA DEL ÁGUILA"
+        }
+      ],
+      "ARAUCANÍA": [
+        {
+          "_origen": "inventario_geositios",
+          "titulo": "CONO NAVIDAD"
+        },
+        {
+          "_origen": "inventario_geositios",
+          "titulo": "CAÑADÓN TRUFUL-TRUFUL"
+        },
+        {
+          "_origen": "inventario_geositios",
+          "titulo": "CRÁTER DEL VOLCÁN VILLARRICA"
+        }
+      ],
+      "LOS RÍOS": [
+        {
+          "_origen": "inventario_geositios",
+          "titulo": "DEPÓSITOS INTERGLACIARES DE VALDIVIA EN EL FUERTE NIEBLA"
+        },
+        {
+          "_origen": "inventario_geositios",
+          "titulo": "LAVAS AA Y PAHOEHOE DEL VOLCÁN VILLARRICA"
+        },
+        {
+          "_origen": "inventario_geositios",
+          "titulo": "CONO MIRADOR"
+        }
+      ],
+      "LOS LAGOS": [
+        {
+          "_origen": "inventario_geositios",
+          "titulo": "SITIO PALEOARQUEOLÓGICO DE PILAUCO"
+        },
+        {
+          "_origen": "inventario_geositios",
+          "titulo": "SALTOS DEL PETROHUÉ"
+        },
+        {
+          "_origen": "inventario_geositios",
+          "titulo": "DOMOS DEL VOLCÁN CHAITÉN"
+        }
+      ],
+      "REGIÓN DE AYSÉN DEL GENERAL CARLOS IBAÑEZ DEL CAMPO": [
+        {
+          "_origen": "inventario_geositios",
+          "titulo": "CERRO CASTILLO"
+        },
+        {
+          "_origen": "inventario_geositios",
+          "titulo": "CAPILLA DE MÁRMOL"
+        },
+        {
+          "_origen": "inventario_geositios",
+          "titulo": "PIEDRA CLAVADA"
+        }
+      ],
+      "REGIÓN DE MAGALLANES Y DE LA ANTÁRTICA CHILENA": [
+        {
+          "_origen": "inventario_geositios",
+          "titulo": "TORRES Y CUERNOS DEL PAINE"
+        },
+        {
+          "_origen": "inventario_geositios",
+          "titulo": "CONO DE PALI-AIKE"
+        },
+        {
+          "_origen": "inventario_geositios",
+          "titulo": "DIENTES DE NAVARINO"
+        }
+      ],
+      "Chile": [
+        {
+          "_origen": "libros",
+          "titulo": "Léxico Estratigráfico (extracto pp. 55-83, Carta H834) - SERNAGEOMIN"
+        }
+      ],
+      "Argentina": [
+        {
+          "_origen": "libros",
+          "titulo": "Las condiciones biofísicas y climáticas de la Argentina (Capítulo VIII de 'Geopolítica argentina')"
+        },
+        {
+          "_origen": "libros",
+          "titulo": "Léxico Estratigráfico de la Argentina. Volumen XIII - Cuaternario"
+        },
+        {
+          "_origen": "libros",
+          "titulo": "Léxico Estratigráfico de la Argentina. Volumen IV - Silúrico"
+        },
+        {
+          "_origen": "libros",
+          "titulo": "Léxico Estratigráfico de la Argentina. Volumen V - Devónico"
+        }
+      ],
+      "Chile - Aysén (Parque Nacional Patagonia, valle del río Jeinimeni)": [
+        {
+          "_origen": "libros",
+          "titulo": "Rutas Interactivas e Inclusivas en Jeinimeni"
+        }
+      ],
+      "Chile - Región de Atacama, Valle del Copiapó": [
+        {
+          "_origen": "libros",
+          "titulo": "Lugares de Interés Geológico del Valle del Copiapó. Geopatrimonio, Geodiversidad y Geoturismo"
+        }
+      ],
+      "Bolivia": [
+        {
+          "_origen": "libros",
+          "titulo": "Léxico Estratigráfico de Bolivia"
+        }
+      ],
+      "Chile - Región de O'Higgins (cordillera y precordillera; comunas de San Fernando, Machalí, Requínoa, Rengo, Codegua)": [
+        {
+          "_origen": "libros",
+          "titulo": "Geopatrimonio de los Andes de O'Higgins. Una apuesta por el geoturismo"
+        }
+      ],
+      "México (marco metodológico aplicable genéricamente a Latinoamérica)": [
+        {
+          "_origen": "libros",
+          "titulo": "Propuesta metodológica para la generación de productos turísticos a partir de la comunidad local"
+        }
+      ],
+      "Aysén": [
+        {
+          "_origen": "papers_regionales_chile",
+          "titulo": "Geositios de la región de Aysén (Chile): resumen de la historia geológica regional, propuesta de contextos geológicos temáticos e inventario"
+        },
+        {
+          "_origen": "papers_regionales_chile",
+          "titulo": "Geositios de la región de Aysén (Chile): resumen de la historia geológica regional, propuesta de contextos geológicos temáticos e inventario"
+        },
+        {
+          "_origen": "tesis_regionales",
+          "titulo": "Geología y Geopatrimonio del Área de Cerro Castillo, XI Región de Aysén, Chile"
+        },
+        {
+          "_origen": "tesis_regionales",
+          "titulo": "Geopatrimonio de las unidades volcánicas y plutónicas del sector oriental del Lago General Carrera: Selección, caracterización y estrategias de divulgación"
+        },
+        {
+          "_origen": "tesis_regionales",
+          "titulo": "Geoconservación en los valles Exploradores y Leones (Campo de Hielo Norte, Región de Aysén): Inventario, cuantificación, medidas de protección y divulgación"
+        },
+        {
+          "_origen": "tesis_regionales",
+          "titulo": "Geopatrimonio de la Península La Carmela, Región de Aysén: Identificación, evaluación y valoración de potenciales geositios"
+        }
+      ],
+      "Atacama": [
+        {
+          "_origen": "papers_regionales_chile",
+          "titulo": "(Geo)patrimonio en la Región de Atacama – con enfoque a la comuna Caldera"
+        },
+        {
+          "_origen": "papers_regionales_chile",
+          "titulo": "La Ruta de Segerstrom: transversa geoturística y geopatrimonial en la Provincia de Copiapó, Región de Atacama"
+        },
+        {
+          "_origen": "tesis_regionales",
+          "titulo": "Inventario de sitios de geodiversidad y creación de rutas temáticas dirigidas a escolares y turistas de las comunas de Copiapó y Caldera, Región de Atacama"
+        }
+      ],
+      "Antofagasta (Atacama altiplánico)": [
+        {
+          "_origen": "papers_regionales_chile",
+          "titulo": "Extremófilos y el origen de la vida en Atacama"
+        }
+      ],
+      "Antofagasta y Tarapacá (Puna chilena)": [
+        {
+          "_origen": "papers_regionales_chile",
+          "titulo": "Guía para la Conservación y Seguimiento de Ecosistemas Microbianos Extremófilos: Tapetes Microbianos, Microbialitos y Endoevaporitas"
+        }
+      ],
+      "Los Lagos (provincia Llanquihue)": [
+        {
+          "_origen": "papers_regionales_chile",
+          "titulo": "Sitios Geológicos en la Región (Llanquihue) - Geoturismo"
+        }
+      ],
+      "Los Lagos (Patagonia Verde: Cochamó, Hualaihué, Chaitén, Futaleufú, Palena)": [
+        {
+          "_origen": "papers_regionales_chile",
+          "titulo": "Patagonia Verde: Guía Geoturística"
+        }
+      ],
+      "Los Lagos (Patagonia Verde: Cochamó, Hualaihué, Chaitén, Palena, Futaleufú)": [
+        {
+          "_origen": "papers_regionales_chile",
+          "titulo": "Patagonia Verde - Cultura e Identidad para el Desarrollo del Turismo Territorial"
+        }
+      ],
+      "Valparaíso (Isla de Pascua/Rapa Nui)": [
+        {
+          "_origen": "papers_regionales_chile",
+          "titulo": "Rapa Nui (Easter Island) monument (ahu) locations explained by freshwater sources"
+        }
+      ],
+      "Chile (todas las regiones)": [
+        {
+          "_origen": "papers_regionales_chile",
+          "titulo": "Estado actual de reconocimiento y distribución geográfica del Patrimonio Geológico Chileno"
+        }
+      ],
+      "Los Lagos (comuna Puerto Varas)": [
+        {
+          "_origen": "papers_regionales_chile",
+          "titulo": "Valoración de la geodiversidad en la comuna de Puerto Varas: Nuevas perspectivas para el desarrollo local"
+        }
+      ],
+      "Arica y Parinacota (Altiplano norte de Chile)": [
+        {
+          "_origen": "papers_regionales_chile",
+          "titulo": "A rare case of grass flow induced by the M8.4 Arequipa earthquake, June 2001, in the Altiplano of Northern Chile"
+        }
+      ],
+      "no aplica (España, marco europeo)": [
+        {
+          "_origen": "papers_regionales_chile",
+          "titulo": "Patrimonio geológico: un nuevo nicho de empleo verde"
+        }
+      ],
+      "Magallanes y de la Antártica Chilena": [
+        {
+          "_origen": "tesis_regionales",
+          "titulo": "Identificación y Evaluación de Geositios en el Parque Nacional Torres del Paine"
+        },
+        {
+          "_origen": "tesis_regionales",
+          "titulo": "Valoración de potenciales geositios en el Campo Volcánico Pali Aike, XII Región de Magallanes y de la Antártica Chilena"
+        }
+      ],
+      "Antofagasta": [
+        {
+          "_origen": "tesis_regionales",
+          "titulo": "Geodiversidad en el sector norte del Parque Nacional Llullaillaco: Identificación, clasificación cuantitativa y cualitativa del patrimonio geológico"
+        }
+      ],
+      "Maule": [
+        {
+          "_origen": "tesis_regionales",
+          "titulo": "Valoración del geopatrimonio de la Reserva Nacional Altos de Lircay mediante caracterización, cuantificación y difusión de su geodiversidad"
+        },
+        {
+          "_origen": "tesis_regionales",
+          "titulo": "Metodología para la evaluación de glaciares como patrimonio geológico, con aplicación en la Cordillera Maulina, Región del Maule"
+        }
+      ],
+      "Araucanía": [
+        {
+          "_origen": "tesis_regionales",
+          "titulo": "Identificación, caracterización y cuantificación de geositios para la creación del I Geoparque en Chile, en torno al Parque Nacional Conguillío"
+        },
+        {
+          "_origen": "tesis_regionales",
+          "titulo": "Inventario de geositios en la comuna de Lonquimay, para la creación del Geoparque Kütralkura, IX Región de la Araucanía"
+        },
+        {
+          "_origen": "tesis_regionales",
+          "titulo": "Relatos del Geoparque Kütralkura: Una visión geomorfológica y cultural del territorio. Región de la Araucanía"
+        }
+      ],
+      "Los Lagos": [
+        {
+          "_origen": "tesis_regionales",
+          "titulo": "Valoración de la geodiversidad en la comuna de Puerto Varas: nuevas perspectivas para el desarrollo local"
+        }
+      ],
+      "Biobío": [
+        {
+          "_origen": "tesis_regionales",
+          "titulo": "Identificación, caracterización y cuantificación del patrimonio geológico de la zona sur de la Reserva de la Biósfera Corredor Biológico Nevados de Chillán-Laguna del Laja"
+        }
+      ],
+      "Arica y Parinacota": [
+        {
+          "_origen": "tesis_regionales",
+          "titulo": "Metodología de evaluación cuantitativa de sitios de interés geológico educativo: Aplicación en el Parque Nacional Lauca, Región de Arica y Parinacota"
+        }
+      ],
+      "Metropolitana": [
+        {
+          "_origen": "tesis_regionales",
+          "titulo": "Patrimonio geológico en la ciudad de Santiago: Caracterización y valoración de geositios en torno a un núcleo urbano"
+        }
+      ],
+      "Valparaíso": [
+        {
+          "_origen": "tesis_regionales",
+          "titulo": "Patrimonio geológico de la comuna de Puchuncaví, para la creación del Geoparque Puchuncaví, V Región de Valparaíso"
+        },
+        {
+          "_origen": "tesis_regionales",
+          "titulo": "Patrimonio geológico de la comuna de Petorca (32°S-32°24'S): Análisis de lugares de interés geológico y su contextualización en un modelo de evolución paleogeográfico"
+        }
+      ],
+      "Ñuble (ex Biobío)": [
+        {
+          "_origen": "tesis_regionales",
+          "titulo": "Geología, Geomorfología y Geopatrimonio en el Complejo Volcánico Nevados de Chillán, Región del Biobío"
+        }
+      ],
+      "Nacional (Chile completo, segmentado por orogenias)": [
+        {
+          "_origen": "tesis_regionales",
+          "titulo": "Potencial de los sitios de interés geológicos de Chile en la transmisión del conocimiento científico a la comunidad"
+        }
+      ]
+    },
+    "por_anio": {
+      "1996": [
+        "Léxico Estratigráfico de Bolivia"
+      ],
+      "2001": [
+        "Interrelación entre la actividad turística y los espacios naturales protegidos"
+      ],
+      "2005": [
+        "A rare case of grass flow induced by the M8.4 Arequipa earthquake, June 2001, in the Altiplano of Northern Chile"
+      ],
+      "2007": [
+        "Patrimonio hidrogeológico y las aguas minerales en la provincia de Cuenca",
+        "Geoheritage and geoconservation – history, definition, scope and scale",
+        "Identificación y Evaluación de Geositios en el Parque Nacional Torres del Paine"
+      ],
+      "2008": [
+        "El patrimonio geológico y la geodiversidad de España. Inicio de su reconocimiento gracias a la nueva legislación"
+      ],
+      "2010": [
+        "Patrimonio geológico: un nuevo nicho de empleo verde",
+        "Identificación, caracterización y cuantificación de geositios para la creación del I Geoparque en Chile, en torno al Parque Nacional Conguillío"
+      ],
+      "2011": [
+        "Geological, Geographical and Legal Considerations for the Conservation of Unique Iron Oxide and Sulphur Flows at El Laco and Lastarria Volcanic Complexes, Central Andes, Northern Chile",
+        "Naturalezas discursivas en espacios protegidos",
+        "La Ruta de Segerstrom: transversa geoturística y geopatrimonial en la Provincia de Copiapó, Región de Atacama"
+      ],
+      "2012": [
+        "Geositios de Chile (Librito SGCh)",
+        "Valoración de potenciales geositios en el Campo Volcánico Pali Aike, XII Región de Magallanes y de la Antártica Chilena"
+      ],
+      "2013": [
+        "El Inventario de Lugares de Interés Geológico de la Comunidad Autónoma del País Vasco (CAPV)",
+        "Inventario de geositios en la comuna de Lonquimay, para la creación del Geoparque Kütralkura, IX Región de la Araucanía",
+        "Patrimonio geológico en la ciudad de Santiago: Caracterización y valoración de geositios en torno a un núcleo urbano"
+      ],
+      "2014": [
+        "El Geoparque Villuercas-Ibores-Jara y su impacto múltiple en el área de influencia",
+        "O patrimônio geológico de Ilhabela-SP: estratégias de geoconservação",
+        "(Geo)patrimonio en la Región de Atacama – con enfoque a la comuna Caldera",
+        "Geología y Geopatrimonio del Área de Cerro Castillo, XI Región de Aysén, Chile",
+        "Geología, Geomorfología y Geopatrimonio en el Complejo Volcánico Nevados de Chillán, Región del Biobío"
+      ],
+      "2015": [
+        "Evolución del estado de conservación de Lugares de Interés Geológico sometidos a modificaciones antrópicas",
+        "Estado actual de reconocimiento y distribución geográfica del Patrimonio Geológico Chileno"
+      ],
+      "2016": [
+        "Patrimonio geológico y su conservación en Chile",
+        "Inventory and Quantitative Assessment of Geosites and Geodiversity Sites: a Review",
+        "Patrimonio geológico y su conservación en América Latina. Situación y perspectivas nacionales",
+        "Geoparques globales en La Libertad: Notas preliminares para la geoconservación, educación y geoturismo",
+        "Potencialidades no Município de Oiapoque, Amapá, para o Desenvolvimento do Geoturismo",
+        "Patrimonio geológico de la comuna de Puchuncaví, para la creación del Geoparque Puchuncaví, V Región de Valparaíso"
+      ],
+      "2017": [
+        "Geopatrimonio de los Andes de O'Higgins. Una apuesta por el geoturismo",
+        "Enfoque de abajo a arriba para el desarrollo sostenible: La estructura de gestión del Geoparque Mundial UNESCO Villuercas-Ibores-Jara",
+        "Propuesta de monitorización instrumental para la geoconservación del LIG 'Icnitas de reptiles triásicos' en el Geoparque de la Comarca de Molina-Alto Tajo",
+        "Guía para la Conservación y Seguimiento de Ecosistemas Microbianos Extremófilos: Tapetes Microbianos, Microbialitos y Endoevaporitas",
+        "Valoración de la geodiversidad en la comuna de Puerto Varas: Nuevas perspectivas para el desarrollo local",
+        "Geopatrimonio de las unidades volcánicas y plutónicas del sector oriental del Lago General Carrera: Selección, caracterización y estrategias de divulgación",
+        "Geodiversidad en el sector norte del Parque Nacional Llullaillaco: Identificación, clasificación cuantitativa y cualitativa del patrimonio geológico",
+        "Valoración de la geodiversidad en la comuna de Puerto Varas: nuevas perspectivas para el desarrollo local",
+        "Geopatrimonio de la Península La Carmela, Región de Aysén: Identificación, evaluación y valoración de potenciales geositios"
+      ],
+      "2018": [
+        "Léxico Estratigráfico de la Argentina. Volumen XIII - Cuaternario",
+        "Geoconservation in Chile: State of the Art and Analysis",
+        "Extremófilos y origen de la vida en Atacama / Extremophiles and the origin of life in Atacama",
+        "Geociencias en la etapa escolar: hacia una sociedad preventiva y con cultura de desastres",
+        "The Inventory of Geological Heritage of the State of São Paulo, Brazil: Methodological Basis, Results and Perspectives",
+        "Geodiversity and Geoheritage: Crossing Disciplines and Approaches (Editorial)",
+        "Extremófilos y el origen de la vida en Atacama",
+        "Patagonia Verde - Cultura e Identidad para el Desarrollo del Turismo Territorial",
+        "Identificación, caracterización y cuantificación del patrimonio geológico de la zona sur de la Reserva de la Biósfera Corredor Biológico Nevados de Chillán-Laguna del Laja",
+        "Patrimonio geológico de la comuna de Petorca (32°S-32°24'S): Análisis de lugares de interés geológico y su contextualización en un modelo de evolución paleogeográfico",
+        "Potencial de los sitios de interés geológicos de Chile en la transmisión del conocimiento científico a la comunidad",
+        "Geoconservación en los valles Exploradores y Leones (Campo de Hielo Norte, Región de Aysén): Inventario, cuantificación, medidas de protección y divulgación"
+      ],
+      "2019": [
+        "Propuesta metodológica para la generación de productos turísticos a partir de la comunidad local",
+        "Atlas del Patrimonio Cultural y Natural: Primera compilación de información geoespacial. Chile 2016 (Versión revisada 2019)",
+        "Geotourism (Editorial - Special Issue Geosciences)",
+        "Gamificación para la geoconservación mediante Minecraft",
+        "O Mapa da Natureza do Brasil. Revisando (Libro de Resúmenes XXIII Bienal RSEHN)",
+        "Geoheritage importance of stratigraphic type sections, type localities and reference sites—review, discussion and protocols for geoconservation",
+        "Hacia una conservación integrada del paisaje biogeocultural de Atacama",
+        "'Apadrina una Roca'. Participación ciudadana para la geoconservación en España",
+        "Rapa Nui (Easter Island) monument (ahu) locations explained by freshwater sources",
+        "Metodología de evaluación cuantitativa de sitios de interés geológico educativo: Aplicación en el Parque Nacional Lauca, Región de Arica y Parinacota"
+      ],
+      "2020": [
+        "Rutas Interactivas e Inclusivas en Jeinimeni",
+        "Celebración Día del Patrimonio - Programa Fomento Productivo de los Recursos Geológicos de la Región de Aysén",
+        "Using Digital Field Tools for Remote Teaching Webinar Series",
+        "Virtual geological mapping in the Lurestan region of the Zagros with Google Earth",
+        "International Geodiversity Day - Proposal arising from the Oxford Geoheritage Virtual Conference",
+        "Geositios de la región de Aysén (Chile): resumen de la historia geológica regional, propuesta de contextos geológicos temáticos e inventario",
+        "Geositios de la región de Aysén (Chile): resumen de la historia geológica regional, propuesta de contextos geológicos temáticos e inventario",
+        "Patagonia Verde: Guía Geoturística"
+      ],
+      "2021": [
+        "Las condiciones biofísicas y climáticas de la Argentina (Capítulo VIII de 'Geopolítica argentina')",
+        "Léxico Estratigráfico de la Argentina. Volumen IV - Silúrico",
+        "Léxico Estratigráfico de la Argentina. Volumen V - Devónico",
+        "Geodiversidad, Patrimonio Geológico y Geositios del Cajón del Maipo - La Capital Geológica de Chile",
+        "Valoración del geopatrimonio de la Reserva Nacional Altos de Lircay mediante caracterización, cuantificación y difusión de su geodiversidad",
+        "Relatos del Geoparque Kütralkura: Una visión geomorfológica y cultural del territorio. Región de la Araucanía",
+        "Inventario de sitios de geodiversidad y creación de rutas temáticas dirigidas a escolares y turistas de las comunas de Copiapó y Caldera, Región de Atacama"
+      ],
+      "2022": [
+        "Lugares de Interés Geológico del Valle del Copiapó. Geopatrimonio, Geodiversidad y Geoturismo"
+      ],
+      "2023": [
+        "Metodología para la evaluación de glaciares como patrimonio geológico, con aplicación en la Cordillera Maulina, Región del Maule"
+      ]
+    }
+  },
+  "_estadisticas": {
+    "total_registros": 131,
+    "n_temas": 55,
+    "n_regiones": 47,
+    "rango_anios": [
+      "1996",
+      "2023"
+    ]
+  }
+}
