@@ -1,7 +1,11 @@
 # Datasets pesados — descargar siguiendo docs/bibliografia/PENDIENTES_DESCARGA.md
 docs/mapas/antartica/*.zip
+docs/mapas/antartica/ATA_SCAR_GeoMAP_v2022_08_ESRI/
 docs/mapas/chile/*.zip
 docs/mapas/chile/*.geojson
+
+# GeoJSON antártico generado por scripts/build_antartica_geojson.py (17 MB; regenerable)
+app/data/antartica_simplecode.geojson
 
 # Bibliografía PDF de terceros (copyright; cada uno descarga por su lado)
 docs/bibliografia/01_contextos_geologicos/*.pdf

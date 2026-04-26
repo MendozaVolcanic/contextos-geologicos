@@ -2,7 +2,8 @@
 // Stack: Leaflet vanilla, sin build. Datos en /app/data/*.
 
 const state = {
-  contextos: null,
+  contextos: null,           // 19 CGT Chile (Aysén) + Antártica placeholders
+  antartica: null,           // 21 SIMPLECODE classes from SCAR/GNS GeoMAP (lazy load)
   lexico: null,
   layer: null,
   selectedId: null,
@@ -10,6 +11,11 @@ const state = {
   filterTypes: new Set(),
   filterAges: new Set(),
   map: null,
+};
+
+const REGION_VIEW = {
+  chile: { center: [-46, -73], zoom: 5 },
+  antartica: { center: [-82, 0], zoom: 2 },
 };
 
 // Helper: create element with optional class, text, and children
@@ -59,12 +65,29 @@ function styleFor(feature) {
   };
 }
 
-function renderContextos() {
+async function ensureAntarticaLoaded() {
+  if (state.antartica) return;
+  try {
+    state.antartica = await fetch('data/antartica_simplecode.geojson').then(r => r.json());
+  } catch (e) {
+    console.warn('No se pudo cargar antartica_simplecode.geojson — corre scripts/build_antartica_geojson.py', e);
+    state.antartica = { type: 'FeatureCollection', features: [] };
+  }
+}
+
+async function renderContextos() {
   if (state.layer) state.map.removeLayer(state.layer);
 
-  const features = state.contextos.features.filter(f => {
+  let source;
+  if (state.filterRegion === 'antartica') {
+    await ensureAntarticaLoaded();
+    source = state.antartica.features;
+  } else {
+    source = state.contextos.features.filter(f => f.properties.region === 'chile');
+  }
+
+  const features = source.filter(f => {
     const p = f.properties;
-    if (p.region !== state.filterRegion) return false;
     if (state.filterTypes.size && !state.filterTypes.has(p.tipo)) return false;
     if (state.filterAges.size && !state.filterAges.has(p.edad)) return false;
     return true;
@@ -81,10 +104,26 @@ function renderContextos() {
   }).addTo(state.map);
 
   if (features.length) {
-    state.map.fitBounds(state.layer.getBounds(), { padding: [40, 40], maxZoom: 6 });
+    if (state.filterRegion === 'antartica') {
+      state.map.setView(REGION_VIEW.antartica.center, REGION_VIEW.antartica.zoom);
+    } else {
+      state.map.fitBounds(state.layer.getBounds(), { padding: [40, 40], maxZoom: 6 });
+    }
   }
 
+  // Reconstruir filtros según la región actual (las clases cambian)
+  rebuildFilters(source);
   renderContextList(features);
+}
+
+function rebuildFilters(features) {
+  const types = [...new Set(features.map(f => f.properties.tipo))].filter(Boolean).sort();
+  const ages = [...new Set(features.map(f => f.properties.edad))].filter(Boolean).sort();
+  // Si los filtros activos no aplican a la región nueva, los limpiamos
+  for (const t of [...state.filterTypes]) if (!types.includes(t)) state.filterTypes.delete(t);
+  for (const a of [...state.filterAges]) if (!ages.includes(a)) state.filterAges.delete(a);
+  buildChipGroup('type-filters', types, state.filterTypes);
+  buildChipGroup('age-filters', ages, state.filterAges);
 }
 
 function renderContextList(features) {
@@ -152,13 +191,6 @@ document.querySelector('.detail-panel .close').addEventListener('click', () => {
 });
 
 // ---------- Filtros ----------
-function buildFilters() {
-  const types = [...new Set(state.contextos.features.map(f => f.properties.tipo))];
-  const ages = [...new Set(state.contextos.features.map(f => f.properties.edad))];
-  buildChipGroup('type-filters', types, state.filterTypes);
-  buildChipGroup('age-filters', ages, state.filterAges);
-}
-
 function buildChipGroup(containerId, values, set) {
   const container = document.getElementById(containerId);
   clear(container);
@@ -260,9 +292,8 @@ async function main() {
   ]);
   state.contextos = ctxRes;
   state.lexico = lexRes;
-  buildFilters();
   buildLexFilters();
-  renderContextos();
+  await renderContextos();
   renderLexList();
 }
 
