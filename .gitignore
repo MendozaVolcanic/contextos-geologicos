@@ -9,6 +9,13 @@ docs/mapas/chile/*.geojson
 # - SCAR/GNS GeoMAP v2022.08 (CC-BY 4.0)
 # - SERNAGEOMIN Mapa Geológico 1:1.000.000
 
+# Material bibliográfico pesado (terceros, demasiado para repo)
+docs/congresos/
+docs/Libros/
+docs/Papers/
+docs/Tesis/
+docs/Simposios-Congresos/
+
 # Bibliografía PDF de terceros (copyright; cada uno descarga por su lado)
 docs/bibliografia/01_contextos_geologicos/*.pdf
 docs/bibliografia/02_tesis_regionales/*.pdf
