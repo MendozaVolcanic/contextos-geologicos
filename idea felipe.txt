@@ -1,0 +1,44 @@
+[6:07 p.m., 25/4/2026] Felipe  Fuentes: buenaa
+[6:08 p.m., 25/4/2026] Felipe  Fuentes: tengo dos
+[6:08 p.m., 25/4/2026] Felipe  Fuentes: ve que te tira sobre los contextos geológicos chilenos
+[6:08 p.m., 25/4/2026] Felipe  Fuentes: y los contextos geológicos antárticos
+[6:09 p.m., 25/4/2026] Felipe  Fuentes: necesitas meterle información como a notebookLM?
+[6:21 p.m., 25/4/2026] Nico Mendo: Osea puedes pedir que te el te busque pero siempre es mas eficiente cuando tu le metes.algo de input
+[6:22 p.m., 25/4/2026] Nico Mendo: ve que te tira sobre los contextos geológicos chilenos
+Ajaj pero explayate un poco mas
+[6:27 p.m., 25/4/2026] Felipe  Fuentes: los contextos geológicos es una forma de agrupar la geologia de un lugar para cuando se definan geositios puedan ser agrupados según esos contextos, por ejemplo los contextos chilenos incluyen cosas como el arco volcanico del jurasico, intrusivos del mioceno, arco volcanico cuaternario, y tambien procesos como remociones en masa, glaciaciones del pleistoceno, depositos fluviales, etx
+[6:27 p.m., 25/4/2026] Felipe  Fuentes: te puedo mandar una propuesta de contextos chilenos, que hicieron unos colegas para un congresp
+[6:28 p.m., 25/4/2026] Felipe  Fuentes: y otro de inglaterra que nos gustaria que fuese similar a ese
+[6:29 p.m., 25/4/2026] Felipe  Fuentes: y como fuentes podrias agregar el mapa geologico al millon y el libro geology of chile
+[6:33 p.m., 25/4/2026] Nico Mendo: Ok pero que quieres que sea un dashboard que explique los contextos y luego muestre los geositios
+[6:33 p.m., 25/4/2026] Nico Mendo: Alguna página de la qur quieras tomar ejemplo para diseño?
+[6:33 p.m., 25/4/2026] Nico Mendo: Podemos hacerlo todo
+[6:37 p.m., 25/4/2026] Felipe  Fuentes: Propuesta de definición de los Contextos Geológicos Chilenos para la caracterización del patrimonio geológico nacional. En actas del XIII Congreso Geológico Chileno
+[6:37 p.m., 25/4/2026] Felipe  Fuentes: mmm
+[6:40 p.m., 25/4/2026] Nico Mendo: O estas buscando un documento? pa eso gemini gratuito lo hace
+[6:40 p.m., 25/4/2026] Nico Mendo: dame algo mas complejo po
+[6:41 p.m., 25/4/2026] Felipe  Fuentes: claro podria ser un mapa estilo arcgis online que seleccione los poligonos de los contextos geologicos
+[6:41 p.m., 25/4/2026] Felipe  Fuentes: pero claro el trabajo seria hacer la definicion
+[6:42 p.m., 25/4/2026] Felipe  Fuentes: y luego mostrar los distintos contextos en un mapa interactivo
+[6:42 p.m., 25/4/2026] Felipe  Fuentes: al que despues lo podamos cargar el shp del inventario nacional de geositios
+[6:43 p.m., 25/4/2026] Felipe  Fuentes: https://www.researchgate.net/publication/328490977_Geoconservation_in_Chile_State_of_the_Art_and_Analysis
+[6:43 p.m., 25/4/2026] Felipe  Fuentes: esa tiene hartas referencias
+[6:46 p.m., 25/4/2026] Felipe  Fuentes: BGS Geology Viewer
+[6:46 p.m., 25/4/2026] Felipe  Fuentes: https://www.bgs.ac.uk/map-viewers/bgs-geology-viewer/
+[6:46 p.m., 25/4/2026] Felipe  Fuentes: https://webapps.bgs.ac.uk/lexicon/
+[6:47 p.m., 25/4/2026] Felipe  Fuentes: lo del lexico tbn lo podriamos hacer
+[6:47 p.m., 25/4/2026] Felipe  Fuentes: tengo un documento que hicimos con el lexico geologico chileno
+[6:49 p.m., 25/4/2026] Felipe  Fuentes: https://durham-repository.worktribe.com/output/1673488
+[6:50 p.m., 25/4/2026] Felipe  Fuentes: y lo otro si quieres un desafio es crear un visor de superficies 3d estilo leapfrog que permita visualizar y cargar rasters
+[6:50 p.m., 25/4/2026] Felipe  Fuentes: como para hacer un visualizador de acuiferos
+[6:53 p.m., 25/4/2026] Felipe  Fuentes: ya voy a compartir con mi familia
+[6:58 p.m., 25/4/2026] Nico Mendo: claro pa mi no hay tiempo
+[7:34 p.m., 25/4/2026] Felipe  Fuentes: jajaj te di casi una hora
+[8:13 p.m., 25/4/2026] Felipe  Fuentes: y lo otro es hacer lo mismo con los contextos geologicos antarticoa
+[8:13 p.m., 25/4/2026] Felipe  Fuentes: s
+[8:14 p.m., 25/4/2026] Felipe  Fuentes: con el mapa geologico antartico
+[8:27 p.m., 25/4/2026] Felipe  Fuentes: https://www.bibliotecanacionaldigital.gob.cl/colecciones/BND/00/MP/MP0002121.pdf
+[8:28 p.m., 25/4/2026] Felipe  Fuentes: https://www.gns.cri.nz/data-and-resources/geomap-geological-mapping-of-antarctica/
+[8:30 p.m., 25/4/2026] Felipe  Fuentes: https://scar.org/science/geo/geoconservation#:~:text=The%20prohibition%20of%20mineral%20resource,potential%20oversampling%20for%20scientific%20purposes.
+
+https://communities.springernature.com/posts/calling-for-antarctic-geoheritage-proposals-advancing-geological-conservation-through-scar#:~:text=A%20Geological%20Framework%20refers%20to,formally%20agreed%20upon%20for%20Antarctica.

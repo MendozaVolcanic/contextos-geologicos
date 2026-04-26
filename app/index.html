@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contextos Geológicos · Chile & Antártica</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <h1>Contextos Geológicos</h1>
+    <nav class="tabs">
+      <button class="tab active" data-tab="mapa">Mapa de contextos</button>
+      <button class="tab" data-tab="lexico">Léxico estratigráfico</button>
+      <button class="tab" data-tab="acerca">Acerca</button>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Mapa -->
+    <section id="tab-mapa" class="tab-panel active">
+      <aside class="sidebar">
+        <div class="filter-group">
+          <label>Región</label>
+          <select id="region-filter">
+            <option value="chile">Chile continental</option>
+            <option value="antartica">Antártica chilena</option>
+          </select>
+        </div>
+        <div class="filter-group">
+          <label>Filtrar por tipo</label>
+          <div id="type-filters" class="chips"></div>
+        </div>
+        <div class="filter-group">
+          <label>Filtrar por edad</label>
+          <div id="age-filters" class="chips"></div>
+        </div>
+        <h3>Contextos</h3>
+        <ul id="context-list" class="context-list"></ul>
+      </aside>
+      <div id="map"></div>
+      <aside id="detail-panel" class="detail-panel hidden">
+        <button class="close" aria-label="Cerrar">×</button>
+        <h2 id="detail-name"></h2>
+        <p class="badges" id="detail-badges"></p>
+        <h4>Descripción</h4>
+        <p id="detail-desc"></p>
+        <h4>Edad</h4>
+        <p id="detail-age"></p>
+        <h4>Unidades representativas</h4>
+        <ul id="detail-units"></ul>
+        <h4>Geositios asociados</h4>
+        <p id="detail-geosites" class="muted">Pendiente: cargar SHP del inventario nacional.</p>
+      </aside>
+    </section>
+
+    <!-- Léxico -->
+    <section id="tab-lexico" class="tab-panel">
+      <div class="lexicon-layout">
+        <aside class="sidebar">
+          <input id="lex-search" type="search" placeholder="Buscar formación, complejo, grupo…" />
+          <div class="filter-group">
+            <label>Período</label>
+            <select id="lex-period">
+              <option value="">Todos</option>
+            </select>
+          </div>
+          <ul id="lex-list" class="lex-list"></ul>
+        </aside>
+        <article id="lex-detail" class="lex-detail">
+          <p class="muted">Selecciona una unidad del listado.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Acerca -->
+    <section id="tab-acerca" class="tab-panel">
+      <div class="prose">
+        <h2>Acerca del proyecto</h2>
+        <p>
+          Plataforma para visualizar los <strong>Contextos Geológicos</strong> de Chile y la Antártica, y
+          consultar el <strong>léxico estratigráfico</strong> de las unidades de roca. Inspirada en
+          <a href="https://www.bgs.ac.uk/map-viewers/bgs-geology-viewer/" target="_blank">BGS Geology Viewer</a>
+          y <a href="https://webapps.bgs.ac.uk/lexicon/" target="_blank">BGS Lexicon of Named Rock Units</a>.
+        </p>
+        <h3>Fuentes</h3>
+        <ul>
+          <li>Mourgues, Schilling &amp; Castro (2012) — Propuesta de Contextos Geológicos Chilenos. XIII Congreso Geológico Chileno.</li>
+          <li>Schilling et al. (2018) — Geoconservation in Chile: State of the Art and Analysis.</li>
+          <li>Léxico Estratigráfico de Chile — informes prácticas profesionales SERNAGEOMIN (2024).</li>
+          <li>SCAR EG-GEOCON — Antarctic Geoconservation Framework.</li>
+          <li>Mapa Geológico de Chile 1:1.000.000 — SERNAGEOMIN.</li>
+        </ul>
+        <h3>Estado</h3>
+        <p>Versión inicial. Polígonos del mapa son <em>placeholders</em> ilustrativos hasta integrar el shapefile oficial. Léxico inicial alimentado con muestras desde los informes SERNAGEOMIN; integración completa pendiente.</p>
+      </div>
+    </section>
+  </main>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="app.js" type="module"></script>
+</body>
+</html>

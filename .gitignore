@@ -1,0 +1,24 @@
+# Datasets pesados — descargar siguiendo docs/bibliografia/PENDIENTES_DESCARGA.md
+docs/mapas/antartica/*.zip
+docs/mapas/chile/*.zip
+docs/mapas/chile/*.geojson
+
+# Bibliografía PDF de terceros (copyright; cada uno descarga por su lado)
+docs/bibliografia/01_contextos_geologicos/*.pdf
+docs/bibliografia/02_tesis_regionales/*.pdf
+docs/bibliografia/03_mapas_base/*.pdf
+
+# Texto extraído de PDFs (regenerable)
+docs/bibliografia/**/*.txt
+docs/pdfs/*.txt
+
+# Sistema
+.DS_Store
+Thumbs.db
+.claude/
+.idea/
+.vscode/
+*.log
+node_modules/
+__pycache__/
+*.pyc
