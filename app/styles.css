@@ -64,6 +64,8 @@ select, input[type="search"] {
   border: 1px solid var(--border); border-radius: 4px; padding: 0.4rem 0.5rem;
   font-size: 0.9rem;
 }
+.checkbox { display: flex; align-items: center; gap: 0.4rem; font-size: 0.85rem; cursor: pointer; }
+.checkbox input { accent-color: var(--accent); }
 .chips { display: flex; flex-wrap: wrap; gap: 0.25rem; }
 .chip {
   font-size: 0.75rem; padding: 0.2rem 0.55rem; border-radius: 999px;
@@ -83,7 +85,8 @@ select, input[type="search"] {
 }
 .context-list li.hidden { display: none; }
 
-#map { width: 100%; height: 100%; background: #0a0e13; }
+#map { width: 100%; height: 100%; background: #0a1929; }
+.leaflet-container { background: #0a1929; }
 
 .detail-panel {
   background: var(--panel); border-left: 1px solid var(--border);
@@ -105,6 +108,19 @@ select, input[type="search"] {
   display: inline-block; font-size: 0.7rem; padding: 0.15rem 0.5rem;
   border-radius: 3px; background: var(--panel-2); margin-right: 0.3rem;
 }
+
+/* Globo 3D */
+#tab-globo { display: none; }
+#tab-globo.active { display: grid; grid-template-columns: 320px 1fr; }
+#tab-globo.active.with-detail { grid-template-columns: 320px 1fr 360px; }
+#cesium-container { width: 100%; height: 100%; background: #000; }
+.btn-view {
+  display: block; width: 100%; margin-bottom: 0.3rem;
+  padding: 0.45rem 0.6rem; background: var(--panel-2); color: var(--text);
+  border: 1px solid var(--border); border-radius: 4px; cursor: pointer;
+  font-size: 0.85rem; text-align: left;
+}
+.btn-view:hover { background: var(--accent); border-color: var(--accent); }
 
 /* Léxico */
 .lexicon-layout { display: grid; grid-template-columns: 320px 1fr; width: 100%; height: 100%; }

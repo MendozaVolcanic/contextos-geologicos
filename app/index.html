@@ -5,6 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Contextos Geológicos · Chile & Antártica</title>
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.9.2/proj4.js"></script>
+  <script src="https://unpkg.com/proj4leaflet@1.0.2/src/proj4leaflet.js"></script>
+  <link rel="stylesheet" href="https://cesium.com/downloads/cesiumjs/releases/1.117/Build/Cesium/Widgets/widgets.css" />
+  <script src="https://cesium.com/downloads/cesiumjs/releases/1.117/Build/Cesium/Cesium.js"></script>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -12,6 +17,7 @@
     <h1>Contextos Geológicos</h1>
     <nav class="tabs">
       <button class="tab active" data-tab="mapa">Mapa de contextos</button>
+      <button class="tab" data-tab="globo">Globo 3D</button>
       <button class="tab" data-tab="lexico">Léxico estratigráfico</button>
       <button class="tab" data-tab="acerca">Acerca</button>
     </nav>
@@ -27,6 +33,12 @@
             <option value="chile">Chile continental</option>
             <option value="antartica">Antártica chilena</option>
           </select>
+        </div>
+        <div class="filter-group">
+          <label class="checkbox">
+            <input type="checkbox" id="toggle-base" checked />
+            Mostrar mapa geológico base
+          </label>
         </div>
         <div class="filter-group">
           <label>Filtrar por tipo</label>
@@ -52,6 +64,35 @@
         <ul id="detail-units"></ul>
         <h4>Geositios asociados</h4>
         <p id="detail-geosites" class="muted">Pendiente: cargar SHP del inventario nacional.</p>
+      </aside>
+    </section>
+
+    <!-- Globo 3D -->
+    <section id="tab-globo" class="tab-panel">
+      <aside class="sidebar">
+        <h3>Vista 3D</h3>
+        <p class="muted" style="font-size:0.85rem">Globo terráqueo con CesiumJS. Capas cargadas desde los GeoJSON procesados de Chile (149 unidades geológicas) y Antártica (21 clases SIMPLECODE).</p>
+        <div class="filter-group">
+          <label>Capas</label>
+          <label class="checkbox"><input type="checkbox" id="globo-chile" checked /> Mapa Geológico de Chile</label>
+          <label class="checkbox"><input type="checkbox" id="globo-antartica" checked /> SCAR GeoMAP Antártica</label>
+          <label class="checkbox"><input type="checkbox" id="globo-cgt" checked /> CGT Aysén (Benado 2020)</label>
+        </div>
+        <div class="filter-group">
+          <label>Vistas rápidas</label>
+          <button class="btn-view" data-view="chile">Chile</button>
+          <button class="btn-view" data-view="antartica">Antártica</button>
+          <button class="btn-view" data-view="continente">América del Sur + Antártica</button>
+          <button class="btn-view" data-view="globo">Globo completo</button>
+        </div>
+        <p class="muted" style="font-size:0.75rem; margin-top:1rem">Click en un polígono para ver su info. Arrastra con click derecho para inclinar la cámara.</p>
+      </aside>
+      <div id="cesium-container"></div>
+      <aside id="globo-detail" class="detail-panel hidden">
+        <button class="close" aria-label="Cerrar">×</button>
+        <h2 id="globo-detail-name"></h2>
+        <p id="globo-detail-meta" class="muted"></p>
+        <p id="globo-detail-desc"></p>
       </aside>
     </section>
 
@@ -98,7 +139,7 @@
     </section>
   </main>
 
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="globo.js"></script>
   <script src="app.js" type="module"></script>
 </body>
 </html>

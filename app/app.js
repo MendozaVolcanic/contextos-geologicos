@@ -2,21 +2,46 @@
 // Stack: Leaflet vanilla, sin build. Datos en /app/data/*.
 
 const state = {
-  contextos: null,           // 19 CGT Chile (Aysén) + Antártica placeholders
-  antartica: null,           // 21 SIMPLECODE classes from SCAR/GNS GeoMAP (lazy load)
+  contextos: null,
+  antartica: null,           // 21 SIMPLECODE classes (lazy)
+  chileGeologico: null,      // Mapa geológico de Chile 1:1M (lazy)
   lexico: null,
-  layer: null,
+  layer: null,               // capa de contextos (CGT)
+  baseLayer: null,           // capa base geológica
   selectedId: null,
   filterRegion: 'chile',
   filterTypes: new Set(),
   filterAges: new Set(),
+  showBase: true,
   map: null,
 };
 
 const REGION_VIEW = {
   chile: { center: [-46, -73], zoom: 5 },
-  antartica: { center: [-82, 0], zoom: 2 },
+  antartica: { center: [-90, 0], zoom: 2 },
 };
+
+// EPSG:3031 — Antarctic Polar Stereographic (true scale at 71°S)
+// Resolutions and origin tomados de la convención del SCAR Antarctic Digital Database.
+const ANTARCTIC_CRS_BOUNDS = 12367396.2185;
+const antarcticCRS = () => new L.Proj.CRS(
+  'EPSG:3031',
+  '+proj=stere +lat_0=-90 +lat_ts=-71 +lon_0=0 +k=1 +x_0=0 +y_0=0 +datum=WGS84 +units=m +no_defs',
+  {
+    origin: [-ANTARCTIC_CRS_BOUNDS, ANTARCTIC_CRS_BOUNDS],
+    resolutions: [
+      67733.46880027094,
+      33866.73440013547,
+      16933.367200067736,
+      8466.683600033868,
+      4233.341800016934,
+      2116.670900008467,
+      1058.3354500042335,
+      529.1677250021168,
+      264.5838625010584,
+    ],
+  }
+);
 
 // Helper: create element with optional class, text, and children
 function el(tag, opts = {}, children = []) {
@@ -42,26 +67,58 @@ document.querySelectorAll('.tab').forEach(btn => {
     if (btn.dataset.tab === 'mapa' && state.map) {
       setTimeout(() => state.map.invalidateSize(), 50);
     }
+    if (btn.dataset.tab === 'globo' && typeof window.initGlobo === 'function') {
+      window.initGlobo();
+    }
   });
 });
 
 // ---------- Mapa ----------
-function initMap() {
-  const map = L.map('map', { center: [-35, -71], zoom: 4, minZoom: 2 });
-  L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
-    attribution: '&copy; OpenStreetMap &copy; CARTO',
-    subdomains: 'abcd',
-    maxZoom: 19,
-  }).addTo(map);
-  state.map = map;
+// Web Mercator (default): para Chile/mundo. Polar Stereographic: para Antártica.
+function initMap(region = 'chile') {
+  if (state.map) {
+    state.map.remove();
+    state.map = null;
+  }
+
+  if (region === 'antartica') {
+    const map = L.map('map', {
+      crs: antarcticCRS(),
+      center: REGION_VIEW.antartica.center,
+      zoom: REGION_VIEW.antartica.zoom,
+      minZoom: 0,
+      maxZoom: 8,
+      attributionControl: true,
+    });
+    // Sin tiles externos en EPSG:3031 (los proveedores comunes no sirven en este CRS).
+    // El fondo lo da el color del contenedor #map; los polígonos del GeoMAP son la visualización.
+    map.attributionControl.addAttribution('SCAR/GNS GeoMAP v2022.08 (Cox et al. 2023)');
+    state.map = map;
+  } else {
+    const map = L.map('map', {
+      center: REGION_VIEW.chile.center,
+      zoom: REGION_VIEW.chile.zoom,
+      minZoom: 2,
+    });
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+      attribution: '&copy; OpenStreetMap &copy; CARTO',
+      subdomains: 'abcd',
+      maxZoom: 19,
+    }).addTo(map);
+    state.map = map;
+  }
 }
 
 function styleFor(feature) {
+  // Para Chile, los CGT son rectángulos placeholder — los pinto como contornos
+  // semi-transparentes para que se vea el mapa geológico de fondo.
+  const isChile = feature.properties.region === 'chile';
   return {
     color: feature.properties.color,
-    weight: 1.5,
+    weight: isChile ? 2 : 1,
     fillColor: feature.properties.color,
-    fillOpacity: 0.45,
+    fillOpacity: isChile ? 0.18 : 0.5,
+    dashArray: isChile ? '4,3' : null,
   };
 }
 
@@ -75,8 +132,56 @@ async function ensureAntarticaLoaded() {
   }
 }
 
+async function ensureChileGeologicoLoaded() {
+  if (state.chileGeologico) return;
+  try {
+    state.chileGeologico = await fetch('data/chile_geologico.geojson').then(r => r.json());
+  } catch (e) {
+    console.warn('No se pudo cargar chile_geologico.geojson — corre scripts/build_chile_geologico.py', e);
+    state.chileGeologico = { type: 'FeatureCollection', features: [] };
+  }
+}
+
+function styleBaseChile(feature) {
+  return {
+    color: feature.properties.color,
+    weight: 0.4,
+    fillColor: feature.properties.color,
+    fillOpacity: 0.75,
+    interactive: false,
+  };
+}
+
+async function renderBaseLayer() {
+  if (state.baseLayer) {
+    state.map.removeLayer(state.baseLayer);
+    state.baseLayer = null;
+  }
+  if (!state.showBase) return;
+
+  if (state.filterRegion === 'chile') {
+    await ensureChileGeologicoLoaded();
+    state.baseLayer = L.geoJSON(state.chileGeologico, {
+      style: styleBaseChile,
+      interactive: false,
+    });
+    state.baseLayer.addTo(state.map);
+    state.baseLayer.bringToBack();
+  }
+  // Antártica: por ahora sin base geológica detallada (los polígonos SIMPCODE ya cubren todo).
+}
+
 async function renderContextos() {
-  if (state.layer) state.map.removeLayer(state.layer);
+  // Si el CRS actual no coincide con la región pedida, recreo el mapa (incluyendo capa base).
+  const wantPolar = state.filterRegion === 'antartica';
+  const isPolar = state.map && state.map.options.crs && state.map.options.crs.code === 'EPSG:3031';
+  if (!state.map || wantPolar !== isPolar) {
+    initMap(state.filterRegion);
+    state.baseLayer = null;
+  } else if (state.layer) {
+    state.map.removeLayer(state.layer);
+  }
+  await renderBaseLayer();
 
   let source;
   if (state.filterRegion === 'antartica') {
@@ -210,6 +315,11 @@ document.getElementById('region-filter').addEventListener('change', e => {
   renderContextos();
 });
 
+document.getElementById('toggle-base').addEventListener('change', e => {
+  state.showBase = e.target.checked;
+  renderBaseLayer();
+});
+
 // ---------- Léxico ----------
 function renderLexList() {
   const list = document.getElementById('lex-list');
@@ -285,7 +395,7 @@ function buildLexFilters() {
 
 // ---------- Bootstrap ----------
 async function main() {
-  initMap();
+  initMap(state.filterRegion);
   const [ctxRes, lexRes] = await Promise.all([
     fetch('data/contextos.geojson').then(r => r.json()),
     fetch('data/lexico.json').then(r => r.json()),

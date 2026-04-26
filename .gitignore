@@ -4,8 +4,10 @@ docs/mapas/antartica/ATA_SCAR_GeoMAP_v2022_08_ESRI/
 docs/mapas/chile/*.zip
 docs/mapas/chile/*.geojson
 
-# GeoJSON antártico generado por scripts/build_antartica_geojson.py (17 MB; regenerable)
-app/data/antartica_simplecode.geojson
+# Los GeoJSON procesados (app/data/*.geojson) SÍ se commitean para que el deploy
+# estático funcione sin necesidad de regenerar. Son derivados públicos de:
+# - SCAR/GNS GeoMAP v2022.08 (CC-BY 4.0)
+# - SERNAGEOMIN Mapa Geológico 1:1.000.000
 
 # Bibliografía PDF de terceros (copyright; cada uno descarga por su lado)
 docs/bibliografia/01_contextos_geologicos/*.pdf
