@@ -4,6 +4,12 @@ Visor interactivo de los **22 Contextos Geológicos Chilenos** (Mourgues, Schill
 
 🌐 **Dashboard público:** https://mendozavolcanic.github.io/contextos-geologicos/ *(GitHub Pages, redeploya automático en cada push)*
 
+Parte de la **Suite Geopatrimonio Chile**:
+- 🗺 **contextos-geologicos** *(este repo)* — visor maestro (22 contextos, mapa, globo, léxico)
+- 🥾 [georrutas-chile](https://github.com/MendozaVolcanic/georrutas-chile) — rutas geoturísticas · [🌐 dashboard](https://mendozavolcanic.github.io/georrutas-chile/)
+- 🪨 [apadrina-geositio-chile](https://github.com/MendozaVolcanic/apadrina-geositio-chile) — ciencia ciudadana · [🌐 dashboard](https://mendozavolcanic.github.io/apadrina-geositio-chile/)
+- 📊 [dashboard-22-contextos](https://github.com/MendozaVolcanic/dashboard-22-contextos) — gestión SGCh · [🌐 dashboard](https://mendozavolcanic.github.io/dashboard-22-contextos/)
+
 ## Qué hace
 
 - **Mapa de contextos** (Leaflet) — cambia entre Chile (Web Mercator) y Antártica (Polar Stereographic EPSG:3031), con mapa geológico base + polígonos de contextos.
