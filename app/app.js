@@ -498,7 +498,16 @@ let geositiosLayer = null;
 async function ensureGeositiosLoaded() {
   if (state.geositios) return;
   try {
-    state.geositios = await fetch('data/geositios_inventario_nacional.geojson').then(r => r.json());
+    // Mergeamos los 49 oficiales SERNAGEOMIN + los candidatos bibliométricos chilenos
+    const [oficial, prop] = await Promise.all([
+      fetch('data/geositios_inventario_nacional.geojson').then(r => r.json()).catch(() => ({features: []})),
+      fetch('data/chile_geositios_propuestos.geojson').then(r => r.json()).catch(() => ({features: []})),
+    ]);
+    state.geositios = {
+      type: 'FeatureCollection',
+      features: [...(oficial.features || []), ...(prop.features || [])],
+    };
+    console.log(`[geositios CL] ${oficial.features?.length || 0} oficiales + ${prop.features?.length || 0} propuestos bibliométrica`);
   } catch (e) {
     console.warn('Inventario Nacional no disponible', e);
     state.geositios = { type: 'FeatureCollection', features: [] };
@@ -514,13 +523,17 @@ async function renderGeositiosLayer() {
   await ensureGeositiosLoaded();
   geositiosLayer = L.geoJSON(state.geositios, {
     pointToLayer: (feature, latlng) => {
+      const tipo = (feature.properties.tipo || '').toLowerCase();
       const escala = (feature.properties['ESCALA DE RELEVANCIA'] || '').toLowerCase();
-      let color = '#fff';
-      if (escala.includes('internacional')) color = '#e74c3c';
+      let color = '#fff', weight = 1, opacity = 0.95, radius = 7;
+      // Candidatos bibliométrica chilena: violeta hueco
+      if (tipo.includes('candidato-chile')) {
+        color = '#9b59b6'; opacity = 0.55; weight = 2; radius = 6;
+      } else if (escala.includes('internacional')) color = '#e74c3c';
       else if (escala.includes('nacional')) color = '#f39c12';
       else if (escala.includes('regional')) color = '#3498db';
       else color = '#95a5a6';
-      return L.circleMarker(latlng, { radius: 7, color: '#000', weight: 1, fillColor: color, fillOpacity: 0.95 });
+      return L.circleMarker(latlng, { radius, color: '#000', weight, fillColor: color, fillOpacity: opacity });
     },
     onEachFeature: (feature, layer) => {
       const p = feature.properties;

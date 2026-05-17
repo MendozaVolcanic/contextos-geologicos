@@ -2,18 +2,13 @@
 
 Generado por `scripts/enrich_candidatos_framework.py`.
 
-## (sin asignar) — 6 candidatos
+## (sin asignar) — 1 candidatos
 
 | Sitio | Pubs | Menciones | Fuente asignación |
 |---|---:|---:|---|
-| Windmill Islands | 11 | 43 | fuera de bboxes conocidos |
-| Pensacola Mountains | 8 | 14 | fuera de bboxes conocidos |
-| Shackleton Range | 6 | 23 | fuera de bboxes conocidos |
-| Whitmore Mountains | 5 | 10 | fuera de bboxes conocidos |
 | Pacific-Antarctic Ridge | 5 | 6 | fuera de bboxes conocidos |
-| Balleny Islands | 5 | 15 | fuera de bboxes conocidos |
 
-## F1 Basement — 9 candidatos
+## F1 Basement — 12 candidatos
 
 | Sitio | Pubs | Menciones | Fuente asignación |
 |---|---:|---:|---|
@@ -23,21 +18,18 @@ Generado por `scripts/enrich_candidatos_framework.py`.
 | Bunger Hills | 15 | 64 | soft-rule (regla geográfica) |
 | Ellsworth Mountains | 14 | 75 | soft-rule (regla geográfica) |
 | Lambert Glacier | 11 | 33 | soft-rule (regla geográfica) |
+| Windmill Islands | 11 | 43 | soft-rule (regla geográfica) |
 | Lützow-Holm Bay | 9 | 27 | soft-rule (regla geográfica) |
 | Taylor Glacier | 9 | 58 | soft-rule (regla geográfica) |
 | Denman Glacier | 7 | 31 | soft-rule (regla geográfica) |
+| Shackleton Range | 6 | 23 | soft-rule (regla geográfica) |
+| Whitmore Mountains | 5 | 10 | soft-rule (regla geográfica) |
 
-## F2 Sedimentary basins (Beacon) — 8 candidatos
+## F2 Sedimentary basins (Beacon) — 2 candidatos
 
 | Sitio | Pubs | Menciones | Fuente asignación |
 |---|---:|---:|---|
 | Transantarctic Mountains | 48 | 200 | soft-rule (regla geográfica) |
-| Taylor Valley | 14 | 114 | soft-rule (regla geográfica) |
-| McMurdo Sound | 11 | 141 | soft-rule (regla geográfica) |
-| Robertson Bay | 10 | 28 | soft-rule (regla geográfica) |
-| Beardmore Glacier | 7 | 14 | soft-rule (regla geográfica) |
-| Mackay Glacier | 6 | 11 | soft-rule (regla geográfica) |
-| Inexpressible Island | 6 | 11 | soft-rule (regla geográfica) |
 | Shackleton Glacier | 5 | 12 | soft-rule (regla geográfica) |
 
 ## F2: Proterozoic orogens & rifted margins — 3 candidatos
@@ -52,10 +44,10 @@ Generado por `scripts/enrich_candidatos_framework.py`.
 
 | Sitio | Pubs | Menciones | Fuente asignación |
 |---|---:|---:|---|
-| Ross Island | 14 | 110 | soft-rule (regla geográfica) |
 | Thwaites Glacier | 12 | 76 | soft-rule (regla geográfica) |
 | Pine Island Bay | 9 | 34 | soft-rule (regla geográfica) |
 | Thurston Island | 6 | 14 | soft-rule (regla geográfica) |
+| Balleny Islands | 5 | 15 | soft-rule (regla geográfica) |
 
 ## F4: Active margin & West Antarctic rift — 6 candidatos
 
@@ -111,4 +103,32 @@ Generado por `scripts/enrich_candidatos_framework.py`.
 |---|---:|---:|---|
 | Signy Island | 12 | 99 | soft-rule (regla geográfica) |
 | South Orkney Islands | 10 | 89 | soft-rule (regla geográfica) |
+
+## TAM Central (Dry Valleys – Royal Society Range) — 4 candidatos
+
+| Sitio | Pubs | Menciones | Fuente asignación |
+|---|---:|---:|---|
+| Ross Island | 14 | 110 | spatial-join (antartica_frameworks.geojson) |
+| Taylor Valley | 14 | 114 | spatial-join (antartica_frameworks.geojson) |
+| McMurdo Sound | 11 | 141 | spatial-join (antartica_frameworks.geojson) |
+| Mackay Glacier | 6 | 11 | spatial-join (antartica_frameworks.geojson) |
+
+## TAM Norte (Northern Victoria Land) — 2 candidatos
+
+| Sitio | Pubs | Menciones | Fuente asignación |
+|---|---:|---:|---|
+| Robertson Bay | 10 | 28 | spatial-join (antartica_frameworks.geojson) |
+| Inexpressible Island | 6 | 11 | spatial-join (antartica_frameworks.geojson) |
+
+## TAM Pacific (Pensacola-Thiel Mountains) — 1 candidatos
+
+| Sitio | Pubs | Menciones | Fuente asignación |
+|---|---:|---:|---|
+| Pensacola Mountains | 8 | 14 | spatial-join (antartica_frameworks.geojson) |
+
+## TAM Sur (Beardmore-Shackleton-Nimrod) — 1 candidatos
+
+| Sitio | Pubs | Menciones | Fuente asignación |
+|---|---:|---:|---|
+| Beardmore Glacier | 7 | 14 | spatial-join (antartica_frameworks.geojson) |
 

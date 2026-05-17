@@ -789,8 +789,8 @@
           "Taylor Valley": 3,
           "The Satellite": 3
         },
-        "framework": "F2 Sedimentary basins (Beacon)",
-        "framework_source": "soft-rule (regla geográfica)"
+        "framework": "TAM Norte (Northern Victoria Land)",
+        "framework_source": "spatial-join (antartica_frameworks.geojson)"
       }
     },
     {
@@ -831,8 +831,8 @@
           "Larsemann Hills": 7,
           "Prydz Bay": 7
         },
-        "framework": "F4 Cenozoic volcanism",
-        "framework_source": "soft-rule (regla geográfica)"
+        "framework": "TAM Central (Dry Valleys – Royal Society Range)",
+        "framework_source": "spatial-join (antartica_frameworks.geojson)"
       }
     },
     {
@@ -914,8 +914,8 @@
           "Larsemann Hills": 1,
           "Hidden Valley": 1
         },
-        "framework": "(sin asignar)",
-        "framework_source": "fuera de bboxes conocidos"
+        "framework": "TAM Pacific (Pensacola-Thiel Mountains)",
+        "framework_source": "spatial-join (antartica_frameworks.geojson)"
       }
     },
     {
@@ -997,8 +997,8 @@
           "Larsemann Hills": 7,
           "Prydz Bay": 7
         },
-        "framework": "F2 Sedimentary basins (Beacon)",
-        "framework_source": "soft-rule (regla geográfica)"
+        "framework": "TAM Central (Dry Valleys – Royal Society Range)",
+        "framework_source": "spatial-join (antartica_frameworks.geojson)"
       }
     },
     {
@@ -1038,8 +1038,8 @@
           "Prydz Bay": 7,
           "South Shetland Islands": 7
         },
-        "framework": "F2 Sedimentary basins (Beacon)",
-        "framework_source": "soft-rule (regla geográfica)"
+        "framework": "TAM Central (Dry Valleys – Royal Society Range)",
+        "framework_source": "spatial-join (antartica_frameworks.geojson)"
       }
     },
     {
@@ -1243,8 +1243,8 @@
           "Livingston Island": 2,
           "Fildes Peninsula": 2
         },
-        "framework": "(sin asignar)",
-        "framework_source": "fuera de bboxes conocidos"
+        "framework": "F1 Basement",
+        "framework_source": "soft-rule (regla geográfica)"
       }
     },
     {
@@ -1480,8 +1480,8 @@
           "Prydz Bay": 1,
           "Ross Island": 1
         },
-        "framework": "F2 Sedimentary basins (Beacon)",
-        "framework_source": "soft-rule (regla geográfica)"
+        "framework": "TAM Sur (Beardmore-Shackleton-Nimrod)",
+        "framework_source": "spatial-join (antartica_frameworks.geojson)"
       }
     },
     {
@@ -1744,8 +1744,8 @@
           "Prydz Bay": 1,
           "Ross Island": 1
         },
-        "framework": "F2 Sedimentary basins (Beacon)",
-        "framework_source": "soft-rule (regla geográfica)"
+        "framework": "TAM Central (Dry Valleys – Royal Society Range)",
+        "framework_source": "spatial-join (antartica_frameworks.geojson)"
       }
     },
     {
@@ -1969,8 +1969,8 @@
           "King George Island": 5,
           "Marguerite Bay": 5
         },
-        "framework": "(sin asignar)",
-        "framework_source": "fuera de bboxes conocidos"
+        "framework": "F1 Basement",
+        "framework_source": "soft-rule (regla geográfica)"
       }
     },
     {
@@ -2039,8 +2039,8 @@
           "2015-2019": 2
         },
         "co_sites_top": {},
-        "framework": "F2 Sedimentary basins (Beacon)",
-        "framework_source": "soft-rule (regla geográfica)"
+        "framework": "TAM Norte (Northern Victoria Land)",
+        "framework_source": "spatial-join (antartica_frameworks.geojson)"
       }
     },
     {
@@ -2160,8 +2160,8 @@
           "Union Glacier": 2,
           "Signy Island": 2
         },
-        "framework": "(sin asignar)",
-        "framework_source": "fuera de bboxes conocidos"
+        "framework": "F4 Cenozoic volcanism",
+        "framework_source": "soft-rule (regla geográfica)"
       }
     },
     {
@@ -2200,8 +2200,8 @@
           "Prydz Bay": 3,
           "Ross Island": 3
         },
-        "framework": "(sin asignar)",
-        "framework_source": "fuera de bboxes conocidos"
+        "framework": "F1 Basement",
+        "framework_source": "soft-rule (regla geográfica)"
       }
     },
     {

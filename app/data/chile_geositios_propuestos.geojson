@@ -1,0 +1,1173 @@
+{
+  "type": "FeatureCollection",
+  "metadata": {
+    "fuente": "Bibliometría chilena (analisis_congresos_chile.py)",
+    "corpus": "551 PDFs Congreso Geol Chileno + Simposios + 865 abstracts OpenAlex"
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -68.70032,
+          -23.45961
+        ]
+      },
+      "properties": {
+        "codigo": "PROP-CL-CORDILLE",
+        "nombre": "Cordillera de Domeyko",
+        "tipo": "candidato-chile",
+        "interes": "26 pubs · 72 menciones · WS=38.1",
+        "fuente": "Bibliometría Congreso Geológico Chileno + Andean Geology + lit. internacional",
+        "feature_type": "T.MTS",
+        "pubs_count": 26,
+        "hits_count": 72,
+        "weighted_score": 38.13,
+        "by_decade": {
+          "unknown": 21,
+          "pre-2010": 3,
+          "2010-2014": 1,
+          "2015-2019": 1
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.81791,
+          -33.95146
+        ]
+      },
+      "properties": {
+        "codigo": "PROP-CL-NAVIDAD",
+        "nombre": "Navidad",
+        "tipo": "candidato-chile",
+        "interes": "19 pubs · 59 menciones · WS=29.0",
+        "fuente": "Bibliometría Congreso Geológico Chileno + Andean Geology + lit. internacional",
+        "feature_type": "T.HLL",
+        "pubs_count": 19,
+        "hits_count": 59,
+        "weighted_score": 28.99,
+        "by_decade": {
+          "unknown": 11,
+          "2010-2014": 7,
+          "2015-2019": 1
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.49592,
+          -36.06103
+        ]
+      },
+      "properties": {
+        "codigo": "PROP-CL-LAGUNAD",
+        "nombre": "Laguna del Maule",
+        "tipo": "candidato-chile",
+        "interes": "19 pubs · 55 menciones · WS=27.3",
+        "fuente": "Bibliometría Congreso Geológico Chileno + Andean Geology + lit. internacional",
+        "feature_type": "H.LK",
+        "pubs_count": 19,
+        "hits_count": 55,
+        "weighted_score": 27.34,
+        "by_decade": {
+          "unknown": 15,
+          "2010-2014": 1,
+          "2015-2019": 2,
+          "2020-2026": 1
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -69.153,
+          -24.88387
+        ]
+      },
+      "properties": {
+        "codigo": "PROP-CL-SIERRAD",
+        "nombre": "Sierra de Varas",
+        "tipo": "candidato-chile",
+        "interes": "15 pubs · 94 menciones · WS=18.0",
+        "fuente": "Bibliometría Congreso Geológico Chileno + Andean Geology + lit. internacional",
+        "feature_type": "T.MTS",
+        "pubs_count": 15,
+        "hits_count": 94,
+        "weighted_score": 18.05,
+        "by_decade": {
+          "unknown": 13,
+          "pre-2010": 2
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -68.74142,
+          -55.16501
+        ]
+      },
+      "properties": {
+        "codigo": "PROP-CL-ISLAGRA",
+        "nombre": "Isla Grande",
+        "tipo": "candidato-chile",
+        "interes": "5 pubs · 6 menciones · WS=13.3",
+        "fuente": "Bibliometría Congreso Geológico Chileno + Andean Geology + lit. internacional",
+        "feature_type": "T.ISL",
+        "pubs_count": 5,
+        "hits_count": 6,
+        "weighted_score": 13.32,
+        "by_decade": {
+          "unknown": 1,
+          "pre-2010": 2,
+          "2010-2014": 1,
+          "2020-2026": 1
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.59836,
+          -26.63069
+        ]
+      },
+      "properties": {
+        "codigo": "PROP-CL-ESCONDID",
+        "nombre": "Escondida",
+        "tipo": "candidato-chile",
+        "interes": "12 pubs · 28 menciones · WS=11.7",
+        "fuente": "Bibliometría Congreso Geológico Chileno + Andean Geology + lit. internacional",
+        "feature_type": "H.SPNG",
+        "pubs_count": 12,
+        "hits_count": 28,
+        "weighted_score": 11.69,
+        "by_decade": {
+          "unknown": 11,
+          "2010-2014": 1
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.36667,
+          -33.9
+        ]
+      },
+      "properties": {
+        "codigo": "PROP-CL-RINCONAD",
+        "nombre": "Rinconada",
+        "tipo": "candidato-chile",
+        "interes": "8 pubs · 14 menciones · WS=11.3",
+        "fuente": "Bibliometría Congreso Geológico Chileno + Andean Geology + lit. internacional",
+        "feature_type": "T.HLL",
+        "pubs_count": 8,
+        "hits_count": 14,
+        "weighted_score": 11.32,
+        "by_decade": {
+          "unknown": 6,
+          "2015-2019": 2
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.88366,
+          -27.11618
+        ]
+      },
+      "properties": {
+        "codigo": "PROP-CL-BAHÍAIN",
+        "nombre": "Bahía Inglesa",
+        "tipo": "candidato-chile",
+        "interes": "10 pubs · 24 menciones · WS=11.1",
+        "fuente": "Bibliometría Congreso Geológico Chileno + Andean Geology + lit. internacional",
+        "feature_type": "H.BAY",
+        "pubs_count": 10,
+        "hits_count": 24,
+        "weighted_score": 11.08,
+        "by_decade": {
+          "unknown": 9,
+          "2015-2019": 1
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -69.84032,
+          -27.39877
+        ]
+      },
+      "properties": {
+        "codigo": "PROP-CL-ROMERO",
+        "nombre": "Romero",
+        "tipo": "candidato-chile",
+        "interes": "11 pubs · 21 menciones · WS=11.0",
+        "fuente": "Bibliometría Congreso Geológico Chileno + Andean Geology + lit. internacional",
+        "feature_type": "H.SPNG",
+        "pubs_count": 11,
+        "hits_count": 21,
+        "weighted_score": 11.0,
+        "by_decade": {
+          "unknown": 11
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -68.00535,
+          -23.69772
+        ]
+      },
+      "properties": {
+        "codigo": "PROP-CL-ALGARROB",
+        "nombre": "Algarrobo",
+        "tipo": "candidato-chile",
+        "interes": "11 pubs · 18 menciones · WS=11.0",
+        "fuente": "Bibliometría Congreso Geológico Chileno + Andean Geology + lit. internacional",
+        "feature_type": "H.SPNG",
+        "pubs_count": 11,
+        "hits_count": 18,
+        "weighted_score": 11.0,
+        "by_decade": {
+          "unknown": 11
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.99648,
+          -30.23607
+        ]
+      },
+      "properties": {
+        "codigo": "PROP-CL-LOSMOLL",
+        "nombre": "Los Molles",
+        "tipo": "candidato-chile",
+        "interes": "7 pubs · 18 menciones · WS=10.7",
+        "fuente": "Bibliometría Congreso Geológico Chileno + Andean Geology + lit. internacional",
+        "feature_type": "H.SPNG",
+        "pubs_count": 7,
+        "hits_count": 18,
+        "weighted_score": 10.73,
+        "by_decade": {
+          "unknown": 4,
+          "pre-2010": 1,
+          "2010-2014": 1,
+          "2020-2026": 1
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.94118,
+          -34.64312
+        ]
+      },
+      "properties": {
+        "codigo": "PROP-CL-LAGUNILL",
+        "nombre": "Lagunillas",
+        "tipo": "candidato-chile",
+        "interes": "10 pubs · 12 menciones · WS=10.0",
+        "fuente": "Bibliometría Congreso Geológico Chileno + Andean Geology + lit. internacional",
+        "feature_type": "T.HLL",
+        "pubs_count": 10,
+        "hits_count": 12,
+        "weighted_score": 10.0,
+        "by_decade": {
+          "unknown": 10
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.16667,
+          -27.55
+        ]
+      },
+      "properties": {
+        "codigo": "PROP-CL-SANJORG",
+        "nombre": "San Jorge",
+        "tipo": "candidato-chile",
+        "interes": "7 pubs · 33 menciones · WS=9.5",
+        "fuente": "Bibliometría Congreso Geológico Chileno + Andean Geology + lit. internacional",
+        "feature_type": "T.MT",
+        "pubs_count": 7,
+        "hits_count": 33,
+        "weighted_score": 9.5,
+        "by_decade": {
+          "unknown": 5,
+          "2015-2019": 1,
+          "2020-2026": 1
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.3445,
+          -32.01803
+        ]
+      },
+      "properties": {
+        "codigo": "PROP-CL-CERROBL",
+        "nombre": "Cerro Blanco",
+        "tipo": "candidato-chile",
+        "interes": "9 pubs · 14 menciones · WS=9.4",
+        "fuente": "Bibliometría Congreso Geológico Chileno + Andean Geology + lit. internacional",
+        "feature_type": "T.MT",
+        "pubs_count": 9,
+        "hits_count": 14,
+        "weighted_score": 9.39,
+        "by_decade": {
+          "unknown": 8,
+          "2020-2026": 1
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.44585,
+          -25.10724
+        ]
+      },
+      "properties": {
+        "codigo": "PROP-CL-DOROTEA",
+        "nombre": "Dorotea",
+        "tipo": "candidato-chile",
+        "interes": "6 pubs · 22 menciones · WS=9.4",
+        "fuente": "Bibliometría Congreso Geológico Chileno + Andean Geology + lit. internacional",
+        "feature_type": "H.SPNG",
+        "pubs_count": 6,
+        "hits_count": 22,
+        "weighted_score": 9.37,
+        "by_decade": {
+          "unknown": 3,
+          "pre-2010": 2,
+          "2015-2019": 1
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.08862,
+          -33.78513
+        ]
+      },
+      "properties": {
+        "codigo": "PROP-CL-ELGUANA",
+        "nombre": "El Guanaco",
+        "tipo": "candidato-chile",
+        "interes": "8 pubs · 59 menciones · WS=9.1",
+        "fuente": "Bibliometría Congreso Geológico Chileno + Andean Geology + lit. internacional",
+        "feature_type": "T.HLL",
+        "pubs_count": 8,
+        "hits_count": 59,
+        "weighted_score": 9.08,
+        "by_decade": {
+          "unknown": 7,
+          "2010-2014": 1
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -69.56865,
+          -23.42567
+        ]
+      },
+      "properties": {
+        "codigo": "PROP-CL-LOMASBA",
+        "nombre": "Lomas Bayas",
+        "tipo": "candidato-chile",
+        "interes": "9 pubs · 43 menciones · WS=9.0",
+        "fuente": "Bibliometría Congreso Geológico Chileno + Andean Geology + lit. internacional",
+        "feature_type": "T.MTS",
+        "pubs_count": 9,
+        "hits_count": 43,
+        "weighted_score": 9.0,
+        "by_decade": {
+          "unknown": 9
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -69.34228,
+          -26.0638
+        ]
+      },
+      "properties": {
+        "codigo": "PROP-CL-CERROEL",
+        "nombre": "Cerro El Plomo",
+        "tipo": "candidato-chile",
+        "interes": "9 pubs · 10 menciones · WS=9.0",
+        "fuente": "Bibliometría Congreso Geológico Chileno + Andean Geology + lit. internacional",
+        "feature_type": "T.MT",
+        "pubs_count": 9,
+        "hits_count": 10,
+        "weighted_score": 9.0,
+        "by_decade": {
+          "unknown": 9
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.25907,
+          -39.80616
+        ]
+      },
+      "properties": {
+        "codigo": "PROP-CL-ISLATEJ",
+        "nombre": "Isla Teja",
+        "tipo": "candidato-chile",
+        "interes": "9 pubs · 9 menciones · WS=9.0",
+        "fuente": "Bibliometría Congreso Geológico Chileno + Andean Geology + lit. internacional",
+        "feature_type": "T.ISL",
+        "pubs_count": 9,
+        "hits_count": 9,
+        "weighted_score": 9.0,
+        "by_decade": {
+          "unknown": 9
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -67.66215,
+          -23.92512
+        ]
+      },
+      "properties": {
+        "codigo": "PROP-CL-AGUASCA",
+        "nombre": "Aguas Calientes",
+        "tipo": "candidato-chile",
+        "interes": "7 pubs · 14 menciones · WS=8.9",
+        "fuente": "Bibliometría Congreso Geológico Chileno + Andean Geology + lit. internacional",
+        "feature_type": "H.SPNG",
+        "pubs_count": 7,
+        "hits_count": 14,
+        "weighted_score": 8.94,
+        "by_decade": {
+          "unknown": 6,
+          "2010-2014": 1
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.16991,
+          -48.51539
+        ]
+      },
+      "properties": {
+        "codigo": "PROP-CL-CERROAZ",
+        "nombre": "Cerro Azul",
+        "tipo": "candidato-chile",
+        "interes": "5 pubs · 18 menciones · WS=8.9",
+        "fuente": "Bibliometría Congreso Geológico Chileno + Andean Geology + lit. internacional",
+        "feature_type": "T.MT",
+        "pubs_count": 5,
+        "hits_count": 18,
+        "weighted_score": 8.89,
+        "by_decade": {
+          "unknown": 3,
+          "2020-2026": 2
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.09342,
+          -34.54697
+        ]
+      },
+      "properties": {
+        "codigo": "PROP-CL-BANDURRI",
+        "nombre": "Bandurrias",
+        "tipo": "candidato-chile",
+        "interes": "8 pubs · 19 menciones · WS=8.8",
+        "fuente": "Bibliometría Congreso Geológico Chileno + Andean Geology + lit. internacional",
+        "feature_type": "T.MT",
+        "pubs_count": 8,
+        "hits_count": 19,
+        "weighted_score": 8.79,
+        "by_decade": {
+          "unknown": 7,
+          "2010-2014": 1
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.68546,
+          -34.36233
+        ]
+      },
+      "properties": {
+        "codigo": "PROP-CL-SANIGNA",
+        "nombre": "San Ignacio",
+        "tipo": "candidato-chile",
+        "interes": "6 pubs · 18 menciones · WS=8.7",
+        "fuente": "Bibliometría Congreso Geológico Chileno + Andean Geology + lit. internacional",
+        "feature_type": "T.HLL",
+        "pubs_count": 6,
+        "hits_count": 18,
+        "weighted_score": 8.7,
+        "by_decade": {
+          "unknown": 4,
+          "2010-2014": 1,
+          "2020-2026": 1
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.78657,
+          -34.02175
+        ]
+      },
+      "properties": {
+        "codigo": "PROP-CL-AGUADA",
+        "nombre": "Aguada",
+        "tipo": "candidato-chile",
+        "interes": "5 pubs · 18 menciones · WS=8.0",
+        "fuente": "Bibliometría Congreso Geológico Chileno + Andean Geology + lit. internacional",
+        "feature_type": "T.HLL",
+        "pubs_count": 5,
+        "hits_count": 18,
+        "weighted_score": 8.05,
+        "by_decade": {
+          "unknown": 3,
+          "pre-2010": 2
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.48316,
+          -25.05704
+        ]
+      },
+      "properties": {
+        "codigo": "PROP-CL-SALITRE",
+        "nombre": "Salitre",
+        "tipo": "candidato-chile",
+        "interes": "8 pubs · 25 menciones · WS=8.0",
+        "fuente": "Bibliometría Congreso Geológico Chileno + Andean Geology + lit. internacional",
+        "feature_type": "H.SPNG",
+        "pubs_count": 8,
+        "hits_count": 25,
+        "weighted_score": 8.0,
+        "by_decade": {
+          "unknown": 8
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.40993,
+          -36.82886
+        ]
+      },
+      "properties": {
+        "codigo": "PROP-CL-NEVADOS",
+        "nombre": "Nevados de Chillán",
+        "tipo": "candidato-chile",
+        "interes": "8 pubs · 17 menciones · WS=8.0",
+        "fuente": "Bibliometría Congreso Geológico Chileno + Andean Geology + lit. internacional",
+        "feature_type": "T.MTS",
+        "pubs_count": 8,
+        "hits_count": 17,
+        "weighted_score": 8.0,
+        "by_decade": {
+          "unknown": 8
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.78128,
+          -33.81336
+        ]
+      },
+      "properties": {
+        "codigo": "PROP-CL-LAGUNAS",
+        "nombre": "Lagunas",
+        "tipo": "candidato-chile",
+        "interes": "8 pubs · 15 menciones · WS=8.0",
+        "fuente": "Bibliometría Congreso Geológico Chileno + Andean Geology + lit. internacional",
+        "feature_type": "T.HLL",
+        "pubs_count": 8,
+        "hits_count": 15,
+        "weighted_score": 8.0,
+        "by_decade": {
+          "unknown": 8
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.7,
+          -34.2
+        ]
+      },
+      "properties": {
+        "codigo": "PROP-CL-ELCAJÓN",
+        "nombre": "El Cajón",
+        "tipo": "candidato-chile",
+        "interes": "8 pubs · 13 menciones · WS=8.0",
+        "fuente": "Bibliometría Congreso Geológico Chileno + Andean Geology + lit. internacional",
+        "feature_type": "T.HLL",
+        "pubs_count": 8,
+        "hits_count": 13,
+        "weighted_score": 8.0,
+        "by_decade": {
+          "unknown": 8
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.91508,
+          -34.36725
+        ]
+      },
+      "properties": {
+        "codigo": "PROP-CL-SANTARO",
+        "nombre": "Santa Rosa",
+        "tipo": "candidato-chile",
+        "interes": "8 pubs · 9 menciones · WS=8.0",
+        "fuente": "Bibliometría Congreso Geológico Chileno + Andean Geology + lit. internacional",
+        "feature_type": "T.HLL",
+        "pubs_count": 8,
+        "hits_count": 9,
+        "weighted_score": 8.0,
+        "by_decade": {
+          "unknown": 8
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -69.32683,
+          -22.80429
+        ]
+      },
+      "properties": {
+        "codigo": "PROP-CL-SIERRAG",
+        "nombre": "Sierra Gorda",
+        "tipo": "candidato-chile",
+        "interes": "8 pubs · 9 menciones · WS=8.0",
+        "fuente": "Bibliometría Congreso Geológico Chileno + Andean Geology + lit. internacional",
+        "feature_type": "T.MTS",
+        "pubs_count": 8,
+        "hits_count": 9,
+        "weighted_score": 8.0,
+        "by_decade": {
+          "unknown": 8
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -69.5493,
+          -26.63781
+        ]
+      },
+      "properties": {
+        "codigo": "PROP-CL-CHICA",
+        "nombre": "Chica",
+        "tipo": "candidato-chile",
+        "interes": "7 pubs · 18 menciones · WS=7.9",
+        "fuente": "Bibliometría Congreso Geológico Chileno + Andean Geology + lit. internacional",
+        "feature_type": "H.SPNG",
+        "pubs_count": 7,
+        "hits_count": 18,
+        "weighted_score": 7.95,
+        "by_decade": {
+          "unknown": 6,
+          "2010-2014": 1
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.79428,
+          -33.8345
+        ]
+      },
+      "properties": {
+        "codigo": "PROP-CL-LOROS",
+        "nombre": "Loros",
+        "tipo": "candidato-chile",
+        "interes": "7 pubs · 12 menciones · WS=7.9",
+        "fuente": "Bibliometría Congreso Geológico Chileno + Andean Geology + lit. internacional",
+        "feature_type": "T.HLL",
+        "pubs_count": 7,
+        "hits_count": 12,
+        "weighted_score": 7.95,
+        "by_decade": {
+          "unknown": 6,
+          "2015-2019": 1
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.22691,
+          -37.70556
+        ]
+      },
+      "properties": {
+        "codigo": "PROP-CL-CERROGU",
+        "nombre": "Cerro Guanaco",
+        "tipo": "candidato-chile",
+        "interes": "7 pubs · 33 menciones · WS=7.0",
+        "fuente": "Bibliometría Congreso Geológico Chileno + Andean Geology + lit. internacional",
+        "feature_type": "T.MT",
+        "pubs_count": 7,
+        "hits_count": 33,
+        "weighted_score": 7.0,
+        "by_decade": {
+          "unknown": 7
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.06667,
+          -33.68333
+        ]
+      },
+      "properties": {
+        "codigo": "PROP-CL-LAOBRA",
+        "nombre": "La Obra",
+        "tipo": "candidato-chile",
+        "interes": "7 pubs · 15 menciones · WS=7.0",
+        "fuente": "Bibliometría Congreso Geológico Chileno + Andean Geology + lit. internacional",
+        "feature_type": "T.HLL",
+        "pubs_count": 7,
+        "hits_count": 15,
+        "weighted_score": 7.0,
+        "by_decade": {
+          "unknown": 7
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.43344,
+          -34.1109
+        ]
+      },
+      "properties": {
+        "codigo": "PROP-CL-LAHIGUE",
+        "nombre": "La Higuera",
+        "tipo": "candidato-chile",
+        "interes": "5 pubs · 6 menciones · WS=6.2",
+        "fuente": "Bibliometría Congreso Geológico Chileno + Andean Geology + lit. internacional",
+        "feature_type": "T.HLL",
+        "pubs_count": 5,
+        "hits_count": 6,
+        "weighted_score": 6.2,
+        "by_decade": {
+          "unknown": 4,
+          "2010-2014": 1
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -69.55718,
+          -25.14381
+        ]
+      },
+      "properties": {
+        "codigo": "PROP-CL-CACHINAL",
+        "nombre": "Cachinal",
+        "tipo": "candidato-chile",
+        "interes": "5 pubs · 23 menciones · WS=6.1",
+        "fuente": "Bibliometría Congreso Geológico Chileno + Andean Geology + lit. internacional",
+        "feature_type": "H.SPNG",
+        "pubs_count": 5,
+        "hits_count": 23,
+        "weighted_score": 6.08,
+        "by_decade": {
+          "unknown": 4,
+          "2010-2014": 1
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.28333,
+          -32.38333
+        ]
+      },
+      "properties": {
+        "codigo": "PROP-CL-BOSQUES",
+        "nombre": "Bosques",
+        "tipo": "candidato-chile",
+        "interes": "6 pubs · 21 menciones · WS=6.0",
+        "fuente": "Bibliometría Congreso Geológico Chileno + Andean Geology + lit. internacional",
+        "feature_type": "T.PK",
+        "pubs_count": 6,
+        "hits_count": 21,
+        "weighted_score": 6.0,
+        "by_decade": {
+          "unknown": 6
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.79131,
+          -33.99746
+        ]
+      },
+      "properties": {
+        "codigo": "PROP-CL-CARRIZAL",
+        "nombre": "Carrizal",
+        "tipo": "candidato-chile",
+        "interes": "6 pubs · 9 menciones · WS=6.0",
+        "fuente": "Bibliometría Congreso Geológico Chileno + Andean Geology + lit. internacional",
+        "feature_type": "T.HLL",
+        "pubs_count": 6,
+        "hits_count": 9,
+        "weighted_score": 6.0,
+        "by_decade": {
+          "unknown": 6
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.1,
+          -34.51667
+        ]
+      },
+      "properties": {
+        "codigo": "PROP-CL-ELVIENT",
+        "nombre": "El Viento",
+        "tipo": "candidato-chile",
+        "interes": "6 pubs · 6 menciones · WS=6.0",
+        "fuente": "Bibliometría Congreso Geológico Chileno + Andean Geology + lit. internacional",
+        "feature_type": "T.MT",
+        "pubs_count": 6,
+        "hits_count": 6,
+        "weighted_score": 6.0,
+        "by_decade": {
+          "unknown": 6
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -69.96281,
+          -26.85748
+        ]
+      },
+      "properties": {
+        "codigo": "PROP-CL-JULIA",
+        "nombre": "Julia",
+        "tipo": "candidato-chile",
+        "interes": "5 pubs · 15 menciones · WS=5.1",
+        "fuente": "Bibliometría Congreso Geológico Chileno + Andean Geology + lit. internacional",
+        "feature_type": "H.SPNG",
+        "pubs_count": 5,
+        "hits_count": 15,
+        "weighted_score": 5.1,
+        "by_decade": {
+          "unknown": 4,
+          "2020-2026": 1
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.63469,
+          -38.59434
+        ]
+      },
+      "properties": {
+        "codigo": "PROP-CL-SIERRAN",
+        "nombre": "Sierra Nevada",
+        "tipo": "candidato-chile",
+        "interes": "5 pubs · 11 menciones · WS=5.1",
+        "fuente": "Bibliometría Congreso Geológico Chileno + Andean Geology + lit. internacional",
+        "feature_type": "T.MTS",
+        "pubs_count": 5,
+        "hits_count": 11,
+        "weighted_score": 5.1,
+        "by_decade": {
+          "unknown": 4,
+          "2020-2026": 1
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -68.98332,
+          -20.38885
+        ]
+      },
+      "properties": {
+        "codigo": "PROP-CL-ALTOSDE",
+        "nombre": "Altos de Pica",
+        "tipo": "candidato-chile",
+        "interes": "5 pubs · 18 menciones · WS=5.0",
+        "fuente": "Bibliometría Congreso Geológico Chileno + Andean Geology + lit. internacional",
+        "feature_type": "T.MTS",
+        "pubs_count": 5,
+        "hits_count": 18,
+        "weighted_score": 5.0,
+        "by_decade": {
+          "unknown": 5
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.20326,
+          -26.26331
+        ]
+      },
+      "properties": {
+        "codigo": "PROP-CL-SIERRAÁ",
+        "nombre": "Sierra Áspera",
+        "tipo": "candidato-chile",
+        "interes": "5 pubs · 13 menciones · WS=5.0",
+        "fuente": "Bibliometría Congreso Geológico Chileno + Andean Geology + lit. internacional",
+        "feature_type": "T.MTS",
+        "pubs_count": 5,
+        "hits_count": 13,
+        "weighted_score": 5.0,
+        "by_decade": {
+          "unknown": 5
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.39903,
+          -40.23763
+        ]
+      },
+      "properties": {
+        "codigo": "PROP-CL-LAGORAN",
+        "nombre": "Lago Ranco",
+        "tipo": "candidato-chile",
+        "interes": "5 pubs · 12 menciones · WS=5.0",
+        "fuente": "Bibliometría Congreso Geológico Chileno + Andean Geology + lit. internacional",
+        "feature_type": "H.LK",
+        "pubs_count": 5,
+        "hits_count": 12,
+        "weighted_score": 5.0,
+        "by_decade": {
+          "unknown": 5
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.12343,
+          -33.85905
+        ]
+      },
+      "properties": {
+        "codigo": "PROP-CL-ZAMBRANO",
+        "nombre": "Zambrano",
+        "tipo": "candidato-chile",
+        "interes": "5 pubs · 6 menciones · WS=5.0",
+        "fuente": "Bibliometría Congreso Geológico Chileno + Andean Geology + lit. internacional",
+        "feature_type": "T.MT",
+        "pubs_count": 5,
+        "hits_count": 6,
+        "weighted_score": 5.0,
+        "by_decade": {
+          "unknown": 5
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -69.24781,
+          -25.85891
+        ]
+      },
+      "properties": {
+        "codigo": "PROP-CL-SIERRAE",
+        "nombre": "Sierra Exploradora",
+        "tipo": "candidato-chile",
+        "interes": "5 pubs · 6 menciones · WS=5.0",
+        "fuente": "Bibliometría Congreso Geológico Chileno + Andean Geology + lit. internacional",
+        "feature_type": "T.MTS",
+        "pubs_count": 5,
+        "hits_count": 6,
+        "weighted_score": 5.0,
+        "by_decade": {
+          "unknown": 5
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -69.1631,
+          -54.54874
+        ]
+      },
+      "properties": {
+        "codigo": "PROP-CL-BAHÍABL",
+        "nombre": "Bahía Blanca",
+        "tipo": "candidato-chile",
+        "interes": "5 pubs · 6 menciones · WS=5.0",
+        "fuente": "Bibliometría Congreso Geológico Chileno + Andean Geology + lit. internacional",
+        "feature_type": "H.BAY",
+        "pubs_count": 5,
+        "hits_count": 6,
+        "weighted_score": 5.0,
+        "by_decade": {
+          "unknown": 5
+        }
+      }
+    }
+  ]
+}

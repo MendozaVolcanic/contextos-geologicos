@@ -76,6 +76,16 @@ SOFT_RULES = [
     # Sør Rondane Mountains (BELARE meteorítico + basamento)
     ("Sør Rondane meteorítico", (-72.5, -71.5, 22.0, 28.0), "F7 Meteorite fields"),
 
+    # --- East Antarctic Craton: cobertura ampliada hasta Wilkes Land ---
+    # Windmill Islands (Casey Station area) — Wilkes Land
+    ("Windmill Islands (Wilkes Land)", (-67.0, -66.0, 109.5, 111.5), "F1 Basement"),
+    # Shackleton Range (gap entre TAM y Ellsworth-Whitmore)
+    ("Shackleton Range", (-81.5, -80.0, -35.0, -19.0), "F1 Basement"),
+    # Balleny Islands (volcánicas, al norte de Cabo Adare)
+    ("Balleny Islands volcanism", (-68.0, -66.0, 162.0, 165.0), "F4 Cenozoic volcanism"),
+    # Whitmore Mountains (extender bbox Ellsworth-Whitmore al oeste)
+    ("Whitmore Mountains (Ellsworth-Whitmore extension)", (-83.0, -81.0, -106.0, -100.0), "F1 Basement"),
+
     # --- East Antarctic Craton sector Princess Elizabeth-Prydz ---
     ("East Antarctic craton (Prydz sector)", (-72.0, -66.0, 70.0, 110.0), "F1 Basement"),
     # Enderby Land (Rayner Complex)

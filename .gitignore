@@ -24,6 +24,11 @@ docs/biblioteca/scar/atcm/
 docs/biblioteca/scar/papers/
 docs/biblioteca/scar_gazetteer.csv
 
+# Chile bibliometría — corpus pesado re-descargable
+docs/biblioteca/chile/papers/
+docs/biblioteca/CL.txt
+docs/biblioteca/readme.txt
+
 # Quantarctica subset (re-descargable desde data.pgc.umn.edu)
 docs/mapas/antartica/aspas_asmas/*.shp
 docs/mapas/antartica/aspas_asmas/*.dbf
