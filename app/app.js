@@ -22,6 +22,7 @@ const state = {
   antarticaSimplecode: null,         // 21 SIMPCODE GeoMAP (lazy)
   antarticGeositios: null,           // ASPAs + SCAR/IUGS geosites (lazy)
   showAntarticGeositios: true,
+  showAntarticHeatmap: false,        // heatmap densidad publicaciones
 };
 
 const REGION_VIEW = {
@@ -346,25 +347,46 @@ async function applyBedmapLayer(key) {
 }
 
 async function attachBedmapVectors() {
-  // Estos vectores son generados por scripts/build_bedmap.py a partir de
-  // los productos SCAR ADD (Antarctic Digital Database). Si no existen, se
-  // muestra el basemap solo.
-  try {
-    const gl = await fetch('data/grounding_line.geojson').then(r => r.json());
-    bedmapVectors.groundingLine = L.geoJSON(gl, { style: { color: '#f1c40f', weight: 1.2, fillOpacity: 0 } });
-    if (document.getElementById('bedmap-grounding-line')?.checked) bedmapVectors.groundingLine.addTo(bedmapMap);
-  } catch (e) { /* opcional */ }
-  try {
-    const co = await fetch('data/coastline.geojson').then(r => r.json());
-    bedmapVectors.coastline = L.geoJSON(co, { style: { color: '#e74c3c', weight: 1, fillOpacity: 0 } });
-    if (document.getElementById('bedmap-coastline')?.checked) bedmapVectors.coastline.addTo(bedmapMap);
-  } catch (e) { /* opcional */ }
+  // Vectores SCAR ADD v7.7 medium-res (simplificados 5km), bajados con
+  // scripts/build_bedmap.py o manualmente desde data.bas.ac.uk/items/...
+  const layerConfigs = [
+    { key: 'groundingLine', file: 'add_coastline_grounding_line.geojson',
+      style: { color: '#f1c40f', weight: 1.4, fillOpacity: 0 },
+      checkbox: 'bedmap-grounding-line' },
+    { key: 'coastline', file: 'add_coastline_ice_coastline.geojson',
+      style: { color: '#e74c3c', weight: 1, fillOpacity: 0 },
+      checkbox: 'bedmap-coastline' },
+    { key: 'rockCoastline', file: 'add_coastline_rock_coastline.geojson',
+      style: { color: '#9c640c', weight: 1.2, fillOpacity: 0 },
+      checkbox: 'bedmap-coastline' },  // muestra cuando coastline está on
+    { key: 'iceShelf', file: 'add_coastline_ice_shelf_and_front.geojson',
+      style: { color: '#3498db', weight: 1, dashArray: '3,2', fillOpacity: 0 },
+      checkbox: 'bedmap-coastline' },
+  ];
+  for (const cfg of layerConfigs) {
+    try {
+      const data = await fetch('data/' + cfg.file).then(r => r.json());
+      bedmapVectors[cfg.key] = L.geoJSON(data, { style: cfg.style });
+      if (document.getElementById(cfg.checkbox)?.checked) {
+        bedmapVectors[cfg.key].addTo(bedmapMap);
+      }
+    } catch (e) {
+      console.warn(`BedMap vector ${cfg.file} no disponible`, e);
+    }
+  }
 }
 
 function toggleBedmapVector(key, show) {
-  const layer = bedmapVectors[key];
-  if (!layer) return;
-  if (show) layer.addTo(bedmapMap); else bedmapMap.removeLayer(layer);
+  // El toggle 'coastline' controla 3 capas (ice/rock/iceShelf)
+  const groups = {
+    groundingLine: ['groundingLine'],
+    coastline: ['coastline', 'rockCoastline', 'iceShelf'],
+  };
+  (groups[key] || [key]).forEach(k => {
+    const layer = bedmapVectors[k];
+    if (!layer) return;
+    if (show) layer.addTo(bedmapMap); else bedmapMap.removeLayer(layer);
+  });
 }
 
 // ---------- Mapa ----------
@@ -612,6 +634,7 @@ async function renderContextos() {
   await renderBaseLayer();
   await renderGeositiosLayer();
   await renderAntarticGeositiosLayer();
+  await renderAntarticHeatmap();
 
   // Mostrar/ocultar controles propios de Antártica
   const antCtrl = document.getElementById('antartica-controls');
@@ -787,6 +810,41 @@ if (toggleAntGeo) {
     state.showAntarticGeositios = e.target.checked;
     renderAntarticGeositiosLayer();
   });
+}
+
+const toggleAntHeatmap = document.getElementById('toggle-antartic-heatmap');
+if (toggleAntHeatmap) {
+  toggleAntHeatmap.addEventListener('change', e => {
+    state.showAntarticHeatmap = e.target.checked;
+    renderAntarticHeatmap();
+  });
+}
+
+let antarticHeatmapLayer = null;
+async function renderAntarticHeatmap() {
+  if (antarticHeatmapLayer) {
+    state.map.removeLayer(antarticHeatmapLayer);
+    antarticHeatmapLayer = null;
+  }
+  if (!state.showAntarticHeatmap || state.filterRegion !== 'antartica') return;
+  await ensureAntarticGeositiosLoaded();
+  // Convertir coords WGS84 → EPSG:3031 (proj4) → píxeles del CRS polar
+  // pero L.heatLayer espera [lat, lon, intensity] en lat/lon (no proyectados).
+  // Para CRS custom, hacemos la conversión a coordenadas planares EPSG:3031
+  // y las pasamos como pseudo-lat/lon que el CRS polar entiende.
+  const feats = state.antarticGeositios.features || [];
+  const points = feats.map(f => {
+    const [lon, lat] = f.geometry.coordinates;
+    // Intensidad: si tiene pubs_count úsalo (max 50→1.0), si no, base 0.5
+    const pubs = f.properties.pubs_count || 5;
+    const intensity = Math.min(pubs / 40, 1.0);
+    return [lat, lon, intensity];
+  });
+  antarticHeatmapLayer = L.heatLayer(points, {
+    radius: 35, blur: 25, max: 1.0, minOpacity: 0.3,
+    gradient: { 0.2: '#3498db', 0.4: '#5fb878', 0.6: '#f1c40f', 0.8: '#e67e22', 1.0: '#e74c3c' },
+  });
+  antarticHeatmapLayer.addTo(state.map);
 }
 
 // ---------- Léxico ----------

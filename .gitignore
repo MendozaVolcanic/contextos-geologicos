@@ -69,3 +69,5 @@ node_modules/
 __pycache__/
 *.pyc
 docs/mapas/antartica/bedmap3/
+docs/mapas/antartica/add_coastline*.zip
+docs/mapas/antartica/add_coastline/
