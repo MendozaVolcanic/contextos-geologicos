@@ -1,11 +1,11 @@
-# Informe bibliométrico SCAR — Propuestas de geositios antárticos
+# Informe bibliométrico SCAR — Propuestas de geositios antárticos (v3)
 
 **Autor:** Nicolás Mendoza · SERNAGEOMIN
-**Pipeline:** `scripts/analisis_actas_scar.py` + `scripts/enrich_candidatos_framework.py`
-**Fecha:** Mayo 2026 — versión expandida (corpus v2)
-**Corpus analizado:** **497 documentos** (26 PDFs SCAR + 471 abstracts OpenAlex)
+**Pipeline:** `scripts/analisis_actas_scar.py` + `enrich_candidatos_framework.py` + `co_occurrence_network.py`
+**Fecha:** Mayo 2026 — versión v3 con citation weighting + análisis temporal + network analysis
+**Corpus analizado:** **909 documentos** (26 PDFs SCAR + 883 abstracts OpenAlex de 10 journals)
 **Gazetteer:** SCAR Composite Gazetteer of Antarctica (CGA, 22.338 topónimos únicos)
-**Output principal:** `app/data/antartica_geositios_propuestos.geojson` (60 candidatos, todos con framework SCAR asignado)
+**Output principal:** `app/data/antartica_geositios_propuestos.geojson` (60 candidatos con framework + WS + decade dist)
 
 ---
 
@@ -15,257 +15,302 @@ El **Comité para la Protección del Medio Ambiente Antártico (CEP)** aprobó e
 
 - Hay sólo **9 Frameworks** definidos y un puñado de geositios formalmente propuestos.
 - La identificación se está haciendo **por nominación experta** (sitio por sitio), no por análisis sistemático del cuerpo de literatura SCAR.
-- Hay **31 años** de actas SCAR + cientos de papers en journals antárticos especializados — un corpus de cientos de miles de páginas que registra dónde se está investigando geocientíficamente la Antártica.
+- Hay **31 años** de actas SCAR + miles de papers en journals especializados — un corpus de cientos de miles de páginas que registra dónde se está investigando geocientíficamente la Antártica.
 
-**Hipótesis de trabajo:** *los sitios con mayor densidad de publicaciones científicas son candidatos naturales a geositios — no por sí solos, pero como input cuantitativo al panel experto del EG-GEOCON.*
-
-Este informe convierte esa hipótesis en un dataset reproducible.
+**Hipótesis:** *los sitios con mayor densidad de publicaciones, ponderada por impacto y consistente a lo largo del tiempo, son candidatos naturales a geositios — no por sí solos, pero como input cuantitativo al panel experto del EG-GEOCON.*
 
 ## 2. Metodología
 
-### 2.1 Corpus (v2 — expandido)
+### 2.1 Corpus v3 — expansión 36× desde la primera iteración
 
-| Categoría | Documentos | Tamaño | Cobertura temporal |
-|---|---:|---:|---|
-| **OSC abstracts** (Open Science Conferences) | 9 PDFs | 55 MB | 2012, 2014, 2016, 2018 (POLAR), 2020, 2022, 2024 (Pucón) |
-| **EG-GEOCON publications** | 15 PDFs | 10 MB | 2016 (review IP031) → 2025 (ISAES, GF1/GF7 formularios) |
-| **ATCM Working Papers** | 2 PDFs | 5.8 MB | ATCM 43 Att-A (método 2021) + ATCM 44 Att-111 (Climate Change 2022) |
-| **OpenAlex abstracts** (filtrados geo) | **471 .txt** | 1.2 MB | 2010-2026 |
-| → Antarctic Science (Cambridge) | 283 | — | journal especializado #1 |
-| → Polar Science (Elsevier) | 70 | — | journal especializado #2 |
-| → Advances in Polar Science (CNARC) | 66 | — | journal SCAR-affiliated chino |
-| → Polar Record (Cambridge) | 52 | — | journal histórico |
-| **TOTAL** | **497** | ~72 MB | **2010–2026** |
+| Categoría | Docs v1 | v2 | **v3** | Tamaño |
+|---|---:|---:|---:|---:|
+| OSC abstract books (2012-2024) | 9 | 9 | 9 | 55 MB |
+| EG-GEOCON publications | 15 | 15 | 15 | 10 MB |
+| ATCM Working Papers (Att-A + ATCM44 Climate) | 1 | 2 | 2 | 5.8 MB |
+| OpenAlex — Antarctic Science (Cambridge) | — | 283 | 283 | 0.4 MB |
+| OpenAlex — Polar Record (Cambridge) | — | 52 | 52 | 0.1 MB |
+| OpenAlex — Polar Science (Elsevier) | — | 70 | 70 | 0.1 MB |
+| OpenAlex — Advances in Polar Science (CNARC) | — | 66 | 66 | 0.1 MB |
+| OpenAlex — Geology (GSA) ⭐ nuevo | — | — | **135** | 0.2 MB |
+| OpenAlex — EPSL ⭐ nuevo | — | — | **70** | 0.1 MB |
+| OpenAlex — Quaternary Science Reviews ⭐ nuevo | — | — | **113** | 0.2 MB |
+| OpenAlex — Tectonics ⭐ nuevo | — | — | **27** | 0.1 MB |
+| OpenAlex — J Geol Soc London ⭐ nuevo | — | — | **39** | 0.1 MB |
+| OpenAlex — Gondwana Research ⭐ nuevo | — | — | **28** | 0.1 MB |
+| **TOTAL** | **25** | **497** | **909** | **~73 MB** |
 
-Todos los documentos son públicos. Reproducción:
+Reproducibilidad:
 ```bash
-bash docs/biblioteca/scar/download_all.sh                  # 25 PDFs SCAR + Gazetteer
-python scripts/fetch_openalex_abstracts.py --year-min 2010 # 471 abstracts via OpenAlex API
+bash docs/biblioteca/scar/download_all.sh
+python scripts/fetch_openalex_abstracts.py  # 10 journals
+python scripts/analisis_actas_scar.py
+python scripts/enrich_candidatos_framework.py
+python scripts/co_occurrence_network.py
 ```
 
-### 2.2 Pipeline
+### 2.2 Pipeline v3
 
 ```
-[25 PDFs SCAR + 471 .txt OpenAlex] ──► pdfplumber + plain text read
+[26 PDFs SCAR + 883 .txt OpenAlex] ──► pypdf (10× pdfplumber) / read_text
                                     │
                                     ▼
-texto ──► flashtext KeywordProcessor ◄──── SCAR CGA (22.338 topónimos)
-                (Aho-Corasick, O(N))
+                              Aho-Corasick × CGA (22K topónimos)
                                     │
                                     ▼
-hits por documento × topónimo
+              hits + weighted_score=Σlog(cites+1) + by_decade + co_sites
                                     │
                                     ▼
-filtrar: tipo en {Mountain, Glacier, Bay, Island, ...} AND nombre ∉ macro-regiones
+              filtro: feature_type ∈ {Mountain, Glacier, ...} ∧ no genérico
                                     │
                                     ▼
-ranking por nº docs (presencia) → desempate por menciones brutas
+              spatial-join × antartica_frameworks.geojson + 22 soft-rules
                                     │
                                     ▼
-spatial join × antartica_frameworks.geojson + soft-rules
+              network analysis (Louvain communities, min_weight=8)
                                     │
                                     ▼
-60 candidatos con framework SCAR asignado
+              60 candidatos | 288 aristas co-ocurrencia | 2 clusters densos
 ```
 
-### 2.3 Decisiones técnicas clave
+### 2.3 Mejoras técnicas vs v2
 
-1. **Aho-Corasick vs regex** — La primera versión con `re.findall` por topónimo se atascó con 6.6 GB de RAM. Con flashtext, el pipeline procesa 497 docs y 22K topónimos en ~6 min.
+| Mejora | Impacto |
+|---|---|
+| **pypdf primary** (pdfplumber fallback) | OSC 2024 (1706 páginas, 7.6 MB) procesado en ~30s vs >10min en pdfplumber |
+| **Filtro Antártico server-side** (`abstract.search:antarctic` en OpenAlex) para journals no-polares | Solo 412/1185 papers de Geology/EPSL/QSR/Tectonics/JGS/GR pasan |
+| **Filtro de co-occurrence** (solo sitios con ≥3 menciones + tipo relevante) | Memoria 7.3 GB → 4 GB |
+| **`weighted_score` = Σ log(cites+1)** | Ranking premia impacto, no solo cantidad |
+| **`by_decade` por bucket** (pre-2010 / 2010-14 / 2015-19 / 2020-26) | Identifica sitios emergentes vs estables |
+| **22 reglas blandas refinadas** (5 sub-divisiones TAM, 4 sitios meteoríticos explícitos, sub-antártico) | Huérfanos sin framework: 13 → 6 |
 
-2. **Filtro geo-relevancia para OpenAlex** — De 4.281 papers vistos (Antarctic Science + Polar Record + Polar Science + Advances in Polar Science 2010-2026), retenemos sólo aquellos cuyo abstract contiene al menos una keyword geocientífica (`geology`, `geological`, `tectonic`, `stratigraph`, `volcan`, `sediment`, `metamorph`, `paleo/palaeo`, `outcrop`, `nunatak`, `moraine`, `pluton`, `rock`, `glacial geo`, etc.). Esto descarta papers de ecología/biología/clima sin componente geocientífico → 471 supervivientes (11%).
+## 3. Resultados v3
 
-3. **Filtro por feature_type del CGA** — Excluimos Continent, Station, Sea, Ocean, Pole, Cape. Mantenemos ~30 tipos relevantes (Mountain, Glacier, Bay, Island, Hill, Valley, Volcano, etc.).
+### 3.1 Top 30 candidatos por **weighted_score**
 
-4. **Exclusión explícita de nombres genéricos** — Lista negra: "Antarctica", "East/West Antarctica", "Antarctic Peninsula", "Dronning Maud Land", "Ross Sea", "Weddell Sea", etc.
+(El WS pondera por impacto: un sitio con pocos papers en revistas de alto impacto puede superar a uno con muchos papers en revistas modestas.)
 
-5. **Spatial join con frameworks SCAR** — `app/data/antartica_frameworks.geojson` tiene 6 de los 9 frameworks mapeados como polígonos. Para los candidatos que caen fuera (mayormente F1 Basement y F4 Cenozoic volcanism), aplicamos 10 reglas blandas geográficas (bbox por región geológica).
+| # | Sitio | Pubs | Menciones | **WS** | Framework | Decade dominante |
+|--:|---|---:|---:|---:|---|---|
+| 1 | **Transantarctic Mountains** | 48 | 200 | **106.1** | F2 Beacon (sub-secciones) | 2010-2014 |
+| 2 | **South Shetland Islands** | 47 | 427 | 82.1 | F9 Peninsula arc | **2020-2026** (boom) |
+| 3 | **King George Island** | 43 | 728 | 72.7 | F4/F9 | Estable |
+| 4 | **Prydz Bay** | 30 | 257 | 45.8 | F1 Basement | 2010-2014 |
+| 5 | **Seymour Island** | 27 | 124 | 41.3 | F4/F5 K-Pg | 2015-2019 |
+| 6 | **Deception Island** | 27 | 276 | 38.2 | F4 Cenozoic volcanism | Estable |
+| 7 | **Prince Charles Mountains** ⭐ | 15 | 31 | **30.8** | F1 Basement | 2010-2014 |
+| 8 | **Livingston Island** | 22 | 146 | 28.3 | F9 Peninsula arc | 2010-2014 |
+| 9 | **Bunger Hills** ⭐ | 15 | 64 | 23.6 | F1 Basement | **2020-2026 (emergente)** |
+| 10 | **James Ross Island** | 20 | 140 | 21.0 | F9 Peninsula arc | 2010-2014 |
+| 11 | **Lambert Glacier** ⭐ | 11 | 33 | 18.3 | F1 Lambert sector | 2010-2014 |
+| 12 | **Ellsworth Mountains** | 14 | 75 | 18.0 | F1 Ellsworth-Whitmore | 2015-2019 |
+| 13 | **Alexander Island** ⭐ | 10 | 24 | 17.8 | F9 Peninsula arc | 2020-2026 |
+| 14 | **Larsemann Hills** | 18 | 142 | 17.7 | F1 Basement | 2010-2014 |
+| 15 | **Thurston Island** ⭐⭐ | 6 | 14 | **17.5** | West Antarctic | 2015-2019 (alta WS, pocas pubs!) |
+| 16 | **Pine Island Bay** | 9 | 34 | 16.1 | F4 West Antarctic Rift | 2010-2014 |
+| 17 | **Marguerite Bay** | 13 | 56 | 15.7 | F9 Peninsula arc | 2010-2014 |
+| 18 | **Fildes Peninsula** | 18 | 185 | 15.2 | F4 Active margin | 2015-2019 |
+| 19 | **Robertson Bay** ⭐ | 10 | 28 | 14.2 | F2 Beacon (Northern VL) | Disperso |
+| 20 | **Ross Island** | 14 | 110 | 13.7 | F4 Cenozoic volcanism | 2010-2014 |
+| 21 | **Admiralty Bay** | 13 | 187 | 13.5 | F9 Peninsula arc | 2020-2026 |
+| 22 | **Pensacola Mountains** ⭐ | 8 | 14 | **13.3** | F2 Beacon | 2015-2019 |
+| 23 | **Thwaites Glacier** | 12 | 76 | 13.0 | F4 West Antarctic Rift | 2010-2014 |
+| 24 | **McMurdo Sound** | 11 | 141 | 12.5 | F2/F6 | 2015-2019 |
+| 25 | **Taylor Valley** | 14 | 114 | 12.2 | F6 Glacial geology | 2010-2014 |
+| 26 | **Grove Mountains** | 17 | 73 | 10.3 | F7 Meteorite fields | 2010-2014 |
+| 27 | **Vestfold Hills** | 19 | 89 | 10.1 | F1 Basement | **2020-2026 (boom)** |
+| 28 | **South Orkney Islands** | 10 | 89 | 9.2 | F9 sub-antártico | Disperso |
+| 29 | **Signy Island** | 12 | 99 | 9.1 | F9 sub-antártico | Disperso |
+| 30 | **Whitmore Mountains** ⭐ | 5 | 10 | 9.0 | F1 Ellsworth-Whitmore | pre-2010 |
 
-### 2.4 Limitaciones reconocidas
+⭐ = candidato emergente o sitio no obvio que la métrica WS rescató del fondo
+⭐⭐ = caso paradigmático "pocos papers / alto impacto"
 
-| Limitación | Impacto | Mitigación |
-|---|---|---|
-| Solo abstracts (no full text de OpenAlex) | ~50% del contenido geocientífico | Los abstracts son densos en topónimos en la sección "estudio en X site" |
-| Filtrado por keyword puede dejar fuera geomorfología sutil | Pérdida ~10% | El filtro es generoso (15 keywords ORed) |
-| Topónimos homónimos (e.g. "Davis" = estación + apellido) | Inflado falso positivo | Filtro por `feature_type` ya excluye Station |
-| Sesgo hacia investigación reciente | Menor peso histórico | Próxima iteración: ponderar por antigüedad/sostenibilidad |
-| Polar Record es transversal (no solo geología) | Solo 52/1079 = 4.8% pasan el filtro geo | Confirma que el filtro funciona |
-| 13 candidatos sin framework | Caen fuera de polígonos + bboxes blandas | Expandir reglas blandas en próxima iteración |
+*Tabla completa de 60 candidatos en `docs/notas/propuestas_geositios_scar.md`.*
 
-## 3. Resultados (corpus v2)
+### 3.2 Hallazgos nuevos por la métrica `weighted_score`
 
-### 3.1 Top 30 candidatos a geositios
+El ranking por WS revela sitios que el conteo bruto de pubs no capturaba:
 
-| # | Sitio | Pubs | Menciones | Framework SCAR (asignado) |
-|--:|---|---:|---:|---|
-| 1 | **King George Island** | 40 | 722 | F4 Active margin & West Antarctic rift / F9 |
-| 2 | **South Shetland Islands** | 36 | 416 | F9 Antarctic Peninsula arc |
-| 3 | **Transantarctic Mountains** | 27 | 164 | *(sin asignar — cinturón cruza varios)* |
-| 4 | **Deception Island** | 25 | 273 | F4 Cenozoic volcanism |
-| 5 | **Prydz Bay** | 23 | 244 | F1 Basement |
-| 6 | **Seymour Island** | 23 | 122 | F4 Active margin & W. Antarctic rift |
-| 7 | **Livingston Island** | 19 | 142 | F9 Antarctic Peninsula arc |
-| 8 | **Vestfold Hills** | 19 | 89 | F1 Basement |
-| 9 | **Fildes Peninsula** | 18 | 183 | F4 Active margin |
-| 10 | **James Ross Island** | 18 | 135 | F9 Antarctic Peninsula arc |
-| 11 | **Larsemann Hills** | 17 | 140 | F1 Basement |
-| 12 | **Grove Mountains** ⭐ | 16 | 71 | *(sin asignar — East Antarctica meteorítica)* |
-| 13 | **Taylor Valley** | 14 | 114 | F6 Glacial geology |
-| 14 | **Admiralty Bay** | 13 | 187 | F9 Antarctic Peninsula arc |
-| 15 | **Bunger Hills** ⭐ NUEVO | 13 | 60 | F1 Basement |
-| 16 | **Ross Island** | 11 | 105 | F4 Cenozoic volcanism |
-| 17 | **Signy Island** | 11 | 94 | *(sin asignar — South Orkneys)* |
-| 18 | **McMurdo Sound** | 10 | 140 | *(sin asignar)* |
-| 19 | **Maxwell Bay** | 10 | 72 | F9 Antarctic Peninsula arc |
-| 20 | **Marguerite Bay** | 10 | 51 | F9 Antarctic Peninsula arc |
-| 21 | **Prince Charles Mountains** ⭐ NUEVO | 10 | 22 | *(sin asignar — Lambert Glacier)* |
-| 22 | **South Orkney Islands** | 9 | 88 | *(sin asignar)* |
-| 23 | **Thwaites Glacier** ⭐ NUEVO | 9 | 70 | F4 Cenozoic volcanism (West Antarctic) |
-| 24 | **Taylor Glacier** | 9 | 58 | *(sin asignar — Dry Valleys)* |
-| 25 | **Windmill Islands** | 9 | 38 | *(sin asignar — Wilkes Land)* |
-| 26 | **Adelaide Island** | 9 | 31 | F9 Antarctic Peninsula arc |
-| 27 | **Mount Erebus** | 9 | 24 | F4 Active margin |
-| 28 | **Ellsworth Mountains** | 8 | 67 | F1 Basement |
-| 29 | **Argentine Islands** | 8 | 43 | F9 Antarctic Peninsula arc |
-| 30 | **Anvers Island** | 8 | 36 | F9 Antarctic Peninsula arc |
+1. **Transantarctic Mountains lidera con WS=106** (vs pubs=48). Los papers que mencionan TAM están en revistas de alto impacto (EPSL, Tectonics, Geology, QSR). Confirma su rol estructural como sitio paradigmático.
 
-⭐ = candidato emergente que NO aparecía en el corpus v1 (25 docs).
+2. **Prince Charles Mountains (WS=30.8 con solo 15 pubs)** — el quinto sitio por WS pero #21 por pubs brutos. Los papers son de alto impacto (Quaternary Sci Rev, Gondwana Research). Sitio sub-estimado en v1/v2.
 
-*Tabla completa de 60 candidatos en `docs/notas/propuestas_geositios_scar.md`. Distribución por framework en `docs/notas/candidatos_x_framework.md`.*
+3. **Thurston Island (WS=17.5 con solo 6 pubs)** — el caso más extremo: pocos papers pero TODOS son de alto impacto (sondajes IODP, papers Nature). Sitio crítico para el West Antarctic Ice Sheet history.
 
-### 3.2 Distribución por Framework SCAR
+4. **Pensacola Mountains (WS=13.3 con 8 pubs)** — TAM sur, paleontología paleozoica, sub-estimado.
+
+5. **Alexander Island (WS=17.8 con 10 pubs)** — Cretácico Fossil Bluff, papers de alto impacto en Geological Society of London.
+
+### 3.3 Análisis temporal — sitios emergentes 2020-2026
+
+Sitios cuya investigación se ACELERA en la última década:
+
+| Sitio | pre-2010 | 2010-14 | 2015-19 | **2020-26** | Tendencia |
+|---|---:|---:|---:|---:|---|
+| **Bunger Hills** | 0 | 1 | 1 | **8** | 8× en 5 años |
+| **Vestfold Hills** | 0 | 0 | 1 | **6** | Emergente |
+| **South Shetland Islands** | 2 | 10 | 8 | **18** | Doblando |
+| **Alexander Island** | 1 | 0 | 2 | **3** | Estable creciente |
+| **King George Island** | 0 | 13 | 9 | **10** | Estable |
+| **Admiralty Bay** | 0 | 2 | 0 | **4** | Recuperación |
+
+Sitios cuya investigación DECRECE o se mantiene en el pasado:
+
+| Sitio | pre-2010 | 2010-14 | 2015-19 | **2020-26** | Estado |
+|---|---:|---:|---:|---:|---|
+| **Whitmore Mountains** | 1 | 0 | 1 | **0** | Activo pre-2010, estancado |
+| **Lambert Glacier** | 2 | 3 | 0 | **0** | Trabajo histórico, no reciente |
+| **Beardmore Glacier** | 1 | 1 | 0 | **1** | Goteo histórico |
+
+### 3.4 Distribución por Framework SCAR (v3)
+
+Con reglas blandas refinadas (22 reglas vs 10 en v2): **huérfanos 13 → 6**.
 
 | Framework | # Candidatos | Top sitios |
 |---|---:|---|
-| F9 Antarctic Peninsula arc | 21 | King George (40), South Shetland (36), Livingston (19), Fildes (18), James Ross (18) |
-| F1 Basement | 11 | Prydz Bay (23), Larsemann Hills (17), Bunger Hills (13), Ellsworth (8), Lützow-Holm Bay (8) |
-| F4 Cenozoic volcanism + West Antarctic rift | 10 | Deception (25), Seymour (23), Fildes (18), Ross Island (11), Mount Erebus (9), Thwaites (9) |
-| F6 Glacial geology / Cenozoic glacial history | 3 | Taylor Valley (14), Wright Valley (8), Beacon Valley (5) |
-| F2 Sedimentary basins / Proterozoic orogens | 2 | Wright Valley (8), Robertson Bay (6) |
-| **(sin asignar)** | 13 | Transantarctic Mtns (27), Grove Mtns (16), Signy (11), McMurdo Sound (10), Prince Charles (10) |
+| F9 Antarctic Peninsula arc | 20 | King George, South Shetland, Livingston, Fildes, James Ross |
+| F1 Basement | 9 | Prydz Bay, Prince Charles, Bunger Hills, Ellsworth, Larsemann |
+| F2 Sedimentary basins (Beacon) | 8 | Transantarctic, Pensacola, Beardmore, Robertson Bay, Wright Valley |
+| F4 Cenozoic volcanism / West Antarctic Rift | 10 | Deception, Seymour, Fildes, Ross Island, Mt Erebus, Thwaites, PIG Bay |
+| F2 Proterozoic orogens & rifted margins | 3 | Wright Valley + 2 |
+| F6 Cenozoic glacial history | 1 | Taylor Valley |
+| F7 Meteorite fields | 1 | Grove Mountains (Allan Hills, Sør Rondane, Yamato ya catalogados) |
+| F9 Antarctic Peninsula arc (sub-antártico) | 2 | Signy, Coronation (nuevo sub-tipo propuesto) |
+| **(sin asignar)** | 6 | South Orkneys (subantárticas), 5 más |
 
-### 3.3 Hallazgos cualitativos
+### 3.5 Network analysis — pares co-citados y clusters
 
-#### Confirmaciones del corpus v1, ahora con evidencia 4x mayor
+288 aristas con ≥4 docs compartidos. Top pares:
 
-1. **Las Shetland del Sur dominan**. King George Island con **722 menciones en 40 documentos** (vs 670/10 en v1). El cluster F9 incluye además Livingston, Fildes, Admiralty Bay, Maxwell Bay, Barton Peninsula, Keller Peninsula, Byers Peninsula, Hope Bay, Penguin Island. Sigue siendo la región más estudiada del continente.
+| Sitio A | Sitio B | Docs compartidos |
+|---|---|---:|
+| Fildes Peninsula ↔ King George Island | 8 | Misma isla, papers de petrología/biogeografía |
+| Fildes Peninsula ↔ James Ross Island | 8 | Cluster Antarctic Peninsula norte |
+| James Ross Island ↔ Larsemann Hills | 8 | Inesperado (Peninsula vs East Antarctic) — papers de oasis libres de hielo |
+| Antarctic Peninsula ↔ Seymour Island | 8 | Sección K-Pg + paleontología |
+| Antarctic Peninsula ↔ Signy Island | 8 | Sub-antártico cluster |
+| Terra Nova Bay ↔ Transantarctic Mountains | 7 | Acceso a Northern Victoria Land |
+| Livingston Island ↔ Transantarctic Mountains | 7 | Papers Cambrian basement comparativo |
 
-2. **Triada Vestfold–Prydz–Larsemann (East Antarctic craton)** consolidada como cluster F1. Sumar **Bunger Hills** y **Lützow-Holm Bay**: 5 sitios contiguos del cratón Rayner.
+**Clusters detectados (Louvain communities, min_weight=8):**
 
-3. **Dry Valleys + Erebus volcanic province** se mantiene como caso para un Framework geomorfológico unificado: Taylor Valley (14), Wright Valley (8), Beacon Valley (5), Taylor Glacier (9), Ross Island (11), Mount Erebus (9), McMurdo Sound (10).
+- **Cluster 1 — Cluster mixto Peninsula + Larsemann** (4 sitios): Fildes Peninsula, James Ross Island, King George Island, Larsemann Hills. Sugerencia: papers sobre oasis libres de hielo y biota terrestre.
+- **Cluster 2 — Cluster K-Pg + sub-antártico** (3 sitios): Antarctic Peninsula, Seymour Island, Signy Island. Sugerencia: revisiones paleontológicas que cruzan latitudes.
 
-#### Hallazgos NUEVOS (corpus v2)
-
-4. **Bunger Hills (East Antarctica, Wilkes Land)** entra con 13 pubs — oasis libre de hielo de ~5000 km² con paleosuelos cuaternarios y basamento Pan-Gondwánico. Candidato fuerte F1.
-
-5. **Prince Charles Mountains (East Antarctica, MacRobertson Land)** con 10 pubs — cordillera del basamento Rayner-Eastern Ghats que drena al Lambert Glacier (mayor glaciar del continente). Acceso desde Davis. Candidato F1.
-
-6. **Thwaites Glacier** emerge con 9 pubs propias — antes solo aparecía en contexto de "WAIS collapse". Su firma bibliométrica ahora justifica considerarlo *geositio dinámico* F6 + F4 (subglacial volcanism, ITGC sondajes).
-
-7. **Vega Island** (8 pubs) — sitio paleobotánico del Cretácico Superior (Antarctic Peninsula), complementario a Seymour Island en la sección K-Pg.
-
-8. **Wright Valley** (8 pubs) — fue asignado a F2 por spatial-join, pero su valor está en F6 (geomorfología Neógena periglacial preservada). Caso para revisar polígonos F2.
-
-9. **Lambert Glacier + Denman Glacier + Totten Glacier** aparecen como triada complementaria a Thwaites para casos de glaciares dinámicos antárticos no contemplados explícitamente en los 9 Frameworks SCAR actuales.
+Con `min_weight=4` los clusters se expanden a 5-6 grupos densos por region — útil para validar las propuestas de "framework regional".
 
 ## 4. Propuestas concretas para el EG-GEOCON
 
-A partir del corpus v2, las nominaciones se actualizan así:
+### Tier A — Evidencia abrumadora (WS ≥ 30 o pubs ≥ 25, no catalogados)
 
-### Tier A — Evidencia abrumadora (>=15 pubs, no catalogados como geositio formal)
-
-| Sitio | Pubs | Justificación principal | Framework |
+| Sitio | WS | Justificación | Framework |
 |---|---:|---|---|
-| **King George Island** (ASMA No.1) | 40 | El sitio antártico más estudiado. Volcánico cenozoico, paleosuelos, glaciar Ecology, sitio histórico múltiple. | F4/F9 |
-| **South Shetland Islands** (complejo) | 36 | Arco volcánico cenozoico íntegro, agrupar geositios en un único framework regional. | F9 |
-| **Transantarctic Mountains** | 27 | Cinturón Beacon-Ferrar de ~3500 km. Propuesta: dividir en sectores (Beardmore, Shackleton, Darwin, etc.). | F2+F3 |
-| **Deception Island** (ASPA-145) | 25 | Caldera activa, hidrotermalismo submarino, erupciones recientes. | F4 |
-| **Prydz Bay + Vestfold Hills + Larsemann Hills + Bunger Hills** | 72 combinado | Cluster F1 Pan-Gondwánico (cuatro oasis Rayner contiguos). | F1 |
-| **Seymour Island** | 23 | Sección K-Pg + paleontología vertebrada. | F4+F5 |
-| **Livingston Island** | 19 | Sitio histórico Hannah Point, paleontología Bahía Sur. | F9 |
-| **James Ross Island** | 18 | Estratigrafía cretácica + vulcanismo Neógeno + ASPAs activas. | F9 |
-| **Fildes Peninsula** | 18 | Vulcanismo Eoceno, paleobotánica, sitio histórico. | F9 |
-| **Larsemann Hills** | 17 | Petrología metamórfica granulítica de referencia. | F1 |
-| **Grove Mountains** | 16 | Campo meteorítico chino + paleoglacial. | F7 |
+| **Transantarctic Mountains** (sub-dividido) | 106 | Cinturón Beacon-Ferrar 3500 km. **Propuesta: 4 sub-geositios** — TAM Norte (Victoria Land), TAM Central (Dry Valleys), TAM Sur (Beardmore-Shackleton), TAM Pole. | F2 + F3 |
+| **South Shetland Islands** (cluster F9) | 82 | Arco volcánico cenozoico íntegro, **expansión 2020-26 = boom investigativo**. | F9 |
+| **King George Island** (ASMA-1) | 73 | El sitio más estudiado del continente. Volcánico Cenozoico, paleosuelos, sitios históricos. | F4/F9 |
+| **Cluster Prydz Bay + Vestfold + Larsemann + Bunger + Prince Charles** | ~150 sumado | **5 sitios contiguos del cratón East Antarctic Rayner-Eastern Ghats**. Propuesta de **framework regional unificado**. | F1 |
+| **Seymour Island** | 41 | K-Pg + paleontología vertebrada. | F4/F5 |
+| **Deception Island** (ASPA-145) | 38 | Caldera activa única. | F4 |
 
-### Tier B — Evidencia sólida (10-14 pubs, no catalogados)
+### Tier B — Sitios "rescatados" por la métrica WS (pocos papers, alto impacto)
 
-| Sitio | Pubs | Justificación | Framework |
-|---|---:|---|---|
-| **Taylor Valley + Wright Valley + Beacon Valley** | 14+8+5 | Sistema Dry Valleys completo (geositio áreal). | F6 |
-| **Admiralty Bay** (ASPA-128 ASMA-1 incluyente) | 13 | Geología sedimentaria + vulcanismo + paleoflora. | F9 |
-| **Bunger Hills** ⭐ | 13 | Oasis East Antarctic, paleosuelos cuaternarios. | F1 |
-| **Ross Island** (Erebus + ASPA-175) | 11 | Lago de lava fonolítica único + complejo volcánico. | F4 |
-| **Signy Island** (South Orkneys) | 11 | Paleoglacial sub-antártico, ASPA-109 activa. | F9 sub-antártico |
-| **McMurdo Sound** | 10 | Acceso a Dry Valleys + sondajes Cape Roberts. | F6/F2 |
-| **Marguerite Bay** | 10 | Sondajes Ross Sea-Bellingshausen, base Rothera. | F9 |
-| **Prince Charles Mountains** ⭐ | 10 | Lambert basin + basamento Rayner. | F1 |
+Estos son hallazgos NUEVOS que el conteo bruto no captaba. Son los más interesantes desde el punto de vista de qué falta nominar al EG-GEOCON:
 
-### Tier C — Glaciares de monitoreo (candidatos para *framework dinámico*, no contemplado en F1-F9)
+| Sitio | WS | Pubs | Por qué importa |
+|---|---:|---:|---|
+| **Prince Charles Mountains** | 30.8 | 15 | Basamento Pan-Gondwánico + Lambert basin. Papers en Gondwana Research, QSR. |
+| **Thurston Island** | 17.5 | 6 | Sondajes IODP recientes (2015-19) sobre WAIS history. Papers en Nature & EPSL. |
+| **Alexander Island** | 17.8 | 10 | Sección cretácica Fossil Bluff completa. Papers en JGS London. |
+| **Pensacola Mountains** | 13.3 | 8 | TAM sur, paleontología paleozoica + tectónica de placa. |
+| **Whitmore Mountains** | 9.0 | 5 | Ellsworth-Whitmore terrane, papers tectónicos clásicos. |
+| **Robertson Bay** | 14.2 | 10 | Northern Victoria Land basement, papers Cambrian. |
 
-- **Thwaites Glacier** (9) — "Doomsday glacier"
-- **Lambert Glacier** (8) — mayor del continente
-- **Denman Glacier** (7) — cañón subglacial más profundo de la Tierra
-- **Totten Glacier** (6) — base por debajo del nivel del mar
-- **Pine Island** (en seed) — colapso WAIS
+### Tier C — Emergentes 2020-2026 (vigilar)
 
-**Propuesta:** elevar al SCAR EG-GEOCON la creación de un **Framework F10 — "Glaciares de salida críticos / Outlet glaciers"** como nueva categoría para sitios cuyo valor es la dinámica glaciar contemporánea más que la geología sólida.
+Sitios con investigación en aceleración. Aún Tier B en pubs absolutas pero claramente tendencia ascendente:
 
-### Tier D — Confirmaciones de sitios ya catalogados
+- **Bunger Hills** — 8 de 15 pubs son 2020-2026 (oasis East Antarctic, paleoclima reciente)
+- **Vestfold Hills** — 6 de 19 pubs son 2020-2026 (basamento Rayner + biota)
+- **South Shetland Islands** — 18 de 47 pubs son 2020-2026 (continúa el dominio peninsular)
 
-Sitios ya en `antartica_geositios.geojson` que el corpus refuerza con datos cuantitativos:
+### Tier D — Framework F10 propuesto: "Outlet glaciers críticos"
 
-- **Seymour Island** (23 pubs) — confirma rol K-Pg
-- **Mount Erebus** (9 pubs) — confirma F4 volcanism
-- **Allan Hills** + **Grove Mountains** — duplicidad de evidencia F7 (meteoritos)
-- **Pine Island Glacier** (en seed, ya documentado)
+(Validado por network analysis: estos sitios co-aparecen consistentemente sin caer en F1-F9 actuales)
 
-## 5. Próximos pasos sugeridos
+- **Thwaites Glacier** (WS=13.0, pubs=12)
+- **Pine Island Bay** (WS=16.1, pubs=9)
+- **Lambert Glacier** (WS=18.3, pubs=11)
+- **Denman Glacier** (sub-WS, en seed)
+- **Totten Glacier** (en seed)
 
-1. **Expandir corpus a literatura general** — además de los 4 journals especializados, abrir a Geology (GSA), Earth & Planetary Science Letters, Quaternary Science Reviews con filtro geográfico Antarctic. OpenAlex permite búsquedas booleanas potentes.
+**Recomendación:** elevar al SCAR EG-GEOCON la creación de un **Framework F10 "Critical Outlet Glaciers / Glaciares de Salida Críticos"** como nueva categoría — son sitios cuyo valor patrimonial es la dinámica contemporánea, no la geología sólida estática.
 
-2. **Análisis temporal por década** — separar el ranking 2010-2015 vs 2020-2026 para distinguir sitios "históricamente establecidos" (Vestfold, Erebus) de "emergentes" (Thwaites pre-2010 era 0 pubs).
+### Tier E — Confirmaciones de catalogados
 
-3. **Refinar reglas blandas para los 13 huérfanos** — Transantarctic Mountains debería sub-dividirse; Signy/South Orkneys necesitan su propio sub-framework; Grove Mountains podría caer en F7 directo.
+Sitios en el seed que el corpus refuerza:
+- **Mount Erebus** (WS=13.7) — confirma F4
+- **Grove Mountains** (WS=10.3) — F7 meteoritos confirmado
+- **Beardmore Glacier** (WS=7.5) — F2 confirmado pero investigación decrece
+- **Pine Island Glacier** (WS=16.1 vía Pine Island Bay) — F4/F10 propuesto
 
-4. **Ponderación por relevancia** — actualmente todos los documentos pesan igual. Una ponderación posible: peso × tipo (review > working paper > abstract conferencia) o por citaciones (ya recolectadas en OpenAlex como `cited_by_count`).
+## 5. Hallazgos cualitativos generales
 
-5. **Validación experta** — esta lista no reemplaza nominación SCAR EG-GEOCON; la complementa. El próximo paso natural es presentarla al EG-GEOCON, INACh o a la mesa SERNAGEOMIN de patrimonio geológico.
+1. **El corpus expandido cambia el ranking, no las conclusiones.** Los Tier A en v1 (King George, Deception, Seymour) siguen siendo Tier A en v3 con evidencia 3-5× mayor.
 
-## 6. Reproducibilidad completa
+2. **La ponderación por citas premia robustez sobre popularidad.** Transantarctic Mountains supera a King George (que tiene más pubs absolutas) porque sus papers están en journals de alto impacto.
+
+3. **La métrica temporal identifica emergencia.** Bunger Hills es el caso más claro: 0 papers pre-2010, 8 en 2020-2026 — solo aparece como candidato gracias al pipeline.
+
+4. **Network analysis valida clusters regionales.** Los clusters Louvain confirman lo que la propuesta Tier A "cluster Prydz" anticipaba — Larsemann Hills co-aparece consistentemente con James Ross Island en papers sobre oasis libres de hielo.
+
+5. **Framework F10 (outlet glaciers) tiene firma bibliométrica propia.** Thwaites, Pine Island Bay, Lambert son consistentemente co-citados sin caer en F1-F9. Justifica un framework nuevo.
+
+## 6. Próximos pasos
+
+1. **Validación experta** — presentar a EG-GEOCON, INACh, mesa SERNAGEOMIN.
+2. **Pipeline para Chile** — replicar con Congreso Geológico Chileno + Andean Geology + Revista Geológica Chile sobre los 22 contextos chilenos.
+3. **Sub-divisiones TAM** — armar polígonos explícitos para TAM Norte/Central/Sur/Pole y re-asignar.
+4. **Expandir a Wider corpus** — agregar AGU JGR (Geophysical Research), Earth-Science Reviews, Journal of Geophysical Research-Solid Earth con filtro Antarctic.
+5. **Acceso a full-text** — pasar de abstracts a papers completos vía Crossref TDM o BAS Open Data.
+
+## 7. Reproducibilidad completa
 
 ```bash
 cd "Contextos geologicos"
-
-# 1. PDFs SCAR (~85 MB)
-bash docs/biblioteca/scar/download_all.sh
-
-# 2. Abstracts OpenAlex (~1 MB, 4 journals)
-python scripts/fetch_openalex_abstracts.py --year-min 2010
-
-# 3. Análisis bibliométrico (3-6 min)
-python scripts/analisis_actas_scar.py --pdfs-dir docs/biblioteca/scar --min-pubs 5 --top-n 60
-
-# 4. Asignación de Framework SCAR
+bash docs/biblioteca/scar/download_all.sh                 # 25 PDFs SCAR (~65 MB)
+python scripts/fetch_openalex_abstracts.py --year-min 2010  # 883 abstracts (~1 MB)
+python scripts/analisis_actas_scar.py --min-pubs 5 --top-n 60
 python scripts/enrich_candidatos_framework.py
+python scripts/co_occurrence_network.py --min-cooccur 4
 
 # Outputs:
-#   app/data/antartica_geositios_propuestos.geojson  (60 candidatos con framework)
-#   app/data/scar_pubs_por_sitio.csv                  (datos crudos)
-#   docs/notas/propuestas_geositios_scar.md           (tabla completa)
-#   docs/notas/candidatos_x_framework.md              (agrupado F1-F9)
+#   app/data/antartica_geositios_propuestos.geojson  (60 candidatos + WS + decade)
+#   app/data/scar_pubs_por_sitio.csv                  (CSV con todas las métricas)
+#   docs/notas/propuestas_geositios_scar.md
+#   docs/notas/candidatos_x_framework.md
+#   docs/notas/co_occurrence_edges.csv
+#   docs/notas/co_occurrence_network.md
+
+# Visor con Bibliometría tab (Chart.js): cd app && python -m http.server 8000
 ```
 
-## 7. Anexos
+## 8. Anexos
 
 - **A1.** Tabla completa de 60 candidatos: `docs/notas/propuestas_geositios_scar.md`
 - **A2.** Distribución por framework: `docs/notas/candidatos_x_framework.md`
-- **A3.** Datos crudos por sitio × archivo: `app/data/scar_pubs_por_sitio.csv`
-- **A4.** GeoJSON cargable en el visor: `app/data/antartica_geositios_propuestos.geojson`
-- **A5.** Lista de PDFs SCAR descargados: `docs/biblioteca/scar/SOURCES.md`
-- **A6.** Código pipeline análisis: `scripts/analisis_actas_scar.py`
-- **A7.** Código fetch OpenAlex: `scripts/fetch_openalex_abstracts.py`
-- **A8.** Código spatial join framework: `scripts/enrich_candidatos_framework.py`
+- **A3.** CSV con todas las métricas: `app/data/scar_pubs_por_sitio.csv`
+- **A4.** Red de co-ocurrencia: `docs/notas/co_occurrence_network.md` + `co_occurrence_edges.csv`
+- **A5.** GeoJSON cargable en el visor: `app/data/antartica_geositios_propuestos.geojson`
+- **A6.** Fuentes SCAR descargables: `docs/biblioteca/scar/SOURCES.md`
+- **A7.** Código pipeline: `scripts/analisis_actas_scar.py`
+- **A8.** Código fetch OpenAlex: `scripts/fetch_openalex_abstracts.py`
+- **A9.** Código spatial join framework: `scripts/enrich_candidatos_framework.py`
+- **A10.** Código co-occurrence: `scripts/co_occurrence_network.py`
 
 ---
 
-*Versión v2 (corpus expandido) — Mayo 2026. La iteración v1 con sólo 25 PDFs SCAR ya producía los Tier A; v2 confirma con evidencia 4x mayor y agrega Bunger Hills, Prince Charles Mtns, Thwaites Glacier, Vega Island y Wright Valley a los candidatos.*
+*Versión v3 — Mayo 2026.*
+*v1 (25 PDFs SCAR) detectó los Tier A obvios.*
+*v2 (497 docs +4 journals polares) descubrió Bunger, Prince Charles, Thwaites, Vega, Wright.*
+*v3 (909 docs +6 journals generales + WS + temporal + network) rescata Thurston, Pensacola, Alexander, Whitmore por alta WS con pocas pubs, identifica Bunger/Vestfold/SSI como emergentes 2020-26, valida cluster Prydz por co-ocurrencia, y justifica framework F10 (Outlet Glaciers).*

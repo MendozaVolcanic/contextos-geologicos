@@ -40,27 +40,57 @@ FRAMEWORKS = APP_DATA / "antartica_frameworks.geojson"
 # Reglas blandas para candidatos que no caigan en polígonos mapeados.
 # Tuplas (descripción, bbox=(lat_min, lat_max, lon_min, lon_max), framework).
 # bbox usa convención (S, N, W, E) en grados decimales con signos.
+# Las reglas se evalúan en orden — primer match gana. Orden de específico a genérico.
 SOFT_RULES = [
-    # Antarctic Peninsula (Tierra Graham + Palmer Land + South Shetlands)
+    # --- Sub-divisiones de Transantarctic Mountains (TAM) ---
+    # TAM Norte (Victoria Land, Northern): Ross Orogen basement + Beacon + Ferrar
+    ("TAM Norte (Northern Victoria Land)", (-76.5, -70.0, 160.0, 170.0), "F2 Sedimentary basins (Beacon)"),
+    # TAM Central (sector Dry Valleys-Mawson Glacier): Beacon + Ferrar dominante
+    ("TAM Central (Dry Valleys sector)", (-79.5, -76.5, 158.0, 167.0), "F2 Sedimentary basins (Beacon)"),
+    # TAM Sur (Beardmore-Shackleton-Darwin Glaciers): Beacon + paleontología
+    ("TAM Sur (Beardmore-Shackleton)", (-86.0, -79.5, 150.0, 175.0), "F2 Sedimentary basins (Beacon)"),
+    # TAM Pole sector (cinturón polar wraparound)
+    ("TAM Pole sector", (-87.0, -79.5, 175.0, 180.0), "F2 Sedimentary basins (Beacon)"),
+    ("TAM Pole sector (W)", (-87.0, -79.5, -180.0, -150.0), "F2 Sedimentary basins (Beacon)"),
+
+    # --- Sub-antártico (South Orkney + South Sandwich + South Georgia) ---
+    ("South Orkneys (Signy, Coronation)", (-61.5, -60.0, -47.0, -44.0), "F9 Antarctic Peninsula arc (sub-antártico)"),
+    ("South Sandwich Islands", (-60.0, -56.0, -29.0, -25.0), "F4 Cenozoic volcanism (sub-antártico)"),
+
+    # --- Antarctic Peninsula (Tierra Graham + Palmer Land + South Shetlands) ---
     ("Peninsula arc", (-75.0, -60.0, -80.0, -50.0), "F9 Antarctic Peninsula arc"),
-    # Dry Valleys
-    ("Dry Valleys", (-78.0, -76.5, 161.0, 164.5), "F6 Glacial geology"),
-    # Erebus / Ross Island volcanic province
+
+    # --- Dry Valleys (estricto: solo Taylor/Wright/Beacon Valley) ---
+    ("Dry Valleys (estricto)", (-78.0, -76.8, 161.0, 164.5), "F6 Glacial geology"),
+
+    # --- Erebus / Ross Island volcanic province ---
     ("Ross Island volcanism", (-78.0, -77.0, 165.5, 168.5), "F4 Cenozoic volcanism"),
-    # Northern Victoria Land (Terra Nova, Cape Roberts) — Ross Orogen + Beacon
-    ("Northern Victoria Land", (-76.5, -71.0, 160.0, 170.0), "F2 Sedimentary basins (Beacon)"),
-    # Transantarctic Mountains (cinturón TAM)
-    ("Transantarctic Mountains", (-87.0, -78.0, 160.0, 180.0), "F2 Sedimentary basins (Beacon)"),
-    # East Antarctic Craton sector Princess Elizabeth-Prydz (Vestfold, Larsemann, Rauer, Grove)
+
+    # --- Campos meteoríticos explícitos ---
+    # Allan Hills (ANSMET)
+    ("Allan Hills meteorítico", (-76.9, -76.6, 159.0, 160.3), "F7 Meteorite fields"),
+    # Grove Mountains (CHINARE meteorítico, Lambert basin)
+    ("Grove Mountains meteorítico", (-73.3, -72.3, 74.0, 76.0), "F7 Meteorite fields"),
+    # Yamato Mountains (JARE meteorítico, Dronning Maud Land East)
+    ("Yamato Mountains meteorítico", (-72.0, -71.0, 35.0, 36.0), "F7 Meteorite fields"),
+    # Sør Rondane Mountains (BELARE meteorítico + basamento)
+    ("Sør Rondane meteorítico", (-72.5, -71.5, 22.0, 28.0), "F7 Meteorite fields"),
+
+    # --- East Antarctic Craton sector Princess Elizabeth-Prydz ---
     ("East Antarctic craton (Prydz sector)", (-72.0, -66.0, 70.0, 110.0), "F1 Basement"),
     # Enderby Land (Rayner Complex)
     ("Enderby Land", (-71.0, -65.0, 45.0, 60.0), "F1 Basement"),
-    # Dronning Maud Land (Sør Rondane, Yamato)
+    # Dronning Maud Land general (Sør Rondane, Yamato regional)
     ("Dronning Maud Land", (-75.0, -68.0, 0.0, 45.0), "F1 Basement"),
     # Ellsworth-Whitmore (Vinson, Union Glacier)
     ("Ellsworth-Whitmore", (-83.0, -77.0, -90.0, -75.0), "F1 Basement"),
-    # West Antarctic Rift (Marie Byrd Land + Amundsen-Bellingshausen)
+    # MacRobertson Land + Prince Charles Mountains + Lambert basin sector
+    ("Lambert-PCM sector", (-75.0, -67.0, 60.0, 80.0), "F1 Basement"),
+
+    # --- West Antarctic Rift / Marie Byrd Land ---
     ("Marie Byrd Land volcanism", (-80.0, -72.0, -150.0, -100.0), "F4 Cenozoic volcanism"),
+    # Pine Island / Thwaites embayment (Amundsen Sea Embayment)
+    ("Amundsen Sea Embayment (PIG/Thwaites)", (-78.0, -73.0, -113.0, -97.0), "F4 Cenozoic volcanism (West Antarctic Rift)"),
 ]
 
 

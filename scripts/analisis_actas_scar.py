@@ -129,22 +129,27 @@ def load_gazetteer(path: Path) -> list[dict]:
 
 
 def extract_text(pdf_path: Path) -> str:
-    """Extrae texto con pdfplumber; fallback pypdf."""
+    """Extrae texto. Usa pypdf por defecto (10× más rápido que pdfplumber para
+    texto plano); cae a pdfplumber sólo si pypdf devuelve <100 chars (PDFs
+    con texto en imágenes o estructura compleja).
+    """
+    text = ""
+    try:
+        from pypdf import PdfReader
+        reader = PdfReader(pdf_path)
+        text = "\n".join((p.extract_text() or "") for p in reader.pages)
+    except Exception as e:
+        print(f"[WARN] pypdf falló en {pdf_path.name}: {e}", file=sys.stderr)
+    if len(text) > 200:
+        return text
+    # Fallback a pdfplumber sólo si pypdf no extrajo nada útil
     try:
         import pdfplumber
         with pdfplumber.open(pdf_path) as pdf:
             return "\n".join((page.extract_text() or "") for page in pdf.pages)
-    except ImportError:
-        pass
-    except Exception as e:
-        print(f"[WARN] pdfplumber falló en {pdf_path.name}: {e}", file=sys.stderr)
-    try:
-        from pypdf import PdfReader
-        reader = PdfReader(pdf_path)
-        return "\n".join((p.extract_text() or "") for p in reader.pages)
     except Exception as e:
         print(f"[ERROR] No se pudo extraer {pdf_path.name}: {e}", file=sys.stderr)
-        return ""
+        return text
 
 
 _KP_CACHE: dict[int, object] = {}
@@ -180,9 +185,68 @@ def count_mentions(text: str, gazetteer: list[dict]) -> dict[str, int]:
     return counts
 
 
+import math
+
+
+def parse_txt_metadata(text: str) -> dict:
+    """Extrae Year + CitedByCount + Source del header de un .txt OpenAlex.
+
+    Formato esperado (primeras líneas):
+        # Title
+        DOI: 10.xxx
+        Year: 2022
+        Source: antarctic_science
+        CitedByCount: 12
+        (blank line)
+        <abstract...>
+    """
+    meta = {"year": None, "cites": 0, "source": "pdf_scar"}
+    head = text[:600]
+    for line in head.splitlines():
+        if line.startswith("Year:"):
+            try:
+                meta["year"] = int(line.split(":", 1)[1].strip())
+            except ValueError:
+                pass
+        elif line.startswith("CitedByCount:"):
+            try:
+                meta["cites"] = int(line.split(":", 1)[1].strip())
+            except ValueError:
+                pass
+        elif line.startswith("Source:"):
+            meta["source"] = line.split(":", 1)[1].strip()
+    return meta
+
+
+def decade_bucket(year: int | None) -> str:
+    if year is None:
+        return "unknown"
+    if year < 2010:
+        return "pre-2010"
+    if year < 2015:
+        return "2010-2014"
+    if year < 2020:
+        return "2015-2019"
+    return "2020-2026"
+
+
 def aggregate(pdfs_dir: Path, gazetteer: list[dict]) -> dict[str, dict]:
-    """Recorre todos los PDFs y .txt y agrega por sitio."""
-    by_site: dict[str, dict] = defaultdict(lambda: {"pubs": 0, "files": set()})
+    """Recorre todos los PDFs y .txt y agrega por sitio.
+
+    Métricas por sitio:
+      - pubs: número de documentos donde aparece
+      - hits: total de menciones (suma)
+      - weighted_score: sum(log(cites+1)) sobre las publicaciones donde aparece
+      - by_decade: dict {bucket: pubs en ese bucket}
+      - files: set de stems
+      - co_sites: dict {otro_sitio: nº de docs compartidos} — usado por
+        el script de co-ocurrencia.
+    """
+    by_site: dict[str, dict] = defaultdict(
+        lambda: {"pubs": 0, "hits": 0, "weighted_score": 0.0,
+                 "by_decade": defaultdict(int), "files": set(),
+                 "co_sites": defaultdict(int)}
+    )
     docs = []
     if pdfs_dir.exists():
         docs = sorted(list(pdfs_dir.glob("**/*.pdf")) +
@@ -194,25 +258,49 @@ def aggregate(pdfs_dir: Path, gazetteer: list[dict]) -> dict[str, dict]:
           f"({sum(1 for d in docs if d.suffix=='.pdf')} PDF, "
           f"{sum(1 for d in docs if d.suffix=='.txt')} TXT)", flush=True)
     for i, doc in enumerate(docs, 1):
-        if i % 25 == 0 or i <= 5 or doc.suffix == ".pdf":
+        if i % 100 == 0 or i <= 5 or doc.suffix == ".pdf":
             print(f"[{i}/{len(docs)}] {doc.name}", flush=True)
         if doc.suffix == ".pdf":
             text = extract_text(doc)
+            meta = {"year": None, "cites": 0, "source": "pdf_scar"}
         else:
             try:
                 text = doc.read_text(encoding="utf-8", errors="replace")
+                meta = parse_txt_metadata(text)
             except Exception as e:
                 print(f"  [WARN] no se pudo leer {doc.name}: {e}", flush=True)
                 continue
         if not text:
             continue
         mentions = count_mentions(text, gazetteer)
-        if doc.suffix == ".pdf" or i % 50 == 0:
-            print(f"  {len(mentions)} topónimos distintos, {sum(mentions.values())} hits", flush=True)
+        if not mentions:
+            continue
+        if doc.suffix == ".pdf" or i % 100 == 0:
+            print(f"  {len(mentions)} topónimos, {sum(mentions.values())} hits "
+                  f"[{meta['year']} cites={meta['cites']}]", flush=True)
+        weight = math.log(meta["cites"] + 1)  # ponderación log para no aplastar por outliers
+        bucket = decade_bucket(meta["year"])
+        # Acumular por sitio
         for name, n in mentions.items():
             by_site[name]["pubs"] += 1
-            by_site[name]["hits"] = by_site[name].get("hits", 0) + n
+            by_site[name]["hits"] += n
+            by_site[name]["weighted_score"] += weight
+            by_site[name]["by_decade"][bucket] += 1
             by_site[name]["files"].add(doc.stem)
+        # Co-ocurrencia: SOLO sitios con >=3 menciones en este doc (filtro de ruido)
+        # y SOLO entre sitios con feature_type relevante (lookup rápido).
+        # Esto reduce O(N^2) por doc de ~350^2 a ~30^2.
+        gaz_types = getattr(aggregate, "_gaz_type_cache", None)
+        if gaz_types is None:
+            gaz_types = {g["name"]: g.get("type", "") for g in gazetteer}
+            aggregate._gaz_type_cache = gaz_types
+        sites_in_doc = [s for s, n in mentions.items()
+                        if n >= 3 and gaz_types.get(s, "") in GEOSITE_RELEVANT_TYPES]
+        for a in sites_in_doc:
+            co = by_site[a]["co_sites"]
+            for b in sites_in_doc:
+                if a != b:
+                    co[b] += 1
     # Enriquecer con coordenadas
     coord = {g["name"]: (g["lat"], g["lon"], g["type"]) for g in gazetteer}
     for name, data in by_site.items():
@@ -273,9 +361,14 @@ def filter_proposals(by_site: dict, catalogados: set[str], min_pubs: int,
         ftype = (d.get("type") or "").strip()
         if only_geosite_types and ftype not in GEOSITE_RELEVANT_TYPES:
             continue
+        # Convertir defaultdicts a dicts normales para serializar limpio
+        d["by_decade"] = dict(d.get("by_decade", {}))
+        d["co_sites_top"] = dict(sorted(
+            d.get("co_sites", {}).items(), key=lambda x: -x[1])[:10])
+        d.pop("co_sites", None)  # no exponer el dict completo
         candidates.append({"name": name, **d})
-    # Ordenar por publicaciones, desempate por hits totales
-    candidates.sort(key=lambda c: (-c["pubs"], -c.get("hits", 0)))
+    # Ordenar por weighted_score (citas-aware), desempate por pubs
+    candidates.sort(key=lambda c: (-c.get("weighted_score", 0), -c["pubs"], -c.get("hits", 0)))
     return candidates[:top_n]
 
 
@@ -297,6 +390,7 @@ def write_outputs(candidates: list[dict]) -> None:
     # GeoJSON propuestos
     features = []
     for c in candidates:
+        ws = round(c.get("weighted_score", 0), 2)
         features.append({
             "type": "Feature",
             "geometry": {"type": "Point", "coordinates": [c["lon"], c["lat"]]},
@@ -304,14 +398,18 @@ def write_outputs(candidates: list[dict]) -> None:
                 "codigo": f"PROP-{c['name'][:8].upper().replace(' ', '')}",
                 "nombre": c["name"],
                 "tipo": "candidato",
-                "interes": f"Alta densidad de publicaciones SCAR ({c['pubs']} actas, {c.get('hits', 0)} menciones)",
-                "fuente": "Bibliometría actas SCAR (analisis_actas_scar.py)",
+                "interes": (f"{c['pubs']} pubs · {c.get('hits', 0)} menciones · "
+                            f"weighted_score={ws}"),
+                "fuente": "Bibliometría SCAR + OpenAlex (analisis_actas_scar.py)",
                 "descripcion": f"Tipo gazetteer: {c.get('type','—')}. "
                                f"Aparece en: {', '.join(c['files'][:6])}"
                                + ("…" if len(c["files"]) > 6 else ""),
                 "pubs_count": c["pubs"],
                 "hits_count": c.get("hits", 0),
+                "weighted_score": ws,
                 "feature_type": c.get("type", ""),
+                "by_decade": c.get("by_decade", {}),
+                "co_sites_top": c.get("co_sites_top", {}),
             }
         })
     out_geo = APP_DATA / "antartica_geositios_propuestos.geojson"
@@ -328,22 +426,34 @@ def write_outputs(candidates: list[dict]) -> None:
     # Notas markdown
     NOTES_OUT.parent.mkdir(parents=True, exist_ok=True)
     with NOTES_OUT.open("w", encoding="utf-8") as f:
-        f.write("# Propuestas de geositios SCAR — bibliometría automática\n\n")
-        f.write(f"Generado por `scripts/analisis_actas_scar.py`.\n\n")
-        f.write("| Sitio | Publicaciones | Menciones | Tipo CGA | Coords |\n")
-        f.write("|---|---:|---:|---|---|\n")
+        f.write("# Propuestas de geositios SCAR — bibliometría automática (v3)\n\n")
+        f.write(f"Generado por `scripts/analisis_actas_scar.py`. Ranking por "
+                f"`weighted_score = sum(log(cites+1))` sobre el corpus.\n\n")
+        f.write("| Sitio | Pubs | Menciones | WS | Tipo CGA | Decade dist. | Coords |\n")
+        f.write("|---|---:|---:|---:|---|---|---|\n")
         for c in candidates:
+            dec = c.get("by_decade", {})
+            dec_str = " ".join(f"{k}:{v}" for k, v in sorted(dec.items()) if v > 0)
             f.write(f"| {c['name']} | {c['pubs']} | {c.get('hits', 0)} | "
-                    f"{c.get('type','—')} | {c.get('lat',0):.2f}, {c.get('lon',0):.2f} |\n")
+                    f"{round(c.get('weighted_score',0),1)} | "
+                    f"{c.get('type','—')} | {dec_str} | "
+                    f"{c.get('lat',0):.2f}, {c.get('lon',0):.2f} |\n")
     print(f"[OK] {NOTES_OUT}")
 
-    # CSV crudo
+    # CSV crudo (con métricas v3)
     csv_out = APP_DATA / "scar_pubs_por_sitio.csv"
     with csv_out.open("w", encoding="utf-8", newline="") as f:
         w = csv.writer(f)
-        w.writerow(["site", "pubs", "lat", "lon", "type", "files"])
+        w.writerow(["site", "pubs", "hits", "weighted_score",
+                    "pre-2010", "2010-2014", "2015-2019", "2020-2026",
+                    "lat", "lon", "type", "files"])
         for c in candidates:
-            w.writerow([c["name"], c["pubs"], c.get("lat"), c.get("lon"),
+            dec = c.get("by_decade", {})
+            w.writerow([c["name"], c["pubs"], c.get("hits", 0),
+                        round(c.get("weighted_score", 0), 2),
+                        dec.get("pre-2010", 0), dec.get("2010-2014", 0),
+                        dec.get("2015-2019", 0), dec.get("2020-2026", 0),
+                        c.get("lat"), c.get("lon"),
                         c.get("type", ""), "|".join(c["files"])])
     print(f"[OK] {csv_out}")
 

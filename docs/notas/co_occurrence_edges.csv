@@ -1,0 +1,289 @@
+site_a,site_b,shared_docs
+Fildes Peninsula,King George Island,8
+Antarctic Peninsula,Seymour Island,8
+Fildes Peninsula,James Ross Island,8
+James Ross Island,Larsemann Hills,8
+Antarctic Peninsula,James Ross Island,8
+Fildes Peninsula,Larsemann Hills,8
+Antarctic Peninsula,Larsemann Hills,8
+Antarctic Peninsula,Fildes Peninsula,8
+Antarctic Peninsula,Signy Island,8
+Terra Nova Bay,Transantarctic Mountains,7
+Livingston Island,Transantarctic Mountains,7
+Antarctic Peninsula,Transantarctic Mountains,7
+King George Island,Transantarctic Mountains,7
+Taylor Valley,Transantarctic Mountains,7
+The Satellite,Transantarctic Mountains,7
+Transantarctic Mountains,Union Glacier,7
+Signy Island,Transantarctic Mountains,7
+Larsemann Hills,Transantarctic Mountains,7
+Prydz Bay,Transantarctic Mountains,7
+South Shetland Islands,Terra Nova Bay,7
+Livingston Island,South Shetland Islands,7
+Antarctic Peninsula,South Shetland Islands,7
+King George Island,South Shetland Islands,7
+South Shetland Islands,Taylor Valley,7
+South Shetland Islands,The Satellite,7
+South Shetland Islands,Union Glacier,7
+Signy Island,South Shetland Islands,7
+Larsemann Hills,South Shetland Islands,7
+Prydz Bay,South Shetland Islands,7
+King George Island,Terra Nova Bay,7
+King George Island,Livingston Island,7
+Antarctic Peninsula,King George Island,7
+King George Island,Taylor Valley,7
+King George Island,The Satellite,7
+King George Island,Union Glacier,7
+King George Island,Signy Island,7
+King George Island,Larsemann Hills,7
+King George Island,Prydz Bay,7
+Prydz Bay,Terra Nova Bay,7
+Livingston Island,Prydz Bay,7
+Antarctic Peninsula,Prydz Bay,7
+Prydz Bay,Taylor Valley,7
+Prydz Bay,The Satellite,7
+Prydz Bay,Union Glacier,7
+Prydz Bay,Signy Island,7
+Larsemann Hills,Prydz Bay,7
+Seymour Island,Terra Nova Bay,7
+Livingston Island,Seymour Island,7
+King George Island,Seymour Island,7
+Seymour Island,Taylor Valley,7
+Seymour Island,The Satellite,7
+Seymour Island,Union Glacier,7
+Seymour Island,Signy Island,7
+Larsemann Hills,Seymour Island,7
+Prydz Bay,Seymour Island,7
+Deception Island,Terra Nova Bay,7
+Deception Island,Livingston Island,7
+Antarctic Peninsula,Deception Island,7
+Deception Island,King George Island,7
+Deception Island,Taylor Valley,7
+Deception Island,The Satellite,7
+Deception Island,Union Glacier,7
+Deception Island,Signy Island,7
+Deception Island,Larsemann Hills,7
+Deception Island,Prydz Bay,7
+Livingston Island,Terra Nova Bay,7
+Antarctic Peninsula,Livingston Island,7
+Livingston Island,Taylor Valley,7
+Livingston Island,The Satellite,7
+Livingston Island,Union Glacier,7
+Livingston Island,Signy Island,7
+Larsemann Hills,Livingston Island,7
+James Ross Island,Terra Nova Bay,7
+James Ross Island,Livingston Island,7
+James Ross Island,King George Island,7
+James Ross Island,Taylor Valley,7
+James Ross Island,The Satellite,7
+James Ross Island,Union Glacier,7
+James Ross Island,Signy Island,7
+Ellsworth Mountains,Terra Nova Bay,7
+Ellsworth Mountains,Livingston Island,7
+Antarctic Peninsula,Ellsworth Mountains,7
+Ellsworth Mountains,King George Island,7
+Ellsworth Mountains,Taylor Valley,7
+Ellsworth Mountains,The Satellite,7
+Ellsworth Mountains,Union Glacier,7
+Ellsworth Mountains,Signy Island,7
+Ellsworth Mountains,Larsemann Hills,7
+Ellsworth Mountains,Prydz Bay,7
+Larsemann Hills,Terra Nova Bay,7
+Larsemann Hills,Taylor Valley,7
+Larsemann Hills,The Satellite,7
+Larsemann Hills,Union Glacier,7
+Larsemann Hills,Signy Island,7
+Fildes Peninsula,Terra Nova Bay,7
+Fildes Peninsula,Livingston Island,7
+Fildes Peninsula,Taylor Valley,7
+Fildes Peninsula,The Satellite,7
+Fildes Peninsula,Union Glacier,7
+Fildes Peninsula,Signy Island,7
+Ross Island,Terra Nova Bay,7
+Livingston Island,Ross Island,7
+Antarctic Peninsula,Ross Island,7
+King George Island,Ross Island,7
+Ross Island,Taylor Valley,7
+Ross Island,The Satellite,7
+Ross Island,Union Glacier,7
+Ross Island,Signy Island,7
+Larsemann Hills,Ross Island,7
+Prydz Bay,Ross Island,7
+Antarctic Peninsula,Thwaites Glacier,7
+Signy Island,Thwaites Glacier,7
+McMurdo Sound,Terra Nova Bay,7
+Livingston Island,McMurdo Sound,7
+Antarctic Peninsula,McMurdo Sound,7
+King George Island,McMurdo Sound,7
+McMurdo Sound,Taylor Valley,7
+McMurdo Sound,The Satellite,7
+McMurdo Sound,Union Glacier,7
+McMurdo Sound,Signy Island,7
+Larsemann Hills,McMurdo Sound,7
+McMurdo Sound,Prydz Bay,7
+Taylor Valley,Terra Nova Bay,7
+Antarctic Peninsula,Taylor Valley,7
+Taylor Valley,The Satellite,7
+Taylor Valley,Union Glacier,7
+Signy Island,Taylor Valley,7
+South Orkney Islands,Terra Nova Bay,7
+Livingston Island,South Orkney Islands,7
+Antarctic Peninsula,South Orkney Islands,7
+King George Island,South Orkney Islands,7
+South Orkney Islands,Taylor Valley,7
+South Orkney Islands,The Satellite,7
+South Orkney Islands,Union Glacier,7
+Signy Island,South Orkney Islands,7
+Larsemann Hills,South Orkney Islands,7
+Prydz Bay,South Orkney Islands,7
+Pine Island Glacier,Signy Island,7
+Signy Island,Terra Nova Bay,7
+Signy Island,The Satellite,7
+Signy Island,Union Glacier,7
+Maxwell Bay,Terra Nova Bay,7
+Livingston Island,Maxwell Bay,7
+Antarctic Peninsula,Maxwell Bay,7
+King George Island,Maxwell Bay,7
+Maxwell Bay,Taylor Valley,7
+Maxwell Bay,The Satellite,7
+Maxwell Bay,Union Glacier,7
+Maxwell Bay,Signy Island,7
+Larsemann Hills,Maxwell Bay,7
+Maxwell Bay,Prydz Bay,7
+Admiralty Bay,Antarctic Peninsula,6
+Admiralty Bay,James Ross Island,6
+Admiralty Bay,Seymour Island,6
+Admiralty Bay,Larsemann Hills,6
+Admiralty Bay,McMurdo Sound,6
+Admiralty Bay,South Shetland Islands,6
+Admiralty Bay,Livingston Island,6
+Admiralty Bay,Fildes Peninsula,6
+Admiralty Bay,King George Island,6
+Admiralty Bay,Maxwell Bay,6
+Pine Island Glacier,Thwaites Glacier,6
+Terra Nova Bay,Thwaites Glacier,6
+Livingston Island,Thwaites Glacier,6
+Taylor Glacier,Thwaites Glacier,6
+King George Island,Thwaites Glacier,6
+Taylor Valley,Thwaites Glacier,6
+The Satellite,Thwaites Glacier,6
+Thwaites Glacier,Union Glacier,6
+Terra Nova Bay,Vestfold Hills,6
+Livingston Island,Vestfold Hills,6
+Antarctic Peninsula,Vestfold Hills,6
+King George Island,Vestfold Hills,6
+Taylor Valley,Vestfold Hills,6
+The Satellite,Vestfold Hills,6
+Union Glacier,Vestfold Hills,6
+Signy Island,Vestfold Hills,6
+Larsemann Hills,Vestfold Hills,6
+Prydz Bay,Vestfold Hills,6
+Anvers Island,Terra Nova Bay,6
+Anvers Island,Livingston Island,6
+Antarctic Peninsula,Anvers Island,6
+Anvers Island,Taylor Glacier,6
+Anvers Island,King George Island,6
+Anvers Island,Taylor Valley,6
+Anvers Island,The Satellite,6
+Anvers Island,Union Glacier,6
+Anvers Island,Signy Island,6
+Anvers Island,Larsemann Hills,6
+Taylor Glacier,Terra Nova Bay,6
+Livingston Island,Taylor Glacier,6
+Antarctic Peninsula,Taylor Glacier,6
+King George Island,Taylor Glacier,6
+Taylor Glacier,Taylor Valley,6
+Taylor Glacier,The Satellite,6
+Taylor Glacier,Union Glacier,6
+Signy Island,Taylor Glacier,6
+Larsemann Hills,Taylor Glacier,6
+Lambert Glacier,Terra Nova Bay,5
+Lambert Glacier,Livingston Island,5
+Antarctic Peninsula,Lambert Glacier,5
+King George Island,Lambert Glacier,5
+Lambert Glacier,Taylor Valley,5
+Lambert Glacier,The Satellite,5
+Lambert Glacier,Union Glacier,5
+Lambert Glacier,Signy Island,5
+Lambert Glacier,Larsemann Hills,5
+Lambert Glacier,Prydz Bay,5
+Pine Island Bay,Terra Nova Bay,5
+Pine Island Bay,Pine Island Glacier,5
+Livingston Island,Pine Island Bay,5
+Antarctic Peninsula,Pine Island Bay,5
+King George Island,Pine Island Bay,5
+Pine Island Bay,Roosevelt Island,5
+Pine Island Bay,Taylor Valley,5
+Pine Island Bay,The Satellite,5
+Pine Island Bay,Union Glacier,5
+Pine Island Bay,Signy Island,5
+Antarctic Peninsula,Marguerite Bay,5
+James Ross Island,Marguerite Bay,5
+Marguerite Bay,Seymour Island,5
+Larsemann Hills,Marguerite Bay,5
+Marguerite Bay,McMurdo Sound,5
+Marguerite Bay,South Shetland Islands,5
+Livingston Island,Marguerite Bay,5
+Fildes Peninsula,Marguerite Bay,5
+King George Island,Marguerite Bay,5
+Marguerite Bay,Maxwell Bay,5
+Antarctic Peninsula,Windmill Islands,5
+James Ross Island,Windmill Islands,5
+Seymour Island,Windmill Islands,5
+Larsemann Hills,Windmill Islands,5
+McMurdo Sound,Windmill Islands,5
+South Shetland Islands,Windmill Islands,5
+Livingston Island,Windmill Islands,5
+Fildes Peninsula,Windmill Islands,5
+King George Island,Windmill Islands,5
+Marguerite Bay,Windmill Islands,5
+Terra Nova Bay,Wright Valley,4
+Pine Island Glacier,Wright Valley,4
+Livingston Island,Wright Valley,4
+Antarctic Peninsula,Wright Valley,4
+King George Island,Wright Valley,4
+Adelaide Island,Wright Valley,4
+Roosevelt Island,Wright Valley,4
+Taylor Valley,Wright Valley,4
+The Satellite,Wright Valley,4
+Union Glacier,Wright Valley,4
+Adelaide Island,Terra Nova Bay,4
+Adelaide Island,Pine Island Glacier,4
+Adelaide Island,Livingston Island,4
+Adelaide Island,Antarctic Peninsula,4
+Adelaide Island,King George Island,4
+Adelaide Island,Roosevelt Island,4
+Adelaide Island,Taylor Valley,4
+Adelaide Island,The Satellite,4
+Adelaide Island,Union Glacier,4
+Adelaide Island,Signy Island,4
+Denman Glacier,Fildes Peninsula,4
+Denman Glacier,King George Island,4
+Denman Glacier,South Shetland Islands,4
+Denman Glacier,Transantarctic Mountains,4
+Denman Glacier,Taylor Valley,4
+Antarctic Peninsula,Denman Glacier,4
+Denman Glacier,Prydz Bay,4
+Denman Glacier,Ross Island,4
+Admiralty Bay,Denman Glacier,4
+Denman Glacier,Ellsworth Mountains,4
+Fildes Peninsula,Greenwich Island,4
+Greenwich Island,King George Island,4
+Greenwich Island,South Shetland Islands,4
+Greenwich Island,Transantarctic Mountains,4
+Greenwich Island,Taylor Valley,4
+Antarctic Peninsula,Greenwich Island,4
+Greenwich Island,Prydz Bay,4
+Greenwich Island,Ross Island,4
+Admiralty Bay,Greenwich Island,4
+Ellsworth Mountains,Greenwich Island,4
+Terra Nova Bay,Ulu Peninsula,4
+Pine Island Glacier,Ulu Peninsula,4
+Livingston Island,Ulu Peninsula,4
+Antarctic Peninsula,Ulu Peninsula,4
+King George Island,Ulu Peninsula,4
+Ryder Bay,Ulu Peninsula,4
+Roosevelt Island,Ulu Peninsula,4
+Taylor Valley,Ulu Peninsula,4
+The Satellite,Ulu Peninsula,4
+Ulu Peninsula,Union Glacier,4

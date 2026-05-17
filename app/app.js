@@ -81,8 +81,136 @@ document.querySelectorAll('.tab').forEach(btn => {
     if (btn.dataset.tab === 'bedmap') {
       initBedmap();
     }
+    if (btn.dataset.tab === 'stats') {
+      initStats();
+    }
   });
 });
+
+// ---------- Stats (Bibliometría SCAR) ----------
+let statsInitialized = false;
+async function initStats() {
+  if (statsInitialized) return;
+  statsInitialized = true;
+  try {
+    const prop = await fetch('data/antartica_geositios_propuestos.geojson')
+      .then(r => r.json());
+    const feats = prop.features || [];
+    if (!feats.length) {
+      document.getElementById('stats-summary').textContent = 'Sin datos. Corre el pipeline primero.';
+      return;
+    }
+
+    // ---- Resumen ----
+    const totalPubs = feats.reduce((s, f) => s + (f.properties.pubs_count || 0), 0);
+    const totalHits = feats.reduce((s, f) => s + (f.properties.hits_count || 0), 0);
+    const totalWS = feats.reduce((s, f) => s + (f.properties.weighted_score || 0), 0);
+    document.getElementById('stats-summary').innerHTML =
+      `<strong>${feats.length}</strong> candidatos<br>` +
+      `<strong>${totalPubs}</strong> doc-mencion total<br>` +
+      `<strong>${totalHits}</strong> menciones brutas<br>` +
+      `<strong>${totalWS.toFixed(0)}</strong> weighted_score acumulado`;
+
+    // ---- Chart 1: Distribución por framework ----
+    const byFW = {};
+    feats.forEach(f => {
+      const fw = f.properties.framework || '(sin asignar)';
+      byFW[fw] = (byFW[fw] || 0) + 1;
+    });
+    const fwSorted = Object.entries(byFW).sort((a, b) => b[1] - a[1]);
+    new Chart(document.getElementById('chart-frameworks').getContext('2d'), {
+      type: 'bar',
+      data: {
+        labels: fwSorted.map(([k]) => k.length > 35 ? k.slice(0, 32) + '…' : k),
+        datasets: [{
+          label: 'Candidatos',
+          data: fwSorted.map(([, v]) => v),
+          backgroundColor: '#5fb878',
+          borderColor: '#3a8c52',
+          borderWidth: 1,
+        }],
+      },
+      options: {
+        indexAxis: 'y',
+        maintainAspectRatio: false,
+        plugins: { legend: { display: false } },
+        scales: {
+          x: { beginAtZero: true, ticks: { color: '#e6edf3' }, grid: { color: '#30363d' } },
+          y: { ticks: { color: '#e6edf3', font: { size: 11 } }, grid: { color: '#30363d' } },
+        },
+      },
+    });
+
+    // ---- Chart 2: Top 20 por weighted_score ----
+    const top20 = [...feats]
+      .sort((a, b) => (b.properties.weighted_score || 0) - (a.properties.weighted_score || 0))
+      .slice(0, 20);
+    new Chart(document.getElementById('chart-top-sites').getContext('2d'), {
+      type: 'bar',
+      data: {
+        labels: top20.map(f => f.properties.nombre),
+        datasets: [
+          {
+            label: 'Weighted score',
+            data: top20.map(f => f.properties.weighted_score || 0),
+            backgroundColor: '#d9764a',
+            borderColor: '#b85e36',
+            borderWidth: 1,
+            yAxisID: 'y',
+          },
+          {
+            label: 'Pubs',
+            data: top20.map(f => f.properties.pubs_count || 0),
+            backgroundColor: '#5fb878',
+            borderColor: '#3a8c52',
+            borderWidth: 1,
+            yAxisID: 'y1',
+          },
+        ],
+      },
+      options: {
+        indexAxis: 'y',
+        maintainAspectRatio: false,
+        scales: {
+          x: { ticks: { color: '#e6edf3' }, grid: { color: '#30363d' } },
+          y: { ticks: { color: '#e6edf3', font: { size: 10 } }, grid: { color: '#30363d' } },
+        },
+        plugins: { legend: { labels: { color: '#e6edf3' } } },
+      },
+    });
+
+    // ---- Chart 3: Evolución temporal (top 12) ----
+    const top12 = [...feats]
+      .sort((a, b) => (b.properties.pubs_count || 0) - (a.properties.pubs_count || 0))
+      .slice(0, 12);
+    const decades = ['pre-2010', '2010-2014', '2015-2019', '2020-2026'];
+    const decadeColors = ['#8b949e', '#3498db', '#5fb878', '#e74c3c'];
+    new Chart(document.getElementById('chart-temporal').getContext('2d'), {
+      type: 'bar',
+      data: {
+        labels: top12.map(f => f.properties.nombre),
+        datasets: decades.map((d, i) => ({
+          label: d,
+          data: top12.map(f => (f.properties.by_decade || {})[d] || 0),
+          backgroundColor: decadeColors[i],
+          borderWidth: 0,
+        })),
+      },
+      options: {
+        maintainAspectRatio: false,
+        scales: {
+          x: { stacked: true, ticks: { color: '#e6edf3', font: { size: 10 } }, grid: { color: '#30363d' } },
+          y: { stacked: true, ticks: { color: '#e6edf3' }, grid: { color: '#30363d' }, beginAtZero: true },
+        },
+        plugins: { legend: { labels: { color: '#e6edf3' } } },
+      },
+    });
+  } catch (e) {
+    console.error('Stats init error:', e);
+    document.getElementById('stats-summary').textContent =
+      'Error: ' + e.message;
+  }
+}
 
 // ---------- BedMap ----------
 let bedmapMap = null;

@@ -10,6 +10,7 @@
   <script src="https://unpkg.com/proj4leaflet@1.0.2/src/proj4leaflet.js"></script>
   <link rel="stylesheet" href="https://cesium.com/downloads/cesiumjs/releases/1.117/Build/Cesium/Widgets/widgets.css" />
   <script src="https://cesium.com/downloads/cesiumjs/releases/1.117/Build/Cesium/Cesium.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -19,6 +20,7 @@
       <button class="tab active" data-tab="mapa">Mapa de contextos</button>
       <button class="tab" data-tab="globo">Globo 3D</button>
       <button class="tab" data-tab="bedmap">BedMap (Antártica sin hielo)</button>
+      <button class="tab" data-tab="stats">Bibliometría SCAR</button>
       <button class="tab" data-tab="lexico">Léxico estratigráfico</button>
       <button class="tab" data-tab="acerca">Acerca</button>
     </nav>
@@ -164,6 +166,52 @@
         <div id="bedmap-legend" style="position:absolute; bottom:1rem; right:1rem; background:rgba(15,20,25,0.85); padding:0.75rem 1rem; border-radius:6px; border:1px solid var(--border); font-size:0.75rem; max-width:240px;">
           <div style="font-weight:600; margin-bottom:0.5rem;" id="bedmap-legend-title">Elevación del lecho (m)</div>
           <div id="bedmap-legend-scale"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bibliometría SCAR -->
+    <section id="tab-stats" class="tab-panel">
+      <aside class="sidebar">
+        <h3>Bibliometría SCAR</h3>
+        <p class="muted" style="font-size:0.85rem">
+          Análisis bibliométrico de actas SCAR + 10 journals geocientíficos
+          (Antarctic Science, Polar Record, Polar Science, Advances in Polar
+          Science, Geology, EPSL, Quaternary Sci Rev, Tectonics,
+          J Geol Soc London, Gondwana Research) sobre el SCAR Composite
+          Gazetteer (22.338 topónimos).
+        </p>
+        <h3>Métricas</h3>
+        <p class="muted" style="font-size:0.85rem" id="stats-summary">Cargando…</p>
+        <h3>Reproducible</h3>
+        <p class="muted" style="font-size:0.75rem">
+          <code>bash docs/biblioteca/scar/download_all.sh</code><br>
+          <code>python scripts/fetch_openalex_abstracts.py</code><br>
+          <code>python scripts/analisis_actas_scar.py</code><br>
+          <code>python scripts/enrich_candidatos_framework.py</code>
+        </p>
+        <p class="muted" style="font-size:0.75rem">
+          INFORME completo: <a href="../docs/INFORME_bibliometria_SCAR.md">INFORME_bibliometria_SCAR.md</a>
+        </p>
+      </aside>
+      <div id="stats-container" style="flex:1; overflow-y:auto; padding:1.5rem 2rem;">
+        <h2 style="margin-top:0">Distribución por Framework SCAR</h2>
+        <div style="position:relative; height:280px; max-width:680px;">
+          <canvas id="chart-frameworks"></canvas>
+        </div>
+
+        <h2 style="margin-top:2rem">Top 20 candidatos por weighted_score</h2>
+        <div style="position:relative; height:520px; max-width:780px;">
+          <canvas id="chart-top-sites"></canvas>
+        </div>
+
+        <h2 style="margin-top:2rem">Evolución temporal de las menciones</h2>
+        <p class="muted" style="font-size:0.85rem">
+          Cuántos documentos del corpus mencionan cada sitio por bucket temporal.
+          Sitios "emergentes" tienen muchas pubs 2020-2026 y pocas pre-2015.
+        </p>
+        <div style="position:relative; height:420px; max-width:780px;">
+          <canvas id="chart-temporal"></canvas>
         </div>
       </div>
     </section>
