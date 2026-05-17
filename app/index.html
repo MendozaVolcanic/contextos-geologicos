@@ -18,6 +18,7 @@
     <nav class="tabs">
       <button class="tab active" data-tab="mapa">Mapa de contextos</button>
       <button class="tab" data-tab="globo">Globo 3D</button>
+      <button class="tab" data-tab="bedmap">BedMap (Antártica sin hielo)</button>
       <button class="tab" data-tab="lexico">Léxico estratigráfico</button>
       <button class="tab" data-tab="acerca">Acerca</button>
     </nav>
@@ -42,6 +43,21 @@
           <label class="checkbox">
             <input type="checkbox" id="toggle-geositios" checked />
             Mostrar geositios SERNAGEOMIN (49)
+          </label>
+        </div>
+        <div class="filter-group" id="antartica-controls" style="display:none">
+          <label>Modo de visualización (Antártica)</label>
+          <label class="checkbox">
+            <input type="radio" name="antartica-mode" value="frameworks" checked />
+            9 Contextos SCAR (interpretativo)
+          </label>
+          <label class="checkbox">
+            <input type="radio" name="antartica-mode" value="simplecode" />
+            Mapa geológico (21 SIMPCODE GeoMAP)
+          </label>
+          <label class="checkbox" style="margin-top:0.5rem">
+            <input type="checkbox" id="toggle-antartic-geositios" checked />
+            Mostrar ASPAs + geositios SCAR/IUGS
           </label>
         </div>
         <div class="filter-group">
@@ -99,6 +115,57 @@
         <p id="globo-detail-meta" class="muted"></p>
         <p id="globo-detail-desc"></p>
       </aside>
+    </section>
+
+    <!-- BedMap -->
+    <section id="tab-bedmap" class="tab-panel">
+      <aside class="sidebar">
+        <h3>BedMap — Antártica sin hielo</h3>
+        <p class="muted" style="font-size:0.85rem">
+          Topografía subglacial de la Antártica. BedMap3 (Pritchard et al., 2025) integra
+          ~84M de mediciones de espesor de hielo y batimetría circumantártica para producir el modelo
+          actual de elevación del lecho rocoso bajo el hielo.
+        </p>
+        <div class="filter-group">
+          <label>Capa visible</label>
+          <label class="checkbox">
+            <input type="radio" name="bedmap-layer" value="bed" checked />
+            Elevación del lecho (bed topography)
+          </label>
+          <label class="checkbox">
+            <input type="radio" name="bedmap-layer" value="surface" />
+            Elevación de la superficie de hielo
+          </label>
+          <label class="checkbox">
+            <input type="radio" name="bedmap-layer" value="thickness" />
+            Espesor de hielo
+          </label>
+        </div>
+        <div class="filter-group">
+          <label class="checkbox">
+            <input type="checkbox" id="bedmap-grounding-line" checked />
+            Línea de aterramiento (grounding line)
+          </label>
+          <label class="checkbox">
+            <input type="checkbox" id="bedmap-coastline" checked />
+            Línea de costa MOA
+          </label>
+        </div>
+        <p id="bedmap-status" class="muted" style="font-size:0.75rem; margin-top:1rem;">
+          Cargando capa BedMap3…
+        </p>
+        <p class="muted" style="font-size:0.75rem; margin-top:1rem;">
+          Fuente: <a href="https://www.bas.ac.uk/project/bedmap/" target="_blank">BAS BedMap3</a> ·
+          CC-BY 4.0
+        </p>
+      </aside>
+      <div id="bedmap-container" style="position:relative; flex:1;">
+        <div id="bedmap-map" style="position:absolute; inset:0;"></div>
+        <div id="bedmap-legend" style="position:absolute; bottom:1rem; right:1rem; background:rgba(15,20,25,0.85); padding:0.75rem 1rem; border-radius:6px; border:1px solid var(--border); font-size:0.75rem; max-width:240px;">
+          <div style="font-weight:600; margin-bottom:0.5rem;" id="bedmap-legend-title">Elevación del lecho (m)</div>
+          <div id="bedmap-legend-scale"></div>
+        </div>
+      </div>
     </section>
 
     <!-- Léxico -->

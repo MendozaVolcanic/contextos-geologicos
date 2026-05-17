@@ -15,6 +15,21 @@ docs/biblioteca/papers/
 docs/biblioteca/tesis/
 docs/biblioteca/congresos/
 # Bases de datos y notas SÍ se commitean: docs/biblioteca/_db/
+
+# SCAR — los PDFs y abstracts son re-descargables vía docs/biblioteca/scar/download_all.sh
+# Versionamos SOURCES.md, download_all.sh y los OUTPUTS del análisis, no los binarios.
+docs/biblioteca/scar/osc/
+docs/biblioteca/scar/eg_geocon/
+docs/biblioteca/scar/atcm/
+docs/biblioteca/scar/papers/
+docs/biblioteca/scar_gazetteer.csv
+
+# Quantarctica subset (re-descargable desde data.pgc.umn.edu)
+docs/mapas/antartica/aspas_asmas/*.shp
+docs/mapas/antartica/aspas_asmas/*.dbf
+docs/mapas/antartica/aspas_asmas/*.shx
+docs/mapas/antartica/aspas_asmas/*.qix
+docs/mapas/antartica/aspas_asmas/*.pdf
 # Carpetas viejas (legacy)
 docs/congresos/
 docs/Libros/

@@ -105,6 +105,20 @@ cd app && python -m http.server 8000   # → http://localhost:8000
 - Dataset Mourgues 2012 original (SSL caducado, ver `docs/bibliografia/PENDIENTES_DESCARGA.md`) para validar nuestras reglas
 - Visor 3D de superficies tipo Leapfrog para acuíferos (idea aparte de Felipe)
 
+## Visor Antártico — extensión 2026-05
+
+Este repo es la base del **Proyecto 1 del documento `../Visor Antartico.docx`**. El visor original (contextos chileno/antárticos) se está extendiendo para cubrir las cuatro funcionalidades pedidas:
+
+| Pedido del documento | Implementación |
+|---|---|
+| Mapa geológico antártico con toggle a contextos SCAR | ✅ Radio buttons "9 Contextos SCAR / 21 SIMPCODE GeoMAP" en sidebar (visibles al seleccionar región Antártica) |
+| ASPAs + geositios SCAR/IUGS | ✅ Capa `data/antartica_geositios.geojson` (15 sitios seed) + script `scripts/build_antartica_geositios.py` para integrar dataset completo ATS/SCAR |
+| Pestaña BedMap (Antártica sin hielo) | ✅ Pestaña nueva con basemap MOA + tiles BedMap3 (bed/surface/thickness) + grounding line y línea de costa. Loader Python: `scripts/build_bedmap.py` |
+| Análisis bibliométrico actas SCAR → nuevos geositios | ✅ Pipeline `scripts/analisis_actas_scar.py` (PDF → gazetteer SCAR → ranking por publicaciones) que produce `data/antartica_geositios_propuestos.geojson` |
+
+### Proyecto 2 (glaciares antárticos)
+Separado en `../Glaciar Antartico/` — comparte EPSG:3031 pero scope independiente (Copernicus + ICESat-2 + ISMIP6).
+
 ## Licencias y atribuciones
 
 - **App y código:** MIT

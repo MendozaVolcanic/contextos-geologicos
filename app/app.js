@@ -17,6 +17,11 @@ const state = {
   showGeositios: true,
   geositios: null,
   map: null,
+  // Antártica
+  antarticaMode: 'frameworks',       // 'frameworks' | 'simplecode'
+  antarticaSimplecode: null,         // 21 SIMPCODE GeoMAP (lazy)
+  antarticGeositios: null,           // ASPAs + SCAR/IUGS geosites (lazy)
+  showAntarticGeositios: true,
 };
 
 const REGION_VIEW = {
@@ -73,8 +78,148 @@ document.querySelectorAll('.tab').forEach(btn => {
     if (btn.dataset.tab === 'globo' && typeof window.initGlobo === 'function') {
       window.initGlobo();
     }
+    if (btn.dataset.tab === 'bedmap') {
+      initBedmap();
+    }
   });
 });
+
+// ---------- BedMap ----------
+let bedmapMap = null;
+let bedmapRaster = null;
+let bedmapVectors = { groundingLine: null, coastline: null };
+let bedmapCurrentLayer = 'bed';
+
+const BEDMAP_LAYERS = {
+  bed: {
+    title: 'Elevación del lecho (m)',
+    // GeoTIFF/COG público de BedMap3 servido como tiles XYZ vía BAS.
+    // Si no responde, el panel queda con un mensaje "datos pendientes"
+    // y el script scripts/build_bedmap.py los regenera localmente.
+    url: 'https://maps.bas.ac.uk/antarctic/wms/bedmap3/bed_topography/{z}/{x}/{y}.png',
+    legend: [
+      { color: '#08306b', label: '−2500 m' },
+      { color: '#2171b5', label: '−1500 m' },
+      { color: '#6baed6', label: '−500 m' },
+      { color: '#fee391', label: '0 m' },
+      { color: '#fe9929', label: '1000 m' },
+      { color: '#cc4c02', label: '2500 m' },
+    ],
+  },
+  surface: {
+    title: 'Elevación superficial del hielo (m)',
+    url: 'https://maps.bas.ac.uk/antarctic/wms/bedmap3/surface_topography/{z}/{x}/{y}.png',
+    legend: [
+      { color: '#f7fbff', label: '0 m' },
+      { color: '#c6dbef', label: '500 m' },
+      { color: '#6baed6', label: '1500 m' },
+      { color: '#2171b5', label: '2500 m' },
+      { color: '#08306b', label: '4000 m' },
+    ],
+  },
+  thickness: {
+    title: 'Espesor de hielo (m)',
+    url: 'https://maps.bas.ac.uk/antarctic/wms/bedmap3/ice_thickness/{z}/{x}/{y}.png',
+    legend: [
+      { color: '#fff7fb', label: '0 m' },
+      { color: '#d0d1e6', label: '500 m' },
+      { color: '#74a9cf', label: '1500 m' },
+      { color: '#0570b0', label: '3000 m' },
+      { color: '#023858', label: '4500 m' },
+    ],
+  },
+};
+
+function initBedmap() {
+  if (bedmapMap) {
+    setTimeout(() => bedmapMap.invalidateSize(), 50);
+    return;
+  }
+  bedmapMap = L.map('bedmap-map', {
+    crs: antarcticCRS(),
+    center: [-90, 0],
+    zoom: 2,
+    minZoom: 0,
+    maxZoom: 8,
+  });
+  // Basemap MOA (Mosaic of Antarctica) desde NASA GIBS — polar EPSG:3031
+  L.tileLayer.wms('https://gibs.earthdata.nasa.gov/wms/epsg3031/best/wms.cgi', {
+    layers: 'MODIS_Terra_Mosaic',
+    format: 'image/jpeg',
+    transparent: false,
+    attribution: 'NASA GIBS · MODIS Mosaic of Antarctica',
+  }).addTo(bedmapMap);
+  applyBedmapLayer(bedmapCurrentLayer);
+  attachBedmapVectors();
+
+  document.querySelectorAll('input[name="bedmap-layer"]').forEach(radio => {
+    radio.addEventListener('change', e => {
+      if (!e.target.checked) return;
+      applyBedmapLayer(e.target.value);
+    });
+  });
+  const glChk = document.getElementById('bedmap-grounding-line');
+  const coChk = document.getElementById('bedmap-coastline');
+  if (glChk) glChk.addEventListener('change', () => toggleBedmapVector('groundingLine', glChk.checked));
+  if (coChk) coChk.addEventListener('change', () => toggleBedmapVector('coastline', coChk.checked));
+}
+
+function applyBedmapLayer(key) {
+  bedmapCurrentLayer = key;
+  const cfg = BEDMAP_LAYERS[key];
+  if (bedmapRaster) bedmapMap.removeLayer(bedmapRaster);
+  bedmapRaster = L.tileLayer(cfg.url, {
+    attribution: 'BedMap3 © BAS (CC-BY 4.0)',
+    opacity: 0.82,
+    errorTileUrl: '',
+  });
+  let tileErrors = 0;
+  bedmapRaster.on('tileerror', () => {
+    tileErrors++;
+    if (tileErrors === 1) {
+      const status = document.getElementById('bedmap-status');
+      if (status) status.innerHTML =
+        '⚠ Tiles remotas no disponibles. Genera la capa local con:<br>' +
+        '<code>python scripts/build_bedmap.py</code>';
+    }
+  });
+  bedmapRaster.on('load', () => {
+    const status = document.getElementById('bedmap-status');
+    if (status) status.textContent = `Capa: ${cfg.title}`;
+  });
+  bedmapRaster.addTo(bedmapMap);
+  document.getElementById('bedmap-legend-title').textContent = cfg.title;
+  const scale = document.getElementById('bedmap-legend-scale');
+  clear(scale);
+  cfg.legend.forEach(item => {
+    const row = el('div', { style: { display: 'flex', alignItems: 'center', gap: '0.5rem', margin: '0.2rem 0' } });
+    row.appendChild(el('span', { style: { width: '20px', height: '12px', background: item.color, border: '1px solid #000', display: 'inline-block' } }));
+    row.appendChild(el('span', { text: item.label }));
+    scale.appendChild(row);
+  });
+}
+
+async function attachBedmapVectors() {
+  // Estos vectores son generados por scripts/build_bedmap.py a partir de
+  // los productos SCAR ADD (Antarctic Digital Database). Si no existen, se
+  // muestra el basemap solo.
+  try {
+    const gl = await fetch('data/grounding_line.geojson').then(r => r.json());
+    bedmapVectors.groundingLine = L.geoJSON(gl, { style: { color: '#f1c40f', weight: 1.2, fillOpacity: 0 } });
+    if (document.getElementById('bedmap-grounding-line')?.checked) bedmapVectors.groundingLine.addTo(bedmapMap);
+  } catch (e) { /* opcional */ }
+  try {
+    const co = await fetch('data/coastline.geojson').then(r => r.json());
+    bedmapVectors.coastline = L.geoJSON(co, { style: { color: '#e74c3c', weight: 1, fillOpacity: 0 } });
+    if (document.getElementById('bedmap-coastline')?.checked) bedmapVectors.coastline.addTo(bedmapMap);
+  } catch (e) { /* opcional */ }
+}
+
+function toggleBedmapVector(key, show) {
+  const layer = bedmapVectors[key];
+  if (!layer) return;
+  if (show) layer.addTo(bedmapMap); else bedmapMap.removeLayer(layer);
+}
 
 // ---------- Mapa ----------
 // Web Mercator (default): para Chile/mundo. Polar Stereographic: para Antártica.
@@ -131,9 +276,18 @@ function styleFor(feature) {
 }
 
 async function ensureAntarticaLoaded() {
+  if (state.antarticaMode === 'simplecode') {
+    if (state.antarticaSimplecode) return;
+    try {
+      state.antarticaSimplecode = await fetch('data/antartica_simplecode.geojson').then(r => r.json());
+    } catch (e) {
+      console.warn('No se pudo cargar antartica_simplecode.geojson', e);
+      state.antarticaSimplecode = { type: 'FeatureCollection', features: [] };
+    }
+    return;
+  }
   if (state.antartica) return;
   try {
-    // Por defecto: 9 SCAR Frameworks (interpretativos). Si querés ver las 21 SIMPCODE, cambia a antartica_simplecode.geojson.
     state.antartica = await fetch('data/antartica_frameworks.geojson').then(r => r.json());
   } catch (e) {
     console.warn('No se pudo cargar antartica_frameworks.geojson, fallback a SIMPCODE', e);
@@ -143,6 +297,63 @@ async function ensureAntarticaLoaded() {
       state.antartica = { type: 'FeatureCollection', features: [] };
     }
   }
+}
+
+let antarticGeositiosLayer = null;
+async function ensureAntarticGeositiosLoaded() {
+  if (state.antarticGeositios) return;
+  try {
+    // Mergeamos: catalogados (ASPAs + SCAR) + propuestos (bibliometría SCAR)
+    const [cat, prop] = await Promise.all([
+      fetch('data/antartica_geositios.geojson').then(r => r.json()).catch(() => ({features: []})),
+      fetch('data/antartica_geositios_propuestos.geojson').then(r => r.json()).catch(() => ({features: []})),
+    ]);
+    state.antarticGeositios = {
+      type: 'FeatureCollection',
+      features: [...(cat.features || []), ...(prop.features || [])],
+    };
+    console.log(`[geositios] ${cat.features?.length || 0} catalogados + ${prop.features?.length || 0} propuestos bibliométrica`);
+  } catch (e) {
+    console.warn('antartica_geositios.geojson no disponible — corre scripts/build_antartica_geositios.py + analisis_actas_scar.py', e);
+    state.antarticGeositios = { type: 'FeatureCollection', features: [] };
+  }
+}
+
+async function renderAntarticGeositiosLayer() {
+  if (antarticGeositiosLayer) {
+    state.map.removeLayer(antarticGeositiosLayer);
+    antarticGeositiosLayer = null;
+  }
+  if (!state.showAntarticGeositios || state.filterRegion !== 'antartica') return;
+  await ensureAntarticGeositiosLoaded();
+  antarticGeositiosLayer = L.geoJSON(state.antarticGeositios, {
+    pointToLayer: (feature, latlng) => {
+      const tipo = (feature.properties.tipo || '').toLowerCase();
+      // ASPA en rojo, geositios SCAR en azul, IUGS en dorado
+      // ASPA rojo, SCAR azul, IUGS dorado, candidato bibliométrico violeta hueco
+      let color = '#5fb878';
+      let weight = 1, opacity = 0.92, radius = 6;
+      if (tipo.includes('aspa')) color = '#e74c3c';
+      else if (tipo.includes('iugs')) color = '#f1c40f';
+      else if (tipo.includes('scar')) color = '#3498db';
+      else if (tipo.includes('candidato')) {
+        color = '#9b59b6'; opacity = 0.6; weight = 2; radius = 7;
+      }
+      return L.circleMarker(latlng, {
+        radius, color: '#000', weight, fillColor: color, fillOpacity: opacity,
+      });
+    },
+    onEachFeature: (feature, layer) => {
+      const p = feature.properties;
+      layer.bindPopup(
+        `<strong>${p.nombre || p.name || 'Sin nombre'}</strong><br>` +
+        `<span style="color:#888;font-size:0.8em">${p.codigo || ''} · ${p.tipo || ''}</span><br>` +
+        `<em>${p.interes || p.framework || ''}</em><br>` +
+        `<small>${p.fuente || ''}</small><br>` +
+        (p.descripcion ? `<details><summary>Más info</summary>${p.descripcion}</details>` : '')
+      );
+    },
+  }).addTo(state.map);
 }
 
 async function ensureChileGeologicoLoaded() {
@@ -241,11 +452,18 @@ async function renderContextos() {
   }
   await renderBaseLayer();
   await renderGeositiosLayer();
+  await renderAntarticGeositiosLayer();
+
+  // Mostrar/ocultar controles propios de Antártica
+  const antCtrl = document.getElementById('antartica-controls');
+  if (antCtrl) antCtrl.style.display = state.filterRegion === 'antartica' ? '' : 'none';
 
   let source;
   if (state.filterRegion === 'antartica') {
     await ensureAntarticaLoaded();
-    source = state.antartica.features;
+    source = state.antarticaMode === 'simplecode'
+      ? (state.antarticaSimplecode?.features || [])
+      : (state.antartica?.features || []);
   } else {
     // Modo Chile: 22 contextos Mourgues mapeados desde el mapa al millón.
     // Fallback: contextos.geojson (19 CGT Aysén) si chile_contextos no carga.
@@ -393,6 +611,24 @@ document.getElementById('toggle-geositios').addEventListener('change', e => {
   state.showGeositios = e.target.checked;
   renderGeositiosLayer();
 });
+
+document.querySelectorAll('input[name="antartica-mode"]').forEach(radio => {
+  radio.addEventListener('change', e => {
+    if (!e.target.checked) return;
+    state.antarticaMode = e.target.value;
+    state.filterTypes.clear();
+    state.filterAges.clear();
+    renderContextos();
+  });
+});
+
+const toggleAntGeo = document.getElementById('toggle-antartic-geositios');
+if (toggleAntGeo) {
+  toggleAntGeo.addEventListener('change', e => {
+    state.showAntarticGeositios = e.target.checked;
+    renderAntarticGeositiosLayer();
+  });
+}
 
 // ---------- Léxico ----------
 function renderLexList() {

@@ -1,0 +1,28 @@
+<!DOCTYPE qgis PUBLIC 'http://mrcc.com/qgis.dtd' 'SYSTEM'><qgis version="3.16.1-Hannover"><language>en</language><type>dataset</type>
+<parentidentifier>ASPA</parentidentifier>
+<identifier>../EnvironmentalManagement/ASPAs_ASMAs/ASPAs_points.shp</identifier>
+<title>Antarctic Specially Protected Areas (ASPAs, points)</title>
+<abstract>
+Antarctic Specially Protected Areas
+
+An Antarctic Specially Protected Area (ASPA) is an area of Antarctica designated by the Committee for Environmental Protection adopted at the Antarctic Treaty Consultative Meeting, which protects outstanding environmental, scientific, historic, aesthetic or wilderness values, and any combination of those values, or ongoing or planned scientific research.
+
+Two shapefiles are contained in this update on the location and extent of Antarctic Specially Protected Areas (ASPAs). The first is a point file (centroids of ASPA locations) and the second is a polygon file showing the spatial extent and boundary of each ASPA. This update builds on the point and polygon files originally provided by Environmental Research and Assessment (2011). The update includes the removal of ASPAs that have been de-designated and new ASPAs that have been designated since 2011. New ASPA boundaries were created from coordinates provided in the management plans.
+
+Terauds, A. (2016, updated 2016) An update to the Antarctic Specially Protected Areas (ASPAs)
+March 2016 Australian Antarctic Data Centre
+https://data.aad.gov.au/metadata/records/AAS_4296_Antarctic_Specially_Protected_Areas_v2
+
+Downloaded 13 February 2017
+None
+Published March 2016
+
+Editor
+Environmental Management
+Fraser Morgan
+MorganF@landcareresearch.co.nz
+
+Author
+Terauds, A. (AAD)
+aleks.terauds@aad.gov.au
+</abstract></qgis>

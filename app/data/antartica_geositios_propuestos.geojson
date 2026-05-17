@@ -1,0 +1,1389 @@
+{
+  "type": "FeatureCollection",
+  "metadata": {
+    "fuente": "Bibliometría actas SCAR",
+    "script": "scripts/analisis_actas_scar.py"
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.2866944,
+          -62.0051389
+        ]
+      },
+      "properties": {
+        "codigo": "PROP-KINGGEO",
+        "nombre": "King George Island",
+        "tipo": "candidato",
+        "interes": "Alta densidad de publicaciones SCAR (40 actas, 722 menciones)",
+        "fuente": "Bibliometría actas SCAR (analisis_actas_scar.py)",
+        "descripcion": "Tipo gazetteer: Island. Aparece en: ATCM39_ATT042_2016_Geoconservation_Attachment, POLAR2018_PolarExpo_posters, POLAR2018_abstracts, SCAR_OSC_2012_abstracts, SCAR_OSC_2014_COMNAP_abstracts, SCAR_OSC_2016_abstracts…",
+        "pubs_count": 40,
+        "hits_count": 722,
+        "feature_type": "Island",
+        "framework": "F9 Antarctic Peninsula arc",
+        "framework_source": "soft-rule (regla geográfica)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.0,
+          -62.0
+        ]
+      },
+      "properties": {
+        "codigo": "PROP-SOUTHSH",
+        "nombre": "South Shetland Islands",
+        "tipo": "candidato",
+        "interes": "Alta densidad de publicaciones SCAR (36 actas, 416 menciones)",
+        "fuente": "Bibliometría actas SCAR (analisis_actas_scar.py)",
+        "descripcion": "Tipo gazetteer: Island. Aparece en: POLAR2018_abstracts, SCAR_OSC_2012_abstracts, SCAR_OSC_2014_COMNAP_abstracts, SCAR_OSC_2016_abstracts, SCAR_OSC_2020_abstracts, SCAR_OSC_2022_abstracts…",
+        "pubs_count": 36,
+        "hits_count": 416,
+        "feature_type": "Island",
+        "framework": "F9 Antarctic Peninsula arc",
+        "framework_source": "soft-rule (regla geográfica)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -175.0,
+          -85.0
+        ]
+      },
+      "properties": {
+        "codigo": "PROP-TRANSANT",
+        "nombre": "Transantarctic Mountains",
+        "tipo": "candidato",
+        "interes": "Alta densidad de publicaciones SCAR (27 actas, 164 menciones)",
+        "fuente": "Bibliometría actas SCAR (analisis_actas_scar.py)",
+        "descripcion": "Tipo gazetteer: Mountain. Aparece en: ATCM39_IP031_2016_Antarctic_Geoconservation_Review, ATCM43_Att-A_2021_Method_Identification_Antarctic_Geological_Sites, POLAR2018_abstracts, SCAR_OSC_2012_abstracts, SCAR_OSC_2014_COMNAP_abstracts, SCAR_OSC_2016_abstracts…",
+        "pubs_count": 27,
+        "hits_count": 164,
+        "feature_type": "Mountain",
+        "framework": "(sin asignar)",
+        "framework_source": "fuera de bboxes conocidos"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -60.633,
+          -62.95
+        ]
+      },
+      "properties": {
+        "codigo": "PROP-DECEPTIO",
+        "nombre": "Deception Island",
+        "tipo": "candidato",
+        "interes": "Alta densidad de publicaciones SCAR (25 actas, 273 menciones)",
+        "fuente": "Bibliometría actas SCAR (analisis_actas_scar.py)",
+        "descripcion": "Tipo gazetteer: Island. Aparece en: POLAR2018_abstracts, SCAR_OSC_2012_abstracts, SCAR_OSC_2014_COMNAP_abstracts, SCAR_OSC_2016_abstracts, SCAR_OSC_2020_abstracts, SCAR_OSC_2022_abstracts…",
+        "pubs_count": 25,
+        "hits_count": 273,
+        "feature_type": "Island",
+        "framework": "F9 Antarctic Peninsula arc",
+        "framework_source": "soft-rule (regla geográfica)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.0,
+          -69.0
+        ]
+      },
+      "properties": {
+        "codigo": "PROP-PRYDZBA",
+        "nombre": "Prydz Bay",
+        "tipo": "candidato",
+        "interes": "Alta densidad de publicaciones SCAR (23 actas, 244 menciones)",
+        "fuente": "Bibliometría actas SCAR (analisis_actas_scar.py)",
+        "descripcion": "Tipo gazetteer: Bay. Aparece en: ATCM39_ATT042_2016_Geoconservation_Attachment, ATCM39_IP031_2016_Antarctic_Geoconservation_Review, Geosite_GF1_Shcherbinina_Layered_Complex, Geosite_GF1_Torckler-Tang, POLAR2018_abstracts, SCAR_OSC_2012_abstracts…",
+        "pubs_count": 23,
+        "hits_count": 244,
+        "feature_type": "Bay",
+        "framework": "F1 Basement",
+        "framework_source": "soft-rule (regla geográfica)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -56.75,
+          -64.2833333
+        ]
+      },
+      "properties": {
+        "codigo": "PROP-SEYMOUR",
+        "nombre": "Seymour Island",
+        "tipo": "candidato",
+        "interes": "Alta densidad de publicaciones SCAR (23 actas, 122 menciones)",
+        "fuente": "Bibliometría actas SCAR (analisis_actas_scar.py)",
+        "descripcion": "Tipo gazetteer: Island. Aparece en: ATCM39_ATT042_2016_Geoconservation_Attachment, ATCM43_Att-A_2021_Method_Identification_Antarctic_Geological_Sites, ISAES_2025_EG-GEOCON, POLAR2018_abstracts, SCAR_OSC_2012_abstracts, SCAR_OSC_2014_COMNAP_abstracts…",
+        "pubs_count": 23,
+        "hits_count": 122,
+        "feature_type": "Island",
+        "framework": "F4: Active margin & West Antarctic rift",
+        "framework_source": "spatial-join (antartica_frameworks.geojson)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -60.5,
+          -62.6
+        ]
+      },
+      "properties": {
+        "codigo": "PROP-LIVINGST",
+        "nombre": "Livingston Island",
+        "tipo": "candidato",
+        "interes": "Alta densidad de publicaciones SCAR (19 actas, 142 menciones)",
+        "fuente": "Bibliometría actas SCAR (analisis_actas_scar.py)",
+        "descripcion": "Tipo gazetteer: Island. Aparece en: ATCM39_ATT042_2016_Geoconservation_Attachment, POLAR2018_abstracts, SCAR_OSC_2012_abstracts, SCAR_OSC_2014_COMNAP_abstracts, SCAR_OSC_2016_abstracts, SCAR_OSC_2020_abstracts…",
+        "pubs_count": 19,
+        "hits_count": 142,
+        "feature_type": "Island",
+        "framework": "F9 Antarctic Peninsula arc",
+        "framework_source": "soft-rule (regla geográfica)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.25,
+          -68.55
+        ]
+      },
+      "properties": {
+        "codigo": "PROP-VESTFOLD",
+        "nombre": "Vestfold Hills",
+        "tipo": "candidato",
+        "interes": "Alta densidad de publicaciones SCAR (19 actas, 89 menciones)",
+        "fuente": "Bibliometría actas SCAR (analisis_actas_scar.py)",
+        "descripcion": "Tipo gazetteer: Hill. Aparece en: ATCM39_IP031_2016_Antarctic_Geoconservation_Review, Geosite_GF1_Shcherbinina_Layered_Complex, Geosite_GF1_Taynaya_Paragneiss, Geosite_GF1_Torckler-Tang, ISAES_2025_EG-GEOCON, POLAR2018_abstracts…",
+        "pubs_count": 19,
+        "hits_count": 89,
+        "feature_type": "Hill",
+        "framework": "F6: Cenozoic glacial history",
+        "framework_source": "spatial-join (antartica_frameworks.geojson)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.9481389,
+          -62.1821389
+        ]
+      },
+      "properties": {
+        "codigo": "PROP-FILDESP",
+        "nombre": "Fildes Peninsula",
+        "tipo": "candidato",
+        "interes": "Alta densidad de publicaciones SCAR (18 actas, 183 menciones)",
+        "fuente": "Bibliometría actas SCAR (analisis_actas_scar.py)",
+        "descripcion": "Tipo gazetteer: Peninsula. Aparece en: ATCM39_ATT042_2016_Geoconservation_Attachment, ATCM39_IP031_2016_Antarctic_Geoconservation_Review, POLAR2018_abstracts, SCAR_OSC_2012_abstracts, SCAR_OSC_2014_COMNAP_abstracts, SCAR_OSC_2016_abstracts…",
+        "pubs_count": 18,
+        "hits_count": 183,
+        "feature_type": "Peninsula",
+        "framework": "F4: Active margin & West Antarctic rift",
+        "framework_source": "spatial-join (antartica_frameworks.geojson)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.75,
+          -64.15
+        ]
+      },
+      "properties": {
+        "codigo": "PROP-JAMESRO",
+        "nombre": "James Ross Island",
+        "tipo": "candidato",
+        "interes": "Alta densidad de publicaciones SCAR (18 actas, 135 menciones)",
+        "fuente": "Bibliometría actas SCAR (analisis_actas_scar.py)",
+        "descripcion": "Tipo gazetteer: Island. Aparece en: ATCM39_ATT042_2016_Geoconservation_Attachment, ATCM39_IP031_2016_Antarctic_Geoconservation_Review, ATCM43_Att-A_2021_Method_Identification_Antarctic_Geological_Sites, POLAR2018_PolarExpo_posters, POLAR2018_abstracts, SCAR_OSC_2012_abstracts…",
+        "pubs_count": 18,
+        "hits_count": 135,
+        "feature_type": "Island",
+        "framework": "F9 Antarctic Peninsula arc",
+        "framework_source": "soft-rule (regla geográfica)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.17333532,
+          -69.39488311
+        ]
+      },
+      "properties": {
+        "codigo": "PROP-LARSEMAN",
+        "nombre": "Larsemann Hills",
+        "tipo": "candidato",
+        "interes": "Alta densidad de publicaciones SCAR (17 actas, 140 menciones)",
+        "fuente": "Bibliometría actas SCAR (analisis_actas_scar.py)",
+        "descripcion": "Tipo gazetteer: Hill. Aparece en: ATCM39_ATT042_2016_Geoconservation_Attachment, ATCM39_IP031_2016_Antarctic_Geoconservation_Review, POLAR2018_abstracts, SCAR_OSC_2012_abstracts, SCAR_OSC_2014_COMNAP_abstracts, SCAR_OSC_2016_abstracts…",
+        "pubs_count": 17,
+        "hits_count": 140,
+        "feature_type": "Hill",
+        "framework": "F1 Basement",
+        "framework_source": "soft-rule (regla geográfica)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.0,
+          -72.75
+        ]
+      },
+      "properties": {
+        "codigo": "PROP-GROVEMO",
+        "nombre": "Grove Mountains",
+        "tipo": "candidato",
+        "interes": "Alta densidad de publicaciones SCAR (16 actas, 71 menciones)",
+        "fuente": "Bibliometría actas SCAR (analisis_actas_scar.py)",
+        "descripcion": "Tipo gazetteer: Mountain. Aparece en: ATCM39_ATT042_2016_Geoconservation_Attachment, ATCM39_IP031_2016_Antarctic_Geoconservation_Review, POLAR2018_abstracts, SCAR_OSC_2012_abstracts, SCAR_OSC_2014_COMNAP_abstracts, SCAR_OSC_2022_abstracts…",
+        "pubs_count": 16,
+        "hits_count": 71,
+        "feature_type": "Mountain",
+        "framework": "(sin asignar)",
+        "framework_source": "fuera de bboxes conocidos"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          163.0,
+          -77.6166667
+        ]
+      },
+      "properties": {
+        "codigo": "PROP-TAYLORV",
+        "nombre": "Taylor Valley",
+        "tipo": "candidato",
+        "interes": "Alta densidad de publicaciones SCAR (14 actas, 114 menciones)",
+        "fuente": "Bibliometría actas SCAR (analisis_actas_scar.py)",
+        "descripcion": "Tipo gazetteer: Valley. Aparece en: ATCM39_ATT042_2016_Geoconservation_Attachment, POLAR2018_abstracts, SCAR_OSC_2012_abstracts, SCAR_OSC_2014_COMNAP_abstracts, SCAR_OSC_2016_abstracts, SCAR_OSC_2020_abstracts…",
+        "pubs_count": 14,
+        "hits_count": 114,
+        "feature_type": "Valley",
+        "framework": "F6 Glacial geology",
+        "framework_source": "soft-rule (regla geográfica)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.4214167,
+          -62.1069444
+        ]
+      },
+      "properties": {
+        "codigo": "PROP-ADMIRALT",
+        "nombre": "Admiralty Bay",
+        "tipo": "candidato",
+        "interes": "Alta densidad de publicaciones SCAR (13 actas, 187 menciones)",
+        "fuente": "Bibliometría actas SCAR (analisis_actas_scar.py)",
+        "descripcion": "Tipo gazetteer: Bay. Aparece en: POLAR2018_abstracts, SCAR_OSC_2012_abstracts, SCAR_OSC_2014_COMNAP_abstracts, SCAR_OSC_2016_abstracts, SCAR_OSC_2020_abstracts, SCAR_OSC_2022_abstracts…",
+        "pubs_count": 13,
+        "hits_count": 187,
+        "feature_type": "Bay",
+        "framework": "F9 Antarctic Peninsula arc",
+        "framework_source": "soft-rule (regla geográfica)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          100.88330556,
+          -66.16669444
+        ]
+      },
+      "properties": {
+        "codigo": "PROP-BUNGERH",
+        "nombre": "Bunger Hills",
+        "tipo": "candidato",
+        "interes": "Alta densidad de publicaciones SCAR (13 actas, 60 menciones)",
+        "fuente": "Bibliometría actas SCAR (analisis_actas_scar.py)",
+        "descripcion": "Tipo gazetteer: Hill. Aparece en: SCAR_OSC_2012_abstracts, SCAR_OSC_2014_COMNAP_abstracts, SCAR_OSC_2020_abstracts, SCAR_OSC_2022_abstracts, SCAR_OSC_2024_Pucon_abstracts, openalex_antarctic_science_2016_10.1017_s095410201600033x…",
+        "pubs_count": 13,
+        "hits_count": 60,
+        "feature_type": "Hill",
+        "framework": "F1 Basement",
+        "framework_source": "soft-rule (regla geográfica)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          168.0,
+          -77.5
+        ]
+      },
+      "properties": {
+        "codigo": "PROP-ROSSISL",
+        "nombre": "Ross Island",
+        "tipo": "candidato",
+        "interes": "Alta densidad de publicaciones SCAR (11 actas, 105 menciones)",
+        "fuente": "Bibliometría actas SCAR (analisis_actas_scar.py)",
+        "descripcion": "Tipo gazetteer: Island. Aparece en: ATCM39_IP031_2016_Antarctic_Geoconservation_Review, POLAR2018_abstracts, SCAR_OSC_2012_abstracts, SCAR_OSC_2014_COMNAP_abstracts, SCAR_OSC_2016_abstracts, SCAR_OSC_2020_abstracts…",
+        "pubs_count": 11,
+        "hits_count": 105,
+        "feature_type": "Island",
+        "framework": "F4 Cenozoic volcanism",
+        "framework_source": "soft-rule (regla geográfica)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -45.6333333,
+          -60.7166667
+        ]
+      },
+      "properties": {
+        "codigo": "PROP-SIGNYIS",
+        "nombre": "Signy Island",
+        "tipo": "candidato",
+        "interes": "Alta densidad de publicaciones SCAR (11 actas, 94 menciones)",
+        "fuente": "Bibliometría actas SCAR (analisis_actas_scar.py)",
+        "descripcion": "Tipo gazetteer: Island. Aparece en: POLAR2018_abstracts, SCAR_OSC_2012_abstracts, SCAR_OSC_2014_COMNAP_abstracts, SCAR_OSC_2016_abstracts, SCAR_OSC_2020_abstracts, SCAR_OSC_2022_abstracts…",
+        "pubs_count": 11,
+        "hits_count": 94,
+        "feature_type": "Island",
+        "framework": "(sin asignar)",
+        "framework_source": "fuera de bboxes conocidos"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          165.0,
+          -77.5
+        ]
+      },
+      "properties": {
+        "codigo": "PROP-MCMURDO",
+        "nombre": "McMurdo Sound",
+        "tipo": "candidato",
+        "interes": "Alta densidad de publicaciones SCAR (10 actas, 140 menciones)",
+        "fuente": "Bibliometría actas SCAR (analisis_actas_scar.py)",
+        "descripcion": "Tipo gazetteer: Sound. Aparece en: POLAR2018_abstracts, SCAR_OSC_2012_abstracts, SCAR_OSC_2014_COMNAP_abstracts, SCAR_OSC_2016_abstracts, SCAR_OSC_2020_abstracts, SCAR_OSC_2022_abstracts…",
+        "pubs_count": 10,
+        "hits_count": 140,
+        "feature_type": "Sound",
+        "framework": "(sin asignar)",
+        "framework_source": "fuera de bboxes conocidos"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.8586667,
+          -62.2228611
+        ]
+      },
+      "properties": {
+        "codigo": "PROP-MAXWELL",
+        "nombre": "Maxwell Bay",
+        "tipo": "candidato",
+        "interes": "Alta densidad de publicaciones SCAR (10 actas, 72 menciones)",
+        "fuente": "Bibliometría actas SCAR (analisis_actas_scar.py)",
+        "descripcion": "Tipo gazetteer: Bay. Aparece en: POLAR2018_abstracts, SCAR_OSC_2012_abstracts, SCAR_OSC_2014_COMNAP_abstracts, SCAR_OSC_2016_abstracts, SCAR_OSC_2020_abstracts, SCAR_OSC_2022_abstracts…",
+        "pubs_count": 10,
+        "hits_count": 72,
+        "feature_type": "Bay",
+        "framework": "F9 Antarctic Peninsula arc",
+        "framework_source": "soft-rule (regla geográfica)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -68.5,
+          -68.5
+        ]
+      },
+      "properties": {
+        "codigo": "PROP-MARGUERI",
+        "nombre": "Marguerite Bay",
+        "tipo": "candidato",
+        "interes": "Alta densidad de publicaciones SCAR (10 actas, 51 menciones)",
+        "fuente": "Bibliometría actas SCAR (analisis_actas_scar.py)",
+        "descripcion": "Tipo gazetteer: Bay. Aparece en: POLAR2018_abstracts, SCAR_OSC_2012_abstracts, SCAR_OSC_2014_COMNAP_abstracts, SCAR_OSC_2016_abstracts, SCAR_OSC_2020_abstracts, SCAR_OSC_2022_abstracts…",
+        "pubs_count": 10,
+        "hits_count": 51,
+        "feature_type": "Bay",
+        "framework": "F9 Antarctic Peninsula arc",
+        "framework_source": "soft-rule (regla geográfica)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          67.24611111,
+          -71.42711111
+        ]
+      },
+      "properties": {
+        "codigo": "PROP-PRINCEC",
+        "nombre": "Prince Charles Mountains",
+        "tipo": "candidato",
+        "interes": "Alta densidad de publicaciones SCAR (10 actas, 22 menciones)",
+        "fuente": "Bibliometría actas SCAR (analisis_actas_scar.py)",
+        "descripcion": "Tipo gazetteer: Mountain. Aparece en: ATCM39_IP031_2016_Antarctic_Geoconservation_Review, SCAR_OSC_2012_abstracts, SCAR_OSC_2014_COMNAP_abstracts, SCAR_OSC_2016_abstracts, SCAR_OSC_2022_abstracts, openalex_antarctic_science_2012_10.1017_s0954102012000909…",
+        "pubs_count": 10,
+        "hits_count": 22,
+        "feature_type": "Mountain",
+        "framework": "(sin asignar)",
+        "framework_source": "fuera de bboxes conocidos"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.25,
+          -68.55
+        ]
+      },
+      "properties": {
+        "codigo": "PROP-VESTFOLD",
+        "nombre": "Vestfold",
+        "tipo": "candidato",
+        "interes": "Alta densidad de publicaciones SCAR (10 actas, 19 menciones)",
+        "fuente": "Bibliometría actas SCAR (analisis_actas_scar.py)",
+        "descripcion": "Tipo gazetteer: Hill. Aparece en: Geosite_GF1_Shcherbinina_Layered_Complex, Geosite_GF1_Taynaya_Paragneiss, Geosite_GF1_Torckler-Tang, POLAR2018_abstracts, SCAR_OSC_2014_COMNAP_abstracts, SCAR_OSC_2016_abstracts…",
+        "pubs_count": 10,
+        "hits_count": 19,
+        "feature_type": "Hill",
+        "framework": "F6: Cenozoic glacial history",
+        "framework_source": "spatial-join (antartica_frameworks.geojson)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -45.5,
+          -60.5833333
+        ]
+      },
+      "properties": {
+        "codigo": "PROP-SOUTHOR",
+        "nombre": "South Orkney Islands",
+        "tipo": "candidato",
+        "interes": "Alta densidad de publicaciones SCAR (9 actas, 88 menciones)",
+        "fuente": "Bibliometría actas SCAR (analisis_actas_scar.py)",
+        "descripcion": "Tipo gazetteer: Island. Aparece en: POLAR2018_abstracts, SCAR_OSC_2012_abstracts, SCAR_OSC_2014_COMNAP_abstracts, SCAR_OSC_2016_abstracts, SCAR_OSC_2020_abstracts, SCAR_OSC_2022_abstracts…",
+        "pubs_count": 9,
+        "hits_count": 88,
+        "feature_type": "Island",
+        "framework": "(sin asignar)",
+        "framework_source": "fuera de bboxes conocidos"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -106.75,
+          -75.5
+        ]
+      },
+      "properties": {
+        "codigo": "PROP-THWAITES",
+        "nombre": "Thwaites Glacier",
+        "tipo": "candidato",
+        "interes": "Alta densidad de publicaciones SCAR (9 actas, 70 menciones)",
+        "fuente": "Bibliometría actas SCAR (analisis_actas_scar.py)",
+        "descripcion": "Tipo gazetteer: Glacier. Aparece en: POLAR2018_abstracts, SCAR_OSC_2012_abstracts, SCAR_OSC_2016_abstracts, SCAR_OSC_2020_abstracts, SCAR_OSC_2022_abstracts, SCAR_OSC_2024_Pucon_abstracts…",
+        "pubs_count": 9,
+        "hits_count": 70,
+        "feature_type": "Glacier",
+        "framework": "F4 Cenozoic volcanism",
+        "framework_source": "soft-rule (regla geográfica)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          60.8504,
+          -67.4493
+        ]
+      },
+      "properties": {
+        "codigo": "PROP-TAYLORG",
+        "nombre": "Taylor Glacier",
+        "tipo": "candidato",
+        "interes": "Alta densidad de publicaciones SCAR (9 actas, 58 menciones)",
+        "fuente": "Bibliometría actas SCAR (analisis_actas_scar.py)",
+        "descripcion": "Tipo gazetteer: Glacier. Aparece en: POLAR2018_abstracts, SCAR_OSC_2012_abstracts, SCAR_OSC_2014_COMNAP_abstracts, SCAR_OSC_2016_abstracts, SCAR_OSC_2020_abstracts, SCAR_OSC_2022_abstracts…",
+        "pubs_count": 9,
+        "hits_count": 58,
+        "feature_type": "Glacier",
+        "framework": "(sin asignar)",
+        "framework_source": "fuera de bboxes conocidos"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          110.4166944,
+          -66.35
+        ]
+      },
+      "properties": {
+        "codigo": "PROP-WINDMILL",
+        "nombre": "Windmill Islands",
+        "tipo": "candidato",
+        "interes": "Alta densidad de publicaciones SCAR (9 actas, 38 menciones)",
+        "fuente": "Bibliometría actas SCAR (analisis_actas_scar.py)",
+        "descripcion": "Tipo gazetteer: Island. Aparece en: POLAR2018_abstracts, SCAR_OSC_2012_abstracts, SCAR_OSC_2014_COMNAP_abstracts, SCAR_OSC_2016_abstracts, SCAR_OSC_2020_abstracts, SCAR_OSC_2022_abstracts…",
+        "pubs_count": 9,
+        "hits_count": 38,
+        "feature_type": "Island",
+        "framework": "(sin asignar)",
+        "framework_source": "fuera de bboxes conocidos"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -68.5,
+          -67.25
+        ]
+      },
+      "properties": {
+        "codigo": "PROP-ADELAIDE",
+        "nombre": "Adelaide Island",
+        "tipo": "candidato",
+        "interes": "Alta densidad de publicaciones SCAR (9 actas, 31 menciones)",
+        "fuente": "Bibliometría actas SCAR (analisis_actas_scar.py)",
+        "descripcion": "Tipo gazetteer: Island. Aparece en: POLAR2018_abstracts, SCAR_OSC_2012_abstracts, SCAR_OSC_2014_COMNAP_abstracts, SCAR_OSC_2016_abstracts, SCAR_OSC_2020_abstracts, SCAR_OSC_2022_abstracts…",
+        "pubs_count": 9,
+        "hits_count": 31,
+        "feature_type": "Island",
+        "framework": "F9 Antarctic Peninsula arc",
+        "framework_source": "soft-rule (regla geográfica)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          167.16666667,
+          -77.53333333
+        ]
+      },
+      "properties": {
+        "codigo": "PROP-MOUNTER",
+        "nombre": "Mount Erebus",
+        "tipo": "candidato",
+        "interes": "Alta densidad de publicaciones SCAR (9 actas, 24 menciones)",
+        "fuente": "Bibliometría actas SCAR (analisis_actas_scar.py)",
+        "descripcion": "Tipo gazetteer: Mountain. Aparece en: POLAR2018_abstracts, SCAR_OSC_2012_abstracts, SCAR_OSC_2016_abstracts, SCAR_OSC_2020_abstracts, SCAR_OSC_2022_abstracts, SCAR_OSC_2024_Pucon_abstracts…",
+        "pubs_count": 9,
+        "hits_count": 24,
+        "feature_type": "Mountain",
+        "framework": "F4: Active margin & West Antarctic rift",
+        "framework_source": "spatial-join (antartica_frameworks.geojson)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          61.08980556,
+          -67.86630556
+        ]
+      },
+      "properties": {
+        "codigo": "PROP-THESATE",
+        "nombre": "The Satellite",
+        "tipo": "candidato",
+        "interes": "Alta densidad de publicaciones SCAR (8 actas, 119 menciones)",
+        "fuente": "Bibliometría actas SCAR (analisis_actas_scar.py)",
+        "descripcion": "Tipo gazetteer: Peak. Aparece en: POLAR2018_PolarExpo_posters, POLAR2018_abstracts, SCAR_OSC_2012_abstracts, SCAR_OSC_2014_COMNAP_abstracts, SCAR_OSC_2016_abstracts, SCAR_OSC_2020_abstracts…",
+        "pubs_count": 8,
+        "hits_count": 119,
+        "feature_type": "Peak",
+        "framework": "(sin asignar)",
+        "framework_source": "fuera de bboxes conocidos"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -84.5,
+          -79.0
+        ]
+      },
+      "properties": {
+        "codigo": "PROP-ELLSWORT",
+        "nombre": "Ellsworth Mountains",
+        "tipo": "candidato",
+        "interes": "Alta densidad de publicaciones SCAR (8 actas, 67 menciones)",
+        "fuente": "Bibliometría actas SCAR (analisis_actas_scar.py)",
+        "descripcion": "Tipo gazetteer: Mountain. Aparece en: ATCM39_ATT042_2016_Geoconservation_Attachment, POLAR2018_abstracts, SCAR_OSC_2012_abstracts, SCAR_OSC_2014_COMNAP_abstracts, SCAR_OSC_2016_abstracts, SCAR_OSC_2020_abstracts…",
+        "pubs_count": 8,
+        "hits_count": 67,
+        "feature_type": "Mountain",
+        "framework": "F1 Basement",
+        "framework_source": "soft-rule (regla geográfica)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -64.2833333,
+          -65.25
+        ]
+      },
+      "properties": {
+        "codigo": "PROP-ARGENTIN",
+        "nombre": "Argentine Islands",
+        "tipo": "candidato",
+        "interes": "Alta densidad de publicaciones SCAR (8 actas, 43 menciones)",
+        "fuente": "Bibliometría actas SCAR (analisis_actas_scar.py)",
+        "descripcion": "Tipo gazetteer: Island. Aparece en: SCAR_OSC_2012_abstracts, SCAR_OSC_2014_COMNAP_abstracts, SCAR_OSC_2016_abstracts, SCAR_OSC_2020_abstracts, SCAR_OSC_2022_abstracts, SCAR_OSC_2024_Pucon_abstracts…",
+        "pubs_count": 8,
+        "hits_count": 43,
+        "feature_type": "Island",
+        "framework": "F9 Antarctic Peninsula arc",
+        "framework_source": "soft-rule (regla geográfica)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -63.5,
+          -64.5833333
+        ]
+      },
+      "properties": {
+        "codigo": "PROP-ANVERSI",
+        "nombre": "Anvers Island",
+        "tipo": "candidato",
+        "interes": "Alta densidad de publicaciones SCAR (8 actas, 36 menciones)",
+        "fuente": "Bibliometría actas SCAR (analisis_actas_scar.py)",
+        "descripcion": "Tipo gazetteer: Island. Aparece en: POLAR2018_abstracts, SCAR_OSC_2012_abstracts, SCAR_OSC_2014_COMNAP_abstracts, SCAR_OSC_2016_abstracts, SCAR_OSC_2020_abstracts, SCAR_OSC_2022_abstracts…",
+        "pubs_count": 8,
+        "hits_count": 36,
+        "feature_type": "Island",
+        "framework": "F9 Antarctic Peninsula arc",
+        "framework_source": "soft-rule (regla geográfica)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.3666667,
+          -63.8333333
+        ]
+      },
+      "properties": {
+        "codigo": "PROP-VEGAISL",
+        "nombre": "Vega Island",
+        "tipo": "candidato",
+        "interes": "Alta densidad de publicaciones SCAR (8 actas, 34 menciones)",
+        "fuente": "Bibliometría actas SCAR (analisis_actas_scar.py)",
+        "descripcion": "Tipo gazetteer: Island. Aparece en: SCAR_OSC_2012_abstracts, SCAR_OSC_2014_COMNAP_abstracts, SCAR_OSC_2016_abstracts, SCAR_OSC_2020_abstracts, SCAR_OSC_2024_Pucon_abstracts, openalex_antarctic_science_2017_10.1017_s0954102017000050…",
+        "pubs_count": 8,
+        "hits_count": 34,
+        "feature_type": "Island",
+        "framework": "F9 Antarctic Peninsula arc",
+        "framework_source": "soft-rule (regla geográfica)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          161.8333333,
+          -77.5166667
+        ]
+      },
+      "properties": {
+        "codigo": "PROP-WRIGHTV",
+        "nombre": "Wright Valley",
+        "tipo": "candidato",
+        "interes": "Alta densidad de publicaciones SCAR (8 actas, 32 menciones)",
+        "fuente": "Bibliometría actas SCAR (analisis_actas_scar.py)",
+        "descripcion": "Tipo gazetteer: Valley. Aparece en: POLAR2018_abstracts, SCAR_OSC_2012_abstracts, SCAR_OSC_2014_COMNAP_abstracts, SCAR_OSC_2016_abstracts, SCAR_OSC_2022_abstracts, SCAR_OSC_2024_Pucon_abstracts…",
+        "pubs_count": 8,
+        "hits_count": 32,
+        "feature_type": "Valley",
+        "framework": "F2: Proterozoic orogens & rifted margins",
+        "framework_source": "spatial-join (antartica_frameworks.geojson)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.7412778,
+          -62.2266111
+        ]
+      },
+      "properties": {
+        "codigo": "PROP-BARTONP",
+        "nombre": "Barton Peninsula",
+        "tipo": "candidato",
+        "interes": "Alta densidad de publicaciones SCAR (8 actas, 32 menciones)",
+        "fuente": "Bibliometría actas SCAR (analisis_actas_scar.py)",
+        "descripcion": "Tipo gazetteer: Peninsula. Aparece en: POLAR2018_abstracts, SCAR_OSC_2012_abstracts, SCAR_OSC_2014_COMNAP_abstracts, SCAR_OSC_2016_abstracts, SCAR_OSC_2020_abstracts, SCAR_OSC_2022_abstracts…",
+        "pubs_count": 8,
+        "hits_count": 32,
+        "feature_type": "Peninsula",
+        "framework": "F4: Active margin & West Antarctic rift",
+        "framework_source": "spatial-join (antartica_frameworks.geojson)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -59.783,
+          -62.5
+        ]
+      },
+      "properties": {
+        "codigo": "PROP-GREENWIC",
+        "nombre": "Greenwich Island",
+        "tipo": "candidato",
+        "interes": "Alta densidad de publicaciones SCAR (8 actas, 30 menciones)",
+        "fuente": "Bibliometría actas SCAR (analisis_actas_scar.py)",
+        "descripcion": "Tipo gazetteer: Island. Aparece en: POLAR2018_abstracts, SCAR_OSC_2012_abstracts, SCAR_OSC_2014_COMNAP_abstracts, SCAR_OSC_2016_abstracts, SCAR_OSC_2022_abstracts, SCAR_OSC_2024_Pucon_abstracts…",
+        "pubs_count": 8,
+        "hits_count": 30,
+        "feature_type": "Island",
+        "framework": "F9 Antarctic Peninsula arc",
+        "framework_source": "soft-rule (regla geográfica)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          67.4898,
+          -73.0653
+        ]
+      },
+      "properties": {
+        "codigo": "PROP-LAMBERT",
+        "nombre": "Lambert Glacier",
+        "tipo": "candidato",
+        "interes": "Alta densidad de publicaciones SCAR (8 actas, 26 menciones)",
+        "fuente": "Bibliometría actas SCAR (analisis_actas_scar.py)",
+        "descripcion": "Tipo gazetteer: Glacier. Aparece en: POLAR2018_abstracts, SCAR_OSC_2012_abstracts, SCAR_OSC_2014_COMNAP_abstracts, SCAR_OSC_2016_abstracts, SCAR_OSC_2022_abstracts, SCAR_OSC_2024_Pucon_abstracts…",
+        "pubs_count": 8,
+        "hits_count": 26,
+        "feature_type": "Glacier",
+        "framework": "(sin asignar)",
+        "framework_source": "fuera de bboxes conocidos"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.5,
+          -69.1666667
+        ]
+      },
+      "properties": {
+        "codigo": "PROP-LÜTZOW-H",
+        "nombre": "Lützow-Holm Bay",
+        "tipo": "candidato",
+        "interes": "Alta densidad de publicaciones SCAR (8 actas, 25 menciones)",
+        "fuente": "Bibliometría actas SCAR (analisis_actas_scar.py)",
+        "descripcion": "Tipo gazetteer: Bay. Aparece en: POLAR2018_abstracts, SCAR_OSC_2012_abstracts, SCAR_OSC_2014_COMNAP_abstracts, SCAR_OSC_2016_abstracts, SCAR_OSC_2020_abstracts, SCAR_OSC_2022_abstracts…",
+        "pubs_count": 8,
+        "hits_count": 25,
+        "feature_type": "Bay",
+        "framework": "F1 Basement",
+        "framework_source": "soft-rule (regla geográfica)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.4666667,
+          -62.175
+        ]
+      },
+      "properties": {
+        "codigo": "PROP-ECOLOGY",
+        "nombre": "Ecology Glacier",
+        "tipo": "candidato",
+        "interes": "Alta densidad de publicaciones SCAR (8 actas, 21 menciones)",
+        "fuente": "Bibliometría actas SCAR (analisis_actas_scar.py)",
+        "descripcion": "Tipo gazetteer: Glacier. Aparece en: POLAR2018_abstracts, SCAR_OSC_2012_abstracts, SCAR_OSC_2014_COMNAP_abstracts, SCAR_OSC_2016_abstracts, SCAR_OSC_2020_abstracts, SCAR_OSC_2022_abstracts…",
+        "pubs_count": 8,
+        "hits_count": 21,
+        "feature_type": "Glacier",
+        "framework": "F9 Antarctic Peninsula arc",
+        "framework_source": "soft-rule (regla geográfica)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.83330556,
+          -68.85
+        ]
+      },
+      "properties": {
+        "codigo": "PROP-RAUERGR",
+        "nombre": "Rauer Group",
+        "tipo": "candidato",
+        "interes": "Alta densidad de publicaciones SCAR (8 actas, 15 menciones)",
+        "fuente": "Bibliometría actas SCAR (analisis_actas_scar.py)",
+        "descripcion": "Tipo gazetteer: Island. Aparece en: Geosite_GF1_Shcherbinina_Layered_Complex, Geosite_GF1_Torckler-Tang, POLAR2018_abstracts, SCAR_OSC_2014_COMNAP_abstracts, SCAR_OSC_2016_abstracts, SCAR_OSC_2020_abstracts…",
+        "pubs_count": 8,
+        "hits_count": 15,
+        "feature_type": "Island",
+        "framework": "F1 Basement",
+        "framework_source": "soft-rule (regla geográfica)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82.5,
+          -79.75
+        ]
+      },
+      "properties": {
+        "codigo": "PROP-UNIONGL",
+        "nombre": "Union Glacier",
+        "tipo": "candidato",
+        "interes": "Alta densidad de publicaciones SCAR (7 actas, 67 menciones)",
+        "fuente": "Bibliometría actas SCAR (analisis_actas_scar.py)",
+        "descripcion": "Tipo gazetteer: Glacier. Aparece en: POLAR2018_abstracts, SCAR_OSC_2012_abstracts, SCAR_OSC_2014_COMNAP_abstracts, SCAR_OSC_2016_abstracts, SCAR_OSC_2020_abstracts, SCAR_OSC_2022_abstracts…",
+        "pubs_count": 7,
+        "hits_count": 67,
+        "feature_type": "Glacier",
+        "framework": "F1 Basement",
+        "framework_source": "soft-rule (regla geográfica)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -162.0,
+          -79.4166667
+        ]
+      },
+      "properties": {
+        "codigo": "PROP-ROOSEVEL",
+        "nombre": "Roosevelt Island",
+        "tipo": "candidato",
+        "interes": "Alta densidad de publicaciones SCAR (7 actas, 52 menciones)",
+        "fuente": "Bibliometría actas SCAR (analisis_actas_scar.py)",
+        "descripcion": "Tipo gazetteer: Island. Aparece en: POLAR2018_abstracts, SCAR_OSC_2012_abstracts, SCAR_OSC_2014_COMNAP_abstracts, SCAR_OSC_2016_abstracts, SCAR_OSC_2020_abstracts, SCAR_OSC_2022_abstracts…",
+        "pubs_count": 7,
+        "hits_count": 52,
+        "feature_type": "Island",
+        "framework": "(sin asignar)",
+        "framework_source": "fuera de bboxes conocidos"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -55.116,
+          -61.133
+        ]
+      },
+      "properties": {
+        "codigo": "PROP-ELEPHANT",
+        "nombre": "Elephant Island",
+        "tipo": "candidato",
+        "interes": "Alta densidad de publicaciones SCAR (7 actas, 52 menciones)",
+        "fuente": "Bibliometría actas SCAR (analisis_actas_scar.py)",
+        "descripcion": "Tipo gazetteer: Island. Aparece en: POLAR2018_abstracts, SCAR_OSC_2012_abstracts, SCAR_OSC_2014_COMNAP_abstracts, SCAR_OSC_2016_abstracts, SCAR_OSC_2020_abstracts, SCAR_OSC_2022_abstracts…",
+        "pubs_count": 7,
+        "hits_count": 52,
+        "feature_type": "Island",
+        "framework": "F9 Antarctic Peninsula arc",
+        "framework_source": "soft-rule (regla geográfica)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.4060556,
+          -62.0729722
+        ]
+      },
+      "properties": {
+        "codigo": "PROP-KELLERP",
+        "nombre": "Keller Peninsula",
+        "tipo": "candidato",
+        "interes": "Alta densidad de publicaciones SCAR (7 actas, 43 menciones)",
+        "fuente": "Bibliometría actas SCAR (analisis_actas_scar.py)",
+        "descripcion": "Tipo gazetteer: Peninsula. Aparece en: POLAR2018_abstracts, SCAR_OSC_2012_abstracts, SCAR_OSC_2014_COMNAP_abstracts, SCAR_OSC_2016_abstracts, SCAR_OSC_2020_abstracts, SCAR_OSC_2022_abstracts…",
+        "pubs_count": 7,
+        "hits_count": 43,
+        "feature_type": "Peninsula",
+        "framework": "F4: Active margin & West Antarctic rift",
+        "framework_source": "spatial-join (antartica_frameworks.geojson)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          99.4167,
+          -66.75
+        ]
+      },
+      "properties": {
+        "codigo": "PROP-DENMANG",
+        "nombre": "Denman Glacier",
+        "tipo": "candidato",
+        "interes": "Alta densidad de publicaciones SCAR (7 actas, 31 menciones)",
+        "fuente": "Bibliometría actas SCAR (analisis_actas_scar.py)",
+        "descripcion": "Tipo gazetteer: Glacier. Aparece en: POLAR2018_abstracts, SCAR_OSC_2014_COMNAP_abstracts, SCAR_OSC_2020_abstracts, SCAR_OSC_2022_abstracts, SCAR_OSC_2024_Pucon_abstracts, openalex_antarctic_science_2016_10.1017_s095410201600033x…",
+        "pubs_count": 7,
+        "hits_count": 31,
+        "feature_type": "Glacier",
+        "framework": "F1 Basement",
+        "framework_source": "soft-rule (regla geográfica)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.8333333,
+          -68.85
+        ]
+      },
+      "properties": {
+        "codigo": "PROP-RAUERIS",
+        "nombre": "Rauer Islands",
+        "tipo": "candidato",
+        "interes": "Alta densidad de publicaciones SCAR (7 actas, 23 menciones)",
+        "fuente": "Bibliometría actas SCAR (analisis_actas_scar.py)",
+        "descripcion": "Tipo gazetteer: Island. Aparece en: Geosite_GF1_Shcherbinina_Layered_Complex, Geosite_GF1_Taynaya_Paragneiss, Geosite_GF1_Torckler-Tang, ISAES_2025_EG-GEOCON, SCAR_OSC_2016_abstracts, SCAR_OSC_2020_abstracts…",
+        "pubs_count": 7,
+        "hits_count": 23,
+        "feature_type": "Island",
+        "framework": "F1 Basement",
+        "framework_source": "soft-rule (regla geográfica)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          65.30788889,
+          -73.82869444
+        ]
+      },
+      "properties": {
+        "codigo": "PROP-COLLINS",
+        "nombre": "Collins Glacier",
+        "tipo": "candidato",
+        "interes": "Alta densidad de publicaciones SCAR (7 actas, 22 menciones)",
+        "fuente": "Bibliometría actas SCAR (analisis_actas_scar.py)",
+        "descripcion": "Tipo gazetteer: Glacier. Aparece en: POLAR2018_abstracts, SCAR_OSC_2012_abstracts, SCAR_OSC_2014_COMNAP_abstracts, SCAR_OSC_2016_abstracts, SCAR_OSC_2020_abstracts, SCAR_OSC_2024_Pucon_abstracts…",
+        "pubs_count": 7,
+        "hits_count": 22,
+        "feature_type": "Glacier",
+        "framework": "(sin asignar)",
+        "framework_source": "fuera de bboxes conocidos"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.3,
+          -71.9666667
+        ]
+      },
+      "properties": {
+        "codigo": "PROP-RISEN",
+        "nombre": "Risen",
+        "tipo": "candidato",
+        "interes": "Alta densidad de publicaciones SCAR (7 actas, 14 menciones)",
+        "fuente": "Bibliometría actas SCAR (analisis_actas_scar.py)",
+        "descripcion": "Tipo gazetteer: Peak. Aparece en: POLAR2018_abstracts, SCAR_OSC_2012_abstracts, SCAR_OSC_2014_COMNAP_abstracts, SCAR_OSC_2016_abstracts, SCAR_OSC_2020_abstracts, SCAR_OSC_2022_abstracts…",
+        "pubs_count": 7,
+        "hits_count": 14,
+        "feature_type": "Peak",
+        "framework": "F1 Basement",
+        "framework_source": "soft-rule (regla geográfica)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.3333333,
+          -63.6166667
+        ]
+      },
+      "properties": {
+        "codigo": "PROP-TRINITY",
+        "nombre": "Trinity Peninsula",
+        "tipo": "candidato",
+        "interes": "Alta densidad de publicaciones SCAR (7 actas, 13 menciones)",
+        "fuente": "Bibliometría actas SCAR (analisis_actas_scar.py)",
+        "descripcion": "Tipo gazetteer: Peninsula. Aparece en: POLAR2018_abstracts, SCAR_OSC_2012_abstracts, SCAR_OSC_2014_COMNAP_abstracts, SCAR_OSC_2016_abstracts, SCAR_OSC_2020_abstracts, SCAR_OSC_2022_abstracts…",
+        "pubs_count": 7,
+        "hits_count": 13,
+        "feature_type": "Peninsula",
+        "framework": "F9 Antarctic Peninsula arc",
+        "framework_source": "soft-rule (regla geográfica)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.6666667,
+          -62.2166667
+        ]
+      },
+      "properties": {
+        "codigo": "PROP-FOURCADE",
+        "nombre": "Fourcade Glacier",
+        "tipo": "candidato",
+        "interes": "Alta densidad de publicaciones SCAR (7 actas, 10 menciones)",
+        "fuente": "Bibliometría actas SCAR (analisis_actas_scar.py)",
+        "descripcion": "Tipo gazetteer: Glacier. Aparece en: POLAR2018_abstracts, SCAR_OSC_2014_COMNAP_abstracts, SCAR_OSC_2016_abstracts, SCAR_OSC_2020_abstracts, SCAR_OSC_2024_Pucon_abstracts, openalex_antarctic_science_2016_10.1017_s0954102016000262…",
+        "pubs_count": 7,
+        "hits_count": 10,
+        "feature_type": "Glacier",
+        "framework": "F9 Antarctic Peninsula arc",
+        "framework_source": "soft-rule (regla geográfica)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          116.33330556,
+          -66.83330556
+        ]
+      },
+      "properties": {
+        "codigo": "PROP-TOTTENG",
+        "nombre": "Totten Glacier",
+        "tipo": "candidato",
+        "interes": "Alta densidad de publicaciones SCAR (6 actas, 59 menciones)",
+        "fuente": "Bibliometría actas SCAR (analisis_actas_scar.py)",
+        "descripcion": "Tipo gazetteer: Glacier. Aparece en: POLAR2018_abstracts, SCAR_OSC_2012_abstracts, SCAR_OSC_2016_abstracts, SCAR_OSC_2020_abstracts, SCAR_OSC_2022_abstracts, openalex_antarctic_science_2020_10.1017_s0954102020000188",
+        "pubs_count": 6,
+        "hits_count": 59,
+        "feature_type": "Glacier",
+        "framework": "(sin asignar)",
+        "framework_source": "fuera de bboxes conocidos"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -59.0275833,
+          -62.2964722
+        ]
+      },
+      "properties": {
+        "codigo": "PROP-NELSONI",
+        "nombre": "Nelson Island",
+        "tipo": "candidato",
+        "interes": "Alta densidad de publicaciones SCAR (6 actas, 43 menciones)",
+        "fuente": "Bibliometría actas SCAR (analisis_actas_scar.py)",
+        "descripcion": "Tipo gazetteer: Island. Aparece en: POLAR2018_abstracts, SCAR_OSC_2012_abstracts, SCAR_OSC_2016_abstracts, SCAR_OSC_2020_abstracts, SCAR_OSC_2022_abstracts, SCAR_OSC_2024_Pucon_abstracts",
+        "pubs_count": 6,
+        "hits_count": 43,
+        "feature_type": "Island",
+        "framework": "F9 Antarctic Peninsula arc",
+        "framework_source": "soft-rule (regla geográfica)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.0,
+          -63.4
+        ]
+      },
+      "properties": {
+        "codigo": "PROP-HOPEBAY",
+        "nombre": "Hope Bay",
+        "tipo": "candidato",
+        "interes": "Alta densidad de publicaciones SCAR (6 actas, 36 menciones)",
+        "fuente": "Bibliometría actas SCAR (analisis_actas_scar.py)",
+        "descripcion": "Tipo gazetteer: Bay. Aparece en: POLAR2018_abstracts, SCAR_OSC_2012_abstracts, SCAR_OSC_2014_COMNAP_abstracts, SCAR_OSC_2016_abstracts, SCAR_OSC_2020_abstracts, SCAR_OSC_2024_Pucon_abstracts",
+        "pubs_count": 6,
+        "hits_count": 36,
+        "feature_type": "Bay",
+        "framework": "F4: Active margin & West Antarctic rift",
+        "framework_source": "spatial-join (antartica_frameworks.geojson)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -102.0,
+          -74.75
+        ]
+      },
+      "properties": {
+        "codigo": "PROP-PINEISL",
+        "nombre": "Pine Island Bay",
+        "tipo": "candidato",
+        "interes": "Alta densidad de publicaciones SCAR (6 actas, 28 menciones)",
+        "fuente": "Bibliometría actas SCAR (analisis_actas_scar.py)",
+        "descripcion": "Tipo gazetteer: Bay. Aparece en: POLAR2018_abstracts, SCAR_OSC_2012_abstracts, SCAR_OSC_2014_COMNAP_abstracts, SCAR_OSC_2016_abstracts, SCAR_OSC_2020_abstracts, openalex_antarctic_science_2012_10.1017_s0954102012000259",
+        "pubs_count": 6,
+        "hits_count": 28,
+        "feature_type": "Bay",
+        "framework": "F4 Cenozoic volcanism",
+        "framework_source": "soft-rule (regla geográfica)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.0833333,
+          -63.9333333
+        ]
+      },
+      "properties": {
+        "codigo": "PROP-ULUPENI",
+        "nombre": "Ulu Peninsula",
+        "tipo": "candidato",
+        "interes": "Alta densidad de publicaciones SCAR (6 actas, 26 menciones)",
+        "fuente": "Bibliometría actas SCAR (analisis_actas_scar.py)",
+        "descripcion": "Tipo gazetteer: Peninsula. Aparece en: POLAR2018_abstracts, SCAR_OSC_2012_abstracts, SCAR_OSC_2014_COMNAP_abstracts, SCAR_OSC_2016_abstracts, SCAR_OSC_2024_Pucon_abstracts, openalex_antarctic_science_2012_10.1017_s0954102012000934",
+        "pubs_count": 6,
+        "hits_count": 26,
+        "feature_type": "Peninsula",
+        "framework": "F9 Antarctic Peninsula arc",
+        "framework_source": "soft-rule (regla geográfica)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -68.3333333,
+          -67.5666667
+        ]
+      },
+      "properties": {
+        "codigo": "PROP-RYDERBA",
+        "nombre": "Ryder Bay",
+        "tipo": "candidato",
+        "interes": "Alta densidad de publicaciones SCAR (6 actas, 23 menciones)",
+        "fuente": "Bibliometría actas SCAR (analisis_actas_scar.py)",
+        "descripcion": "Tipo gazetteer: Bay. Aparece en: POLAR2018_abstracts, SCAR_OSC_2014_COMNAP_abstracts, SCAR_OSC_2016_abstracts, SCAR_OSC_2020_abstracts, SCAR_OSC_2024_Pucon_abstracts, openalex_antarctic_science_2012_10.1017_s0954102012000892",
+        "pubs_count": 6,
+        "hits_count": 23,
+        "feature_type": "Bay",
+        "framework": "F9 Antarctic Peninsula arc",
+        "framework_source": "soft-rule (regla geográfica)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          170.0,
+          -71.4166667
+        ]
+      },
+      "properties": {
+        "codigo": "PROP-ROBERTSO",
+        "nombre": "Robertson Bay",
+        "tipo": "candidato",
+        "interes": "Alta densidad de publicaciones SCAR (6 actas, 21 menciones)",
+        "fuente": "Bibliometría actas SCAR (analisis_actas_scar.py)",
+        "descripcion": "Tipo gazetteer: Bay. Aparece en: POLAR2018_abstracts, SCAR_OSC_2014_COMNAP_abstracts, SCAR_OSC_2016_abstracts, SCAR_OSC_2020_abstracts, SCAR_OSC_2022_abstracts, openalex_antarctic_science_2011_10.1017_s0954102010000969",
+        "pubs_count": 6,
+        "hits_count": 21,
+        "feature_type": "Bay",
+        "framework": "F2 Sedimentary basins (Beacon)",
+        "framework_source": "soft-rule (regla geográfica)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.75,
+          -72.0166667
+        ]
+      },
+      "properties": {
+        "codigo": "PROP-JUTULSES",
+        "nombre": "Jutulsessen",
+        "tipo": "candidato",
+        "interes": "Alta densidad de publicaciones SCAR (6 actas, 19 menciones)",
+        "fuente": "Bibliometría actas SCAR (analisis_actas_scar.py)",
+        "descripcion": "Tipo gazetteer: Mountain. Aparece en: POLAR2018_abstracts, SCAR_OSC_2014_COMNAP_abstracts, SCAR_OSC_2016_abstracts, SCAR_OSC_2020_abstracts, SCAR_OSC_2024_Pucon_abstracts, openalex_polar_science_2014_10.1016_j.polar.2014.03.001",
+        "pubs_count": 6,
+        "hits_count": 19,
+        "feature_type": "Mountain",
+        "framework": "F1 Basement",
+        "framework_source": "soft-rule (regla geográfica)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -63.5666667,
+          -64.85
+        ]
+      },
+      "properties": {
+        "codigo": "PROP-DOUMERI",
+        "nombre": "Doumer Island",
+        "tipo": "candidato",
+        "interes": "Alta densidad de publicaciones SCAR (6 actas, 16 menciones)",
+        "fuente": "Bibliometría actas SCAR (analisis_actas_scar.py)",
+        "descripcion": "Tipo gazetteer: Island. Aparece en: POLAR2018_abstracts, SCAR_OSC_2016_abstracts, SCAR_OSC_2020_abstracts, SCAR_OSC_2022_abstracts, SCAR_OSC_2024_Pucon_abstracts, openalex_advances_polar_sci_2019_10.13679_j.advps.2018.0036",
+        "pubs_count": 6,
+        "hits_count": 16,
+        "feature_type": "Island",
+        "framework": "F9 Antarctic Peninsula arc",
+        "framework_source": "soft-rule (regla geográfica)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.9258056,
+          -62.1024167
+        ]
+      },
+      "properties": {
+        "codigo": "PROP-PENGUIN",
+        "nombre": "Penguin Island",
+        "tipo": "candidato",
+        "interes": "Alta densidad de publicaciones SCAR (6 actas, 16 menciones)",
+        "fuente": "Bibliometría actas SCAR (analisis_actas_scar.py)",
+        "descripcion": "Tipo gazetteer: Island. Aparece en: SCAR_OSC_2012_abstracts, SCAR_OSC_2022_abstracts, SCAR_OSC_2024_Pucon_abstracts, openalex_antarctic_science_2016_10.1017_s0954102016000274, openalex_antarctic_science_2023_10.1017_s0954102023000111, openalex_polar_record_2021_10.1017_s0032247421000152",
+        "pubs_count": 6,
+        "hits_count": 16,
+        "feature_type": "Island",
+        "framework": "F4: Active margin & West Antarctic rift",
+        "framework_source": "spatial-join (antartica_frameworks.geojson)"
+      }
+    }
+  ]
+}
