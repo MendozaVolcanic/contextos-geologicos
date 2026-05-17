@@ -221,39 +221,44 @@ let bedmapCurrentLayer = 'bed';
 const BEDMAP_LAYERS = {
   bed: {
     title: 'Elevación del lecho (m)',
-    // GeoTIFF/COG público de BedMap3 servido como tiles XYZ vía BAS.
-    // Si no responde, el panel queda con un mensaje "datos pendientes"
-    // y el script scripts/build_bedmap.py los regenera localmente.
-    url: 'https://maps.bas.ac.uk/antarctic/wms/bedmap3/bed_topography/{z}/{x}/{y}.png',
+    // COG de BedMap3 (Pritchard 2025) reducido a 5 km, servido desde el repo.
+    // Range-requests + GeoTIFF rendering en el cliente vía georaster-layer.
+    cog: 'data/bedmap3_bed_5km.tif',
+    scale: { min: -2700, max: 4500 },
+    palette: ['#08306b', '#2171b5', '#6baed6', '#fee391', '#fe9929', '#cc4c02', '#67000d'],
     legend: [
       { color: '#08306b', label: '−2500 m' },
       { color: '#2171b5', label: '−1500 m' },
       { color: '#6baed6', label: '−500 m' },
       { color: '#fee391', label: '0 m' },
-      { color: '#fe9929', label: '1000 m' },
-      { color: '#cc4c02', label: '2500 m' },
+      { color: '#fe9929', label: '1500 m' },
+      { color: '#cc4c02', label: '3000 m' },
     ],
   },
   surface: {
     title: 'Elevación superficial del hielo (m)',
-    url: 'https://maps.bas.ac.uk/antarctic/wms/bedmap3/surface_topography/{z}/{x}/{y}.png',
+    cog: 'data/bedmap3_surface_5km.tif',
+    scale: { min: 0, max: 4200 },
+    palette: ['#f7fbff', '#c6dbef', '#6baed6', '#2171b5', '#08306b'],
     legend: [
       { color: '#f7fbff', label: '0 m' },
       { color: '#c6dbef', label: '500 m' },
       { color: '#6baed6', label: '1500 m' },
       { color: '#2171b5', label: '2500 m' },
-      { color: '#08306b', label: '4000 m' },
+      { color: '#08306b', label: '4200 m' },
     ],
   },
   thickness: {
     title: 'Espesor de hielo (m)',
-    url: 'https://maps.bas.ac.uk/antarctic/wms/bedmap3/ice_thickness/{z}/{x}/{y}.png',
+    cog: 'data/bedmap3_thickness_5km.tif',
+    scale: { min: 0, max: 5000 },
+    palette: ['#fff7fb', '#d0d1e6', '#74a9cf', '#0570b0', '#023858'],
     legend: [
       { color: '#fff7fb', label: '0 m' },
       { color: '#d0d1e6', label: '500 m' },
       { color: '#74a9cf', label: '1500 m' },
       { color: '#0570b0', label: '3000 m' },
-      { color: '#023858', label: '4500 m' },
+      { color: '#023858', label: '5000 m' },
     ],
   },
 };
@@ -292,38 +297,51 @@ function initBedmap() {
   if (coChk) coChk.addEventListener('change', () => toggleBedmapVector('coastline', coChk.checked));
 }
 
-function applyBedmapLayer(key) {
+async function applyBedmapLayer(key) {
   bedmapCurrentLayer = key;
   const cfg = BEDMAP_LAYERS[key];
   if (bedmapRaster) bedmapMap.removeLayer(bedmapRaster);
-  bedmapRaster = L.tileLayer(cfg.url, {
-    attribution: 'BedMap3 © BAS (CC-BY 4.0)',
-    opacity: 0.82,
-    errorTileUrl: '',
-  });
-  let tileErrors = 0;
-  bedmapRaster.on('tileerror', () => {
-    tileErrors++;
-    if (tileErrors === 1) {
-      const status = document.getElementById('bedmap-status');
-      if (status) status.innerHTML =
-        '⚠ Tiles remotas no disponibles. Genera la capa local con:<br>' +
-        '<code>python scripts/build_bedmap.py</code>';
-    }
-  });
-  bedmapRaster.on('load', () => {
-    const status = document.getElementById('bedmap-status');
-    if (status) status.textContent = `Capa: ${cfg.title}`;
-  });
-  bedmapRaster.addTo(bedmapMap);
+  const status = document.getElementById('bedmap-status');
+  if (status) status.textContent = `Cargando ${cfg.title}…`;
+
+  try {
+    // Fetch del COG (range-requests soportado por GitHub Pages)
+    const response = await fetch(cfg.cog);
+    if (!response.ok) throw new Error(`HTTP ${response.status}`);
+    const buf = await response.arrayBuffer();
+    const georaster = await parseGeoraster(buf);
+
+    // Escala de color: chroma.js para interpolar la palette
+    const scale = chroma.scale(cfg.palette).domain([cfg.scale.min, cfg.scale.max]);
+    bedmapRaster = new GeoRasterLayer({
+      georaster,
+      opacity: 0.85,
+      resolution: 64,
+      pixelValuesToColorFn: vals => {
+        const v = vals[0];
+        if (v === null || v === undefined || v < -10000) return null;
+        return scale(v).hex();
+      },
+    });
+    bedmapRaster.addTo(bedmapMap);
+    bedmapMap.fitBounds(bedmapRaster.getBounds(), { padding: [20, 20] });
+    if (status) status.innerHTML = `<strong>${cfg.title}</strong><br>BedMap3 (Pritchard 2025, 5km downsample)`;
+  } catch (e) {
+    console.error('BedMap COG load error:', e);
+    if (status) status.innerHTML =
+      `⚠ COG no disponible (${e.message}).<br>` +
+      'Generar local con:<br><code>python scripts/build_bedmap.py</code><br>' +
+      '<code>python scripts/bedmap3_to_cog.py</code>';
+  }
+
   document.getElementById('bedmap-legend-title').textContent = cfg.title;
-  const scale = document.getElementById('bedmap-legend-scale');
-  clear(scale);
+  const legend = document.getElementById('bedmap-legend-scale');
+  clear(legend);
   cfg.legend.forEach(item => {
     const row = el('div', { style: { display: 'flex', alignItems: 'center', gap: '0.5rem', margin: '0.2rem 0' } });
     row.appendChild(el('span', { style: { width: '20px', height: '12px', background: item.color, border: '1px solid #000', display: 'inline-block' } }));
     row.appendChild(el('span', { text: item.label }));
-    scale.appendChild(row);
+    legend.appendChild(row);
   });
 }
 

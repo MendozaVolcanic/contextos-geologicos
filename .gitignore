@@ -68,3 +68,4 @@ Thumbs.db
 node_modules/
 __pycache__/
 *.pyc
+docs/mapas/antartica/bedmap3/
