@@ -99,7 +99,65 @@ que más desbloquea:
   (`'F2 Sedimentary basins (Beacon) — TAM Central'`) para las cuatro subdivisiones TAM.
   Si vas a filtrar por ese campo, normalízalo primero.
 
-## 6. Los repos hermanos
+## 7. Pendientes de la auditoría de código
+
+El 2026-08-24 se auditó el código con seis revisores (correctness, reproducibility, design,
+domain, performance, security). El informe completo está en
+[`reviews/code-review/2026-08-24_CODE-REVIEW-REPORT.md`](reviews/code-review/2026-08-24_CODE-REVIEW-REPORT.md).
+
+**Ya corregido** (no tienes que hacer nada): las subdivisiones TAM estaban etiquetadas F2
+cuando el propio repo define Beacon/Ferrar como F3; ocho scripts se caían al redirigir la
+salida a un archivo; las actas SCAR pesaban cero en su propio ranking; y no existía
+`requirements.txt`.
+
+**Lo que queda abierto.** Ordenado por lo que más conviene atacar primero. Los cuatro
+primeros necesitan criterio geológico, no un parche.
+
+### 7.1 · Decisiones que requieren tu criterio
+
+| Dónde | Qué pasa | Por qué importa |
+|---|---|---|
+| `build_tam_subdivisions.py:59` | **Los bboxes TAM-N y TAM-C se solapan** en lat[−76,5 · −76,0] × lon[159 · 170] — 0,5° de latitud por 11° de longitud. | En la zona de solape el spatial-join asigna según cuál polígono aparezca primero en el GeoJSON, o sea por orden de iteración y no por geología. Contradice el objetivo declarado del script. La salida más simple es que compartan una latitud de borde (−76,0) en vez de rangos que se pisan. |
+| `build_chile_contextos.py:118` | **Todo el volcánico paleozoico cae en SSPz**, que Mourgues define como *"Series sedimentarias del Paleozoico"*. Son 375 polígonos según el propio `mapping_rules_log.md`. | La rama Paleozoico no tiene bucket volcánico, así que arcos volcánicos quedan rotulados como cuencas sedimentarias. O se crea un bucket propio, o se mandan a UNK marcados para que los revises uno a uno. |
+| `build_chile_contextos.py:99` | **El Cretácico de época ambigua cae por defecto en SMKs** (Superior). Si `periodo == "Cretacico"` pero `epoca` viene en blanco o no reconocida, el catch-all devuelve SMKs. | SMKi y SMKs son contextos distintos, con cuencas y formaciones distintas. Hoy se está dando una respuesta específica donde el dato no alcanza, inflando el conteo de SMKs. Lo honesto sería UNK o un bucket "Cretácico indeterminado". |
+| `enrich_candidatos_framework.py:92,94` | **Enderby Land y Dronning Maud Land están rotulados "F1 Basement"** completo. | Ambas regiones mezclan el Napier arqueano (F1 real) con el Rayner proterozoico y el orógeno Este-Africano-Antártico (F2), dentro del mismo bbox. Un candidato en la porción proterozoica queda mal clasificado según las definiciones del propio repo. |
+
+### 7.2 · Bugs mecánicos, arreglo directo
+
+| Dónde | Qué pasa |
+|---|---|
+| `extract_long_paths.py:33` | **ZIP slip.** `target = dest_root / name` no valida contención, y `long_path()` hace `resolve()`, que normaliza los `..`. Una entrada `../../algo` escribe fuera del destino. Riesgo acotado porque se usa a mano sobre ZIPs oficiales, pero ver el punto siguiente. |
+| `build_bedmap.py:57,59` · `build_antartica_geositios.py:54` · `analisis_congresos_chile.py:127` | **Descargas por HTTP sin TLS** (BAS RAMADDA, Quantarctica, GeoNames). Los tres soportan HTTPS hoy — verificado. Va junto con el ZIP slip: son el mismo vector, porque un intermediario podría servir un ZIP alterado que luego se extrae sin validar. |
+| `analisis_congresos_chile.py:315` | **El prefijo fuzzy nunca trunca.** `c[:max(8, len(c))]` devuelve la cadena entera, porque el guard ya exige `len(c) >= 8`. Debía ser `min`. El dedup contra geositios ya catalogados casi no filtra, así que entran duplicados a la lista de candidatos nuevos. |
+| `analisis_congresos_chile.py:282` y `analisis_actas_scar.py` | **El peso por citas no es monótono en el borde**: 0 citas pesa 1,0 y 1 cita pesa log(2)=0,69, o sea el no citado le gana al citado. Se mantuvo así en ambos scripts por consistencia. La alternativa monótona es `math.log1p(cites) + 1.0` en los dos, pero recalcula todos los pesos ya generados. |
+| `enrich_candidatos_framework.py:111` y `build_tam_subdivisions.py:114` | **Fallback silencioso a latin-1** al leer GeoJSON. latin-1 decodifica cualquier byte sin fallar nunca, así que enmascara corrupción futura sin avisar. Era el parche al bug de encoding ya corregido; ahora que los archivos son UTF-8, conviene sacarlo o al menos que imprima un `[WARN]`. |
+| `build_chile_contextos.py:77` | Las metamórficas **cenozoicas** caen en UNK, mientras las paleozoicas y mesozoicas van a TCA. Regla inconsistente entre eras; son 5 polígonos. |
+
+### 7.3 · Menores
+
+- Los cuatro `build_*.py` serializan geometrías con un roundtrip JSON por fila donde
+  `shapely.geometry.mapping()` es directo. Datasets chicos, impacto bajo.
+- `import math` a mitad del módulo en `analisis_actas_scar.py:188`.
+- `lexico1.txt` y `lexico2.txt` no tienen script de extracción desde sus PDFs. Los regex de
+  `build_lexico.py` dependen del layout exacto que produjo el extractor, así que si hay que
+  regenerarlos no se sabe con qué herramienta ni con qué parámetros.
+- `fetch_openalex_*.py` no registran fecha de consulta. OpenAlex es mutable, así que el
+  corpus no queda trazable a un snapshot y dos corridas distintas dan resultados distintos
+  sin manera de saber cuál produjo qué.
+- No hay linters (`ruff`, `eslint`) ni tests en el proyecto.
+- `build_antartica_*.py` hacen `int(row.SIMPCODE)` sin guard de nulos sobre 99.080
+  polígonos: si alguno viniera vacío, el batch cae sin salida parcial.
+
+### 7.4 · Riesgos que no se pudieron verificar
+
+- Las reglas de mapping se auditaron contra `mapping_rules_log.md`, no corriendo el
+  pipeline sobre los polígonos reales.
+- Las descripciones F1-F9 se contrastaron entre archivos de este repo, **no** contra el
+  documento primario SCAR ATCM XLIII Att. A. Si tienes acceso a ese documento, vale la pena
+  validarlas de raíz.
+
+
+## 8. Los repos hermanos
 
 - [georrutas-chile](https://github.com/MendozaVolcanic/georrutas-chile) — rutas geoturísticas
 - [apadrina-geositio-chile](https://github.com/MendozaVolcanic/apadrina-geositio-chile) — ciencia ciudadana
