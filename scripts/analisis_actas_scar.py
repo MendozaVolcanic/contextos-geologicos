@@ -278,7 +278,12 @@ def aggregate(pdfs_dir: Path, gazetteer: list[dict]) -> dict[str, dict]:
         if doc.suffix == ".pdf" or i % 100 == 0:
             print(f"  {len(mentions)} topónimos, {sum(mentions.values())} hits "
                   f"[{meta['year']} cites={meta['cites']}]", flush=True)
-        weight = math.log(meta["cites"] + 1)  # ponderación log para no aplastar por outliers
+        # Los PDF de actas SCAR entran con cites=0 porque no traen conteo de
+        # citas, y log(0+1) = 0.0 los dejaba sin ningún peso en el ranking:
+        # justamente el corpus que le da sentido a este script no influía en
+        # el resultado. El piso de 1.0 replica lo que ya hace el script
+        # hermano analisis_congresos_chile.py.
+        weight = math.log(meta["cites"] + 1) if meta["cites"] > 0 else 1.0
         bucket = decade_bucket(meta["year"])
         # Acumular por sitio
         for name, n in mentions.items():

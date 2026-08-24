@@ -1,0 +1,40 @@
+# Contextos Geológicos · Chile & Antártica
+#
+# Versiones = las efectivamente usadas para generar los GeoJSON commiteados
+# en app/data/ (Python 3.12, Windows 11, 2026-08-24). Se declaran como cota
+# inferior para no forzar downgrades, pero si algo no reproduce, pinear a
+# estas exactas es el primer paso de diagnóstico.
+#
+# El dashboard NO necesita nada de esto: app/ es HTML+JS estático y los
+# GeoJSON ya están versionados. Esto sirve solo para re-correr scripts/.
+
+# --- Geoespacial (build_chile_*.py, build_antartica_*.py) ---
+geopandas>=1.1.3
+pyogrio>=0.12.1
+fiona>=1.10.1
+shapely>=2.1.2
+
+# --- Raster y NetCDF (build_bedmap.py, bedmap3_to_cog.py) ---
+rasterio>=1.5.0
+rioxarray>=0.22.0
+xarray>=2026.2.0
+netCDF4>=1.7.4
+numpy>=2.4.4
+
+# --- Extracción de PDF (analisis_actas_scar.py, build_lexico.py) ---
+pypdf>=6.10.2
+pdfplumber>=0.11.9
+
+# --- Bibliometría (analisis_*.py, co_occurrence_network.py) ---
+flashtext>=2.7
+networkx>=3.6.1
+
+# --- HTTP y parsing (fetch_openalex_*.py, build_bedmap.py) ---
+requests>=2.33.1
+lxml>=6.0.3
+
+# --- Planillas (build_inventario_geositios.py) ---
+openpyxl>=3.1.5
+
+# --- Opcional: solo para servir BedMap3 como COG con tiles ---
+# rio-cogeo>=5.0

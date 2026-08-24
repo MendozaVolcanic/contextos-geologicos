@@ -44,14 +44,14 @@ FRAMEWORKS = APP_DATA / "antartica_frameworks.geojson"
 SOFT_RULES = [
     # --- Sub-divisiones de Transantarctic Mountains (TAM) ---
     # TAM Norte (Victoria Land, Northern): Ross Orogen basement + Beacon + Ferrar
-    ("TAM Norte (Northern Victoria Land)", (-76.5, -70.0, 160.0, 170.0), "F2 Sedimentary basins (Beacon)"),
+    ("TAM Norte (Northern Victoria Land)", (-76.5, -70.0, 160.0, 170.0), "F3 Gondwana amalgamation and breakup"),
     # TAM Central (sector Dry Valleys-Mawson Glacier): Beacon + Ferrar dominante
-    ("TAM Central (Dry Valleys sector)", (-79.5, -76.5, 158.0, 167.0), "F2 Sedimentary basins (Beacon)"),
+    ("TAM Central (Dry Valleys sector)", (-79.5, -76.5, 158.0, 167.0), "F3 Gondwana amalgamation and breakup"),
     # TAM Sur (Beardmore-Shackleton-Darwin Glaciers): Beacon + paleontología
-    ("TAM Sur (Beardmore-Shackleton)", (-86.0, -79.5, 150.0, 175.0), "F2 Sedimentary basins (Beacon)"),
+    ("TAM Sur (Beardmore-Shackleton)", (-86.0, -79.5, 150.0, 175.0), "F3 Gondwana amalgamation and breakup"),
     # TAM Pole sector (cinturón polar wraparound)
-    ("TAM Pole sector", (-87.0, -79.5, 175.0, 180.0), "F2 Sedimentary basins (Beacon)"),
-    ("TAM Pole sector (W)", (-87.0, -79.5, -180.0, -150.0), "F2 Sedimentary basins (Beacon)"),
+    ("TAM Pole sector", (-87.0, -79.5, 175.0, 180.0), "F3 Gondwana amalgamation and breakup"),
+    ("TAM Pole sector (W)", (-87.0, -79.5, -180.0, -150.0), "F3 Gondwana amalgamation and breakup"),
 
     # --- Sub-antártico (South Orkney + South Sandwich + South Georgia) ---
     ("South Orkneys (Signy, Coronation)", (-61.5, -60.0, -47.0, -44.0), "F9 Antarctic Peninsula arc (sub-antártico)"),

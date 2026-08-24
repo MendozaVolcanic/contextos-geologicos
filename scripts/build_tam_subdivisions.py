@@ -42,6 +42,11 @@ ROOT = Path(__file__).resolve().parents[1]
 FRAMEWORKS = ROOT / "app" / "data" / "antartica_frameworks.geojson"
 
 
+# Las TAM son Beacon Supergroup + Ferrar, que build_antartica_frameworks.py
+# mapea a F3 "Gondwana amalgamation and breakup" (SIMPCODE 50 y 42).
+# Hasta 2026-08-24 se etiquetaban F2, que es "Proterozoic orogens & rifted
+# margins" (basamento pre-Gondwana) y no corresponde.
+#
 # Polígonos sub-TAM como bbox cerrados (cuádruple) en EPSG:4326.
 # Las coordenadas siguen el contorno aproximado del cinturón TAM,
 # que va de NE (~71°S 170°E) a SW (~84°S -45°W), cruzando el polo.
@@ -49,7 +54,7 @@ TAM_SUBDIVISIONS = [
     {
         "codigo": "TAM-N",
         "nombre": "TAM Norte (Northern Victoria Land)",
-        "framework": "F2 Sedimentary basins (Beacon) — TAM Norte",
+        "framework": "F3 Gondwana amalgamation and breakup — TAM Norte",
         "descripcion": "Northern Victoria Land. Cape Adare a Mawson Glacier "
                        "(~76°S). Ross Orogen basement (Wilson/Bowers/Robertson "
                        "Bay terranes) + Beacon + Ferrar sills.",
@@ -61,7 +66,7 @@ TAM_SUBDIVISIONS = [
     {
         "codigo": "TAM-C",
         "nombre": "TAM Central (Dry Valleys – Royal Society Range)",
-        "framework": "F2 Sedimentary basins (Beacon) — TAM Central",
+        "framework": "F3 Gondwana amalgamation and breakup — TAM Central",
         "descripcion": "Mawson Glacier a Shackleton Glacier. Sector Dry "
                        "Valleys + Royal Society Range + David Glacier. "
                        "Beacon paleobotánico + Ferrar dolerite sills.",
@@ -72,7 +77,7 @@ TAM_SUBDIVISIONS = [
     {
         "codigo": "TAM-S",
         "nombre": "TAM Sur (Beardmore-Shackleton-Nimrod)",
-        "framework": "F2 Sedimentary basins (Beacon) — TAM Sur",
+        "framework": "F3 Gondwana amalgamation and breakup — TAM Sur",
         "descripcion": "Shackleton Glacier a Scott Glacier (~84°S). "
                        "Beardmore Glacier (Cryolophosaurus en Hanson Fm.). "
                        "Beacon Supergroup + Ferrar.",
@@ -83,7 +88,7 @@ TAM_SUBDIVISIONS = [
     {
         "codigo": "TAM-P",
         "nombre": "TAM Pacific (Pensacola-Thiel Mountains)",
-        "framework": "F2 Sedimentary basins (Beacon) — TAM Pacific",
+        "framework": "F3 Gondwana amalgamation and breakup — TAM Pacific",
         "descripcion": "Scott Glacier a Pensacola Mountains. Sector "
                        "Atlántico/Pacífico del cinturón TAM. Beacon "
                        "paleozoico + basamento Ross Orogen + Whitmore.",

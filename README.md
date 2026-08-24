@@ -66,7 +66,14 @@ Parte de la **Suite Geopatrimonio Chile**:
 
 ## Reproducir el procesamiento
 
-Requiere Python 3.12 + geopandas, fiona, pyogrio.
+Requiere Python 3.12. Instalar el entorno con:
+
+```bash
+pip install -r requirements.txt
+```
+
+El dashboard no necesita nada de esto: `app/` es estático y los GeoJSON ya están
+versionados. El `requirements.txt` sirve solo para re-correr `scripts/`.
 
 ```bash
 # 1. Bajar los datasets pesados a docs/mapas/{chile,antartica}/ (ver docs/bibliografia/PENDIENTES_DESCARGA.md)

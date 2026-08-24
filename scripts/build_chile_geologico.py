@@ -8,6 +8,16 @@ Salida: ~5-10 MB, disuelto por código `geo` (86 unidades), simplificado.
 import geopandas as gpd
 from pathlib import Path
 import json
+import sys
+
+# En Windows, Python solo usa UTF-8 en consola interactiva (PEP 528). Al
+# redirigir la salida a un archivo cae a cp1252 y cualquier print() con
+# flechas o checks lanza UnicodeEncodeError, abortando el script a medio
+# correr. Esto lo fuerza a UTF-8 siempre.
+for _s in (sys.stdout, sys.stderr):
+    if hasattr(_s, "reconfigure"):
+        _s.reconfigure(encoding="utf-8")
+
 
 ROOT = Path(__file__).resolve().parent.parent
 SRC = ROOT / "docs/mapas/chile/Mapa_Geologico_de_Chile.geojson"
