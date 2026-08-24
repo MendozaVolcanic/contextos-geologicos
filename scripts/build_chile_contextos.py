@@ -193,7 +193,7 @@ def main():
     }
 
     OUT_GEOJSON.parent.mkdir(parents=True, exist_ok=True)
-    OUT_GEOJSON.write_text(json.dumps(fc, ensure_ascii=False))
+    OUT_GEOJSON.write_text(json.dumps(fc, ensure_ascii=False), encoding="utf-8")
     size_mb = OUT_GEOJSON.stat().st_size / 1024 / 1024
     print(f"\nWritten: {OUT_GEOJSON}")
     print(f"Size: {size_mb:.2f} MB")

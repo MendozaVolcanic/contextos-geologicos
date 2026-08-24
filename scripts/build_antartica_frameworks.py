@@ -129,7 +129,7 @@ def main():
         "features": records,
     }
     OUT.parent.mkdir(parents=True, exist_ok=True)
-    OUT.write_text(json.dumps(fc, ensure_ascii=False))
+    OUT.write_text(json.dumps(fc, ensure_ascii=False), encoding="utf-8")
     print(f"\nWritten: {OUT}")
     print(f"Size: {OUT.stat().st_size/1024/1024:.2f} MB")
 
