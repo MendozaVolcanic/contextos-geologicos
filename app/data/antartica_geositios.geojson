@@ -1,1574 +1,2007 @@
 {
-  "type": "FeatureCollection",
-  "metadata": {
-    "fuente": "Seed manual (Contextos geologicos / Visor Antartico). Reemplazar con la salida de scripts/build_antartica_geositios.py una vez procesados los datos ATS-SCAR ASPA y el catálogo SCAR EG-GEOCON.",
-    "fecha_seed": "2026-05-16",
-    "campos": [
-      "codigo",
-      "nombre",
-      "tipo",
-      "framework",
-      "interes",
-      "fuente",
-      "descripcion"
-    ],
-    "tipos": [
-      "ASPA",
-      "SCAR-geosite",
-      "IUGS-geosite",
-      "candidato"
-    ],
-    "frameworks_scar": [
-      "F1 Basement",
-      "F2 Sedimentary basins (Beacon)",
-      "F3 Igneous provinces (Ferrar/Karoo)",
-      "F4 Cenozoic volcanism",
-      "F5 K-Pg boundary",
-      "F6 Glacial geology",
-      "F7 Meteorite fields",
-      "F8 Subglacial environments",
-      "F9 Antarctic Peninsula arc"
-    ]
-  },
-  "features": [
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          162.97,
-          -77.55
-        ]
-      },
-      "properties": {
-        "codigo": "ASPA-138",
-        "nombre": "Linnaeus Terrace, Asgard Range",
-        "tipo": "ASPA",
-        "framework": "F2 Sedimentary basins (Beacon)",
-        "interes": "Beacon Supergroup; barnices de roca y endolitos criptoendolíticos",
-        "fuente": "ATS ASPA 138 (Management Plan)",
-        "descripcion": "Terraza de areniscas del Devónico-Triásico del Beacon Supergroup con uno de los mejores registros mundiales de barniz de roca y comunidades criptoendolíticas. Sitio de referencia para procesos de meteorización en ambiente hiperárido frío."
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          162.27,
-          -77.62
-        ]
-      },
-      "properties": {
-        "codigo": "ASPA-131",
-        "nombre": "Canada Glacier, Lake Fryxell",
-        "tipo": "ASPA",
-        "framework": "F6 Glacial geology",
-        "interes": "Glaciar de valle no flotante, lago perenne con costra de hielo",
-        "fuente": "ATS ASPA 131",
-        "descripcion": "Sistema glaciar-lago de los Valles Secos de McMurdo. Modelo análogo a Marte para hidrología en permafrost."
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          161.92,
-          -77.0
-        ]
-      },
-      "properties": {
-        "codigo": "ASPA-147",
-        "nombre": "Ablation Valley & Ganymede Heights, Alexander Island",
-        "tipo": "ASPA",
-        "framework": "F2 Sedimentary basins (Beacon)",
-        "interes": "Estratigrafía cretácica Fossil Bluff Group; flora y fauna marina",
-        "fuente": "ATS ASPA 147",
-        "descripcion": "Secuencia sedimentaria cretácica de la cuenca Fossil Bluff con abundante registro paleontológico marino. Sección tipo regional."
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          162.55,
-          -77.0
-        ]
-      },
-      "properties": {
-        "codigo": "ASPA-154",
-        "nombre": "Botany Bay, Cape Geology",
-        "tipo": "ASPA",
-        "framework": "F2 Sedimentary basins (Beacon)",
-        "interes": "Paleobotánica Triásica-Jurásica; flora de Glossopteris",
-        "fuente": "ATS ASPA 154",
-        "descripcion": "Yacimientos clásicos de flora fósil de Glossopteris en areniscas del Beacon Supergroup. Evidencia clave de la conexión Gondwánica."
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          167.17,
-          -77.53
-        ]
-      },
-      "properties": {
-        "codigo": "ASPA-175",
-        "nombre": "High Altitude Geothermal Sites, Mt Erebus",
-        "tipo": "ASPA",
-        "framework": "F4 Cenozoic volcanism",
-        "interes": "Volcán activo, lago de lava persistente, fumarolas",
-        "fuente": "ATS ASPA 175",
-        "descripcion": "Mt Erebus alberga uno de los pocos lagos de lava fonolítica persistentes del mundo. Sitios geotermales en cima con biota termófila única."
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -60.62,
-          -62.97
-        ]
-      },
-      "properties": {
-        "codigo": "ASPA-145",
-        "nombre": "Port Foster, Deception Island",
-        "tipo": "ASPA",
-        "framework": "F4 Cenozoic volcanism",
-        "interes": "Caldera volcánica activa, hidrotermalismo submarino",
-        "fuente": "ATS ASPA 145",
-        "descripcion": "Caldera de colapso del arco volcánico de las Shetland del Sur, con erupciones recientes (1967, 1969, 1970) y actividad fumarólica submarina persistente."
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -56.5,
-          -64.27
-        ]
-      },
-      "properties": {
-        "codigo": "SCAR-SEY",
-        "nombre": "Seymour (Marambio) Island",
-        "tipo": "SCAR-geosite",
-        "framework": "F5 K-Pg boundary",
-        "interes": "Sección K-Pg, paleontología cretácico-paleógena",
-        "fuente": "SCAR ATCM XLIII (2021) Att. A",
-        "descripcion": "Una de las secciones más completas del límite K-Pg en el hemisferio sur. Registro paleontológico excepcional de aves, mamíferos marinos y vertebrados marinos."
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          159.7,
-          -76.72
-        ]
-      },
-      "properties": {
-        "codigo": "SCAR-ALL",
-        "nombre": "Allan Hills",
-        "tipo": "SCAR-geosite",
-        "framework": "F7 Meteorite fields",
-        "interes": "Campo de meteoritos azules; testigos de hielo antiguo (>2.7 Ma)",
-        "fuente": "ANSMET / SCAR EG-GEOCON",
-        "descripcion": "Zona de hielo azul donde el flujo glaciar y la sublimación concentran meteoritos. Sitio del testigo de hielo más antiguo recuperado (>2.7 Ma)."
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          25.0,
-          -72.0
-        ]
-      },
-      "properties": {
-        "codigo": "SCAR-SR",
-        "nombre": "Sør Rondane Mountains",
-        "tipo": "SCAR-geosite",
-        "framework": "F1 Basement",
-        "interes": "Basamento del East African-Antarctic Orogen, granulitas y migmatitas",
-        "fuente": "SCAR EG-GEOCON",
-        "descripcion": "Exposición clave del basamento polimetamórfico del Orógeno Este Africano-Antártico (Pan-Gondwánico, 600-500 Ma). Recurso para meteoritos también."
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          170.5,
-          -84.5
-        ]
-      },
-      "properties": {
-        "codigo": "SCAR-BEA",
-        "nombre": "Beardmore Glacier (Cloudmaker / Mount Kirkpatrick)",
-        "tipo": "SCAR-geosite",
-        "framework": "F2 Sedimentary basins (Beacon)",
-        "interes": "Cryolophosaurus (dinosaurio jurásico); Beacon-Ferrar contacto",
-        "fuente": "SCAR EG-GEOCON",
-        "descripcion": "Tipo del dinosaurio Cryolophosaurus ellioti (Jurásico Inferior, Formación Hanson). Contacto regional Beacon (sedimentario) - Ferrar (sills doleríticos jurásicos)."
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          163.5,
-          -77.5
-        ]
-      },
-      "properties": {
-        "codigo": "SCAR-DV",
-        "nombre": "McMurdo Dry Valleys",
-        "tipo": "SCAR-geosite",
-        "framework": "F6 Glacial geology",
-        "interes": "Desierto polar; geomorfología periglacial; paisajes Neógenos preservados",
-        "fuente": "SCAR EG-GEOCON · ASMA 2",
-        "descripcion": "Mayor área libre de hielo del continente (~4800 km²). Paisajes preservados desde el Mioceno medio. Análogo planetario (Marte) por excelencia."
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          163.7,
-          -77.0
-        ]
-      },
-      "properties": {
-        "codigo": "SCAR-CR",
-        "nombre": "Cape Roberts",
-        "tipo": "SCAR-geosite",
-        "framework": "F2 Sedimentary basins (Beacon)",
-        "interes": "Sondajes CRP-1/2/3, estratigrafía Cenozoica del Mar de Ross",
-        "fuente": "SCAR / Cape Roberts Project",
-        "descripcion": "Sitio de los sondajes Cape Roberts Project, registro de la transición del clima Cenozoico desde el Eoceno tardío hasta el Mioceno temprano."
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -86.93,
-          -78.52
-        ]
-      },
-      "properties": {
-        "codigo": "SCAR-VIN",
-        "nombre": "Vinson Massif (Ellsworth Mountains)",
-        "tipo": "SCAR-geosite",
-        "framework": "F1 Basement",
-        "interes": "Cumbre más alta de Antártica (4892 m); cuarcitas paleozoicas",
-        "fuente": "SCAR EG-GEOCON (candidato)",
-        "descripcion": "Cuarcitas y metasedimentos cámbricos del Ellsworth-Whitmore block. Cumbre más alta del continente."
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          106.8,
-          -78.46
-        ]
-      },
-      "properties": {
-        "codigo": "SCAR-VOS",
-        "nombre": "Lake Vostok",
-        "tipo": "candidato",
-        "framework": "F8 Subglacial environments",
-        "interes": "Lago subglacial más extenso; hielo de acreción; biota aislada",
-        "fuente": "SCAR SALE / publicaciones",
-        "descripcion": "Lago subglacial de ~14000 km² bajo ~4 km de hielo. Sitio paradigmático para los ambientes subglaciales antárticos (Framework SCAR F8)."
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -100.4,
-          -75.16
-        ]
-      },
-      "properties": {
-        "codigo": "CAND-PIG",
-        "nombre": "Pine Island Glacier",
-        "tipo": "candidato",
-        "framework": "F6 Glacial geology",
-        "interes": "Mayor contribuyente actual al aumento global del nivel del mar",
-        "fuente": "Propuesto · bibliometría SCAR ATCM",
-        "descripcion": "Glaciar de salida del Mar de Amundsen, en retroceso acelerado. Sitio crítico para monitorear el colapso de la Antártica Occidental."
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          161.19956608788303,
-          -77.76749857155762
-        ]
-      },
-      "properties": {
-        "codigo": "ASPA-172",
-        "nombre": "Lower Taylor Glacier and Blood Falls, Taylor Valley, McMurdo Dry Valleys, Victoria Land",
-        "tipo": "ASPA",
-        "framework": "",
-        "interes": "Área Antártica Especialmente Protegida (Annex V Protocolo Madrid)",
-        "fuente": "Quantarctica · ASPAs_polygons.shp",
-        "descripcion": ""
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          164.9595039733879,
-          -74.61769815632438
-        ]
-      },
-      "properties": {
-        "codigo": "ASPA-173",
-        "nombre": "Cape Washington and Silverfish Bay, Terra Nova Bay, Ross Sea",
-        "tipo": "ASPA",
-        "framework": "",
-        "interes": "Área Antártica Especialmente Protegida (Annex V Protocolo Madrid)",
-        "fuente": "Quantarctica · ASPAs_polygons.shp",
-        "descripcion": ""
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          76.08543444544796,
-          -69.42789214599226
-        ]
-      },
-      "properties": {
-        "codigo": "ASPA-174",
-        "nombre": "Stornes, Larsemann Hills, Princess Elizabeth Land",
-        "tipo": "ASPA",
-        "framework": "",
-        "interes": "Área Antártica Especialmente Protegida (Annex V Protocolo Madrid)",
-        "fuente": "Quantarctica · ASPAs_polygons.shp",
-        "descripcion": ""
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          60.885443113776596,
-          -67.45483011213692
-        ]
-      },
-      "properties": {
-        "codigo": "ASPA-101",
-        "nombre": "Taylor Rookery, Mac. Robertson Land",
-        "tipo": "ASPA",
-        "framework": "",
-        "interes": "Área Antártica Especialmente Protegida (Annex V Protocolo Madrid)",
-        "fuente": "Quantarctica · ASPAs_polygons.shp",
-        "descripcion": ""
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          62.51551209632999,
-          -67.60139163369583
-        ]
-      },
-      "properties": {
-        "codigo": "ASPA-102",
-        "nombre": "Rookery Islands, Holme Bay, Mac. Robertson Land",
-        "tipo": "ASPA",
-        "framework": "",
-        "interes": "Área Antártica Especialmente Protegida (Annex V Protocolo Madrid)",
-        "fuente": "Quantarctica · ASPAs_polygons.shp",
-        "descripcion": ""
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          110.52221797303955,
-          -66.37287255585746
-        ]
-      },
-      "properties": {
-        "codigo": "ASPA-103",
-        "nombre": "Ardery Island, Budd Coast",
-        "tipo": "ASPA",
-        "framework": "",
-        "interes": "Área Antártica Especialmente Protegida (Annex V Protocolo Madrid)",
-        "fuente": "Quantarctica · ASPAs_polygons.shp",
-        "descripcion": ""
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          163.31696310221315,
-          -66.89972363896291
-        ]
-      },
-      "properties": {
-        "codigo": "ASPA-104",
-        "nombre": "Sabrina Island, Northern Ross Sea, Antarctica",
-        "tipo": "ASPA",
-        "framework": "",
-        "interes": "Área Antártica Especialmente Protegida (Annex V Protocolo Madrid)",
-        "fuente": "Quantarctica · ASPAs_polygons.shp",
-        "descripcion": ""
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          166.94310943705418,
-          -76.94693583519307
-        ]
-      },
-      "properties": {
-        "codigo": "ASPA-105",
-        "nombre": "Beaufort Island",
-        "tipo": "ASPA",
-        "framework": "",
-        "interes": "Área Antártica Especialmente Protegida (Annex V Protocolo Madrid)",
-        "fuente": "Quantarctica · ASPAs_polygons.shp",
-        "descripcion": ""
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          170.22526683960197,
-          -72.3203279575975
-        ]
-      },
-      "properties": {
-        "codigo": "ASPA-106",
-        "nombre": "Cape Hallett",
-        "tipo": "ASPA",
-        "framework": "",
-        "interes": "Área Antártica Especialmente Protegida (Annex V Protocolo Madrid)",
-        "fuente": "Quantarctica · ASPAs_polygons.shp",
-        "descripcion": ""
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -68.70869756715287,
-          -67.86429750859769
-        ]
-      },
-      "properties": {
-        "codigo": "ASPA-107",
-        "nombre": "Dion Islands, Marguerite Bay",
-        "tipo": "ASPA",
-        "framework": "",
-        "interes": "Área Antártica Especialmente Protegida (Annex V Protocolo Madrid)",
-        "fuente": "Quantarctica · ASPAs_polygons.shp",
-        "descripcion": ""
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -64.15086327831816,
-          -65.323970768423
-        ]
-      },
-      "properties": {
-        "codigo": "ASPA-108",
-        "nombre": "Green Island, Berthelot Islands",
-        "tipo": "ASPA",
-        "framework": "",
-        "interes": "Área Antártica Especialmente Protegida (Annex V Protocolo Madrid)",
-        "fuente": "Quantarctica · ASPAs_polygons.shp",
-        "descripcion": ""
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -45.68428230349054,
-          -60.736150937885036
-        ]
-      },
-      "properties": {
-        "codigo": "ASPA-109",
-        "nombre": "Moe Island, South Orkney Islands",
-        "tipo": "ASPA",
-        "framework": "",
-        "interes": "Área Antártica Especialmente Protegida (Annex V Protocolo Madrid)",
-        "fuente": "Quantarctica · ASPAs_polygons.shp",
-        "descripcion": ""
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -45.608407590188726,
-          -60.65494035781713
-        ]
-      },
-      "properties": {
-        "codigo": "ASPA-110",
-        "nombre": "Lynch Island, South Orkney Islands",
-        "tipo": "ASPA",
-        "framework": "",
-        "interes": "Área Antártica Especialmente Protegida (Annex V Protocolo Madrid)",
-        "fuente": "Quantarctica · ASPAs_polygons.shp",
-        "descripcion": ""
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -45.00531028661122,
-          -60.72955440679522
-        ]
-      },
-      "properties": {
-        "codigo": "ASPA-111",
-        "nombre": "Southern Powell Island and adjacent islands, South Orkney Islands",
-        "tipo": "ASPA",
-        "framework": "",
-        "interes": "Área Antártica Especialmente Protegida (Annex V Protocolo Madrid)",
-        "fuente": "Quantarctica · ASPAs_polygons.shp",
-        "descripcion": ""
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -59.71196363941373,
-          -62.37410053413002
-        ]
-      },
-      "properties": {
-        "codigo": "ASPA-112",
-        "nombre": "Coppermine Peninsula, Robert Island",
-        "tipo": "ASPA",
-        "framework": "",
-        "interes": "Área Antártica Especialmente Protegida (Annex V Protocolo Madrid)",
-        "fuente": "Quantarctica · ASPAs_polygons.shp",
-        "descripcion": ""
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -64.09206819247804,
-          -64.77044261939184
-        ]
-      },
-      "properties": {
-        "codigo": "ASPA-113",
-        "nombre": "Litchfield Island, Arthur Harbour, Anvers Island",
-        "tipo": "ASPA",
-        "framework": "",
-        "interes": "Área Antártica Especialmente Protegida (Annex V Protocolo Madrid)",
-        "fuente": "Quantarctica · ASPAs_polygons.shp",
-        "descripcion": ""
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -67.40400494258343,
-          -67.8868820776727
-        ]
-      },
-      "properties": {
-        "codigo": "ASPA-115",
-        "nombre": "Lagotellerie Island, Marguerite Bay, Antarctic Peninsula",
-        "tipo": "ASPA",
-        "framework": "",
-        "interes": "Área Antártica Especialmente Protegida (Annex V Protocolo Madrid)",
-        "fuente": "Quantarctica · ASPAs_polygons.shp",
-        "descripcion": ""
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          166.44214697974692,
-          -77.22272819977647
-        ]
-      },
-      "properties": {
-        "codigo": "ASPA-116",
-        "nombre": "New College Valley, Caughley Beach, Cape Bird, Ross Island",
-        "tipo": "ASPA",
-        "framework": "",
-        "interes": "Área Antártica Especialmente Protegida (Annex V Protocolo Madrid)",
-        "fuente": "Quantarctica · ASPAs_polygons.shp",
-        "descripcion": ""
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -68.88865720518348,
-          -67.77267390931513
-        ]
-      },
-      "properties": {
-        "codigo": "ASPA-117",
-        "nombre": "Avian Island, off Adelaide Island, Antarctic Peninsula",
-        "tipo": "ASPA",
-        "framework": "",
-        "interes": "Área Antártica Especialmente Protegida (Annex V Protocolo Madrid)",
-        "fuente": "Quantarctica · ASPAs_polygons.shp",
-        "descripcion": ""
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -51.12040643107205,
-          -82.4880453606291
-        ]
-      },
-      "properties": {
-        "codigo": "ASPA-119",
-        "nombre": "Davis Valley and Forlidas Pond, Dufek Massif",
-        "tipo": "ASPA",
-        "framework": "",
-        "interes": "Área Antártica Especialmente Protegida (Annex V Protocolo Madrid)",
-        "fuente": "Quantarctica · ASPAs_polygons.shp",
-        "descripcion": ""
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          140.01202435044914,
-          -66.66924891558436
-        ]
-      },
-      "properties": {
-        "codigo": "ASPA-120",
-        "nombre": "‘Pointe-Géologie Archipelego’, Terre Adélie",
-        "tipo": "ASPA",
-        "framework": "",
-        "interes": "Área Antártica Especialmente Protegida (Annex V Protocolo Madrid)",
-        "fuente": "Quantarctica · ASPAs_polygons.shp",
-        "descripcion": ""
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          166.16002975965733,
-          -77.5564283341333
-        ]
-      },
-      "properties": {
-        "codigo": "ASPA-121",
-        "nombre": "Cape Royds, Ross Island",
-        "tipo": "ASPA",
-        "framework": "",
-        "interes": "Área Antártica Especialmente Protegida (Annex V Protocolo Madrid)",
-        "fuente": "Quantarctica · ASPAs_polygons.shp",
-        "descripcion": ""
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          166.66749984495578,
-          -77.82791798656753
-        ]
-      },
-      "properties": {
-        "codigo": "ASPA-122",
-        "nombre": "Arrival Heights, Hut Point Peninsula, Ross Island",
-        "tipo": "ASPA",
-        "framework": "",
-        "interes": "Área Antártica Especialmente Protegida (Annex V Protocolo Madrid)",
-        "fuente": "Quantarctica · ASPAs_polygons.shp",
-        "descripcion": ""
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          160.94849238655536,
-          -77.34805739969288
-        ]
-      },
-      "properties": {
-        "codigo": "ASPA-123",
-        "nombre": "Barwick Valley, Victoria Land",
-        "tipo": "ASPA",
-        "framework": "",
-        "interes": "Área Antártica Especialmente Protegida (Annex V Protocolo Madrid)",
-        "fuente": "Quantarctica · ASPAs_polygons.shp",
-        "descripcion": ""
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          169.33127558448743,
-          -77.48085846240018
-        ]
-      },
-      "properties": {
-        "codigo": "ASPA-124",
-        "nombre": "Cape Crozier, Ross Island",
-        "tipo": "ASPA",
-        "framework": "",
-        "interes": "Área Antártica Especialmente Protegida (Annex V Protocolo Madrid)",
-        "fuente": "Quantarctica · ASPAs_polygons.shp",
-        "descripcion": ""
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -58.93722983457311,
-          -62.17696183778948
-        ]
-      },
-      "properties": {
-        "codigo": "ASPA-125",
-        "nombre": "125A  Fildes Peninsula - Fossil Hill",
-        "tipo": "ASPA",
-        "framework": "",
-        "interes": "Área Antártica Especialmente Protegida (Annex V Protocolo Madrid)",
-        "fuente": "Quantarctica · ASPAs_polygons.shp",
-        "descripcion": ""
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -61.035171443778694,
-          -62.6322112609912
-        ]
-      },
-      "properties": {
-        "codigo": "ASPA-126",
-        "nombre": "Byers Peninsula, Livingston Island",
-        "tipo": "ASPA",
-        "framework": "",
-        "interes": "Área Antártica Especialmente Protegida (Annex V Protocolo Madrid)",
-        "fuente": "Quantarctica · ASPAs_polygons.shp",
-        "descripcion": ""
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          93.02516768274289,
-          -66.52888438223118
-        ]
-      },
-      "properties": {
-        "codigo": "ASPA-127",
-        "nombre": "Haswell Island",
-        "tipo": "ASPA",
-        "framework": "",
-        "interes": "Área Antártica Especialmente Protegida (Annex V Protocolo Madrid)",
-        "fuente": "Quantarctica · ASPAs_polygons.shp",
-        "descripcion": ""
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -58.463448620884016,
-          -62.19761743732647
-        ]
-      },
-      "properties": {
-        "codigo": "ASPA-128",
-        "nombre": "Western shore of Admiralty Bay",
-        "tipo": "ASPA",
-        "framework": "",
-        "interes": "Área Antártica Especialmente Protegida (Annex V Protocolo Madrid)",
-        "fuente": "Quantarctica · ASPAs_polygons.shp",
-        "descripcion": ""
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -68.11592964059165,
-          -67.56707998209554
-        ]
-      },
-      "properties": {
-        "codigo": "ASPA-129",
-        "nombre": "Rothera Point, Adelaide Island",
-        "tipo": "ASPA",
-        "framework": "",
-        "interes": "Área Antártica Especialmente Protegida (Annex V Protocolo Madrid)",
-        "fuente": "Quantarctica · ASPAs_polygons.shp",
-        "descripcion": ""
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -58.647581693680635,
-          -62.251877354132056
-        ]
-      },
-      "properties": {
-        "codigo": "ASPA-132",
-        "nombre": "Potter Peninsula",
-        "tipo": "ASPA",
-        "framework": "",
-        "interes": "Área Antártica Especialmente Protegida (Annex V Protocolo Madrid)",
-        "fuente": "Quantarctica · ASPAs_polygons.shp",
-        "descripcion": ""
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -59.19463102111499,
-          -62.30510464977382
-        ]
-      },
-      "properties": {
-        "codigo": "ASPA-133",
-        "nombre": "Harmony Cove, Nelson Island",
-        "tipo": "ASPA",
-        "framework": "",
-        "interes": "Área Antártica Especialmente Protegida (Annex V Protocolo Madrid)",
-        "fuente": "Quantarctica · ASPAs_polygons.shp",
-        "descripcion": ""
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -61.0276555944109,
-          -64.17095833298282
-        ]
-      },
-      "properties": {
-        "codigo": "ASPA-134",
-        "nombre": "Cierva Point and offshore islands, Danco Coast",
-        "tipo": "ASPA",
-        "framework": "",
-        "interes": "Área Antártica Especialmente Protegida (Annex V Protocolo Madrid)",
-        "fuente": "Quantarctica · ASPAs_polygons.shp",
-        "descripcion": ""
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          110.54424679767712,
-          -66.28384747578636
-        ]
-      },
-      "properties": {
-        "codigo": "ASPA-135",
-        "nombre": "Northeast Bailey Peninsula",
-        "tipo": "ASPA",
-        "framework": "",
-        "interes": "Área Antártica Especialmente Protegida (Annex V Protocolo Madrid)",
-        "fuente": "Quantarctica · ASPAs_polygons.shp",
-        "descripcion": ""
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          110.59669122379385,
-          -66.25097962936337
-        ]
-      },
-      "properties": {
-        "codigo": "ASPA-136",
-        "nombre": "Clark Peninsula",
-        "tipo": "ASPA",
-        "framework": "",
-        "interes": "Área Antártica Especialmente Protegida (Annex V Protocolo Madrid)",
-        "fuente": "Quantarctica · ASPAs_polygons.shp",
-        "descripcion": ""
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          167.30513821778985,
-          -78.04157221994897
-        ]
-      },
-      "properties": {
-        "codigo": "ASPA-137",
-        "nombre": "North-West White Island, McMurdo Sound",
-        "tipo": "ASPA",
-        "framework": "",
-        "interes": "Área Antártica Especialmente Protegida (Annex V Protocolo Madrid)",
-        "fuente": "Quantarctica · ASPAs_polygons.shp",
-        "descripcion": ""
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -63.7761726487527,
-          -64.81072862958061
-        ]
-      },
-      "properties": {
-        "codigo": "ASPA-139",
-        "nombre": "Biscoe Point, Anvers Island",
-        "tipo": "ASPA",
-        "framework": "",
-        "interes": "Área Antártica Especialmente Protegida (Annex V Protocolo Madrid)",
-        "fuente": "Quantarctica · ASPAs_polygons.shp",
-        "descripcion": ""
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -60.629414102207534,
-          -62.96415340157254
-        ]
-      },
-      "properties": {
-        "codigo": "ASPA-140",
-        "nombre": "Parts of Deception Island",
-        "tipo": "ASPA",
-        "framework": "",
-        "interes": "Área Antártica Especialmente Protegida (Annex V Protocolo Madrid)",
-        "fuente": "Quantarctica · ASPAs_polygons.shp",
-        "descripcion": ""
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          39.77488329214959,
-          -69.23733508837687
-        ]
-      },
-      "properties": {
-        "codigo": "ASPA-141",
-        "nombre": "‘Yukidori Valley’, Langhovde, Lützow-Holmbukta",
-        "tipo": "ASPA",
-        "framework": "",
-        "interes": "Área Antártica Especialmente Protegida (Annex V Protocolo Madrid)",
-        "fuente": "Quantarctica · ASPAs_polygons.shp",
-        "descripcion": ""
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          5.182507069858266,
-          -71.90894429689378
-        ]
-      },
-      "properties": {
-        "codigo": "ASPA-142",
-        "nombre": "Svarthamaren, Mühlig-Hofmannfjella, Dronning Maud Land",
-        "tipo": "ASPA",
-        "framework": "",
-        "interes": "Área Antártica Especialmente Protegida (Annex V Protocolo Madrid)",
-        "fuente": "Quantarctica · ASPAs_polygons.shp",
-        "descripcion": ""
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          78.14187718064657,
-          -68.63077927157742
-        ]
-      },
-      "properties": {
-        "codigo": "ASPA-143",
-        "nombre": "Marine Plain, Mule Peninsula, Vestfold Hills, Princess Elizabeth Land",
-        "tipo": "ASPA",
-        "framework": "",
-        "interes": "Área Antártica Especialmente Protegida (Annex V Protocolo Madrid)",
-        "fuente": "Quantarctica · ASPAs_polygons.shp",
-        "descripcion": ""
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -59.71555961444186,
-          -62.47505913378151
-        ]
-      },
-      "properties": {
-        "codigo": "ASPA-144",
-        "nombre": "Chile Bay (Discovery Bay), Greenwich Island",
-        "tipo": "ASPA",
-        "framework": "",
-        "interes": "Área Antártica Especialmente Protegida (Annex V Protocolo Madrid)",
-        "fuente": "Quantarctica · ASPAs_polygons.shp",
-        "descripcion": ""
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -63.57483444878391,
-          -64.86878724551764
-        ]
-      },
-      "properties": {
-        "codigo": "ASPA-146",
-        "nombre": "South Bay, Doumer Island",
-        "tipo": "ASPA",
-        "framework": "",
-        "interes": "Área Antártica Especialmente Protegida (Annex V Protocolo Madrid)",
-        "fuente": "Quantarctica · ASPAs_polygons.shp",
-        "descripcion": ""
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -57.02394216435783,
-          -63.415873017467064
-        ]
-      },
-      "properties": {
-        "codigo": "ASPA-148",
-        "nombre": "Mount Flora, Hope Bay",
-        "tipo": "ASPA",
-        "framework": "",
-        "interes": "Área Antártica Especialmente Protegida (Annex V Protocolo Madrid)",
-        "fuente": "Quantarctica · ASPAs_polygons.shp",
-        "descripcion": ""
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -60.803383972669,
-          -62.474726524464174
-        ]
-      },
-      "properties": {
-        "codigo": "ASPA-149",
-        "nombre": "Cape Shirreff, Livingston Island",
-        "tipo": "ASPA",
-        "framework": "",
-        "interes": "Área Antártica Especialmente Protegida (Annex V Protocolo Madrid)",
-        "fuente": "Quantarctica · ASPAs_polygons.shp",
-        "descripcion": ""
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -58.93155087724404,
-          -62.21203328814473
-        ]
-      },
-      "properties": {
-        "codigo": "ASPA-150",
-        "nombre": "Ardley Island, Maxwell Bay, King George Island",
-        "tipo": "ASPA",
-        "framework": "",
-        "interes": "Área Antártica Especialmente Protegida (Annex V Protocolo Madrid)",
-        "fuente": "Quantarctica · ASPAs_polygons.shp",
-        "descripcion": ""
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -58.13794060751617,
-          -62.1342093007801
-        ]
-      },
-      "properties": {
-        "codigo": "ASPA-151",
-        "nombre": "Lions Rump",
-        "tipo": "ASPA",
-        "framework": "",
-        "interes": "Área Antártica Especialmente Protegida (Annex V Protocolo Madrid)",
-        "fuente": "Quantarctica · ASPAs_polygons.shp",
-        "descripcion": ""
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -62.41199284580516,
-          -63.38625822654288
-        ]
-      },
-      "properties": {
-        "codigo": "ASPA-152",
-        "nombre": "Western Bransfield Strait",
-        "tipo": "ASPA",
-        "framework": "",
-        "interes": "Área Antártica Especialmente Protegida (Annex V Protocolo Madrid)",
-        "fuente": "Quantarctica · ASPAs_polygons.shp",
-        "descripcion": ""
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -62.54929128664108,
-          -64.04074323657112
-        ]
-      },
-      "properties": {
-        "codigo": "ASPA-153",
-        "nombre": "Eastern Dallman Bay",
-        "tipo": "ASPA",
-        "framework": "",
-        "interes": "Área Antártica Especialmente Protegida (Annex V Protocolo Madrid)",
-        "fuente": "Quantarctica · ASPAs_polygons.shp",
-        "descripcion": ""
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          166.42120418396232,
-          -77.63663166517497
-        ]
-      },
-      "properties": {
-        "codigo": "ASPA-155",
-        "nombre": "Cape Evans, Ross Island",
-        "tipo": "ASPA",
-        "framework": "",
-        "interes": "Área Antártica Especialmente Protegida (Annex V Protocolo Madrid)",
-        "fuente": "Quantarctica · ASPAs_polygons.shp",
-        "descripcion": ""
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          167.46967750301698,
-          -77.42620309554565
-        ]
-      },
-      "properties": {
-        "codigo": "ASPA-156",
-        "nombre": "Lewis Bay, Mount Erebus, Ross Island",
-        "tipo": "ASPA",
-        "framework": "",
-        "interes": "Área Antártica Especialmente Protegida (Annex V Protocolo Madrid)",
-        "fuente": "Quantarctica · ASPAs_polygons.shp",
-        "descripcion": ""
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          166.17105704784336,
-          -77.55309996562036
-        ]
-      },
-      "properties": {
-        "codigo": "ASPA-157",
-        "nombre": "Backdoor Bay, Cape Royds, Ross Island",
-        "tipo": "ASPA",
-        "framework": "",
-        "interes": "Área Antártica Especialmente Protegida (Annex V Protocolo Madrid)",
-        "fuente": "Quantarctica · ASPAs_polygons.shp",
-        "descripcion": ""
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          166.64166666620838,
-          -77.84574999995753
-        ]
-      },
-      "properties": {
-        "codigo": "ASPA-158",
-        "nombre": "Hut Point, Ross Island",
-        "tipo": "ASPA",
-        "framework": "",
-        "interes": "Área Antártica Especialmente Protegida (Annex V Protocolo Madrid)",
-        "fuente": "Quantarctica · ASPAs_polygons.shp",
-        "descripcion": ""
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          170.19377498805756,
-          -71.30912848394519
-        ]
-      },
-      "properties": {
-        "codigo": "ASPA-159",
-        "nombre": "Cape Adare, Borchgrevink Coast",
-        "tipo": "ASPA",
-        "framework": "",
-        "interes": "Área Antártica Especialmente Protegida (Annex V Protocolo Madrid)",
-        "fuente": "Quantarctica · ASPAs_polygons.shp",
-        "descripcion": ""
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          110.1750946649014,
-          -66.2288336834243
-        ]
-      },
-      "properties": {
-        "codigo": "ASPA-160",
-        "nombre": "Frazier Islands",
-        "tipo": "ASPA",
-        "framework": "",
-        "interes": "Área Antártica Especialmente Protegida (Annex V Protocolo Madrid)",
-        "fuente": "Quantarctica · ASPAs_polygons.shp",
-        "descripcion": ""
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          164.0980814569703,
-          -74.76802634274573
-        ]
-      },
-      "properties": {
-        "codigo": "ASPA-161",
-        "nombre": "Terra Nova Bay",
-        "tipo": "ASPA",
-        "framework": "",
-        "interes": "Área Antártica Especialmente Protegida (Annex V Protocolo Madrid)",
-        "fuente": "Quantarctica · ASPAs_polygons.shp",
-        "descripcion": ""
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          142.66181903073593,
-          -67.0079219873907
-        ]
-      },
-      "properties": {
-        "codigo": "ASPA-162",
-        "nombre": "Mawson's Hut, Cape Denison, Commonwealth Bay, George V Land",
-        "tipo": "ASPA",
-        "framework": "",
-        "interes": "Área Antártica Especialmente Protegida (Annex V Protocolo Madrid)",
-        "fuente": "Quantarctica · ASPAs_polygons.shp",
-        "descripcion": ""
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          11.581971677870213,
-          -70.7474400869
-        ]
-      },
-      "properties": {
-        "codigo": "ASPA-163",
-        "nombre": "Dakshin Gangotri Glacier, Dronning Maud Land",
-        "tipo": "ASPA",
-        "framework": "",
-        "interes": "Área Antártica Especialmente Protegida (Annex V Protocolo Madrid)",
-        "fuente": "Quantarctica · ASPAs_polygons.shp",
-        "descripcion": ""
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          66.78550998950698,
-          -67.79158449660662
-        ]
-      },
-      "properties": {
-        "codigo": "ASPA-164",
-        "nombre": "Scullin Monolith",
-        "tipo": "ASPA",
-        "framework": "",
-        "interes": "Área Antártica Especialmente Protegida (Annex V Protocolo Madrid)",
-        "fuente": "Quantarctica · ASPAs_polygons.shp",
-        "descripcion": ""
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          165.09558996019504,
-          -74.32547831742222
-        ]
-      },
-      "properties": {
-        "codigo": "ASPA-165",
-        "nombre": "Edmonson Point, Wood Bay, Victoria Land",
-        "tipo": "ASPA",
-        "framework": "",
-        "interes": "Área Antártica Especialmente Protegida (Annex V Protocolo Madrid)",
-        "fuente": "Quantarctica · ASPAs_polygons.shp",
-        "descripcion": ""
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          141.3931027947922,
-          -66.81798627346306
-        ]
-      },
-      "properties": {
-        "codigo": "ASPA-166",
-        "nombre": "Port-Martin, Terre-Adelie",
-        "tipo": "ASPA",
-        "framework": "",
-        "interes": "Área Antártica Especialmente Protegida (Annex V Protocolo Madrid)",
-        "fuente": "Quantarctica · ASPAs_polygons.shp",
-        "descripcion": ""
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          77.85784912026817,
-          -68.63552941048977
-        ]
-      },
-      "properties": {
-        "codigo": "ASPA-167",
-        "nombre": "Hawker Island",
-        "tipo": "ASPA",
-        "framework": "",
-        "interes": "Área Antártica Especialmente Protegida (Annex V Protocolo Madrid)",
-        "fuente": "Quantarctica · ASPAs_polygons.shp",
-        "descripcion": ""
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          75.04284928517023,
-          -72.90203520347977
-        ]
-      },
-      "properties": {
-        "codigo": "ASPA-168",
-        "nombre": "Mount Harding, Grove Mountains, East Antarctica",
-        "tipo": "ASPA",
-        "framework": "",
-        "interes": "Área Antártica Especialmente Protegida (Annex V Protocolo Madrid)",
-        "fuente": "Quantarctica · ASPAs_polygons.shp",
-        "descripcion": ""
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          76.84749568624042,
-          -69.25358557471905
-        ]
-      },
-      "properties": {
-        "codigo": "ASPA-169",
-        "nombre": "Amanda Bay, Ingrid Christensen Coast, Princess Elizabeth Land",
-        "tipo": "ASPA",
-        "framework": "",
-        "interes": "Área Antártica Especialmente Protegida (Annex V Protocolo Madrid)",
-        "fuente": "Quantarctica · ASPAs_polygons.shp",
-        "descripcion": ""
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -75.24999999972603,
-          -69.75833333324051
-        ]
-      },
-      "properties": {
-        "codigo": "ASPA-170",
-        "nombre": "Marion Nunataks, Charcot Island, Antarctic Peninsula",
-        "tipo": "ASPA",
-        "framework": "",
-        "interes": "Área Antártica Especialmente Protegida (Annex V Protocolo Madrid)",
-        "fuente": "Quantarctica · ASPAs_polygons.shp",
-        "descripcion": ""
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -58.76785130323864,
-          -62.23388197949898
-        ]
-      },
-      "properties": {
-        "codigo": "ASPA-171",
-        "nombre": "Narebski Point, Barton Peninsula, KGI",
-        "tipo": "ASPA",
-        "framework": "",
-        "interes": "Área Antártica Especialmente Protegida (Annex V Protocolo Madrid)",
-        "fuente": "Quantarctica · ASPAs_polygons.shp",
-        "descripcion": ""
-      }
-    }
+ "type": "FeatureCollection",
+ "metadata": {
+  "fuente": "Seed manual (Contextos geologicos / Visor Antartico). Reemplazar con la salida de scripts/build_antartica_geositios.py una vez procesados los datos ATS-SCAR ASPA y el catálogo SCAR EG-GEOCON.",
+  "fecha_seed": "2026-05-16",
+  "campos": [
+   "codigo",
+   "nombre",
+   "tipo",
+   "framework",
+   "interes",
+   "fuente",
+   "descripcion"
+  ],
+  "tipos": [
+   "ASPA",
+   "SCAR-geosite",
+   "IUGS-geosite",
+   "candidato"
+  ],
+  "frameworks_scar": [
+   "F1 Basement",
+   "F2 Sedimentary basins (Beacon)",
+   "F3 Igneous provinces (Ferrar/Karoo)",
+   "F4 Cenozoic volcanism",
+   "F5 K-Pg boundary",
+   "F6 Glacial geology",
+   "F7 Meteorite fields",
+   "F8 Subglacial environments",
+   "F9 Antarctic Peninsula arc"
   ]
+ },
+ "features": [
+  {
+   "type": "Feature",
+   "properties": {
+    "codigo": "GEOCON-GF5-01",
+    "nombre": "Transición Cretácico-Paleógeno (K-Pg), isla Marambio (Seymour)",
+    "estatus": "aprobado",
+    "tipo": "geositio SCAR",
+    "framework": "GF5 — Cretaceous-Palaeogene (K-Pg) transition",
+    "framework_n": 5,
+    "fuente": "SCAR ATCM XLIII (2021) Att. A, Annex 1",
+    "origen_coordenada": "coordenada oficial del documento",
+    "descripcion": "Uno de los mejores registros del límite K-Pg del planeta y el único aflorante confirmado en la Antártica. Primer geositio seleccionado por el método SCAR.",
+    "nota_ubicacion": "Coordenada oficial del centro del geositio, no del gazetteer."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -56.7353,
+     -64.2875
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "codigo": "GEOCON-GF1-01",
+    "nombre": "Complejo estratificado Torckler-Tang Øy, islas Rauer",
+    "estatus": "aprobado",
+    "tipo": "geositio SCAR",
+    "framework": "GF1 — Archean cratons",
+    "framework_n": 1,
+    "fuente": "Presentación GEOCON, lámina 6",
+    "origen_coordenada": "SCAR Composite Gazetteer · Torckler Island (Island)",
+    "descripcion": "Intrusión máfica-ultramáfica de 3280-3300 Ma, uno de los complejos ígneos estratificados más antiguos conocidos. Conserva estructuras sin-magmáticas: bandeamiento gradado y rítmico, cumulados piroxeníticos."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     77.8298,
+     -68.8888
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "codigo": "GEOCON-GF1-02",
+    "nombre": "Paragneis de Taynaya, Vestfold Hills",
+    "estatus": "aprobado",
+    "tipo": "geositio SCAR",
+    "framework": "GF1 — Archean cratons",
+    "framework_n": 1,
+    "fuente": "Presentación GEOCON, lámina 7",
+    "origen_coordenada": "SCAR Composite Gazetteer · Taynaya Bay (Bay)",
+    "descripcion": "Metasedimentos químicos ultra-magnesianos del Arqueano tardío: safirina-espinela-enstatita casi puros, prácticamente sin hierro."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     78.2923,
+     -68.4525
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "codigo": "GEOCON-GF1-03",
+    "nombre": "Complejo estratificado Shcherbinina, islas Rauer",
+    "estatus": "aprobado",
+    "tipo": "geositio SCAR",
+    "framework": "GF1 — Archean cratons",
+    "framework_n": 1,
+    "fuente": "Presentación GEOCON, lámina 8",
+    "origen_coordenada": "SCAR Composite Gazetteer · Shcherbinina Island (Island)",
+    "descripcion": "Complejo máfico estratificado de 2840 Ma (diorita-ferrodiorita-ferrogabro) metamorfizado en facies granulita, con bandeamiento ígneo gradado y texturas ofíticas remanentes."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     77.9333,
+     -68.8333
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "codigo": "GEOCON-GF1-04",
+    "nombre": "Ortogneis tonalítico de Mount Sones, Enderby Land",
+    "estatus": "aprobado",
+    "tipo": "geositio SCAR",
+    "framework": "GF1 — Archean cratons",
+    "framework_n": 1,
+    "fuente": "Presentación GEOCON, lámina 9",
+    "origen_coordenada": "SCAR Composite Gazetteer · Mount Sones (Mountain)",
+    "descripcion": "Litología eoarqueana datada en ~3850 Ma. Sus dataciones U-Pb en circón impulsaron la investigación sobre el comportamiento del Pb a nanoescala. Aprobado como IUGS Third 100 junto a Mount Riiser-Larsen.",
+    "iugs_third_100": true
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     51.4833,
+     -67.0333
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "codigo": "GEOCON-GF1-05",
+    "nombre": "Metamorfismo UHT de Mount Riiser-Larsen, Enderby Land",
+    "estatus": "aprobado",
+    "tipo": "geositio SCAR",
+    "framework": "GF1 — Archean cratons",
+    "framework_n": 1,
+    "fuente": "Presentación GEOCON, lámina 10",
+    "origen_coordenada": "SCAR Composite Gazetteer · Mount Riiser-Larsen (Mountain)",
+    "descripcion": "Asociación UHT definitoria safirina + ortopiroxeno + cuarzo, con osumilita y plegamiento isoclinal por deformación UHT. Aprobado como IUGS Third 100 junto a Mount Sones.",
+    "iugs_third_100": true
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     50.7702,
+     -66.7716
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "codigo": "GEOCON-GF1-06",
+    "nombre": "Pegmatitas de berilio de Casey Bay, Enderby Land",
+    "estatus": "aprobado",
+    "tipo": "geositio SCAR",
+    "framework": "GF1 — Archean cratons",
+    "framework_n": 1,
+    "fuente": "Presentación GEOCON, lámina 11",
+    "origen_coordenada": "SCAR Composite Gazetteer · Christmas Point (Point)",
+    "descripcion": "Única ocurrencia conocida en el mundo de mineralización de berilio a alta temperatura.",
+    "nota_ubicacion": "Localidad de las pegmatitas dentro de Casey Bay."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     48.9667,
+     -67.3833
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "codigo": "GEOCON-GF7-01",
+    "nombre": "Campos de meteoritos de las montañas Yamato",
+    "estatus": "aprobado",
+    "tipo": "geositio SCAR",
+    "framework": "GF7 — Meteorites and evidence of impacts",
+    "framework_n": 7,
+    "fuente": "Presentación GEOCON, lámina 12",
+    "origen_coordenada": "SCAR Composite Gazetteer · Yamato Sanmyaku (Mountain)",
+    "descripcion": "~14.000 meteoritos recuperados de los campos de hielo azul, una de las principales fuentes mundiales. Colección curada en el NIPR. Aprobado como IUGS Third 100.",
+    "iugs_third_100": true
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     35.75,
+     -71.5
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "codigo": "GEOCON-GF3-N1",
+    "nombre": "Rundvågshetta, complejo de Lützow-Holm",
+    "estatus": "nominado",
+    "tipo": "geositio SCAR",
+    "framework": "GF3 — Gondwana amalgamation and breakup",
+    "framework_n": 3,
+    "fuente": "Presentación GEOCON, lámina 15",
+    "origen_coordenada": "SCAR Composite Gazetteer · Rundvågshetta (Head)",
+    "descripcion": "Granulitas pelíticas y máficas de alta a ultra-alta temperatura; registro de eventos del Neoproterozoico tardío (~600 a ~530 Ma) durante la amalgamación de Gondwana."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     38.9833,
+     -69.8833
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "codigo": "GEOCON-GF3-N2",
+    "nombre": "Montañas Sør Rondane",
+    "estatus": "nominado",
+    "tipo": "geositio SCAR",
+    "framework": "GF3 — Gondwana amalgamation and breakup",
+    "framework_n": 3,
+    "fuente": "Presentación GEOCON, lámina 16",
+    "origen_coordenada": "SCAR Composite Gazetteer · Sør Rondane Mountains (Mountain)",
+    "descripcion": "Registro de dos eventos metamórficos neoproterozoicos (~600 y ~550 Ma), historia colisional multi-etapa. Localidad tipo del mineral dissakisita-Ce."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     25.0,
+     -72.0
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "codigo": "GEOCON-GF3-N3",
+    "nombre": "Complejo intrusivo Trollslottet, Filchnerfjella (Dronning Maud central)",
+    "estatus": "nominado",
+    "tipo": "geositio SCAR",
+    "framework": "GF3 — Gondwana amalgamation and breakup",
+    "framework_n": 3,
+    "fuente": "Presentación GEOCON, lámina 17",
+    "origen_coordenada": "SCAR Composite Gazetteer · Trollslottet (Mountain)",
+    "descripcion": "Infiltración de fluidos tardi-magmáticos en la fase final del orógeno Pan-Africano. Las zonas de alteración se extienden por cientos de km: ejemplo de libro a escala global."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     7.2,
+     -71.9333
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "codigo": "GEOCON-GF3-N4",
+    "nombre": "Gneis de Jutulhogget (Dronning Maud central)",
+    "estatus": "nominado",
+    "tipo": "geositio SCAR",
+    "framework": "GF3 — Gondwana amalgamation and breakup",
+    "framework_n": 3,
+    "fuente": "Presentación GEOCON, lámina 18",
+    "origen_coordenada": "SCAR Composite Gazetteer · Jutulhogget (Peak)",
+    "descripcion": "Evolución tectonometamórfica polifásica del cinturón Maud, desde el Mesoproterozoico hasta la orogenia Ediacárico-Cámbrico. Permite trazar fundidos anatécticos desde la fuente hasta el dique."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     2.8333,
+     -72.0167
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "codigo": "GEOCON-GF3-N5",
+    "nombre": "Turba silicificada de Fremouw Peak",
+    "estatus": "nominado",
+    "tipo": "geositio SCAR",
+    "framework": "GF3 — Gondwana amalgamation and breakup",
+    "framework_n": 3,
+    "fuente": "Presentación GEOCON, lámina 19",
+    "origen_coordenada": "SCAR Composite Gazetteer · Fremouw Peak (Peak)",
+    "descripcion": "Turba permineralizada del Triásico medio-tardío con flora, hongos y una cianobacteria. La permineralización preserva anatomía a nivel celular, algo raro en el registro vegetal mundial."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     164.3333,
+     -84.2833
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "codigo": "GEOCON-GF3-N6",
+    "nombre": "Turba silicificada de Skaar Ridge, glaciar Beardmore",
+    "estatus": "nominado",
+    "tipo": "geositio SCAR",
+    "framework": "GF3 — Gondwana amalgamation and breakup",
+    "framework_n": 3,
+    "fuente": "Presentación GEOCON, lámina 20",
+    "origen_coordenada": "SCAR Composite Gazetteer · Skaar Ridge (Ridge)",
+    "descripcion": "Turba del Pérmico superior con flora de Glossopteris permineralizada. Los anillos de crecimiento fósiles aportan datos paleoclimáticos."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     163.25,
+     -84.8167
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "codigo": "GEOCON-GF3-N7",
+    "nombre": "The Palisades",
+    "estatus": "nominado",
+    "tipo": "geositio SCAR",
+    "framework": "GF3 — Gondwana amalgamation and breakup",
+    "framework_n": 3,
+    "fuente": "Presentación GEOCON, lámina 21",
+    "origen_coordenada": "SCAR Composite Gazetteer · The Palisades (Range)",
+    "descripcion": "Contacto entre la Formación Goldie neoproterozoica plegada y la Caliza Shackleton cámbrica suprayacente. ATENCIÓN: la presentación dice que se pidió justificación geológica adicional y que NO se está considerando como nominación por ahora.",
+    "en_espera": true
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     159.1667,
+     -82.8333
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "codigo": "GEOCON-GF4-N1",
+    "nombre": "Registro Pérmico-Mesozoico de Hope Bay",
+    "estatus": "nominado",
+    "tipo": "geositio SCAR",
+    "framework": "GF4 — Active margin & West Antarctic rift system",
+    "framework_n": 4,
+    "fuente": "Presentación GEOCON, lámina 22",
+    "origen_coordenada": "SCAR Composite Gazetteer · Hope Bay (Bay)",
+    "descripcion": "Al menos cuatro unidades sedimentarias, volcánicas y plutónicas que componen un registro muy completo del margen activo de la Península Antártica, del Permo-Triásico al Cretácico."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -57.0,
+     -63.4
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "codigo": "GEOCON-GF4-N2",
+    "nombre": "Intrusión máfica estratificada de Dufek",
+    "estatus": "nominado",
+    "tipo": "geositio SCAR",
+    "framework": "GF4 — Active margin & West Antarctic rift system",
+    "framework_n": 4,
+    "fuente": "Presentación GEOCON, lámina 23",
+    "origen_coordenada": "SCAR Composite Gazetteer · Dufek Massif (Massif)",
+    "descripcion": "Una de las mayores intrusiones máficas estratificadas del mundo: >6.600 km² expuestos y 8-9 km de espesor. Emplazada hacia los 183 Ma durante la ruptura de Gondwana; probable conducto de los basaltos Ferrar.",
+    "nota_ubicacion": "Resuelto al Dufek Massif (Pensacola), no a Dufek Coast ni Dufekfjellet, que son otros rasgos homónimos."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -51.8167,
+     -82.6
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     162.97,
+     -77.55
+    ]
+   },
+   "properties": {
+    "codigo": "ASPA-138",
+    "nombre": "Linnaeus Terrace, Asgard Range",
+    "tipo": "ASPA",
+    "framework": "F2 Sedimentary basins (Beacon)",
+    "interes": "Beacon Supergroup; barnices de roca y endolitos criptoendolíticos",
+    "fuente": "ATS ASPA 138 (Management Plan)",
+    "descripcion": "Terraza de areniscas del Devónico-Triásico del Beacon Supergroup con uno de los mejores registros mundiales de barniz de roca y comunidades criptoendolíticas. Sitio de referencia para procesos de meteorización en ambiente hiperárido frío.",
+    "estatus": "aspa"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     162.27,
+     -77.62
+    ]
+   },
+   "properties": {
+    "codigo": "ASPA-131",
+    "nombre": "Canada Glacier, Lake Fryxell",
+    "tipo": "ASPA",
+    "framework": "F6 Glacial geology",
+    "interes": "Glaciar de valle no flotante, lago perenne con costra de hielo",
+    "fuente": "ATS ASPA 131",
+    "descripcion": "Sistema glaciar-lago de los Valles Secos de McMurdo. Modelo análogo a Marte para hidrología en permafrost.",
+    "estatus": "aspa"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     161.92,
+     -77.0
+    ]
+   },
+   "properties": {
+    "codigo": "ASPA-147",
+    "nombre": "Ablation Valley & Ganymede Heights, Alexander Island",
+    "tipo": "ASPA",
+    "framework": "F2 Sedimentary basins (Beacon)",
+    "interes": "Estratigrafía cretácica Fossil Bluff Group; flora y fauna marina",
+    "fuente": "ATS ASPA 147",
+    "descripcion": "Secuencia sedimentaria cretácica de la cuenca Fossil Bluff con abundante registro paleontológico marino. Sección tipo regional.",
+    "estatus": "aspa"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     162.55,
+     -77.0
+    ]
+   },
+   "properties": {
+    "codigo": "ASPA-154",
+    "nombre": "Botany Bay, Cape Geology",
+    "tipo": "ASPA",
+    "framework": "F2 Sedimentary basins (Beacon)",
+    "interes": "Paleobotánica Triásica-Jurásica; flora de Glossopteris",
+    "fuente": "ATS ASPA 154",
+    "descripcion": "Yacimientos clásicos de flora fósil de Glossopteris en areniscas del Beacon Supergroup. Evidencia clave de la conexión Gondwánica.",
+    "estatus": "aspa"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     167.17,
+     -77.53
+    ]
+   },
+   "properties": {
+    "codigo": "ASPA-175",
+    "nombre": "High Altitude Geothermal Sites, Mt Erebus",
+    "tipo": "ASPA",
+    "framework": "F4 Cenozoic volcanism",
+    "interes": "Volcán activo, lago de lava persistente, fumarolas",
+    "fuente": "ATS ASPA 175",
+    "descripcion": "Mt Erebus alberga uno de los pocos lagos de lava fonolítica persistentes del mundo. Sitios geotermales en cima con biota termófila única.",
+    "estatus": "aspa"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -60.62,
+     -62.97
+    ]
+   },
+   "properties": {
+    "codigo": "ASPA-145",
+    "nombre": "Port Foster, Deception Island",
+    "tipo": "ASPA",
+    "framework": "F4 Cenozoic volcanism",
+    "interes": "Caldera volcánica activa, hidrotermalismo submarino",
+    "fuente": "ATS ASPA 145",
+    "descripcion": "Caldera de colapso del arco volcánico de las Shetland del Sur, con erupciones recientes (1967, 1969, 1970) y actividad fumarólica submarina persistente.",
+    "estatus": "aspa"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -56.5,
+     -64.27
+    ]
+   },
+   "properties": {
+    "codigo": "SCAR-SEY",
+    "nombre": "Seymour (Marambio) Island",
+    "tipo": "SCAR-geosite",
+    "framework": "F5 K-Pg boundary",
+    "interes": "Sección K-Pg, paleontología cretácico-paleógena",
+    "fuente": "SCAR ATCM XLIII (2021) Att. A",
+    "descripcion": "Una de las secciones más completas del límite K-Pg en el hemisferio sur. Registro paleontológico excepcional de aves, mamíferos marinos y vertebrados marinos.",
+    "estatus": "potencial"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     159.7,
+     -76.72
+    ]
+   },
+   "properties": {
+    "codigo": "SCAR-ALL",
+    "nombre": "Allan Hills",
+    "tipo": "SCAR-geosite",
+    "framework": "F7 Meteorite fields",
+    "interes": "Campo de meteoritos azules; testigos de hielo antiguo (>2.7 Ma)",
+    "fuente": "ANSMET / SCAR EG-GEOCON",
+    "descripcion": "Zona de hielo azul donde el flujo glaciar y la sublimación concentran meteoritos. Sitio del testigo de hielo más antiguo recuperado (>2.7 Ma).",
+    "estatus": "potencial"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     170.5,
+     -84.5
+    ]
+   },
+   "properties": {
+    "codigo": "SCAR-BEA",
+    "nombre": "Beardmore Glacier (Cloudmaker / Mount Kirkpatrick)",
+    "tipo": "SCAR-geosite",
+    "framework": "F2 Sedimentary basins (Beacon)",
+    "interes": "Cryolophosaurus (dinosaurio jurásico); Beacon-Ferrar contacto",
+    "fuente": "SCAR EG-GEOCON",
+    "descripcion": "Tipo del dinosaurio Cryolophosaurus ellioti (Jurásico Inferior, Formación Hanson). Contacto regional Beacon (sedimentario) - Ferrar (sills doleríticos jurásicos).",
+    "estatus": "potencial"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     163.5,
+     -77.5
+    ]
+   },
+   "properties": {
+    "codigo": "SCAR-DV",
+    "nombre": "McMurdo Dry Valleys",
+    "tipo": "SCAR-geosite",
+    "framework": "F6 Glacial geology",
+    "interes": "Desierto polar; geomorfología periglacial; paisajes Neógenos preservados",
+    "fuente": "SCAR EG-GEOCON · ASMA 2",
+    "descripcion": "Mayor área libre de hielo del continente (~4800 km²). Paisajes preservados desde el Mioceno medio. Análogo planetario (Marte) por excelencia.",
+    "estatus": "potencial"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     163.7,
+     -77.0
+    ]
+   },
+   "properties": {
+    "codigo": "SCAR-CR",
+    "nombre": "Cape Roberts",
+    "tipo": "SCAR-geosite",
+    "framework": "F2 Sedimentary basins (Beacon)",
+    "interes": "Sondajes CRP-1/2/3, estratigrafía Cenozoica del Mar de Ross",
+    "fuente": "SCAR / Cape Roberts Project",
+    "descripcion": "Sitio de los sondajes Cape Roberts Project, registro de la transición del clima Cenozoico desde el Eoceno tardío hasta el Mioceno temprano.",
+    "estatus": "potencial"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -86.93,
+     -78.52
+    ]
+   },
+   "properties": {
+    "codigo": "SCAR-VIN",
+    "nombre": "Vinson Massif (Ellsworth Mountains)",
+    "tipo": "SCAR-geosite",
+    "framework": "F1 Basement",
+    "interes": "Cumbre más alta de Antártica (4892 m); cuarcitas paleozoicas",
+    "fuente": "SCAR EG-GEOCON (candidato)",
+    "descripcion": "Cuarcitas y metasedimentos cámbricos del Ellsworth-Whitmore block. Cumbre más alta del continente.",
+    "estatus": "potencial"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     106.8,
+     -78.46
+    ]
+   },
+   "properties": {
+    "codigo": "SCAR-VOS",
+    "nombre": "Lake Vostok",
+    "tipo": "candidato",
+    "framework": "F8 Subglacial environments",
+    "interes": "Lago subglacial más extenso; hielo de acreción; biota aislada",
+    "fuente": "SCAR SALE / publicaciones",
+    "descripcion": "Lago subglacial de ~14000 km² bajo ~4 km de hielo. Sitio paradigmático para los ambientes subglaciales antárticos (Framework SCAR F8).",
+    "estatus": "potencial"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -100.4,
+     -75.16
+    ]
+   },
+   "properties": {
+    "codigo": "CAND-PIG",
+    "nombre": "Pine Island Glacier",
+    "tipo": "candidato",
+    "framework": "F6 Glacial geology",
+    "interes": "Mayor contribuyente actual al aumento global del nivel del mar",
+    "fuente": "Propuesto · bibliometría SCAR ATCM",
+    "descripcion": "Glaciar de salida del Mar de Amundsen, en retroceso acelerado. Sitio crítico para monitorear el colapso de la Antártica Occidental.",
+    "estatus": "potencial"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     161.19956608788303,
+     -77.76749857155762
+    ]
+   },
+   "properties": {
+    "codigo": "ASPA-172",
+    "nombre": "Lower Taylor Glacier and Blood Falls, Taylor Valley, McMurdo Dry Valleys, Victoria Land",
+    "tipo": "ASPA",
+    "framework": "",
+    "interes": "Área Antártica Especialmente Protegida (Annex V Protocolo Madrid)",
+    "fuente": "Quantarctica · ASPAs_polygons.shp",
+    "descripcion": "",
+    "estatus": "aspa"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     164.9595039733879,
+     -74.61769815632438
+    ]
+   },
+   "properties": {
+    "codigo": "ASPA-173",
+    "nombre": "Cape Washington and Silverfish Bay, Terra Nova Bay, Ross Sea",
+    "tipo": "ASPA",
+    "framework": "",
+    "interes": "Área Antártica Especialmente Protegida (Annex V Protocolo Madrid)",
+    "fuente": "Quantarctica · ASPAs_polygons.shp",
+    "descripcion": "",
+    "estatus": "aspa"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     76.08543444544796,
+     -69.42789214599226
+    ]
+   },
+   "properties": {
+    "codigo": "ASPA-174",
+    "nombre": "Stornes, Larsemann Hills, Princess Elizabeth Land",
+    "tipo": "ASPA",
+    "framework": "",
+    "interes": "Área Antártica Especialmente Protegida (Annex V Protocolo Madrid)",
+    "fuente": "Quantarctica · ASPAs_polygons.shp",
+    "descripcion": "",
+    "estatus": "aspa"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     60.885443113776596,
+     -67.45483011213692
+    ]
+   },
+   "properties": {
+    "codigo": "ASPA-101",
+    "nombre": "Taylor Rookery, Mac. Robertson Land",
+    "tipo": "ASPA",
+    "framework": "",
+    "interes": "Área Antártica Especialmente Protegida (Annex V Protocolo Madrid)",
+    "fuente": "Quantarctica · ASPAs_polygons.shp",
+    "descripcion": "",
+    "estatus": "aspa"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     62.51551209632999,
+     -67.60139163369583
+    ]
+   },
+   "properties": {
+    "codigo": "ASPA-102",
+    "nombre": "Rookery Islands, Holme Bay, Mac. Robertson Land",
+    "tipo": "ASPA",
+    "framework": "",
+    "interes": "Área Antártica Especialmente Protegida (Annex V Protocolo Madrid)",
+    "fuente": "Quantarctica · ASPAs_polygons.shp",
+    "descripcion": "",
+    "estatus": "aspa"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     110.52221797303955,
+     -66.37287255585746
+    ]
+   },
+   "properties": {
+    "codigo": "ASPA-103",
+    "nombre": "Ardery Island, Budd Coast",
+    "tipo": "ASPA",
+    "framework": "",
+    "interes": "Área Antártica Especialmente Protegida (Annex V Protocolo Madrid)",
+    "fuente": "Quantarctica · ASPAs_polygons.shp",
+    "descripcion": "",
+    "estatus": "aspa"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     163.31696310221315,
+     -66.89972363896291
+    ]
+   },
+   "properties": {
+    "codigo": "ASPA-104",
+    "nombre": "Sabrina Island, Northern Ross Sea, Antarctica",
+    "tipo": "ASPA",
+    "framework": "",
+    "interes": "Área Antártica Especialmente Protegida (Annex V Protocolo Madrid)",
+    "fuente": "Quantarctica · ASPAs_polygons.shp",
+    "descripcion": "",
+    "estatus": "aspa"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     166.94310943705418,
+     -76.94693583519307
+    ]
+   },
+   "properties": {
+    "codigo": "ASPA-105",
+    "nombre": "Beaufort Island",
+    "tipo": "ASPA",
+    "framework": "",
+    "interes": "Área Antártica Especialmente Protegida (Annex V Protocolo Madrid)",
+    "fuente": "Quantarctica · ASPAs_polygons.shp",
+    "descripcion": "",
+    "estatus": "aspa"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     170.22526683960197,
+     -72.3203279575975
+    ]
+   },
+   "properties": {
+    "codigo": "ASPA-106",
+    "nombre": "Cape Hallett",
+    "tipo": "ASPA",
+    "framework": "",
+    "interes": "Área Antártica Especialmente Protegida (Annex V Protocolo Madrid)",
+    "fuente": "Quantarctica · ASPAs_polygons.shp",
+    "descripcion": "",
+    "estatus": "aspa"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -68.70869756715287,
+     -67.86429750859769
+    ]
+   },
+   "properties": {
+    "codigo": "ASPA-107",
+    "nombre": "Dion Islands, Marguerite Bay",
+    "tipo": "ASPA",
+    "framework": "",
+    "interes": "Área Antártica Especialmente Protegida (Annex V Protocolo Madrid)",
+    "fuente": "Quantarctica · ASPAs_polygons.shp",
+    "descripcion": "",
+    "estatus": "aspa"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -64.15086327831816,
+     -65.323970768423
+    ]
+   },
+   "properties": {
+    "codigo": "ASPA-108",
+    "nombre": "Green Island, Berthelot Islands",
+    "tipo": "ASPA",
+    "framework": "",
+    "interes": "Área Antártica Especialmente Protegida (Annex V Protocolo Madrid)",
+    "fuente": "Quantarctica · ASPAs_polygons.shp",
+    "descripcion": "",
+    "estatus": "aspa"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -45.68428230349054,
+     -60.736150937885036
+    ]
+   },
+   "properties": {
+    "codigo": "ASPA-109",
+    "nombre": "Moe Island, South Orkney Islands",
+    "tipo": "ASPA",
+    "framework": "",
+    "interes": "Área Antártica Especialmente Protegida (Annex V Protocolo Madrid)",
+    "fuente": "Quantarctica · ASPAs_polygons.shp",
+    "descripcion": "",
+    "estatus": "aspa"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -45.608407590188726,
+     -60.65494035781713
+    ]
+   },
+   "properties": {
+    "codigo": "ASPA-110",
+    "nombre": "Lynch Island, South Orkney Islands",
+    "tipo": "ASPA",
+    "framework": "",
+    "interes": "Área Antártica Especialmente Protegida (Annex V Protocolo Madrid)",
+    "fuente": "Quantarctica · ASPAs_polygons.shp",
+    "descripcion": "",
+    "estatus": "aspa"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -45.00531028661122,
+     -60.72955440679522
+    ]
+   },
+   "properties": {
+    "codigo": "ASPA-111",
+    "nombre": "Southern Powell Island and adjacent islands, South Orkney Islands",
+    "tipo": "ASPA",
+    "framework": "",
+    "interes": "Área Antártica Especialmente Protegida (Annex V Protocolo Madrid)",
+    "fuente": "Quantarctica · ASPAs_polygons.shp",
+    "descripcion": "",
+    "estatus": "aspa"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -59.71196363941373,
+     -62.37410053413002
+    ]
+   },
+   "properties": {
+    "codigo": "ASPA-112",
+    "nombre": "Coppermine Peninsula, Robert Island",
+    "tipo": "ASPA",
+    "framework": "",
+    "interes": "Área Antártica Especialmente Protegida (Annex V Protocolo Madrid)",
+    "fuente": "Quantarctica · ASPAs_polygons.shp",
+    "descripcion": "",
+    "estatus": "aspa"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -64.09206819247804,
+     -64.77044261939184
+    ]
+   },
+   "properties": {
+    "codigo": "ASPA-113",
+    "nombre": "Litchfield Island, Arthur Harbour, Anvers Island",
+    "tipo": "ASPA",
+    "framework": "",
+    "interes": "Área Antártica Especialmente Protegida (Annex V Protocolo Madrid)",
+    "fuente": "Quantarctica · ASPAs_polygons.shp",
+    "descripcion": "",
+    "estatus": "aspa"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -67.40400494258343,
+     -67.8868820776727
+    ]
+   },
+   "properties": {
+    "codigo": "ASPA-115",
+    "nombre": "Lagotellerie Island, Marguerite Bay, Antarctic Peninsula",
+    "tipo": "ASPA",
+    "framework": "",
+    "interes": "Área Antártica Especialmente Protegida (Annex V Protocolo Madrid)",
+    "fuente": "Quantarctica · ASPAs_polygons.shp",
+    "descripcion": "",
+    "estatus": "aspa"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     166.44214697974692,
+     -77.22272819977647
+    ]
+   },
+   "properties": {
+    "codigo": "ASPA-116",
+    "nombre": "New College Valley, Caughley Beach, Cape Bird, Ross Island",
+    "tipo": "ASPA",
+    "framework": "",
+    "interes": "Área Antártica Especialmente Protegida (Annex V Protocolo Madrid)",
+    "fuente": "Quantarctica · ASPAs_polygons.shp",
+    "descripcion": "",
+    "estatus": "aspa"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -68.88865720518348,
+     -67.77267390931513
+    ]
+   },
+   "properties": {
+    "codigo": "ASPA-117",
+    "nombre": "Avian Island, off Adelaide Island, Antarctic Peninsula",
+    "tipo": "ASPA",
+    "framework": "",
+    "interes": "Área Antártica Especialmente Protegida (Annex V Protocolo Madrid)",
+    "fuente": "Quantarctica · ASPAs_polygons.shp",
+    "descripcion": "",
+    "estatus": "aspa"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -51.12040643107205,
+     -82.4880453606291
+    ]
+   },
+   "properties": {
+    "codigo": "ASPA-119",
+    "nombre": "Davis Valley and Forlidas Pond, Dufek Massif",
+    "tipo": "ASPA",
+    "framework": "",
+    "interes": "Área Antártica Especialmente Protegida (Annex V Protocolo Madrid)",
+    "fuente": "Quantarctica · ASPAs_polygons.shp",
+    "descripcion": "",
+    "estatus": "aspa"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     140.01202435044914,
+     -66.66924891558436
+    ]
+   },
+   "properties": {
+    "codigo": "ASPA-120",
+    "nombre": "‘Pointe-Géologie Archipelego’, Terre Adélie",
+    "tipo": "ASPA",
+    "framework": "",
+    "interes": "Área Antártica Especialmente Protegida (Annex V Protocolo Madrid)",
+    "fuente": "Quantarctica · ASPAs_polygons.shp",
+    "descripcion": "",
+    "estatus": "aspa"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     166.16002975965733,
+     -77.5564283341333
+    ]
+   },
+   "properties": {
+    "codigo": "ASPA-121",
+    "nombre": "Cape Royds, Ross Island",
+    "tipo": "ASPA",
+    "framework": "",
+    "interes": "Área Antártica Especialmente Protegida (Annex V Protocolo Madrid)",
+    "fuente": "Quantarctica · ASPAs_polygons.shp",
+    "descripcion": "",
+    "estatus": "aspa"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     166.66749984495578,
+     -77.82791798656753
+    ]
+   },
+   "properties": {
+    "codigo": "ASPA-122",
+    "nombre": "Arrival Heights, Hut Point Peninsula, Ross Island",
+    "tipo": "ASPA",
+    "framework": "",
+    "interes": "Área Antártica Especialmente Protegida (Annex V Protocolo Madrid)",
+    "fuente": "Quantarctica · ASPAs_polygons.shp",
+    "descripcion": "",
+    "estatus": "aspa"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     160.94849238655536,
+     -77.34805739969288
+    ]
+   },
+   "properties": {
+    "codigo": "ASPA-123",
+    "nombre": "Barwick Valley, Victoria Land",
+    "tipo": "ASPA",
+    "framework": "",
+    "interes": "Área Antártica Especialmente Protegida (Annex V Protocolo Madrid)",
+    "fuente": "Quantarctica · ASPAs_polygons.shp",
+    "descripcion": "",
+    "estatus": "aspa"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     169.33127558448743,
+     -77.48085846240018
+    ]
+   },
+   "properties": {
+    "codigo": "ASPA-124",
+    "nombre": "Cape Crozier, Ross Island",
+    "tipo": "ASPA",
+    "framework": "",
+    "interes": "Área Antártica Especialmente Protegida (Annex V Protocolo Madrid)",
+    "fuente": "Quantarctica · ASPAs_polygons.shp",
+    "descripcion": "",
+    "estatus": "aspa"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -58.93722983457311,
+     -62.17696183778948
+    ]
+   },
+   "properties": {
+    "codigo": "ASPA-125",
+    "nombre": "125A  Fildes Peninsula - Fossil Hill",
+    "tipo": "ASPA",
+    "framework": "",
+    "interes": "Área Antártica Especialmente Protegida (Annex V Protocolo Madrid)",
+    "fuente": "Quantarctica · ASPAs_polygons.shp",
+    "descripcion": "",
+    "estatus": "aspa"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -61.035171443778694,
+     -62.6322112609912
+    ]
+   },
+   "properties": {
+    "codigo": "ASPA-126",
+    "nombre": "Byers Peninsula, Livingston Island",
+    "tipo": "ASPA",
+    "framework": "",
+    "interes": "Área Antártica Especialmente Protegida (Annex V Protocolo Madrid)",
+    "fuente": "Quantarctica · ASPAs_polygons.shp",
+    "descripcion": "",
+    "estatus": "aspa"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     93.02516768274289,
+     -66.52888438223118
+    ]
+   },
+   "properties": {
+    "codigo": "ASPA-127",
+    "nombre": "Haswell Island",
+    "tipo": "ASPA",
+    "framework": "",
+    "interes": "Área Antártica Especialmente Protegida (Annex V Protocolo Madrid)",
+    "fuente": "Quantarctica · ASPAs_polygons.shp",
+    "descripcion": "",
+    "estatus": "aspa"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -58.463448620884016,
+     -62.19761743732647
+    ]
+   },
+   "properties": {
+    "codigo": "ASPA-128",
+    "nombre": "Western shore of Admiralty Bay",
+    "tipo": "ASPA",
+    "framework": "",
+    "interes": "Área Antártica Especialmente Protegida (Annex V Protocolo Madrid)",
+    "fuente": "Quantarctica · ASPAs_polygons.shp",
+    "descripcion": "",
+    "estatus": "aspa"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -68.11592964059165,
+     -67.56707998209554
+    ]
+   },
+   "properties": {
+    "codigo": "ASPA-129",
+    "nombre": "Rothera Point, Adelaide Island",
+    "tipo": "ASPA",
+    "framework": "",
+    "interes": "Área Antártica Especialmente Protegida (Annex V Protocolo Madrid)",
+    "fuente": "Quantarctica · ASPAs_polygons.shp",
+    "descripcion": "",
+    "estatus": "aspa"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -58.647581693680635,
+     -62.251877354132056
+    ]
+   },
+   "properties": {
+    "codigo": "ASPA-132",
+    "nombre": "Potter Peninsula",
+    "tipo": "ASPA",
+    "framework": "",
+    "interes": "Área Antártica Especialmente Protegida (Annex V Protocolo Madrid)",
+    "fuente": "Quantarctica · ASPAs_polygons.shp",
+    "descripcion": "",
+    "estatus": "aspa"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -59.19463102111499,
+     -62.30510464977382
+    ]
+   },
+   "properties": {
+    "codigo": "ASPA-133",
+    "nombre": "Harmony Cove, Nelson Island",
+    "tipo": "ASPA",
+    "framework": "",
+    "interes": "Área Antártica Especialmente Protegida (Annex V Protocolo Madrid)",
+    "fuente": "Quantarctica · ASPAs_polygons.shp",
+    "descripcion": "",
+    "estatus": "aspa"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -61.0276555944109,
+     -64.17095833298282
+    ]
+   },
+   "properties": {
+    "codigo": "ASPA-134",
+    "nombre": "Cierva Point and offshore islands, Danco Coast",
+    "tipo": "ASPA",
+    "framework": "",
+    "interes": "Área Antártica Especialmente Protegida (Annex V Protocolo Madrid)",
+    "fuente": "Quantarctica · ASPAs_polygons.shp",
+    "descripcion": "",
+    "estatus": "aspa"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     110.54424679767712,
+     -66.28384747578636
+    ]
+   },
+   "properties": {
+    "codigo": "ASPA-135",
+    "nombre": "Northeast Bailey Peninsula",
+    "tipo": "ASPA",
+    "framework": "",
+    "interes": "Área Antártica Especialmente Protegida (Annex V Protocolo Madrid)",
+    "fuente": "Quantarctica · ASPAs_polygons.shp",
+    "descripcion": "",
+    "estatus": "aspa"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     110.59669122379385,
+     -66.25097962936337
+    ]
+   },
+   "properties": {
+    "codigo": "ASPA-136",
+    "nombre": "Clark Peninsula",
+    "tipo": "ASPA",
+    "framework": "",
+    "interes": "Área Antártica Especialmente Protegida (Annex V Protocolo Madrid)",
+    "fuente": "Quantarctica · ASPAs_polygons.shp",
+    "descripcion": "",
+    "estatus": "aspa"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     167.30513821778985,
+     -78.04157221994897
+    ]
+   },
+   "properties": {
+    "codigo": "ASPA-137",
+    "nombre": "North-West White Island, McMurdo Sound",
+    "tipo": "ASPA",
+    "framework": "",
+    "interes": "Área Antártica Especialmente Protegida (Annex V Protocolo Madrid)",
+    "fuente": "Quantarctica · ASPAs_polygons.shp",
+    "descripcion": "",
+    "estatus": "aspa"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -63.7761726487527,
+     -64.81072862958061
+    ]
+   },
+   "properties": {
+    "codigo": "ASPA-139",
+    "nombre": "Biscoe Point, Anvers Island",
+    "tipo": "ASPA",
+    "framework": "",
+    "interes": "Área Antártica Especialmente Protegida (Annex V Protocolo Madrid)",
+    "fuente": "Quantarctica · ASPAs_polygons.shp",
+    "descripcion": "",
+    "estatus": "aspa"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -60.629414102207534,
+     -62.96415340157254
+    ]
+   },
+   "properties": {
+    "codigo": "ASPA-140",
+    "nombre": "Parts of Deception Island",
+    "tipo": "ASPA",
+    "framework": "",
+    "interes": "Área Antártica Especialmente Protegida (Annex V Protocolo Madrid)",
+    "fuente": "Quantarctica · ASPAs_polygons.shp",
+    "descripcion": "",
+    "estatus": "aspa"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     39.77488329214959,
+     -69.23733508837687
+    ]
+   },
+   "properties": {
+    "codigo": "ASPA-141",
+    "nombre": "‘Yukidori Valley’, Langhovde, Lützow-Holmbukta",
+    "tipo": "ASPA",
+    "framework": "",
+    "interes": "Área Antártica Especialmente Protegida (Annex V Protocolo Madrid)",
+    "fuente": "Quantarctica · ASPAs_polygons.shp",
+    "descripcion": "",
+    "estatus": "aspa"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     5.182507069858266,
+     -71.90894429689378
+    ]
+   },
+   "properties": {
+    "codigo": "ASPA-142",
+    "nombre": "Svarthamaren, Mühlig-Hofmannfjella, Dronning Maud Land",
+    "tipo": "ASPA",
+    "framework": "",
+    "interes": "Área Antártica Especialmente Protegida (Annex V Protocolo Madrid)",
+    "fuente": "Quantarctica · ASPAs_polygons.shp",
+    "descripcion": "",
+    "estatus": "aspa"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     78.14187718064657,
+     -68.63077927157742
+    ]
+   },
+   "properties": {
+    "codigo": "ASPA-143",
+    "nombre": "Marine Plain, Mule Peninsula, Vestfold Hills, Princess Elizabeth Land",
+    "tipo": "ASPA",
+    "framework": "",
+    "interes": "Área Antártica Especialmente Protegida (Annex V Protocolo Madrid)",
+    "fuente": "Quantarctica · ASPAs_polygons.shp",
+    "descripcion": "",
+    "estatus": "aspa"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -59.71555961444186,
+     -62.47505913378151
+    ]
+   },
+   "properties": {
+    "codigo": "ASPA-144",
+    "nombre": "Chile Bay (Discovery Bay), Greenwich Island",
+    "tipo": "ASPA",
+    "framework": "",
+    "interes": "Área Antártica Especialmente Protegida (Annex V Protocolo Madrid)",
+    "fuente": "Quantarctica · ASPAs_polygons.shp",
+    "descripcion": "",
+    "estatus": "aspa"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -63.57483444878391,
+     -64.86878724551764
+    ]
+   },
+   "properties": {
+    "codigo": "ASPA-146",
+    "nombre": "South Bay, Doumer Island",
+    "tipo": "ASPA",
+    "framework": "",
+    "interes": "Área Antártica Especialmente Protegida (Annex V Protocolo Madrid)",
+    "fuente": "Quantarctica · ASPAs_polygons.shp",
+    "descripcion": "",
+    "estatus": "aspa"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -57.02394216435783,
+     -63.415873017467064
+    ]
+   },
+   "properties": {
+    "codigo": "ASPA-148",
+    "nombre": "Mount Flora, Hope Bay",
+    "tipo": "ASPA",
+    "framework": "",
+    "interes": "Área Antártica Especialmente Protegida (Annex V Protocolo Madrid)",
+    "fuente": "Quantarctica · ASPAs_polygons.shp",
+    "descripcion": "",
+    "estatus": "aspa"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -60.803383972669,
+     -62.474726524464174
+    ]
+   },
+   "properties": {
+    "codigo": "ASPA-149",
+    "nombre": "Cape Shirreff, Livingston Island",
+    "tipo": "ASPA",
+    "framework": "",
+    "interes": "Área Antártica Especialmente Protegida (Annex V Protocolo Madrid)",
+    "fuente": "Quantarctica · ASPAs_polygons.shp",
+    "descripcion": "",
+    "estatus": "aspa"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -58.93155087724404,
+     -62.21203328814473
+    ]
+   },
+   "properties": {
+    "codigo": "ASPA-150",
+    "nombre": "Ardley Island, Maxwell Bay, King George Island",
+    "tipo": "ASPA",
+    "framework": "",
+    "interes": "Área Antártica Especialmente Protegida (Annex V Protocolo Madrid)",
+    "fuente": "Quantarctica · ASPAs_polygons.shp",
+    "descripcion": "",
+    "estatus": "aspa"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -58.13794060751617,
+     -62.1342093007801
+    ]
+   },
+   "properties": {
+    "codigo": "ASPA-151",
+    "nombre": "Lions Rump",
+    "tipo": "ASPA",
+    "framework": "",
+    "interes": "Área Antártica Especialmente Protegida (Annex V Protocolo Madrid)",
+    "fuente": "Quantarctica · ASPAs_polygons.shp",
+    "descripcion": "",
+    "estatus": "aspa"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -62.41199284580516,
+     -63.38625822654288
+    ]
+   },
+   "properties": {
+    "codigo": "ASPA-152",
+    "nombre": "Western Bransfield Strait",
+    "tipo": "ASPA",
+    "framework": "",
+    "interes": "Área Antártica Especialmente Protegida (Annex V Protocolo Madrid)",
+    "fuente": "Quantarctica · ASPAs_polygons.shp",
+    "descripcion": "",
+    "estatus": "aspa"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -62.54929128664108,
+     -64.04074323657112
+    ]
+   },
+   "properties": {
+    "codigo": "ASPA-153",
+    "nombre": "Eastern Dallman Bay",
+    "tipo": "ASPA",
+    "framework": "",
+    "interes": "Área Antártica Especialmente Protegida (Annex V Protocolo Madrid)",
+    "fuente": "Quantarctica · ASPAs_polygons.shp",
+    "descripcion": "",
+    "estatus": "aspa"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     166.42120418396232,
+     -77.63663166517497
+    ]
+   },
+   "properties": {
+    "codigo": "ASPA-155",
+    "nombre": "Cape Evans, Ross Island",
+    "tipo": "ASPA",
+    "framework": "",
+    "interes": "Área Antártica Especialmente Protegida (Annex V Protocolo Madrid)",
+    "fuente": "Quantarctica · ASPAs_polygons.shp",
+    "descripcion": "",
+    "estatus": "aspa"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     167.46967750301698,
+     -77.42620309554565
+    ]
+   },
+   "properties": {
+    "codigo": "ASPA-156",
+    "nombre": "Lewis Bay, Mount Erebus, Ross Island",
+    "tipo": "ASPA",
+    "framework": "",
+    "interes": "Área Antártica Especialmente Protegida (Annex V Protocolo Madrid)",
+    "fuente": "Quantarctica · ASPAs_polygons.shp",
+    "descripcion": "",
+    "estatus": "aspa"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     166.17105704784336,
+     -77.55309996562036
+    ]
+   },
+   "properties": {
+    "codigo": "ASPA-157",
+    "nombre": "Backdoor Bay, Cape Royds, Ross Island",
+    "tipo": "ASPA",
+    "framework": "",
+    "interes": "Área Antártica Especialmente Protegida (Annex V Protocolo Madrid)",
+    "fuente": "Quantarctica · ASPAs_polygons.shp",
+    "descripcion": "",
+    "estatus": "aspa"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     166.64166666620838,
+     -77.84574999995753
+    ]
+   },
+   "properties": {
+    "codigo": "ASPA-158",
+    "nombre": "Hut Point, Ross Island",
+    "tipo": "ASPA",
+    "framework": "",
+    "interes": "Área Antártica Especialmente Protegida (Annex V Protocolo Madrid)",
+    "fuente": "Quantarctica · ASPAs_polygons.shp",
+    "descripcion": "",
+    "estatus": "aspa"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     170.19377498805756,
+     -71.30912848394519
+    ]
+   },
+   "properties": {
+    "codigo": "ASPA-159",
+    "nombre": "Cape Adare, Borchgrevink Coast",
+    "tipo": "ASPA",
+    "framework": "",
+    "interes": "Área Antártica Especialmente Protegida (Annex V Protocolo Madrid)",
+    "fuente": "Quantarctica · ASPAs_polygons.shp",
+    "descripcion": "",
+    "estatus": "aspa"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     110.1750946649014,
+     -66.2288336834243
+    ]
+   },
+   "properties": {
+    "codigo": "ASPA-160",
+    "nombre": "Frazier Islands",
+    "tipo": "ASPA",
+    "framework": "",
+    "interes": "Área Antártica Especialmente Protegida (Annex V Protocolo Madrid)",
+    "fuente": "Quantarctica · ASPAs_polygons.shp",
+    "descripcion": "",
+    "estatus": "aspa"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     164.0980814569703,
+     -74.76802634274573
+    ]
+   },
+   "properties": {
+    "codigo": "ASPA-161",
+    "nombre": "Terra Nova Bay",
+    "tipo": "ASPA",
+    "framework": "",
+    "interes": "Área Antártica Especialmente Protegida (Annex V Protocolo Madrid)",
+    "fuente": "Quantarctica · ASPAs_polygons.shp",
+    "descripcion": "",
+    "estatus": "aspa"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     142.66181903073593,
+     -67.0079219873907
+    ]
+   },
+   "properties": {
+    "codigo": "ASPA-162",
+    "nombre": "Mawson's Hut, Cape Denison, Commonwealth Bay, George V Land",
+    "tipo": "ASPA",
+    "framework": "",
+    "interes": "Área Antártica Especialmente Protegida (Annex V Protocolo Madrid)",
+    "fuente": "Quantarctica · ASPAs_polygons.shp",
+    "descripcion": "",
+    "estatus": "aspa"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     11.581971677870213,
+     -70.7474400869
+    ]
+   },
+   "properties": {
+    "codigo": "ASPA-163",
+    "nombre": "Dakshin Gangotri Glacier, Dronning Maud Land",
+    "tipo": "ASPA",
+    "framework": "",
+    "interes": "Área Antártica Especialmente Protegida (Annex V Protocolo Madrid)",
+    "fuente": "Quantarctica · ASPAs_polygons.shp",
+    "descripcion": "",
+    "estatus": "aspa"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     66.78550998950698,
+     -67.79158449660662
+    ]
+   },
+   "properties": {
+    "codigo": "ASPA-164",
+    "nombre": "Scullin Monolith",
+    "tipo": "ASPA",
+    "framework": "",
+    "interes": "Área Antártica Especialmente Protegida (Annex V Protocolo Madrid)",
+    "fuente": "Quantarctica · ASPAs_polygons.shp",
+    "descripcion": "",
+    "estatus": "aspa"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     165.09558996019504,
+     -74.32547831742222
+    ]
+   },
+   "properties": {
+    "codigo": "ASPA-165",
+    "nombre": "Edmonson Point, Wood Bay, Victoria Land",
+    "tipo": "ASPA",
+    "framework": "",
+    "interes": "Área Antártica Especialmente Protegida (Annex V Protocolo Madrid)",
+    "fuente": "Quantarctica · ASPAs_polygons.shp",
+    "descripcion": "",
+    "estatus": "aspa"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     141.3931027947922,
+     -66.81798627346306
+    ]
+   },
+   "properties": {
+    "codigo": "ASPA-166",
+    "nombre": "Port-Martin, Terre-Adelie",
+    "tipo": "ASPA",
+    "framework": "",
+    "interes": "Área Antártica Especialmente Protegida (Annex V Protocolo Madrid)",
+    "fuente": "Quantarctica · ASPAs_polygons.shp",
+    "descripcion": "",
+    "estatus": "aspa"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     77.85784912026817,
+     -68.63552941048977
+    ]
+   },
+   "properties": {
+    "codigo": "ASPA-167",
+    "nombre": "Hawker Island",
+    "tipo": "ASPA",
+    "framework": "",
+    "interes": "Área Antártica Especialmente Protegida (Annex V Protocolo Madrid)",
+    "fuente": "Quantarctica · ASPAs_polygons.shp",
+    "descripcion": "",
+    "estatus": "aspa"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     75.04284928517023,
+     -72.90203520347977
+    ]
+   },
+   "properties": {
+    "codigo": "ASPA-168",
+    "nombre": "Mount Harding, Grove Mountains, East Antarctica",
+    "tipo": "ASPA",
+    "framework": "",
+    "interes": "Área Antártica Especialmente Protegida (Annex V Protocolo Madrid)",
+    "fuente": "Quantarctica · ASPAs_polygons.shp",
+    "descripcion": "",
+    "estatus": "aspa"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     76.84749568624042,
+     -69.25358557471905
+    ]
+   },
+   "properties": {
+    "codigo": "ASPA-169",
+    "nombre": "Amanda Bay, Ingrid Christensen Coast, Princess Elizabeth Land",
+    "tipo": "ASPA",
+    "framework": "",
+    "interes": "Área Antártica Especialmente Protegida (Annex V Protocolo Madrid)",
+    "fuente": "Quantarctica · ASPAs_polygons.shp",
+    "descripcion": "",
+    "estatus": "aspa"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -75.24999999972603,
+     -69.75833333324051
+    ]
+   },
+   "properties": {
+    "codigo": "ASPA-170",
+    "nombre": "Marion Nunataks, Charcot Island, Antarctic Peninsula",
+    "tipo": "ASPA",
+    "framework": "",
+    "interes": "Área Antártica Especialmente Protegida (Annex V Protocolo Madrid)",
+    "fuente": "Quantarctica · ASPAs_polygons.shp",
+    "descripcion": "",
+    "estatus": "aspa"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -58.76785130323864,
+     -62.23388197949898
+    ]
+   },
+   "properties": {
+    "codigo": "ASPA-171",
+    "nombre": "Narebski Point, Barton Peninsula, KGI",
+    "tipo": "ASPA",
+    "framework": "",
+    "interes": "Área Antártica Especialmente Protegida (Annex V Protocolo Madrid)",
+    "fuente": "Quantarctica · ASPAs_polygons.shp",
+    "descripcion": "",
+    "estatus": "aspa"
+   }
+  }
+ ],
+ "_source": "Geositios SCAR: presentación del workshop GEOCON (SCAR ISAES 2025 / OSC 2026) y ATCM XLIII (2021) Att. A. ASPAs: Quantarctica / ATS. Coordenadas: SCAR Composite Gazetteer.",
+ "_processing": "scripts/build_geositios_geocon.py",
+ "_estatus": {
+  "aprobado": "Geositio SCAR formalmente aprobado por el EG-GEOCON.",
+  "nominado": "Propuesto en la convocatoria GF3/GF4 2026-2028; sin resolver.",
+  "potencial": "Candidato propio, derivado de la bibliografía. Sin estatus SCAR.",
+  "aspa": "Área Antártica Especialmente Protegida. Es otra figura, con estatus legal bajo el Tratado Antártico; los geositios SCAR no lo tienen."
+ }
 }

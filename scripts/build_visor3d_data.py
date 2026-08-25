@@ -189,10 +189,25 @@ def puntos(ruta, campos):
         p = {"x": round(g3031.x, 1), "y": round(g3031.y, 1),
              "lon": round(g4326.x, 4), "lat": round(g4326.y, 4)}
         for c in campos:
-            if c in fila and fila[c] is not None:
-                v = fila[c]
-                p[c] = int(v) if isinstance(v, np.integer) else (
-                    float(v) if isinstance(v, np.floating) else str(v))
+            if c not in fila:
+                continue
+            v = fila[c]
+            if v is None:
+                continue
+            # geopandas rellena con NaN los campos que solo existen en algunas
+            # features. Convertirlo con str() daba la cadena "nan", que en
+            # JavaScript es truthy: todos los geositios acababan con la insignia
+            # de IUGS Third 100 encendida. Los ausentes se omiten.
+            if isinstance(v, float) and v != v:
+                continue
+            if isinstance(v, (bool, np.bool_)):
+                p[c] = bool(v)
+            elif isinstance(v, np.integer):
+                p[c] = int(v)
+            elif isinstance(v, (float, np.floating)):
+                p[c] = float(v)
+            else:
+                p[c] = str(v)
         salida.append(p)
     return salida
 
@@ -253,13 +268,27 @@ def main(argv):
     print(f"  geocon.png     {len(leyenda)} frameworks  "
           f"({(OUT / 'geocon.png').stat().st_size/1024:,.0f} KB)")
 
-    # --- Geositios ---
-    meta["geositios"] = puntos(DATA / "antartica_geositios.geojson",
-                               ["nombre", "name", "framework", "descripcion"])
-    meta["candidatos"] = puntos(DATA / "antartica_geositios_propuestos.geojson",
-                                ["name", "nombre", "framework", "pubs", "weighted_score"])
-    print(f"\nPuntos: {len(meta['geositios'])} geositios SCAR, "
-          f"{len(meta['candidatos'])} candidatos bibliométricos")
+    # --- Geositios, separados por estatus ---
+    #
+    # El archivo mezcla cuatro figuras distintas y la diferencia importa: solo 8
+    # son geositios SCAR aprobados. Ver scripts/build_geositios_geocon.py.
+    todos = puntos(DATA / "antartica_geositios.geojson",
+                   ["nombre", "name", "framework", "descripcion", "estatus",
+                    "codigo", "fuente", "iugs_third_100", "en_espera"])
+    for est in ("aprobado", "nominado", "potencial", "aspa"):
+        meta[est] = [p for p in todos if p.get("estatus") == est]
+
+    # Los candidatos bibliométricos viven en su propio archivo y también son
+    # potenciales, así que se suman a ese grupo.
+    bibl = puntos(DATA / "antartica_geositios_propuestos.geojson",
+                  ["name", "nombre", "framework", "pubs", "weighted_score"])
+    for p in bibl:
+        p["estatus"] = "potencial"
+    meta["potencial"] += bibl
+
+    print("\nPuntos por estatus:")
+    for est in ("aprobado", "nominado", "potencial", "aspa"):
+        print(f"  {len(meta[est]):>4}  {est}")
 
     (OUT / "meta.json").write_text(json.dumps(meta, ensure_ascii=False), encoding="utf-8")
     print(f"\nmeta.json escrito ({(OUT / 'meta.json').stat().st_size/1024:,.0f} KB)")

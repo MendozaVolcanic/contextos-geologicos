@@ -43,6 +43,23 @@ en `requirements.txt`.
 - **Espesor de hielo** — no es una elevación. El relieve representa cuánto hielo
   hay encima, así que se lee distinto: los máximos son las cuencas subglaciales.
 
+## Los cuatro niveles de geositio
+
+No todo punto en el mapa es un geositio SCAR, y la diferencia es sustantiva. Los
+geositios SCAR **no tienen estatus legal** bajo el Tratado Antártico (presentación
+GEOCON, lámina 3); las ASPAs sí. Mezclarlos era un error de categoría.
+
+| Nivel | | Qué es |
+|---|---:|---|
+| **Aprobado** | 8 | Geositio SCAR formalmente aprobado. 6 de GF1, 1 de GF7 (Yamato) y el K-Pg de isla Marambio. Tres son además IUGS Third 100 |
+| **Nominado** | 9 | Propuestos en la convocatoria GF3/GF4 2026-2028, sin resolver. Incluye The Palisades, que la propia presentación dice que no se está considerando por ahora |
+| **Potencial** | 68 | Candidatos nuestros, derivados de la bibliografía. **Sin estatus SCAR de ningún tipo** |
+| **ASPA** | 72 | Áreas Antárticas Especialmente Protegidas. No son geositios |
+
+Por defecto solo se muestran aprobados y nominados. Se regeneran con
+`scripts/build_geositios_geocon.py`, que trae la lista con la lámina de origen de
+cada uno y resuelve las coordenadas contra el SCAR Composite Gazetteer.
+
 ## Dos cosas que no hay que malinterpretar
 
 **El tamaño de las clases en pantalla no es el área real.** La roca aflorante de

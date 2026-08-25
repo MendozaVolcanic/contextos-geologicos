@@ -21,6 +21,22 @@ const RAMPAS = {
               [.7, '#93cfe3'], [1, '#f0fbff']],
 };
 
+// [clave, color, radio]. El orden es el de la jerarquía SCAR, de aprobado a
+// simple área protegida — que no es un geositio en absoluto.
+const ESTATUS = [
+  ['aprobado',  0xffd24a, 4.6],
+  ['nominado',  0xff9d4a, 3.8],
+  ['potencial', 0x5fd0a0, 2.8],
+  ['aspa',      0x8fa8c0, 2.4],
+];
+
+const ETIQUETA_ESTATUS = {
+  aprobado: 'Geositio SCAR aprobado',
+  nominado: 'Nominado (GF3/GF4, sin resolver)',
+  potencial: 'Potencial — derivado de bibliografía, sin estatus SCAR',
+  aspa: 'ASPA · área protegida del Tratado, no es un geositio',
+};
+
 const NOTAS = {
   surface: 'Altura de la superficie del hielo. Solo hay dato donde hay hielo o roca; el océano queda como hueco.',
   bed: 'Topografía del lecho bajo el hielo, incluida la batimetría. Es la capa con mayor cobertura.',
@@ -256,41 +272,45 @@ function colocarPuntos() {
   grupoPuntos = new THREE.Group();
   escena.add(grupoPuntos);
 
-  const geo = new THREE.SphereGeometry(3.2, 12, 10);
-  const conjuntos = [
-    ['geositios', 0xffd24a, document.getElementById('ver-geositios').checked],
-    ['candidatos', 0x5fd0a0, document.getElementById('ver-candidatos').checked],
-  ];
-
-  for (const [clave, color, visible] of conjuntos) {
-    if (!visible) continue;
+  // Los aprobados se dibujan más grandes: son 8 contra 72 ASPAs, y sin eso
+  // desaparecen entre el resto.
+  for (const [clave, color, radio] of ESTATUS) {
+    if (!document.getElementById(`ver-${clave}`).checked) continue;
+    const geo = new THREE.SphereGeometry(radio, 12, 10);
     const mat = new THREE.MeshBasicMaterial({ color });
     for (const p of meta[clave] || []) {
       const h = alturaEn(p.x, p.y);
       const w = mundoDesde3031(p.x, p.y);
       const esfera = new THREE.Mesh(geo, mat);
-      esfera.position.set(w.x, (h ?? 0) * escalaZ * exageracion + 4, w.z);
-      esfera.userData = { punto: p, tipo: clave, altura: h };
+      esfera.position.set(w.x, (h ?? 0) * escalaZ * exageracion + radio + 2, w.z);
+      esfera.userData = { punto: p, estatus: clave, altura: h };
       grupoPuntos.add(esfera);
     }
   }
 }
 
 function mostrarFicha(datos) {
-  const { punto: p, tipo, altura } = datos;
+  const { punto: p, estatus, altura } = datos;
   const nombre = p.nombre || p.name || 'Sin nombre';
   const ll = aLatLon(p.x, p.y);
   const filas = [
-    ['Tipo', tipo === 'geositios' ? 'Geositio SCAR' : 'Candidato bibliométrico'],
+    ['Estatus', ETIQUETA_ESTATUS[estatus] || estatus],
     ['Framework', p.framework || '—'],
-    ['Posición', `${ll.lat.toFixed(3)}° S · ${ll.lon.toFixed(3)}°`],
+    ['Posición', `${Math.abs(ll.lat).toFixed(3)}° S · ${ll.lon.toFixed(3)}°`],
     [capaActiva === 'thickness' ? 'Espesor' : 'Elevación',
      altura === null ? 'sin dato' : `${altura.toLocaleString('es')} m`],
   ];
+  if (p.fuente) filas.push(['Fuente', p.fuente]);
   if (p.pubs) filas.push(['Publicaciones', p.pubs]);
 
+  const color = (ESTATUS.find(e => e[0] === estatus) || [, 0x888888])[1];
+  const insignias =
+    (p.iugs_third_100 ? '<span class="insignia iugs">IUGS Third 100</span>' : '') +
+    (p.en_espera ? '<span class="insignia espera">no se considera por ahora</span>' : '');
+
   document.getElementById('ficha-cuerpo').innerHTML =
-    `<h3>${escapar(nombre)}</h3><dl>` +
+    `<h3><span class="punto" style="background:#${color.toString(16).padStart(6, '0')}"></span>` +
+    `${escapar(nombre)}</h3>${insignias}<dl>` +
     filas.map(([k, v]) => `<dt>${k}</dt><dd>${escapar(String(v))}</dd>`).join('') +
     `</dl>` + (p.descripcion ? `<p class="desc">${escapar(p.descripcion)}</p>` : '');
   document.getElementById('ficha').hidden = false;
@@ -429,14 +449,13 @@ function conectarUI() {
     malla.material.uniforms.uOpacidad.value = opacidadTema;
   };
 
-  document.getElementById('ver-geositios').onchange = colocarPuntos;
-  document.getElementById('ver-candidatos').onchange = colocarPuntos;
+  for (const [clave] of ESTATUS) {
+    document.getElementById(`ver-${clave}`).onchange = colocarPuntos;
+    document.getElementById(`n-${clave}`).textContent = (meta[clave] || []).length;
+  }
   document.getElementById('reset').onclick = reencuadrar;
   document.getElementById('cerrar-ficha').onclick =
     () => { document.getElementById('ficha').hidden = true; };
-
-  document.getElementById('n-geositios').textContent = (meta.geositios || []).length;
-  document.getElementById('n-candidatos').textContent = (meta.candidatos || []).length;
 
   render.domElement.addEventListener('pointermove', sondear);
   render.domElement.addEventListener('click', clic);

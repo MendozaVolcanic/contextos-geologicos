@@ -196,3 +196,25 @@ html, body {
 }
 .nota.aviso code { font-size: 10.5px; color: #e0c99a; }
 .nota.aviso strong { color: #e8d2a8; }
+
+/* puntos de color en las casillas y en la ficha */
+.punto {
+  display: inline-block;
+  width: 9px; height: 9px;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, .35);
+  flex: 0 0 auto;
+}
+#ficha h3 .punto { width: 10px; height: 10px; margin-right: 7px; vertical-align: middle; }
+
+.insignia {
+  display: inline-block;
+  margin: 0 5px 8px 0;
+  padding: 2px 7px;
+  border-radius: 10px;
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: .01em;
+}
+.insignia.iugs { background: rgba(255, 210, 74, .16); color: #ffd24a; border: 1px solid rgba(255, 210, 74, .4); }
+.insignia.espera { background: rgba(200, 120, 120, .14); color: #dda0a0; border: 1px solid rgba(200, 120, 120, .38); }
