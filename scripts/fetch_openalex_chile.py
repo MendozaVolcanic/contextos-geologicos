@@ -29,6 +29,12 @@ import sys
 import time
 from pathlib import Path
 
+# Ver nota en analisis_actas_scar.py: el docstring que argparse imprime con
+# --help trae "→", que cp1252 no puede representar.
+for _s in (sys.stdout, sys.stderr):
+    if hasattr(_s, "reconfigure"):
+        _s.reconfigure(encoding="utf-8")
+
 ROOT = Path(__file__).resolve().parents[1]
 PAPERS_DIR = ROOT / "docs" / "biblioteca" / "chile" / "papers"
 PAPERS_DIR.mkdir(parents=True, exist_ok=True)

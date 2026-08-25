@@ -115,9 +115,14 @@ def main() -> int:
     if not FRAMEWORKS.exists():
         print(f"[ERROR] No existe {FRAMEWORKS}", file=sys.stderr)
         return 1
+    # El fallback a latin-1 se mantiene por compatibilidad con GeoJSON viejos, pero
+    # avisa: latin-1 nunca falla al decodificar, así que enmascararía corrupción
+    # futura en silencio. Ahora que los archivos son UTF-8, llegar acá es un síntoma.
     try:
         data = json.loads(FRAMEWORKS.read_text(encoding="utf-8"))
     except UnicodeDecodeError:
+        print(f"[WARN] {FRAMEWORKS.name} no es UTF-8 válido; releyendo como latin-1. "
+              f"El RFC 7946 exige UTF-8: revisa qué script lo escribió.", file=sys.stderr)
         data = json.loads(FRAMEWORKS.read_text(encoding="latin-1"))
 
     existing = data.get("features", [])

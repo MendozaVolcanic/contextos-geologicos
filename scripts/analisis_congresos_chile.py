@@ -76,6 +76,17 @@ GEONAMES_RELEVANT_CODES = {
     "ISL",                                    # incluye Isla de Pascua, Chiloé, etc.
 }
 
+# Largo del prefijo con que se comparan los nombres ya catalogados contra los
+# candidatos nuevos (dedup difuso en filter_props()).
+#
+# Es un compromiso y conviene tenerlo a la vista: con 8 caracteres, tres de los
+# 49 geositios del inventario comparten prefijo entre sí ('cráter d' lo comparten
+# 3, 'disyunci' y 'dunas de' 2 cada uno). O sea que un candidato legítimo como
+# "Cráter del volcán Llaima" queda descartado por "Cráter del volcán Villarrica",
+# que es otro sitio. Subir el número descarta menos y deja pasar más duplicados;
+# bajarlo hace lo contrario. Felipe: ajustar contra la lista que salga.
+PREFIJO_DEDUP = 8
+
 # Nombres genéricos a excluir + homónimos con ciudades/personas conocidas que
 # inflan el ranking sin valor geocientífico.
 GENERIC_NAMES = {
@@ -124,7 +135,7 @@ def load_geonames_cl(path: Path) -> list[dict]:
     """
     if not path.exists():
         print(f"[ERROR] No existe {path}.\nBajar:\n"
-              "  curl -L -o /tmp/CL.zip http://download.geonames.org/export/dump/CL.zip\n"
+              "  curl -L -o /tmp/CL.zip https://download.geonames.org/export/dump/CL.zip\n"
               "  unzip /tmp/CL.zip -d docs/biblioteca/",
               file=sys.stderr)
         return []
@@ -312,7 +323,8 @@ def filter_props(by_site: dict, catalogados: set[str], min_pubs: int, top_n: int
             continue
         # Excluir catalogados (fuzzy by lowercased prefix)
         nl = name.lower()
-        if nl in catalogados or any(nl.startswith(c[:max(8, len(c))]) for c in catalogados if len(c) >= 8):
+        if nl in catalogados or any(nl.startswith(c[:PREFIJO_DEDUP])
+                                    for c in catalogados if len(c) >= PREFIJO_DEDUP):
             continue
         out.append({"name": name, **d})
     out.sort(key=lambda c: (-c.get("weighted_score", 0), -c["pubs"], -c.get("hits", 0)))

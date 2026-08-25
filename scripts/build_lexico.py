@@ -18,7 +18,14 @@ Salida: app/data/lexico.json
 
 import re
 import json
+import sys
 from pathlib import Path
+
+# Ver nota en analisis_actas_scar.py: Windows escribe cp1252 a stdout redirigido
+# y este módulo maneja texto con flechas y guiones largos.
+for _s in (sys.stdout, sys.stderr):
+    if hasattr(_s, "reconfigure"):
+        _s.reconfigure(encoding="utf-8")
 
 ROOT = Path(__file__).resolve().parent.parent
 TXT_FILES = [

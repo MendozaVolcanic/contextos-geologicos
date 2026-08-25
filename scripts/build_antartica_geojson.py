@@ -90,8 +90,16 @@ def tipo_for(desc):
     return "otros"
 
 records = []
+saltados = 0
 for _, row in dissolved.iterrows():
-    code = int(row.SIMPCODE)
+    # Guard de nulos: son 99.080 polígonos y un solo SIMPCODE vacío o no numérico
+    # tiraba el batch entero sin dejar salida parcial. Mejor saltarlo y avisar.
+    try:
+        code = int(row.SIMPCODE)
+    except (TypeError, ValueError):
+        print(f"[WARN] SIMPCODE no numérico ({row.SIMPCODE!r}); grupo omitido", file=sys.stderr)
+        saltados += 1
+        continue
     cls, desc, color = SIMPLECODE_META.get(code, ("UNKNOWN", "", "#999"))
     geom = json.loads(gpd.GeoSeries([row.geometry], crs="EPSG:4326").to_json())["features"][0]["geometry"]
     props = {
@@ -121,3 +129,5 @@ size_mb = OUT.stat().st_size / 1024 / 1024
 print(f"\nWritten: {OUT}")
 print(f"Size: {size_mb:.2f} MB")
 print(f"Classes present: {sorted(dissolved.SIMPCODE.unique())}")
+if saltados:
+    print(f"[WARN] {saltados} grupo(s) omitido(s) por SIMPCODE no numérico", file=sys.stderr)

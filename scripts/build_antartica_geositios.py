@@ -39,7 +39,7 @@ SEED_NOTES = ROOT / "docs" / "notas" / "scar_geositios_seed.md"
 # desde el paquete Quantarctica (Norsk Polarinstitutt), que empaqueta las capas
 # vigentes de ASPAs/ASMAs/HSMs como ESRI Shapefiles en:
 #   Quantarctica3/Basemap/ProtectedAreas/
-# Página de descarga: http://quantarctica.npolar.no/downloads
+# Página de descarga: https://quantarctica.npolar.no/downloads
 #
 # Como el paquete completo pesa ~12 GB, lo razonable es:
 #   (a) bajar el paquete una vez con el Norwegian Polar Institute Downloader
@@ -51,7 +51,7 @@ SEED_NOTES = ROOT / "docs" / "notas" / "scar_geositios_seed.md"
 # SCAR EG-GEOCON Geological Heritage Sites: la lista oficial vive en SCAR ATCM XLIII
 # Attachment A (PDF). Texto extraído manualmente a docs/notas/scar_geositios_seed.md
 # y semilla puesta en app/data/antartica_geositios.geojson.
-QUANTARCTICA_DOWNLOAD_PAGE = "http://quantarctica.npolar.no/downloads"
+QUANTARCTICA_DOWNLOAD_PAGE = "https://quantarctica.npolar.no/downloads"
 QUANTARCTICA_RSYNC = "rsync://quantarctica.npolar.no/quantarctica"
 SCAR_EGGEOCON_LIST = "https://scar.org/science/geo/geoconservation"
 

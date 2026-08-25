@@ -53,7 +53,13 @@ FRAMEWORKS = {
 
 def simpcode_to_framework(simpcode):
     """Reglas SIMPCODE → Framework. Felipe: revisar."""
-    s = int(simpcode)
+    # Guard de nulos: esto corre sobre 99.080 polígonos y un solo SIMPCODE vacío
+    # o no numérico tiraba el batch entero. Va a F9 ("otros"), que es justamente
+    # el bucket de lo no clasificable, y queda contado en el resumen de reglas.
+    try:
+        s = int(simpcode)
+    except (TypeError, ValueError):
+        return 9, f"SIMPCODE no numérico ({simpcode!r}) → F9 otros"
     # Arqueano
     if s == 70:
         return 1, "Arqueano metamórfico/intrusivo → F1 cratones arqueanos"

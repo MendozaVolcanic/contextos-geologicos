@@ -63,9 +63,9 @@ NOTES = ROOT / "docs" / "notas" / "bedmap.md"
 #      bm3_grid.nc) y descargar.
 RAMADDA_ENTRY_UUID = "2d0e4791-8e20-46a3-80e4-f5f6716025d2"
 RAMADDA_ENTRY_URL = (
-    f"http://ramadda.data.bas.ac.uk/repository/entry/show?entryid={RAMADDA_ENTRY_UUID}"
+    f"https://ramadda.data.bas.ac.uk/repository/entry/show?entryid={RAMADDA_ENTRY_UUID}"
 )
-RAMADDA_GET_BASE = "http://ramadda.data.bas.ac.uk/repository/entry/get/"
+RAMADDA_GET_BASE = "https://ramadda.data.bas.ac.uk/repository/entry/get/"
 BEDMAP3_FILES = {
     "bed":       "bm3_bed.tif",         # ~700 MB (16-bit signed, 500 m)
     "surface":   "bm3_surface.tif",     # ~700 MB
@@ -190,7 +190,7 @@ def resolve_ramadda_links() -> dict[str, str]:
     found = {}
     for match in pattern.finditer(r.text):
         href, fname = match.group(1), match.group(2)
-        found[fname] = "http://ramadda.data.bas.ac.uk" + href
+        found[fname] = "https://ramadda.data.bas.ac.uk" + href
     return found
 
 

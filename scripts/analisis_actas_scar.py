@@ -56,10 +56,19 @@ from __future__ import annotations
 import argparse
 import csv
 import json
+import math
 import re
 import sys
 from collections import defaultdict
 from pathlib import Path
+
+# Windows manda cp1252 a stdout cuando la salida va a un archivo, y este módulo
+# tiene flechas "→" en el docstring que argparse imprime con --help. Sin esto,
+# `python scripts/analisis_actas_scar.py --help > log.txt` muere con
+# UnicodeEncodeError.
+for _s in (sys.stdout, sys.stderr):
+    if hasattr(_s, "reconfigure"):
+        _s.reconfigure(encoding="utf-8")
 
 ROOT = Path(__file__).resolve().parents[1]
 APP_DATA = ROOT / "app" / "data"
@@ -183,9 +192,6 @@ def count_mentions(text: str, gazetteer: list[dict]) -> dict[str, int]:
     for hit in kp.extract_keywords(text):
         counts[hit] = counts.get(hit, 0) + 1
     return counts
-
-
-import math
 
 
 def parse_txt_metadata(text: str) -> dict:
