@@ -44,7 +44,7 @@
           "Larsemann Hills": 7,
           "Prydz Bay": 7
         },
-        "framework": "F2 Sedimentary basins (Beacon)",
+        "framework": "F3 Beacon Supergroup (cobertura Gondwana)",
         "framework_source": "soft-rule (regla geográfica)"
       }
     },
@@ -87,7 +87,7 @@
           "Larsemann Hills": 7,
           "Prydz Bay": 7
         },
-        "framework": "F9 Antarctic Peninsula arc",
+        "framework": "F4 Arco de la Península Antártica",
         "framework_source": "soft-rule (regla geográfica)"
       }
     },
@@ -129,7 +129,7 @@
           "Larsemann Hills": 7,
           "Prydz Bay": 7
         },
-        "framework": "F9 Antarctic Peninsula arc",
+        "framework": "F4 Arco de la Península Antártica",
         "framework_source": "soft-rule (regla geográfica)"
       }
     },
@@ -257,7 +257,7 @@
           "Larsemann Hills": 7,
           "Prydz Bay": 7
         },
-        "framework": "F9 Antarctic Peninsula arc",
+        "framework": "F4 Arco de la Península Antártica",
         "framework_source": "soft-rule (regla geográfica)"
       }
     },
@@ -342,7 +342,7 @@
           "Prydz Bay": 7,
           "South Shetland Islands": 7
         },
-        "framework": "F9 Antarctic Peninsula arc",
+        "framework": "F4 Arco de la Península Antártica",
         "framework_source": "soft-rule (regla geográfica)"
       }
     },
@@ -426,7 +426,7 @@
           "Union Glacier": 7,
           "Signy Island": 7
         },
-        "framework": "F9 Antarctic Peninsula arc",
+        "framework": "F4 Arco de la Península Antártica",
         "framework_source": "soft-rule (regla geográfica)"
       }
     },
@@ -552,7 +552,7 @@
           "Prydz Bay": 1,
           "Ross Island": 1
         },
-        "framework": "F9 Antarctic Peninsula arc",
+        "framework": "F4 Arco de la Península Antártica",
         "framework_source": "soft-rule (regla geográfica)"
       }
     },
@@ -706,7 +706,7 @@
           "King George Island": 5,
           "Maxwell Bay": 5
         },
-        "framework": "F9 Antarctic Peninsula arc",
+        "framework": "F4 Arco de la Península Antártica",
         "framework_source": "soft-rule (regla geográfica)"
       }
     },
@@ -872,7 +872,7 @@
           "King George Island": 6,
           "Maxwell Bay": 6
         },
-        "framework": "F9 Antarctic Peninsula arc",
+        "framework": "F4 Arco de la Península Antártica",
         "framework_source": "soft-rule (regla geográfica)"
       }
     },
@@ -1161,7 +1161,7 @@
           "Larsemann Hills": 7,
           "Prydz Bay": 7
         },
-        "framework": "F9 Antarctic Peninsula arc (sub-antártico)",
+        "framework": "F4 Arco de Scotia (sub-antártico)",
         "framework_source": "soft-rule (regla geográfica)"
       }
     },
@@ -1202,7 +1202,7 @@
           "Union Glacier": 7,
           "Larsemann Hills": 7
         },
-        "framework": "F9 Antarctic Peninsula arc (sub-antártico)",
+        "framework": "F4 Arco de Scotia (sub-antártico)",
         "framework_source": "soft-rule (regla geográfica)"
       }
     },
@@ -1285,7 +1285,7 @@
           "Signy Island": 6,
           "Larsemann Hills": 6
         },
-        "framework": "F9 Antarctic Peninsula arc",
+        "framework": "F4 Arco de la Península Antártica",
         "framework_source": "soft-rule (regla geográfica)"
       }
     },
@@ -1368,7 +1368,7 @@
           "Transantarctic Mountains": 3,
           "Fildes Peninsula": 3
         },
-        "framework": "F9 Antarctic Peninsula arc",
+        "framework": "F4 Arco de la Península Antártica",
         "framework_source": "soft-rule (regla geográfica)"
       }
     },
@@ -1409,7 +1409,7 @@
           "Larsemann Hills": 7,
           "Prydz Bay": 7
         },
-        "framework": "F9 Antarctic Peninsula arc",
+        "framework": "F4 Arco de la Península Antártica",
         "framework_source": "soft-rule (regla geográfica)"
       }
     },
@@ -1540,7 +1540,7 @@
           "2020-2026": 1
         },
         "co_sites_top": {},
-        "framework": "F9 Antarctic Peninsula arc",
+        "framework": "F4 Arco de la Península Antártica",
         "framework_source": "soft-rule (regla geográfica)"
       }
     },
@@ -1580,7 +1580,7 @@
           "Union Glacier": 4,
           "Signy Island": 4
         },
-        "framework": "F9 Antarctic Peninsula arc",
+        "framework": "F4 Arco de la Península Antártica",
         "framework_source": "soft-rule (regla geográfica)"
       }
     },
@@ -1785,7 +1785,7 @@
           "Admiralty Bay": 4,
           "Ellsworth Mountains": 4
         },
-        "framework": "F9 Antarctic Peninsula arc",
+        "framework": "F4 Arco de la Península Antártica",
         "framework_source": "soft-rule (regla geográfica)"
       }
     },
@@ -1826,7 +1826,7 @@
           "Byers Peninsula": 1,
           "Livingston Island": 1
         },
-        "framework": "F9 Antarctic Peninsula arc",
+        "framework": "F4 Arco de la Península Antártica",
         "framework_source": "soft-rule (regla geográfica)"
       }
     },
@@ -1927,7 +1927,7 @@
           "Prydz Bay": 2,
           "Ross Island": 2
         },
-        "framework": "F2 Sedimentary basins (Beacon)",
+        "framework": "F3 Beacon Supergroup (cobertura Gondwana)",
         "framework_source": "soft-rule (regla geográfica)"
       }
     },
@@ -2120,7 +2120,7 @@
           "The Satellite": 4,
           "Union Glacier": 4
         },
-        "framework": "F9 Antarctic Peninsula arc",
+        "framework": "F4 Arco de la Península Antártica",
         "framework_source": "soft-rule (regla geográfica)"
       }
     },
@@ -2241,7 +2241,7 @@
           "Adelaide Island": 1,
           "Recovery Glacier": 1
         },
-        "framework": "F9 Antarctic Peninsula arc",
+        "framework": "F4 Arco de la Península Antártica",
         "framework_source": "soft-rule (regla geográfica)"
       }
     },
@@ -2321,7 +2321,7 @@
           "King George Island": 2,
           "Mount Johns": 2
         },
-        "framework": "F9 Antarctic Peninsula arc",
+        "framework": "F4 Arco de la Península Antártica",
         "framework_source": "soft-rule (regla geográfica)"
       }
     },
@@ -2350,7 +2350,7 @@
           "2020-2026": 1
         },
         "co_sites_top": {},
-        "framework": "F9 Antarctic Peninsula arc",
+        "framework": "F4 Arco de la Península Antártica",
         "framework_source": "soft-rule (regla geográfica)"
       }
     },
@@ -2390,7 +2390,7 @@
           "Livingston Island": 2,
           "Fildes Peninsula": 2
         },
-        "framework": "F9 Antarctic Peninsula arc",
+        "framework": "F4 Arco de la Península Antártica",
         "framework_source": "soft-rule (regla geográfica)"
       }
     }

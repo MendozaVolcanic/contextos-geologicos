@@ -26,11 +26,40 @@ Documento descargado: `docs/bibliografia/01_contextos_geologicos/SCAR_ATCM43_202
 | 8 | **Subglacial water bodies, deposits and morphological features** | Morfología subglacial, lagos y redes fluviales subglaciales |
 | 9 | **Geological features or materials which cannot be included in other frameworks** | Categoría "comodín" — minerales, rocas, fósiles, suelos, permafrost, estructuras o landforms científicamente importantes que no encajan en los 8 anteriores, incluyendo localidades tipo reconocidas internacionalmente |
 
-### Estado del proceso (al 2021)
+### Verificación contra la fuente primaria
 
-- **Paso 1 — Generación de Frameworks: COMPLETADO.** Los 9 fueron acordados tras consulta con la comunidad antártica.
-- **Paso 2 — Selección de Geosites: en curso.** Solo el Framework 5 (K-Pg) tiene Geosite seleccionado (Isla Marambio).
-- **Pendiente:** Geosites para Frameworks 1, 2, 3, 4, 6, 7, 8, 9. SCAR EG-GEOCON está convocando propuestas activamente, en particular para Frameworks 3 y 4.
+**2026-08-24:** la tabla de los 9 frameworks de arriba se contrastó línea por línea contra el
+documento original —SCAR ATCM XLIII (2021), Attachment A, Annex 1, págs. 7-8, hoy en
+`docs/biblioteca/scar/atcm/ATCM43_Att-A_2021_Method_Identification_Antarctic_Geological_Sites.pdf`—
+y **coincide**. Esto cierra el riesgo que la auditoría de código dejó abierto en su §7.4
+("las descripciones F1-F9 se contrastaron entre archivos de este repo, no contra el documento
+primario").
+
+Ojo con un detalle que el propio documento aclara y que el código del repo no respetaba: la
+orogenia Ross y los **orógenos/suturas Pan-Africanos son GF3**, no GF2. GF2 es el ciclo
+Rodinia. Ver `docs/notas/geocon_mapping_log.md`.
+
+### Estado del proceso (al 2025-2026)
+
+Fuente: presentación del workshop GEOCON (SCAR ISAES, 18 agosto 2025; versión ampliada
+circulada para OSC 2026). Equipo de liderazgo: Anne Grunow (chair), Cliff Atkins (deputy),
+Enrique Díaz-Martínez (secretario), Javier N. Gelfo. El EG-GEOCON se constituyó a fines de
+2022 y tiene 35 miembros de 16 países.
+
+- **Paso 1 — Generación de Frameworks: COMPLETADO.**
+- **Paso 2 — Selección de Geosites: bastante más avanzado de lo que decía esta nota.**
+
+| Framework | Estado 2025 |
+|---|---|
+| GF1 Archean cratons | **6 geositios aprobados** de 10 propuestos; 2 aceptados como IUGS Third 100. Son Torckler-Tang Øy, Taynaya Paragneiss, Shcherbinina Layered Complex, Mount Sones, Mount Riiser-Larsen y las pegmatitas de berilio de Casey Bay |
+| GF5 K-Pg | 1 geositio (isla Marambio/Seymour), el primero de todos |
+| GF6 Cenozoic glacial history | 10 propuestos, **en evaluación** |
+| GF7 Meteorites | 1 aprobado (Yamato Mountains), también IUGS Third 100 |
+| GF3 y GF4 | **convocatoria abierta 2026-2028.** Ya hay propuestas: GF3 — Rundvågshetta (Lützow-Holm), Sør Rondane, Trollslottet y Jutulhogget (Dronning Maud central), Fremouw Peak y Skaar Ridge (turba silicificada), The Palisades. GF4 — Hope Bay, Dufek Layered Mafic Intrusion |
+| GF2, GF8, GF9 | sin geositios todavía |
+
+**Lo relevante para este repo:** la convocatoria abierta es justamente GF3 y GF4, que son los
+dos frameworks donde nuestra clasificación tiene más área y más incertidumbre.
 
 ## Fuente B — Cox et al. 2023, GeoMAP: SIMPLECODE en 21 clases
 

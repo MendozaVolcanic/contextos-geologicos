@@ -13,7 +13,7 @@ Estrategia
 3. Spatial join: para cada candidato, framework cuyo polígono lo contenga.
 4. Para candidatos fuera de cualquier polígono mapeado, asigna framework por
    regla geográfica blanda (latitud + longitud + nombre):
-     - Antarctic Peninsula (-75°S..-60°S, -80°W..-50°W) → F9 Peninsula arc
+     - Antarctic Peninsula (-75°S..-60°S, -80°W..-50°W) → F4 arco del margen activo
      - Transantarctic Mountains (cinturón) → F2 Beacon / F3 Ferrar
      - Dry Valleys (-78°S..-77°S, 162°E..164°E) → F6 Glacial geology
      - Mt Erebus / Ross Island (-78°S..-77°S, 166°E..168°E) → F4 Cenozoic volcanism
@@ -30,6 +30,12 @@ from __future__ import annotations
 import json
 import sys
 from pathlib import Path
+
+# Ver nota en analisis_actas_scar.py: los nombres de framework que este script
+# imprime traen "→" y cp1252 no puede representarlo.
+for _s in (sys.stdout, sys.stderr):
+    if hasattr(_s, "reconfigure"):
+        _s.reconfigure(encoding="utf-8")
 
 ROOT = Path(__file__).resolve().parents[1]
 APP_DATA = ROOT / "app" / "data"
@@ -54,11 +60,11 @@ SOFT_RULES = [
     ("TAM Pole sector (W)", (-87.0, -79.5, -180.0, -150.0), "F3 Gondwana amalgamation and breakup"),
 
     # --- Sub-antártico (South Orkney + South Sandwich + South Georgia) ---
-    ("South Orkneys (Signy, Coronation)", (-61.5, -60.0, -47.0, -44.0), "F9 Antarctic Peninsula arc (sub-antártico)"),
+    ("South Orkneys (Signy, Coronation)", (-61.5, -60.0, -47.0, -44.0), "F4 Arco de Scotia (sub-antártico)"),
     ("South Sandwich Islands", (-60.0, -56.0, -29.0, -25.0), "F4 Cenozoic volcanism (sub-antártico)"),
 
     # --- Antarctic Peninsula (Tierra Graham + Palmer Land + South Shetlands) ---
-    ("Peninsula arc", (-75.0, -60.0, -80.0, -50.0), "F9 Antarctic Peninsula arc"),
+    ("Peninsula arc", (-75.0, -60.0, -80.0, -50.0), "F4 Arco de la Península Antártica"),
 
     # --- Dry Valleys (estricto: solo Taylor/Wright/Beacon Valley) ---
     ("Dry Valleys (estricto)", (-78.0, -76.8, 161.0, 164.5), "F6 Glacial geology"),
@@ -109,9 +115,17 @@ def load_geojson(path: Path) -> dict:
         print(f"[ERROR] No existe {path}", file=sys.stderr)
         sys.exit(1)
     # Algunos GeoJSON antiguos vienen en latin-1 (con guion largo Word "—" como byte 0x97).
+    #
+    # El fallback se mantiene por compatibilidad, pero avisa: latin-1 decodifica
+    # cualquier byte sin fallar nunca, así que si vuelve a aparecer un archivo mal
+    # codificado lo leería en silencio y la corrupción seguiría viaje. Desde que los
+    # GeoJSON son UTF-8 (RFC 7946), llegar acá es señal de que algo se rompió aguas
+    # arriba, no un caso normal.
     try:
         return json.loads(path.read_text(encoding="utf-8"))
     except UnicodeDecodeError:
+        print(f"[WARN] {path.name} no es UTF-8 válido; releyendo como latin-1. "
+              f"El RFC 7946 exige UTF-8: revisa qué script lo escribió.", file=sys.stderr)
         return json.loads(path.read_text(encoding="latin-1"))
 
 

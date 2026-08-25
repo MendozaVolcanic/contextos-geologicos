@@ -25,7 +25,7 @@ Generado por `scripts/enrich_candidatos_framework.py`.
 | Shackleton Range | 6 | 23 | soft-rule (regla geográfica) |
 | Whitmore Mountains | 5 | 10 | soft-rule (regla geográfica) |
 
-## F2 Sedimentary basins (Beacon) — 2 candidatos
+## F3 Beacon Supergroup (cobertura Gondwana) — 2 candidatos
 
 | Sitio | Pubs | Menciones | Fuente asignación |
 |---|---:|---:|---|
@@ -72,7 +72,7 @@ Generado por `scripts/enrich_candidatos_framework.py`.
 |---|---:|---:|---|
 | Grove Mountains | 17 | 73 | soft-rule (regla geográfica) |
 
-## F9 Antarctic Peninsula arc — 20 candidatos
+## F4 Arco de la Península Antártica — 20 candidatos
 
 | Sitio | Pubs | Menciones | Fuente asignación |
 |---|---:|---:|---|
@@ -97,7 +97,7 @@ Generado por `scripts/enrich_candidatos_framework.py`.
 | Joinville Island | 6 | 7 | soft-rule (regla geográfica) |
 | Hobbs Glacier | 5 | 11 | soft-rule (regla geográfica) |
 
-## F9 Antarctic Peninsula arc (sub-antártico) — 2 candidatos
+## F4 Arco de Scotia (sub-antártico) — 2 candidatos
 
 | Sitio | Pubs | Menciones | Fuente asignación |
 |---|---:|---:|---|

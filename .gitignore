@@ -58,6 +58,12 @@ docs/bibliografia/03_mapas_base/*.pdf
 docs/bibliografia/**/*.txt
 docs/pdfs/*.txt
 
+# Reclasificacion GEOCON: derivado regenerable con scripts/build_antartica_geocon.py
+# en segundos. Son 15,5 MB que ningun visor carga todavia (el visor 3D consume
+# app/visor3d/data/, no este archivo), asi que no vale la pena versionarlo ni
+# publicarlo en cada deploy de Pages.
+app/data/antartica_geocon.geojson
+
 # Sistema
 .DS_Store
 Thumbs.db
