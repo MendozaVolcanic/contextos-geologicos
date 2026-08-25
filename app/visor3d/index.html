@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Visor 3D Antártico — relieve, geología y contextos GEOCON</title>
+<link rel="stylesheet" href="styles.css" />
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+    "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+  }
+}
+</script>
+</head>
+<body>
+
+<div id="lienzo"></div>
+
+<div id="cargando"><div class="spinner"></div><p>Cargando BedMap3…</p></div>
+
+<header id="cabecera">
+  <h1>Visor 3D Antártico</h1>
+  <p>BedMap3 · GeoMAP · 9 Geological Frameworks del SCAR EG-GEOCON</p>
+</header>
+
+<section id="panel">
+
+  <div class="grupo">
+    <h2>Relieve</h2>
+    <div class="segmentado" id="sel-capa">
+      <button data-capa="surface" class="activo">Superficie</button>
+      <button data-capa="bed">Lecho rocoso</button>
+      <button data-capa="thickness">Espesor de hielo</button>
+    </div>
+    <p class="nota" id="nota-capa"></p>
+  </div>
+
+  <div class="grupo">
+    <h2>Capa temática</h2>
+    <div class="segmentado vertical" id="sel-tema">
+      <button data-tema="ninguno" class="activo">Hipsometría</button>
+      <button data-tema="geologia">Geología · GeoMAP (21 clases)</button>
+      <button data-tema="geocon">Contextos GEOCON (frameworks)</button>
+    </div>
+    <label class="deslizador">
+      Opacidad temática <output id="val-opacidad">85%</output>
+      <input type="range" id="opacidad" min="0" max="100" value="85" />
+    </label>
+    <p class="nota aviso" id="nota-tema" hidden>
+      La roca aflorante es ~0,2% del continente y casi todo afloramiento mide
+      menos que un píxel, así que las clases van engordadas para poder verse.
+      <strong>El tamaño en pantalla no es el área real</strong> — esa está en
+      <code>docs/notas/geocon_mapping_log.md</code>.
+    </p>
+  </div>
+
+  <div class="grupo">
+    <h2>Vista</h2>
+    <label class="deslizador">
+      Exageración vertical <output id="val-exag">60×</output>
+      <input type="range" id="exag" min="1" max="150" value="60" />
+    </label>
+    <label class="casilla">
+      <input type="checkbox" id="ver-geositios" checked />
+      Geositios SCAR <span class="conteo" id="n-geositios"></span>
+    </label>
+    <label class="casilla">
+      <input type="checkbox" id="ver-candidatos" />
+      Candidatos bibliométricos <span class="conteo" id="n-candidatos"></span>
+    </label>
+    <button id="reset" class="boton-plano">Reencuadrar</button>
+  </div>
+
+  <div class="grupo" id="grupo-leyenda" hidden>
+    <h2>Leyenda</h2>
+    <div id="leyenda"></div>
+  </div>
+
+  <p class="pie">
+    Arrastrar para rotar · rueda para acercar · clic derecho para desplazar.
+    <a href="../index.html">← Visor 2D</a>
+  </p>
+</section>
+
+<aside id="ficha" hidden>
+  <button id="cerrar-ficha" aria-label="Cerrar">×</button>
+  <div id="ficha-cuerpo"></div>
+</aside>
+
+<div id="sonda" hidden></div>
+
+<script type="module" src="visor3d.js"></script>
+</body>
+</html>
