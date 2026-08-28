@@ -10,6 +10,11 @@ Parte de la **Suite Geopatrimonio Chile**:
 - 🪨 [apadrina-geositio-chile](https://github.com/MendozaVolcanic/apadrina-geositio-chile) — ciencia ciudadana · [🌐 dashboard](https://mendozavolcanic.github.io/apadrina-geositio-chile/)
 - 📊 [dashboard-22-contextos](https://github.com/MendozaVolcanic/dashboard-22-contextos) — gestión SGCh · [🌐 dashboard](https://mendozavolcanic.github.io/dashboard-22-contextos/)
 
+> 📋 **Estado del proyecto y traspaso:** este repo pasó a continuidad de Felipe Fuentes
+> Carrasco el 2026-08-24 y **ya no tiene copia local en el equipo original**. Ver
+> [`ESTADO.md`](ESTADO.md) para saber dónde está cada cosa (incluidos los 3,6 GB de datos
+> que no van a GitHub) y [`TRASPASO.md`](TRASPASO.md) para lo que queda pendiente.
+
 ## Qué hace
 
 - **Mapa de contextos** (Leaflet) — cambia entre Chile (Web Mercator) y Antártica (Polar Stereographic EPSG:3031), con mapa geológico base + polígonos de contextos.
